@@ -36,6 +36,14 @@
 * [Architecture Styles](#architecture-styles)
     * [User Experience Patterns](#architecture-styles-user-experience-patterns)
 * [References](#references-2)
+* [References](#references-3)
+    * [Software](#references-3-software)
+    * [Architecture](#references-3-architecture)
+    * [Design](#references-3-design)
+    * [Patterns](#references-3-patterns-1)
+    * [Principles](#references-3-principles)
+    * [Government of Canada](#references-3-government-of-canada)
+* [Terms](#terms)
 * [TODO](#todo)
     * [Notes - Paper to Write-Up](#todo-notes-paper-to-write-up)
 * [TO DO](#to-do)
@@ -44,7 +52,7 @@
         * [Guidelines](#to-do-enterprise-overview-guidelines)
         * [Design Methodolgoy??](#to-do-enterprise-overview-design-methodolgoy)
         * [UX Design](#to-do-enterprise-overview-ux-design)
-        * [Obervability](#to-do-enterprise-overview-obervability)
+        * [Observability](#to-do-enterprise-overview-observability)
     * [Reference Architecture](#to-do-reference-architecture)
         * [CNA - AWS : Cloud Native](#to-do-reference-architecture-cna-aws-cloud-native)
     * [Example Problems](#to-do-example-problems)
@@ -52,9 +60,9 @@
     * [Data Availability](#to-do-data-availability)
     * [Framework for Data Governance](#to-do-framework-for-data-governance)
     * [Distributed Multi-Security-Zone Business Process](#to-do-distributed-multi-security-zone-business-process)
-    * [Terms](#to-do-terms)
+    * [Terms](#to-do-terms-1)
     * [CNA](#to-do-cna)
-    * [References](#to-do-references-3)
+    * [References](#to-do-references-4)
     * [Gartner](#to-do-gartner)
     * [GC](#to-do-gc)
     * [Wikipedia](#to-do-wikipedia)
@@ -482,6 +490,47 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 # References
 
 
+
+
+<a name="references-3"></a>
+# References
+
+<a name="references-3-software"></a>
+## Software
+<a name="references-3-architecture"></a>
+## Architecture
+- [Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)
+
+<a name="references-3-design"></a>
+## Design
+- [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)] http://www.worldcat.org/isbn/9780133039900
+
+<a name="references-3-patterns-1"></a>
+## Patterns
+- [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
+
+- [Design patterns: elements of reusable object-oriented software. (Addison-Wesley, 1995).](http://www.worldcat.org/isbn/978-0-201-63361-0)
+- [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
+](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
+
+<a name="references-3-principles"></a>
+## Principles
+- [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
+
+
+<a name="references-3-government-of-canada"></a>
+## Government of Canada
+- [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewrds, Design ethical services, Collaborate widely
+- [GC Information Management Guidelines - 1996](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=13832&section=html)
+- [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
+
+
+<a name="terms"></a>
+# Terms
+
+Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.
+
+
 <a name="todo"></a>
 # TODO
 <a name="todo-notes-paper-to-write-up"></a>
@@ -655,8 +704,8 @@ Embrace GC User Centric Design
 j -[Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
 
 
-<a name="to-do-enterprise-overview-obervability"></a>
-### Obervability
+<a name="to-do-enterprise-overview-observability"></a>
+### Observability
 
 Observability:  This is an entire field of its own, and has gained momentum with microservices.  
 - Trace
@@ -734,7 +783,7 @@ Quote : Okta?
 
 
 
-<a name="to-do-terms"></a>
+<a name="to-do-terms-1"></a>
 ## Terms
 - Application:
 - System:
@@ -753,7 +802,7 @@ Quote : Okta?
 - Kubernetes is a platform to manage, host, scale, and deploy containers.
 - Containers are a portable way of packaging and running code. They are well suited to the microservices pattern, where each microservice can run in its own container.
 
-<a name="to-do-references-3"></a>
+<a name="to-do-references-4"></a>
 ## References
 <a name="to-do-gartner"></a>
 ## Gartner
@@ -787,6 +836,7 @@ Zachman
 <a name="to-do-frameworks-usa"></a>
 ### USA
 [DoD Architecture Framework](https://dodcio.defense.gov/Library/DoD-Architecture-Framework/) - massive framework
+- notes on USA Gov - coarse grained API ... (API for large data, ...)
 
 
 <a name="to-do-templates"></a>
