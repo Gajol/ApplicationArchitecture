@@ -159,7 +159,7 @@ Embrace GC User Centric Design
 j -[Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
 
 
-### Obervability
+### Observability
 
 Observability:  This is an entire field of its own, and has gained momentum with microservices.  
 - Trace
@@ -273,6 +273,7 @@ Archimate
 Zachman
 ### USA
 [DoD Architecture Framework](https://dodcio.defense.gov/Library/DoD-Architecture-Framework/) - massive framework
+- notes on USA Gov - coarse grained API ... (API for large data, ...)
 
 
 ## Templates

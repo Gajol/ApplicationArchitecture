@@ -18,6 +18,8 @@
 
 {"gitdown": "include", "file": "./ARA-Patterns.md"}
 
+{"gitdown": "include", "file": "./ARA-References.md"}
+
 {"gitdown": "include", "file": "./ARA-TODO.md"}
 
 
