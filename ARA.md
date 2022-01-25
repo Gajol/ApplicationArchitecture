@@ -36,39 +36,35 @@
 * [Architecture Styles](#architecture-styles)
     * [User Experience Patterns](#architecture-styles-user-experience-patterns)
 * [References](#references-2)
+* [TODO](#todo)
+    * [Notes - Paper to Write-Up](#todo-notes-paper-to-write-up)
 * [TO DO](#to-do)
-* [------------------------------](#)
-* [Reference Architecture Outline:](#reference-architecture-outline)
-    * [Enterprise Overview](#reference-architecture-outline-enterprise-overview)
-* [Guidelines](#guidelines)
-    * [Security : Shift-Left](#guidelines-security-shift-left)
-    * [System Architecture](#guidelines-system-architecture)
-        * [Loosely Coupled](#guidelines-system-architecture-loosely-coupled)
-    * [Design Methodolgoy??](#guidelines-design-methodolgoy)
-        * [User Experience](#guidelines-design-methodolgoy-user-experience)
-    * [UX Design](#guidelines-ux-design)
-    * [Obervability](#guidelines-obervability)
-* [Reference Architecture](#reference-architecture)
-* [CNA - AWS](#cna-aws)
-* [Example Problems](#example-problems)
-    * [Enterprise Search](#example-problems-enterprise-search)
-* [Data Availability](#data-availability)
-    * [Framework for Data Governance](#data-availability-framework-for-data-governance)
-    * [Distributed Multi-Security-Zone Business Process](#data-availability-distributed-multi-security-zone-business-process)
-* [Terms](#terms)
-    * [CNA](#terms-cna)
-* [References](#references-3)
-    * [Gartner](#references-3-gartner)
-    * [GC](#references-3-gc)
-    * [Wikipedia](#references-3-wikipedia)
-    * [Documentation](#references-3-documentation)
-    * [Standards Bodies](#references-3-standards-bodies)
-    * [Frameworks](#references-3-frameworks)
-        * [USA](#references-3-frameworks-usa)
-* [Templates](#templates)
-* [Goal](#goal)
-* [Thoughts](#thoughts)
-* [Jobs](#jobs)
+    * [Architecture: (from Gartner)](#to-do-architecture-from-gartner)
+    * [Enterprise Overview](#to-do-enterprise-overview)
+        * [Guidelines](#to-do-enterprise-overview-guidelines)
+        * [Design Methodolgoy??](#to-do-enterprise-overview-design-methodolgoy)
+        * [UX Design](#to-do-enterprise-overview-ux-design)
+        * [Obervability](#to-do-enterprise-overview-obervability)
+    * [Reference Architecture](#to-do-reference-architecture)
+        * [CNA - AWS : Cloud Native](#to-do-reference-architecture-cna-aws-cloud-native)
+    * [Example Problems](#to-do-example-problems)
+        * [Enterprise Search](#to-do-example-problems-enterprise-search)
+    * [Data Availability](#to-do-data-availability)
+    * [Framework for Data Governance](#to-do-framework-for-data-governance)
+    * [Distributed Multi-Security-Zone Business Process](#to-do-distributed-multi-security-zone-business-process)
+    * [Terms](#to-do-terms)
+    * [CNA](#to-do-cna)
+    * [References](#to-do-references-3)
+    * [Gartner](#to-do-gartner)
+    * [GC](#to-do-gc)
+    * [Wikipedia](#to-do-wikipedia)
+    * [Documentation](#to-do-documentation)
+    * [Standards Bodies](#to-do-standards-bodies)
+    * [Frameworks](#to-do-frameworks)
+        * [USA](#to-do-frameworks-usa)
+    * [Templates](#to-do-templates)
+    * [Goal](#to-do-goal)
+    * [Thoughts - Describe TRB / AWG differences](#to-do-thoughts-describe-trb-awg-differences)
 
 
 <a name="introduction"></a>
@@ -486,8 +482,10 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 # References
 
 
-
-Notes - Paper to Write-Up
+<a name="todo"></a>
+# TODO
+<a name="todo-notes-paper-to-write-up"></a>
+## Notes - Paper to Write-Up
 - GraphQL / RESTful
 - microservices,
 - REST HATEOAS
@@ -589,14 +587,15 @@ Notes - Paper to Write-Up
 - [ ] GC Digital Standards
 
 
-Architecture: (from Gartner)
-Concepts:,
-Principles:
-Rules:
-Patterns:
-Interfaces:
-Standards:
-Reference Models:
+<a name="to-do-architecture-from-gartner"></a>
+## Architecture: (from Gartner)
+- Concepts:,
+- Principles:
+- Rules:
+- Patterns:
+- Interfaces:
+- Standards:
+- Reference Models:
 
 Software / Code Quality: (from Gitlab) : code quality, SAST & container scanning
 
@@ -609,42 +608,26 @@ Architecture: [([from Google)](https://cloud.google.com/blog/products/applicatio
 @Work:
 Directives, Guidelines, Standards, Processes, Procedures, ...
 
-
-<a name=""></a>
-# 
-<a name="reference-architecture-outline"></a>
-# Reference Architecture Outline:
-
-1. Forward
-1. introduction
-  1. Enterprise Overview
-  1. Challenges / Risks / Patterns
-1. Guidelines
-1. Terms
-1. References
-1. Templates
-
-
-<a name="reference-architecture-outline-enterprise-overview"></a>
+<a name="to-do-enterprise-overview"></a>
 ## Enterprise Overview
 
-<a name="guidelines"></a>
-# Guidelines
+<a name="to-do-enterprise-overview-guidelines"></a>
+### Guidelines
 
-<a name="guidelines-security-shift-left"></a>
-## Security : Shift-Left
+<a name="to-do-enterprise-overview-guidelines-security-shift-left"></a>
+#### Security : Shift-Left
 Engage Security early.  Inform security early of the technology you are planning on using, and how you are address common security requirements (identity, access, monitoring, auditing, patching, ...).  There are many other security families, and including security and recording joint, collaborative decisions is important in avoiding the discovery of major security risks later in the project.
 
-<a name="guidelines-system-architecture"></a>
-## System Architecture
-<a name="guidelines-system-architecture-loosely-coupled"></a>
-### Loosely Coupled
+<a name="to-do-enterprise-overview-guidelines-system-architecture"></a>
+#### System Architecture
+<a name="to-do-enterprise-overview-guidelines-system-architecture-loosely-coupled"></a>
+##### Loosely Coupled
 Resources: Domain Driven Design : Domain Driven Design can help decompose a system into loosely coupled components: how to draw boundaries between services, how to decide whether some logic belongs to one service or another, and how domain-driven design can help us make those decisions.   
 
-<a name="guidelines-design-methodolgoy"></a>
-## Design Methodolgoy??
-<a name="guidelines-design-methodolgoy-user-experience"></a>
-### User Experience
+<a name="to-do-enterprise-overview-design-methodolgoy"></a>
+### Design Methodolgoy??
+<a name="to-do-enterprise-overview-design-methodolgoy-user-experience"></a>
+#### User Experience
 Embrace GC User Centric Design
 - [Nielsen Norman Group - Maturity Model](https://www.nngroup.com/articles/ux-maturity-model/)
 
@@ -664,16 +647,16 @@ Embrace GC User Centric Design
 1. Outcomes: Intentional definition of goals and measurement of the results produced by UX work (impact of design, measurement)
 
 
-<a name="guidelines-ux-design"></a>
-## UX Design
+<a name="to-do-enterprise-overview-ux-design"></a>
+### UX Design
 - follow GC User Centric Design
 - see deisgn mothers for Ux - on CW - [UK 18F Methods](https://methods.18f.gov/) - referenced by GC standards - [18f technoloyg and design company - USA ](https://18f.gsa.gov/)
 - http://uxdesign.uw.edu/
 j -[Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
 
 
-<a name="guidelines-obervability"></a>
-## Obervability
+<a name="to-do-enterprise-overview-obervability"></a>
+### Obervability
 
 Observability:  This is an entire field of its own, and has gained momentum with microservices.  
 - Trace
@@ -681,11 +664,11 @@ Observability:  This is an entire field of its own, and has gained momentum with
 - Montor ???
 
 
-<a name="reference-architecture"></a>
-# Reference Architecture
+<a name="to-do-reference-architecture"></a>
+## Reference Architecture
 
-<a name="cna-aws"></a>
-# CNA - AWS
+<a name="to-do-reference-architecture-cna-aws-cloud-native"></a>
+### CNA - AWS : Cloud Native
 https://aws.amazon.com/architecture/
 - Analytics and Big Data  
 - Compute and HPC (high performance computer)
@@ -702,10 +685,10 @@ data bricks : cloud hosted data engineering, data analytics, data science (core 
  - *we strongly believe in API-driven access to data*
 
 
-<a name="example-problems"></a>
-# Example Problems
-<a name="example-problems-enterprise-search"></a>
-## Enterprise Search
+<a name="to-do-example-problems"></a>
+## Example Problems
+<a name="to-do-example-problems-enterprise-search"></a>
+### Enterprise Search
 Problem:  Enterprise Search has access to all corporate information.   Display search results, and provide information to the user must respect security and privacy concerns.   Applications with local access-business logic, and big-data platforms are difficult to expose to enterprise search.
 Challenges:
 1. Granularity:  field-level access, crawl PDFs (and other filetypes), ...
@@ -719,13 +702,13 @@ Challenges:
 
 
 
-<a name="data-availability"></a>
-# Data Availability
+<a name="to-do-data-availability"></a>
+## Data Availability
 Problem:  Corporate solutions (ERP, HR, S-app, Collab-platforms) have silos of data which is unavailable for easy use by other applications.
 Guideline:  "Application data must be made available to other applications in a controlled fashion".
 - Controlled Fashion : respecting IM and security concerns.   Exposing data in a modern manner (distributed architecture, API).
 
-<a name="data-availability-framework-for-data-governance"></a>
+<a name="to-do-framework-for-data-governance"></a>
 ## Framework for Data Governance
 Problem:  Data governance, business and technical processes to provide a version of truth of the system, or, system of record.
 Example:  Entity Resolves / Unresolves.  The business-activity is unrestrained, and the application that performs the resolution action does not generate meaningful data such that a reliable API can be defined to identify a resource.  The system of record is unaware of these activities.  The SoR does not have API to identity the identity of the entity, nor, a means to notify on changes to the core entity's identity.
@@ -737,7 +720,7 @@ Software Architecture Patterns that can help:
 - [Domain Driven Design](https://en.wikipedia.org/wiki/Domain-driven_design) : DDD model of the entity (our Entity), events on the entity (resolve / unresolve)  and aggregates which are only permitted to contain references to the root of the entity.
 Challenge:  Unsure how MDM can solve Analytics Platform resolve/unresolve process.
 
-<a name="data-availability-distributed-multi-security-zone-business-process"></a>
+<a name="to-do-distributed-multi-security-zone-business-process"></a>
 ## Distributed Multi-Security-Zone Business Process
 Problem: We are starting to use SaaS application providers, however, due to privacy and security concerns we cannot put sensitive information in the SaaS application.   As a result, business process will involve using systems on both the high and low security zones.  Business users will have to learn to complete processes using tokenized, masked and redacted information.   IT will have to provide technology to move and transform the data between these systems.  This design constraint will impact the user experience.  IT's role is to implement technology to facilitate these multi-zone business processes, while reamining loosely coupled with the SaaS solution (important as the SaaS solution is upgraded regularly beyond the control of the business or IT).
 Guideline:  
@@ -751,8 +734,8 @@ Quote : Okta?
 
 
 
-<a name="terms"></a>
-# Terms
+<a name="to-do-terms"></a>
+## Terms
 - Application:
 - System:
 - Solution:
@@ -764,76 +747,69 @@ Quote : Okta?
 
 
 
-<a name="terms-cna"></a>
+<a name="to-do-cna"></a>
 ## CNA
 - CNA: Cloud-native architecture and technologies are an approach to designing, constructing, and operating workloads that are built in the cloud and take full advantage of the cloud computing model.
 - Kubernetes is a platform to manage, host, scale, and deploy containers.
 - Containers are a portable way of packaging and running code. They are well suited to the microservices pattern, where each microservice can run in its own container.
 
-<a name="references-3"></a>
-# References
-<a name="references-3-gartner"></a>
+<a name="to-do-references-3"></a>
+## References
+<a name="to-do-gartner"></a>
 ## Gartner
 
-<a name="references-3-gc"></a>
+<a name="to-do-gc"></a>
 ## GC
 1. [Directive on Service & Digital - Appendix B - Mandatory Procedures](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=32604)
-<a name="references-3-wikipedia"></a>
+<a name="to-do-wikipedia"></a>
 ## Wikipedia
 1. [View Model](https://en.wikipedia.org/wiki/View_model)
 1. [USA Federated Enterprise Architecture](https://en.wikipedia.org/wiki/Federal_enterprise_architecture) : Viewpoints of Enterprise, Information, Functional, Physical, Engineering, Technology.  6 Reference Models : Performance, Business, Data, Application, Infrastructure, Security.
 1. [USA NIST Enteprise Architecture Model](https://en.wikipedia.org/wiki/NIST_Enterprise_Architecture_Model) - 1980's no longer relevant
 
-<a name="references-3-documentation"></a>
+<a name="to-do-documentation"></a>
 ## Documentation
 
 - [Google DORA State of DevOps - 2021](https://services.google.com/fh/files/misc/state-of-devops-2021.pdf)
 - [IEEE Software Documentation Issues Unveiled - ISBN 978-1-7281-0869-8 - 2019](https://ieeexplore.ieee.org/document/8811931)
 - [IEEE The Value of Software Quality - ISBN 978-1-4799-7198-5 - 2014](https://ieeexplore.ieee.org/document/6958422)
 
-<a name="references-3-standards-bodies"></a>
+<a name="to-do-standards-bodies"></a>
 ## Standards Bodies
 1. [IEEE 42010] - Systems and Software Engineering - Architecture Description (2011 $150)
  - [The Journal of Systems and Software - Overview of Architecture Description - Documenting Decisions - IEEE 42010](http://www.cs.rug.nl/paris/papers/JSS11c.pdf)
 
-<a name="references-3-frameworks"></a>
+<a name="to-do-frameworks"></a>
 ## Frameworks
 TOGAF
 Archimate
 Zachman
-<a name="references-3-frameworks-usa"></a>
+<a name="to-do-frameworks-usa"></a>
 ### USA
 [DoD Architecture Framework](https://dodcio.defense.gov/Library/DoD-Architecture-Framework/) - massive framework
 
 
-<a name="templates"></a>
-# Templates
+<a name="to-do-templates"></a>
+## Templates
 This section addresses the lack of standards, templates and clear requirements for documentation.
+- Integration COE : standard for schemas (API and events) and knowledge of consumers/subscribers to these integration points.
 
-<a name="goal"></a>
-# Goal
+<a name="to-do-goal"></a>
+## Goal
 - *At the end of the day, I want my artifacts to be enduring. My goal is to create a prescriptive, semi-formal architectural description that can be used as a basis for setting department priorities, parallelizing development, [managing] legacy migration, etc.*
 
 
 
-<a name="thoughts"></a>
-# Thoughts
+<a name="to-do-thoughts-describe-trb-awg-differences"></a>
+## Thoughts - Describe TRB / AWG differences
+- key - TRB is agile - share early, quickly, often and informally...get guidance...
+
 Unstructured Knowledge Sharing:
 - team-based knowledge sharing meetings where the purpose is to share and discuss (some TRB meetings have this as the key-goal)
 - open office hours for any questions
 - lunch & learn presentation series
 - show & tell / demonstrations  
 - peer learning groups : learning (small, L&D type activities), guided learning
-
-
-<a name="jobs"></a>
-# Jobs
-
-AWS Cloud Engineer - Craig Pike
-https://www.linkedin.com/jobs/view/2871475279/?refId=b%2FsrZNU%2FSpWwOLDNT5fWnw%3D%3D
-
-
-- TODO [ see ../Application/Architecture/SystemsThinking.md]
 
 
 

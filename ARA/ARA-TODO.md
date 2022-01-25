@@ -1,5 +1,5 @@
-
-Notes - Paper to Write-Up
+# TODO
+## Notes - Paper to Write-Up
 - GraphQL / RESTful
 - microservices,
 - REST HATEOAS
@@ -100,14 +100,14 @@ Notes - Paper to Write-Up
 - [ ] GC Digital Standards
 
 
-Architecture: (from Gartner)
-Concepts:,
-Principles:
-Rules:
-Patterns:
-Interfaces:
-Standards:
-Reference Models:
+## Architecture: (from Gartner)
+- Concepts:,
+- Principles:
+- Rules:
+- Patterns:
+- Interfaces:
+- Standards:
+- Reference Models:
 
 Software / Code Quality: (from Gitlab) : code quality, SAST & container scanning
 
@@ -120,33 +120,19 @@ Architecture: [([from Google)](https://cloud.google.com/blog/products/applicatio
 @Work:
 Directives, Guidelines, Standards, Processes, Procedures, ...
 
-
-# ------------------------------
-# Reference Architecture Outline:
-
-1. Forward
-1. introduction
-  1. Enterprise Overview
-  1. Challenges / Risks / Patterns
-1. Guidelines
-1. Terms
-1. References
-1. Templates
-
-
 ## Enterprise Overview
 
-# Guidelines
+### Guidelines
 
-## Security : Shift-Left
+#### Security : Shift-Left
 Engage Security early.  Inform security early of the technology you are planning on using, and how you are address common security requirements (identity, access, monitoring, auditing, patching, ...).  There are many other security families, and including security and recording joint, collaborative decisions is important in avoiding the discovery of major security risks later in the project.
 
-## System Architecture
-### Loosely Coupled
+#### System Architecture
+##### Loosely Coupled
 Resources: Domain Driven Design : Domain Driven Design can help decompose a system into loosely coupled components: how to draw boundaries between services, how to decide whether some logic belongs to one service or another, and how domain-driven design can help us make those decisions.   
 
-## Design Methodolgoy??
-### User Experience
+### Design Methodolgoy??
+#### User Experience
 Embrace GC User Centric Design
 - [Nielsen Norman Group - Maturity Model](https://www.nngroup.com/articles/ux-maturity-model/)
 
@@ -166,14 +152,14 @@ Embrace GC User Centric Design
 1. Outcomes: Intentional definition of goals and measurement of the results produced by UX work (impact of design, measurement)
 
 
-## UX Design
+### UX Design
 - follow GC User Centric Design
 - see deisgn mothers for Ux - on CW - [UK 18F Methods](https://methods.18f.gov/) - referenced by GC standards - [18f technoloyg and design company - USA ](https://18f.gsa.gov/)
 - http://uxdesign.uw.edu/
 j -[Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
 
 
-## Obervability
+### Obervability
 
 Observability:  This is an entire field of its own, and has gained momentum with microservices.  
 - Trace
@@ -181,9 +167,9 @@ Observability:  This is an entire field of its own, and has gained momentum with
 - Montor ???
 
 
-# Reference Architecture
+## Reference Architecture
 
-# CNA - AWS
+### CNA - AWS : Cloud Native
 https://aws.amazon.com/architecture/
 - Analytics and Big Data  
 - Compute and HPC (high performance computer)
@@ -200,8 +186,8 @@ data bricks : cloud hosted data engineering, data analytics, data science (core 
  - *we strongly believe in API-driven access to data*
 
 
-# Example Problems
-## Enterprise Search
+## Example Problems
+### Enterprise Search
 Problem:  Enterprise Search has access to all corporate information.   Display search results, and provide information to the user must respect security and privacy concerns.   Applications with local access-business logic, and big-data platforms are difficult to expose to enterprise search.
 Challenges:
 1. Granularity:  field-level access, crawl PDFs (and other filetypes), ...
@@ -215,7 +201,7 @@ Challenges:
 
 
 
-# Data Availability
+## Data Availability
 Problem:  Corporate solutions (ERP, HR, S-app, Collab-platforms) have silos of data which is unavailable for easy use by other applications.
 Guideline:  "Application data must be made available to other applications in a controlled fashion".
 - Controlled Fashion : respecting IM and security concerns.   Exposing data in a modern manner (distributed architecture, API).
@@ -244,7 +230,7 @@ Quote : Okta?
 
 
 
-# Terms
+## Terms
 - Application:
 - System:
 - Solution:
@@ -261,7 +247,7 @@ Quote : Okta?
 - Kubernetes is a platform to manage, host, scale, and deploy containers.
 - Containers are a portable way of packaging and running code. They are well suited to the microservices pattern, where each microservice can run in its own container.
 
-# References
+##  References
 ## Gartner
 
 ## GC
@@ -289,27 +275,21 @@ Zachman
 [DoD Architecture Framework](https://dodcio.defense.gov/Library/DoD-Architecture-Framework/) - massive framework
 
 
-# Templates
+## Templates
 This section addresses the lack of standards, templates and clear requirements for documentation.
+- Integration COE : standard for schemas (API and events) and knowledge of consumers/subscribers to these integration points.
 
-# Goal
+## Goal
 - *At the end of the day, I want my artifacts to be enduring. My goal is to create a prescriptive, semi-formal architectural description that can be used as a basis for setting department priorities, parallelizing development, [managing] legacy migration, etc.*
 
 
 
-# Thoughts
+## Thoughts - Describe TRB / AWG differences
+- key - TRB is agile - share early, quickly, often and informally...get guidance...
+
 Unstructured Knowledge Sharing:
 - team-based knowledge sharing meetings where the purpose is to share and discuss (some TRB meetings have this as the key-goal)
 - open office hours for any questions
 - lunch & learn presentation series
 - show & tell / demonstrations  
 - peer learning groups : learning (small, L&D type activities), guided learning
-
-
-# Jobs
-
-AWS Cloud Engineer - Craig Pike
-https://www.linkedin.com/jobs/view/2871475279/?refId=b%2FsrZNU%2FSpWwOLDNT5fWnw%3D%3D
-
-
-- TODO [ see ../Application/Architecture/SystemsThinking.md]
