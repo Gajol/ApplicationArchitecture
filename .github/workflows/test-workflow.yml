@@ -15,5 +15,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: |
-          ls ${{ github.worksapce }}/ARA
+          ls ${{ github.workspace }}/ARA
       - run: echo "🍏 This job's status is ${{ job.status }}."
