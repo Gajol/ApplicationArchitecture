@@ -2,7 +2,12 @@
 
 
 ## Table of Contents
+*Document Generation Date: {"gitdown": "date", "format": "YYYY-MM-DD"}*
+
 {"gitdown": "contents"}
+
+{"gitdown": "include", "file": "./Text.md"}
+{"gitdown": "include", "file": "./Text2.md"}
 
 {"gitdown": "include", "file": "./ARA-Intro.md"}
 

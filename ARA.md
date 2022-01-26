@@ -4,6 +4,8 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
+*Document Generation Date: 2022-01-25*
+
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
 * [Introduction](#introduction)
@@ -73,6 +75,23 @@
     * [Templates](#to-do-templates)
     * [Goal](#to-do-goal)
     * [Thoughts - Describe TRB / AWG differences](#to-do-thoughts-describe-trb-awg-differences)
+
+
+Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
+
+Here is a simple footnote[^2]. With some additional text after it.
+
+[^2]: My reference.
+
+
+It is reference links [emphasis tutorials][myexample].
+It is reference links [emphasis tutorials][myexample2].
+
+[myexample]: /file/markdown-emphasis "markdown emphasis tutorials"
+
+[MYexample2]: /file/markdown-emphasis "markdown emphasis tutorials 2"
 
 
 <a name="introduction"></a>
@@ -185,7 +204,8 @@ As part of the analysis and design some high-level characteristics of the applic
 
 <a name="application-characteristics-and-styles-application-architecture-styles"></a>
 ## Application Architecture Styles
-Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are [[Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)]:
+Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are [[Fundamentals of software architecture]][fundamentalsofsoftwarearchitecture]: 
+-  [[Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)]:
 - Distributed: Microservices Architecture : pros (reliablity, modularity, elasticity, +++), cons: (cost, complexity, ...)
 - Distributed: Orchestration - Service Oriented Architecture (~2005) : pros (good elasticity, fault tolerance, scalability), cons: (complexity, testability, cost, ...).  A big weakness of SOA was the use of a common platform for all services deployed (e.g., Oracle SOA Suite, IBM WebSphere, DataPower, MessageBroker).  SOA also required stateful services and sharing of context (tight-coupling).  Note, SOA promised loose-coupling, scalability and fault tolerance [Josuttis, N. M. SOA in practice. (O’Reilly, 2007)
 ](http://www.worldcat.org/978-0-596-52955-0)] however these were difficult to achieve.
@@ -500,6 +520,8 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 <a name="references-3-architecture"></a>
 ## Architecture
 - [Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)
+
+[fundamentalsofsoftwarearchitecture]: http://www.worldcat.org/isbn/9781492043454 "Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)]"
 
 <a name="references-3-design"></a>
 ## Design

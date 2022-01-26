@@ -1,3 +1,0 @@
-/**
- * @gitdownanchor my-anchor-name
- */

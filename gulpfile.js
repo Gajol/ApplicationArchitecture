@@ -30,12 +30,12 @@ gulp.task('ARA', async function() {
 })
 
 
-gulp.task('gitdown', () => {
+gulp.task('ara', () => {
   return Gitdown
     // ./.README/README.md fails saying "fileName must be an absolute path"
     // ?? config issue?  I did npm init ...
 
-    .readFile(__dirname + '/ARA/ARA.md')
+    .readFile(__dirname + '/ARA/ARA-Input.md')
     .writeFile(__dirname + '/ARA.md');
 });
 
