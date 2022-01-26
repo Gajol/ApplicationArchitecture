@@ -7,7 +7,7 @@ ARA.pdf: *.md
 	pandoc \
 		--metadata=date:"Revision: $(VERSION)" \
 		--pdf-engine=$(PDF_ENGINE) \
-		-o $@ *.md
+		-o $@ ARA-Intro.md
 
 clean:
 	-rm ARA.pdf
