@@ -3,6 +3,9 @@ This document outlines the Application Reference Architecture (ARA) as it applie
 
 ```
 Architecture is the stuff you can’t Google. - Mark Richards.   
+Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle - Ralph Johnson & Martin Fowler
+Architecture is about the important stuff, whatever that is. - Ralph Johnson & Martin Fowler
+Architecture Style: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed. - TOGAF
 ```
 
 The Application Reference Architecture (ARA) borders on what many would consider an enterprise reference architecture.  This document, the ARA,  attempts to provide an overview of the enterprise environment with a focus on application architecture elements.

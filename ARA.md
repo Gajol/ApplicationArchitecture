@@ -4,8 +4,8 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-01-25*
-
+*Document Generation Date: 2022-03-15 19:03*
+ 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
 * [Introduction](#introduction)
@@ -75,23 +75,7 @@
     * [Templates](#to-do-templates)
     * [Goal](#to-do-goal)
     * [Thoughts - Describe TRB / AWG differences](#to-do-thoughts-describe-trb-awg-differences)
-
-
-Here's a sentence with a footnote. [^1]
-
-[^1]: This is the footnote.
-
-Here is a simple footnote[^2]. With some additional text after it.
-
-[^2]: My reference.
-
-
-It is reference links [emphasis tutorials][myexample].
-It is reference links [emphasis tutorials][myexample2].
-
-[myexample]: /file/markdown-emphasis "markdown emphasis tutorials"
-
-[MYexample2]: /file/markdown-emphasis "markdown emphasis tutorials 2"
+* [Footnotes - Test](#footnotes-test)
 
 
 <a name="introduction"></a>
@@ -100,6 +84,9 @@ This document outlines the Application Reference Architecture (ARA) as it applie
 
 ```
 Architecture is the stuff you can’t Google. - Mark Richards.   
+Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle - Ralph Johnson & Martin Fowler
+Architecture is about the important stuff, whatever that is. - Ralph Johnson & Martin Fowler
+Architecture Style: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed. - TOGAF
 ```
 
 The Application Reference Architecture (ARA) borders on what many would consider an enterprise reference architecture.  This document, the ARA,  attempts to provide an overview of the enterprise environment with a focus on application architecture elements.
@@ -186,7 +173,24 @@ TODO - reference Confluence ITOD Dependencies document
 TODO - Add Enterprise Interoperability to ITOD Dependencies
 
 
+---
+title: Application Reference Architecture
+subtitle: Application Styles and Guidance
+author:
+- Doug Nielsen
+fontsize: 10pt
+mainfont: Arial
+geometry: margin=0.75in
+header-includes: |
+    \usepackage{fancyhdr}
+    \pagestyle{fancy}
+    \fancyhead[L]{Application Reference Architecture}
+    \fancyhead[R]{UNCLASSIFIED / NON-CLASSIFIÉ}
+---
 
+\begin{center}UNCLASSIFIED / NON-CLASSIFIÉ\end{center}
+
+\newpage
 <a name="application-characteristics-and-styles"></a>
 # Application Characteristics and Styles
 
@@ -204,7 +208,7 @@ As part of the analysis and design some high-level characteristics of the applic
 
 <a name="application-characteristics-and-styles-application-architecture-styles"></a>
 ## Application Architecture Styles
-Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are [[Fundamentals of software architecture]][fundamentalsofsoftwarearchitecture]: 
+Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are [[Fundamentals of software architecture]][fundamentalsofsoftwarearchitecture]:
 -  [[Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)]:
 - Distributed: Microservices Architecture : pros (reliablity, modularity, elasticity, +++), cons: (cost, complexity, ...)
 - Distributed: Orchestration - Service Oriented Architecture (~2005) : pros (good elasticity, fault tolerance, scalability), cons: (complexity, testability, cost, ...).  A big weakness of SOA was the use of a common platform for all services deployed (e.g., Oracle SOA Suite, IBM WebSphere, DataPower, MessageBroker).  SOA also required stateful services and sharing of context (tight-coupling).  Note, SOA promised loose-coupling, scalability and fault tolerance [Josuttis, N. M. SOA in practice. (O’Reilly, 2007)
@@ -640,7 +644,7 @@ Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://
 1. NIH (Raman shared 2018 strategy) - more surfing:
   - [ NIH - EA Management as a Solution for Big Data 0 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7813431/pdf/10257_2020_Article_500.pdf) - [NIH EA - Persisent Link](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7813431/)
   - [NIH EA - dated 1995 - 2003](https://ocio.nih.gov/ITGovPolicy/Pages/Enterprise-Architecture.aspx)
-  - [NIH Accessiblity - Section 508](https://ocio.nih.gov/ITGovPolicy/NIH508/Pages/default.aspx): The NIH Office of the Chief Information Officer (OCIO) is responsible for the oversight of the Section 508 program at NIH. �Section 508� refers to an amendment that was added to an existing law -- the Rehabilitation Act of 1973 � that requires all electronic and information technology (EIT) that is developed, procured, maintained, or used by the Federal government be accessible to people with disabilities.
+  - [NIH Accessiblity - Section 508](https://ocio.nih.gov/ITGovPolicy/NIH508/Pages/default.aspx): The NIH Office of the Chief Information Officer (OCIO) is responsible for the oversight of the Section 508 program at NIH. Section 508 refers to an amendment that was added to an existing law -- the Rehabilitation Act of 1973 that requires all electronic and information technology (EIT) that is developed, procured, maintained, or used by the Federal government be accessible to people with disabilities.
   - [NIH - EA](https://hr.nih.gov/working-nih/competencies/competencies-dictionary/enterprise-architecture) - Key Behaviours: ....
   - [NIH EA Search Results](https://search.nih.gov/search?affiliate=nih&query=%22enterprise+architecture%22)
 
@@ -884,5 +888,24 @@ Unstructured Knowledge Sharing:
 - peer learning groups : learning (small, L&D type activities), guided learning
 
 
+<a name="footnotes-test"></a>
+# Footnotes - Test
 
-*Document Generation Date: 2022-01-25*
+Here's a sentence with a footnote. [^1]
+
+[^1]: This is the footnote.
+
+Here is a simple footnote[^2]. With some additional text after it.
+
+[^2]: My reference.
+
+
+It is reference links [emphasis tutorials][myexample].
+It is reference links [emphasis tutorials][myexample2].
+
+[myexample]: /file/markdown-emphasis "markdown emphasis tutorials"
+
+[MYexample2]: /file/markdown-emphasis "markdown emphasis tutorials 2"
+
+
+*Document Generation Date: 2022-03-15*

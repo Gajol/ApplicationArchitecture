@@ -2,12 +2,9 @@
 
 
 ## Table of Contents
-*Document Generation Date: {"gitdown": "date", "format": "YYYY-MM-DD"}*
-
+*Document Generation Date: {"gitdown": "date", "format": "YYYY-MM-DD HH:MM"}*
+ 
 {"gitdown": "contents"}
-
-{"gitdown": "include", "file": "./Text.md"}
-{"gitdown": "include", "file": "./Text2.md"}
 
 {"gitdown": "include", "file": "./ARA-Intro.md"}
 
@@ -27,5 +24,6 @@
 
 {"gitdown": "include", "file": "./ARA-TODO.md"}
 
+{"gitdown": "include", "file": "./Footnote.md"}
 
 *Document Generation Date: {"gitdown": "date", "format": "YYYY-MM-DD"}*
