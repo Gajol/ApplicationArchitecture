@@ -1,12 +1,12 @@
 # Business
 
-Our department has a Business Capabiltiy Map (BCM) describing the main capabiliies required to fullfil our mandate.   To help support the busines our technology teams provide a broad range of IT capabilities.   Our IT department supports many networks both nationally and internationally.  Within the IT department, our software development team supports an extensive catalog of applications.
+Our department has a Business Capability Map (BCM) describing the main capabilities required to fulfil our mandate.   To help support the business our technology teams provide a broad range of IT capabilities.   Our IT department supports many networks both nationally and internationally.  Within the IT department, our software development team supports an extensive catalog of applications.
 
 The health of our portfolio needs to improve as identified in our Corporate Risk Profile (CRP).   Several leadership principles have been established over the years to provide guidance when addressing business needs.   Key principles relating to directing architecture and design are:
 
-1. Rationalization:  We have an long queue of valuable business requests and opportunities.   During the software development phase, requirements must be rationalized against the original approved project scope and other compete busines needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and can include the senior management team when necessary.  [See Guidance - Rationalization for more informatoin - !!!]
+1. Rationalization:  We have an long queue of valuable business requests and opportunities.   During the software development phase, requirements must be rationalized against the original approved project scope and other compete business needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and can include the senior management team when necessary.  [See Guidance - Rationalization for more information - !!!]
 
-1. Executive Lead / Change Management:  Projects and programs need executive sponsors who are committed to the change management and ratinalization required to allow IT to develop a product.
+1. Executive Lead / Change Management:  Projects and programs need executive sponsors who are committed to the change management and rationalization required to allow IT to develop a product.
 
 1. Business Architecture and Artefacts:  The business plays a key role in shaping the application.  For effective analysis of the business needs during application development the business should provide key business architecture input.  These are essential for a successful application and if unavailable will result significant architecture and design waste.  
 
