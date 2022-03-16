@@ -16,6 +16,7 @@ ARA-gulp.pdf: *.md
 		pandoc \
 			--metadata=date:"Revision: $(VERSION)" \
 			--pdf-engine=$(PDF_ENGINE) \
+			--toc \
 			-o $@ ARA.md
 
 clean:
