@@ -1,10 +1,83 @@
-<a name="application-reference-architecture"></a>
 # Application Reference Architecture
 
-
-<a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
+<<<<<<< HEAD
 *Document Generation Date: 2022-03-15 23:03*
+=======
+*Document Generation Date: 2022-03-15 19:03*
+
+* [Application Reference Architecture](#application-reference-architecture)
+    * [Table of Contents](#application-reference-architecture-table-of-contents)
+* [Introduction](#introduction)
+    * [Out-of-Scope](#introduction-out-of-scope)
+* [Business](#business)
+    * [Technology Environment](#business-technology-environment)
+    * [Discovery](#business-discovery)
+* [Application Characteristics and Styles](#application-characteristics-and-styles)
+    * [Application Characteristics](#application-characteristics-and-styles-application-characteristics)
+    * [Application Architecture Styles](#application-characteristics-and-styles-application-architecture-styles)
+* [Application Architecture Guidance](#application-architecture-guidance)
+    * [Goal:  Composable Enterprise](#application-architecture-guidance-goal-composable-enterprise)
+    * [Goal:  Reduce Technical Debt](#application-architecture-guidance-goal-reduce-technical-debt)
+    * [Goal: Reduce Content Duplication.](#application-architecture-guidance-goal-reduce-content-duplication)
+        * [References](#application-architecture-guidance-goal-reduce-content-duplication-references)
+    * [Goal: Composable Applications](#application-architecture-guidance-goal-composable-applications)
+        * [References](#application-architecture-guidance-goal-composable-applications-references-1)
+    * [Goal: Testable Applications](#application-architecture-guidance-goal-testable-applications)
+    * [Goal: Future Proof Technology](#application-architecture-guidance-goal-future-proof-technology)
+    * [Goal: User Experience](#application-architecture-guidance-goal-user-experience)
+    * [Other - TODO](#application-architecture-guidance-other-todo)
+        * [Goal: Streaming-Based Application](#application-architecture-guidance-other-todo-goal-streaming-based-application)
+    * [Goal: GC Alignment](#application-architecture-guidance-goal-gc-alignment)
+* [Goal: Architecture Strategy](#goal-architecture-strategy)
+    * [Creating a Strategy](#goal-architecture-strategy-creating-a-strategy)
+        * [Apply Patterns to Formulate a Strategy](#goal-architecture-strategy-creating-a-strategy-apply-patterns-to-formulate-a-strategy)
+        * [Concerns of an Architect](#goal-architecture-strategy-creating-a-strategy-concerns-of-an-architect)
+        * [Corporate (Enterprise) Context](#goal-architecture-strategy-creating-a-strategy-corporate-enterprise-context)
+* [Patterns](#patterns)
+* [Architecture Styles](#architecture-styles)
+    * [User Experience Patterns](#architecture-styles-user-experience-patterns)
+* [References](#references-2)
+* [References](#references-3)
+    * [Software](#references-3-software)
+    * [Architecture](#references-3-architecture)
+    * [Design](#references-3-design)
+    * [Patterns](#references-3-patterns-1)
+    * [Principles](#references-3-principles)
+    * [Government of Canada](#references-3-government-of-canada)
+* [Terms](#terms)
+* [TODO](#todo)
+    * [Notes - Paper to Write-Up](#todo-notes-paper-to-write-up)
+* [TO DO](#to-do)
+    * [Architecture: (from Gartner)](#to-do-architecture-from-gartner)
+    * [Enterprise Overview](#to-do-enterprise-overview)
+        * [Guidelines](#to-do-enterprise-overview-guidelines)
+        * [Design Methodolgoy??](#to-do-enterprise-overview-design-methodolgoy)
+        * [UX Design](#to-do-enterprise-overview-ux-design)
+        * [Observability](#to-do-enterprise-overview-observability)
+    * [Reference Architecture](#to-do-reference-architecture)
+        * [CNA - AWS : Cloud Native](#to-do-reference-architecture-cna-aws-cloud-native)
+    * [Example Problems](#to-do-example-problems)
+        * [Enterprise Search](#to-do-example-problems-enterprise-search)
+    * [Data Availability](#to-do-data-availability)
+    * [Framework for Data Governance](#to-do-framework-for-data-governance)
+    * [Distributed Multi-Security-Zone Business Process](#to-do-distributed-multi-security-zone-business-process)
+    * [Terms](#to-do-terms-1)
+    * [CNA](#to-do-cna)
+    * [References](#to-do-references-4)
+    * [Gartner](#to-do-gartner)
+    * [GC](#to-do-gc)
+    * [Wikipedia](#to-do-wikipedia)
+    * [Documentation](#to-do-documentation)
+    * [Standards Bodies](#to-do-standards-bodies)
+    * [Frameworks](#to-do-frameworks)
+        * [USA](#to-do-frameworks-usa)
+    * [Templates](#to-do-templates)
+    * [Goal](#to-do-goal)
+    * [Thoughts - Describe TRB / AWG differences](#to-do-thoughts-describe-trb-awg-differences)
+* [Footnotes - Test](#footnotes-test)
+
+>>>>>>> a152c1628cc23fab888ea802898a84020bdbd6ea
 
 <a name="introduction"></a>
 # Introduction
