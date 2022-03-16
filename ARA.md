@@ -1,11 +1,10 @@
-<a name="application-reference-architecture"></a>
 # Application Reference Architecture
 
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
 *Document Generation Date: 2022-03-15 19:03*
- 
+
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
 * [Introduction](#introduction)
