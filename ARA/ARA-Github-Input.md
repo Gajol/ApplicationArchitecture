@@ -4,6 +4,8 @@
 ## Table of Contents
 *Document Generation Date: {"gitdown": "date", "format": "YYYY-MM-DD HH:MM"}*
 
+{"gitdown": "contents"}
+
 {"gitdown": "include", "file": "./ARA-Intro.md"}
 
 {"gitdown": "include", "file": "./ARA-Business.md"}

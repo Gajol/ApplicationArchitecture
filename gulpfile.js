@@ -21,7 +21,7 @@ gulp.task('someothertask', async function() {
     console.log('Here is some other task')
 })
 
-gulp.task('ARA', async function() {
+gulp.task('log-test', async function() {
     console.log('Building Application Reference Architecture')
     console.log(__dirname)
 
@@ -30,14 +30,45 @@ gulp.task('ARA', async function() {
 })
 
 
-gulp.task('ara', () => {
+// gulp.start deprecated 4.++
+//gulp.task('ARA', function(){
+//  gulp.start('ara-no-toc');
+//  gulp.start('ara-github');
+//})
+
+// https://stackoverflow.com/questions/32981108/how-to-run-a-gulp-task-from-another-task
+// const task1 = () => { /*do stuff*/ };
+// const task2 = () => { /*do stuff*/ };
+// register task with gulp
+// gulp.task(task1);
+//(gulp.series("task1", "task2")());
+//(gulp.parallel("task1", "task2")());
+
+const araNoTOC = () => {
   return Gitdown
     // ./.README/README.md fails saying "fileName must be an absolute path"
     // ?? config issue?  I did npm init ...
 
     .readFile(__dirname + '/ARA/ARA-Input.md')
     .writeFile(__dirname + '/ARA.md');
-});
+};
+gulp.task(araNoTOC);
+
+const araTOC = async () => {
+  return Gitdown
+    // ./.README/README.md fails saying "fileName must be an absolute path"
+    // ?? config issue?  I did npm init ...
+
+    .readFile(__dirname + '/ARA/ARA-Github-Input.md')
+    .writeFile(__dirname + '/ARA-Github.md');
+};
+gulp.task(araTOC);
+
+const ara = async () => {
+  gulp.series("araTOC", "araNoTOC")();
+}
+gulp.task(ara)
+
 
 gulp.task('watch', () => {
   gulp.watch(['./.README/*'], ['gitdown']);

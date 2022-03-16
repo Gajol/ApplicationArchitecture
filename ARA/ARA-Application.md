@@ -16,6 +16,7 @@ header-includes: |
 \begin{center}UNCLASSIFIED / NON-CLASSIFIÉ\end{center}
 
 \newpage
+
 # Application Characteristics and Styles
 
 ## Application Characteristics
