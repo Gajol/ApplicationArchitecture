@@ -16,9 +16,10 @@ ARA-gulp.pdf: *.md
 		pandoc \
 			--metadata=date:"Revision: $(VERSION)" \
 			--pdf-engine=$(PDF_ENGINE) \
-			-o $@ ARA.md
+			-o ARA-gulp.pdf ARA.md
 
 clean:
 	-rm ARA.pdf
+	-rm ARA-gulp.pdf
 
-.phony: build clean
+.phony: build build-two clean
