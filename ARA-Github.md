@@ -5,7 +5,7 @@
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
 *Document Generation Date: 2022-03-15 23:03*
- 
+
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
 * [Introduction](#introduction)
@@ -912,5 +912,3 @@ It is reference links [emphasis tutorials][myexample2].
 
 [MYexample2]: /file/markdown-emphasis "markdown emphasis tutorials 2"
 
-
-*Document Generation Date: 2022-03-15*
