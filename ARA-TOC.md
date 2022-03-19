@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-03-15 23:03*
+*Document Generation Date: 2022-03-19 13:03*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -201,7 +201,7 @@ header-includes: |
 
 <a name="application-characteristics-and-styles-application-characteristics"></a>
 ## Application Characteristics
-As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumered or derived for requirements
+As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumed or derived for requirements
 
 |Attribute|Description|Note|
 |--|--|--|

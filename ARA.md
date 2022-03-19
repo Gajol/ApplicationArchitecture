@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents-djn"></a>
 ## Table of Contents - DJN
-*Document Generation Date: 2022-03-15 23:03*
+*Document Generation Date: 2022-03-19 13:03*
 
 <a name="introduction"></a>
 # Introduction
@@ -129,7 +129,7 @@ header-includes: |
 
 <a name="application-characteristics-and-styles-application-characteristics"></a>
 ## Application Characteristics
-As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumered or derived for requirements
+As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumed or derived for requirements
 
 |Attribute|Description|Note|
 |--|--|--|
