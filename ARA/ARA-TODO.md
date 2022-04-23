@@ -1,4 +1,105 @@
 # TODO
+
+## TODO 2022-04
+Themes : API, consistency, cohesive
+
+Architectural Examples :
+To demonstrate architecture, c4model, ... (mach model)
+1. Collaboration:   What is collaboration?  What is it not?
+- Contribute and read centrally.   e.g., VISIOPS - essentially List management but done centrally with CW
+- Collaboration is not "the intranet"
+
+1. Strategy: ....
+
+1. Collaboration Capabilities
+- share, version control, notify, 
+
+1. Technology supporting strategy:
+  - Departmental : CW, Confluence, GCdocs, Drupal, ...
+  - IC / 5EE : BallistaPlus
+  - task management : ITBM-PM, JIra, ...
+  - workflow :
+
+
+1. Key Pillars to Success
+  - Governance:  Major IM concerns about sprawl of transitory information.
+    - Sprawl, Lifecycle, Admin vs Operational workoads
+    - IM, eDiscovery, Hold, Disposition
+    - ECM integration, enterprise taxonomy
+    - search, access,
+    - L&D
+    - IS audit, access control, anonymous access,
+    - operations: monitoring / NOC
+
+1. Legacy ITSS Pillars (2012) JP Lachance
+- Quality, Communications, Training, Operations
+
+
+Roles
+- full stack developer
+- back end developer
+- systems integrator
+
+Agile
+- SAFe
+- LEAN : WIP Limits, Visual Display, Feedback Loop
+- Scrum : Retrospective, Backlog, Grooming, Poker (called??)
+
+API's
+- governance : between domain-models.   HR, ERP.   Smaller domain-Models
+- master data (shared data across many systems), system of truth
+
+Ux - GCcollab
+
+Navita
+- work backwards
+- future proof
+
+Decision Making
+- Problem Solving, Kepner-Trege.   The decision might not be right, but did I go about it in a skilful way.  
+
+React
+- Why React .
+
+Architecture - 4 Parts (not sure if from SAA-C02 Pearson AWS Certification test - on O'Reilly)
+1.  Architecture versus Design
+- How to collaborate with development teams to make architecture work.
+
+2. Wide Breadth of Technical Knowledge with some Technical Depth
+- Allows architect to see solution, problems and options that others do not server
+
+3. Understanding, Analyzing and Reconciling Trade-Offs Between Solution & Technologies
+
+4. Understanding Importance of "Business Drivers" and how they translate to architectural concerns.
+
+## Culture
+- Westrum Culture:  Useful, Timely, Relevant
+
+## BI
+### Tableau
+- Anaylitcs, Calculations, Data Prepparation, Data Relationships, Data Visualizations, Excel and Tableau, Performance, Storytelling, Tableau Server.
+
+### DAaaS
+- Kubeflow
+
+## Data
+- DRA : Pragmatic, Feasible, "I can build it, consistently.".  Clear guidance to get of debt.  How to get out of debt, moving forward.
+  - for initiatives have you gone to forums (TRB, AWG, ...)
+  - other bodies: GC, EDO, CIO, CSO, EPMO, FIMB, SMB, PM, IMB, CMC
+  - pillars to move forward
+- mutable data
+
+### Lower Priority
+DevOps
+- Puppet vs Ansible vs Terraform
+- Travis, Jenkins, ...
+
+Data Mesh
+
+ML Pipeline Architecture.  Policy on Automated Decision Making.
+
+
+
 ## Notes - Paper to Write-Up
 - GraphQL / RESTful
 - microservices,
