@@ -21,24 +21,10 @@ gulp.task('someothertask', async function() {
     console.log('Here is some other task')
 })
 
-gulp.task('ARA', async function() {
+gulp.task('log-test', async function() {
     console.log('Building Application Reference Architecture')
     console.log(__dirname)
 
     console.log('./.README/README.md')
     //console.log(__dirname + '/.README/README.md')
 })
-
-
-gulp.task('gitdown', () => {
-  return Gitdown
-    // ./.README/README.md fails saying "fileName must be an absolute path"
-    // ?? config issue?  I did npm init ...
-
-    .readFile(__dirname + '/.README/README.md')
-    .writeFile(__dirname + '/README.md');
-});
-
-gulp.task('watch', () => {
-  gulp.watch(['./.README/*'], ['gitdown']);
-});

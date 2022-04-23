@@ -20,7 +20,7 @@ header-includes: |
 # Application Characteristics and Styles
 
 ## Application Characteristics
-As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumered or derived for requirements
+As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumed or derived for requirements
 
 |Attribute|Description|Note|
 |--|--|--|
