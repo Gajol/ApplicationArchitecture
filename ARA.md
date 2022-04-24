@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents-djn"></a>
 ## Table of Contents - DJN
-*Document Generation Date: 2022-04-24 17:04*
+*Document Generation Date: 2022-04-24 18:04*
 
 <a name="introduction"></a>
 # Introduction
@@ -136,41 +136,55 @@ The applications we develop support business models.  When an application is par
 1. Organizational Map
 1. Business Capability Model (BCM) : identify and score capabilities against good system design quality attributes {performance, scalability, stability, monitorability, extensibility, security}
 1. Process Maps and Re-engineer Processes : Consider [value streams](https://en.wikipedia.org/wiki/Value_stream).  Model process using BPMN.
-1. Define the metrics : Identify what metrics can help assessment and reflection on desired business outcomes. These metrics must be possible to measure and communicate.
+1. Define the Metrics : Identify what metrics can help assessment and reflection on desired business outcomes. These metrics must be possible to measure and communicate.
 1. Understand the Governance Model: Governance is a meta-process. In your value stream, ask how decisions are made, who the authorities are, what roles they have, and what relevant review boards are.   Operational scorecards.
 1. Business Architecture in Applications : What business strategy does this application map to?  Why does this project/application matter?  What new capabilities are you creating?  What major uses cases are performed?  Who are the audiences?
 
-A common way for the business to communicate what the organization needs and does is through a business capability model (BCM). There are many uses for a BCM.   Product owners can use a BCM to drive convergence in technology and business processes to enterprise standards.   Regular review of aligning the BCM with the department strategy and vision can allow enterprise architects and business architects to identify and prioritize the corresponding IT initiatives with business needs.  Internal committees, working groups and forums can collaborate to identify reusable business process and push for adoption across the organization.  Business capabilities, processes, information flows and value streams should be assessed routinely based on efficiency, priority, and complexity.
+<a name="business-business-capability-model-bcm"></a>
+## Business Capability Model (BCM)
 
-Our department has a Business Capabiltiy Map (BCM) describing the main capabilities required to fulfill our mandate.   To help support the business our technology teams provide a broad range of IT capabilities.   Our IT department supports many networks both nationally and internationally.  Within the IT department, our software development team supports an extensive catalog of applications.
+A common way for the business to communicate what the organization needs and does is through a business capability model (BCM)[^2]. There are many uses for a BCM.   Product owners can use a BCM to drive convergence in technology and business processes to enterprise standards.   Regular review of aligning the BCM with the department strategy and vision can allow enterprise architects and business architects to identify and prioritize the corresponding IT initiatives with business needs.  Internal committees, working groups and forums can collaborate to identify reusable business process and push for adoption across the organization.  Business capabilities, processes, information flows and value streams should be assessed routinely based on efficiency, priority, and complexity.
 
-The health of our portfolio needs to improve as identified in our Corporate Risk Profile (CRP).   Several leadership principles have been established over the years to provide guidance when addressing business needs.   Key principles relating to directing architecture and design are:
+Our department has a draft Business Capabiltiy Map (BCM) describing the main capabilities required to fulfill our mandate.   To help support the business our technology teams provide a broad range of IT capabilities.   Our IT department supports many networks both nationally and internationally.  Within the IT department, our software development team supports an extensive catalog of applications.
 
-1. Rationalization:  We have an long queue of valuable business requests and opportunities.   During the software development phase, requirements must be rationalized against the original approved project scope and other compete business needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and can include the senior management team when necessary.  [See Guidance - Rationalization for more information - !!!]
+<a name="business-process-maps-information-flows-and-value-streams"></a>
+## Process Maps, Information Flows and Value Streams
+Information Flows [^4] is a business view of how information flows between business responsibility centres. *The main purpose of an information flow diagram is so that sources that send and receive information can be displayed neatly and analysed.*.  
 
-1. Executive Lead / Change Management:  Projects and programs need executive sponsors who are committed to the change management and rationalization required to allow IT to develop a product.
+Introduced in Lean (1950's) a value stream is a set of actions (workflow) to produce value [^3].  Value Stream Mapping is visual tool introduced in Lean Management methodology to display the value stream with define icons to show delays and inventory stages.   An example value stream might be recruitment "street to seat", "hire to retire" and "procure to pay".
 
-1. Business Architecture and Artifacts:  The business plays a key role in shaping the application.  Business architecture (capabilities, value streams, information flows, organization model) are essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.
+A Process Map[^5] defines the standard business process, and who is responsible for the activity.  
 
-  The following are useful:
-  - Business Capability Model (BCM) - [[Wikipedia - Business Capability Model]](https://en.wikipedia.org/wiki/Business_capability_model) : A diagram that identifies the business capabilities with regards to the application being developed.   The GC BCM is a reference, and our department has an internal BCM.   The BCM traditional is decomposed into 3-4 levels with descriptions of each level.    The application requirements are mapped to the respective BCM capabilities.
-  - Value Streams - [[Wikipedia - Value Streams]](https://en.wikipedia.org/wiki/Value_stream) : Introduced in Lean (1950's) a value stream is a set of actions (workflow) to produce value.  Value Stream Mapping [[Wikipedia - Value Stream Mapping]](https://en.wikipedia.org/wiki/Value-stream_mapping) is visual tool introduced in Lean Management methodology to display the value stream with define icons to show delays and inventory stages.   An example value stream might be recruitment "street to seat" or "hire to retire".  
-  - Information Flows [[Wikipedia - Information Flow Diagram]](https://en.wikipedia.org/wiki/Information_flow_diagram) is a business view of how information flows between business responsiblity centres. *The main purpose of an information flow diagram is so that sources that send and receive information can be displayed neatly and analysed.*
-  - Organization Model / Operating Model [[Wikipedia - Operating Model]](https://en.wikipedia.org/wiki/Operating_model)- An operating model is both an abstract and visual representation (model) of how an organization delivers value to its customers or beneficiaries as well as how an organization actually runs itself.  The elements that make up the Operating Model are People, Process and Technology (PPT).  
 
-  1. Business Requirements:  Business requirements for IT analysis, prioritization and design.  Business requirements should attempt to be specific, measurable, achievable, realistic/relevant and time-based [(SMART)](https://en.wikipedia.org/wiki/SMART_criteria).  By being SMART, this affords the technology project the ability to effectively plan and analyse.
+<a name="business-business-governance"></a>
+## Business Governance
 
-As our department adapts agile methodologies, incremental value in the project can be obtained by the agile team developing business artefacts.
+The health of our portfolio needs to improve as identified in our Corporate Risk Profile (CRP).   Several leadership principles have been established over the years to provide guidance when addressing business needs.   Key principles relating to governing and directing architecture and application design are:
 
-<a name="business-technology-environment"></a>
-## Technology Environment
-Our IT operates in a complex constrained environment.   
-!!! - add on corporate production details !!!
+1. __Rationalization__:  With a large backlog of valuable business requests and opportunities application functionality must be constantly rationalized.   During the software development phase, requirements must be rationalized against the original approved project scope and other compete business needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and can include the senior management team when necessary.  [*See Guidance - Rationalization for more information*]
+
+1. __Executive Lead / Change Management__:  Projects and programs need executive sponsors who are committed to the change management and rationalization required to allow IT to develop a product.
+
+1. __Business Architecture and Artifacts__:  The business plays a key role in shaping the application.  Business architecture (capabilities, value streams, information flows, organization model) are essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.  As our department adapts agile methodologies, incremental value in the project can be obtained by the agile team including maturing business artefacts as part of the product backlog.
+
+<a name="business-business-and-technology-environment"></a>
+## Business and Technology Environment
+Our Information Technology (IT) operates in a complex and constrained environment due to the sensitivity of information managed.  Awareness of the legislative and departmental directives and policies is crucial at the outset of application development.   A common phrase used in DevOps is to *shift-left* quality attributes like security and privacy.   Key non-functionality quality requirements derived from our environment should be considered at the outset (e.g., official languages act, accessibilty act, information management).   The non-functional requirements should be realistic and follow the SMART guidelines (Specific, Measurable, Achievable, Realistic, Time-Bount)[^6].
 
 
 <a name="business-references"></a>
 ## References
-[^1]: Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020. [ISBN 978-1-4920-4594-6](http://www.worldcat.org/ISBN 978-1-4920-4594-6))
+[^1]: Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.  - *[ISBN 978-1-4920-4594-6](http://www.worldcat.org/978-1-4920-4594-6)*
+
+[^2]: [Wikipedia - Business Capability Model](https://en.wikipedia.org/wiki/Business_capability_model)
+
+[^3]: [Wikipedia - Value Streams](https://en.wikipedia.org/wiki/Value_stream)
+
+[^4]: [Wikipedia - Information Flow Diagram](https://en.wikipedia.org/wiki/Information_flow_diagram)
+
+[^5]: [Wikipeida - Business Process Maps](https://en.wikipedia.org/wiki/Business_process_mapping)
+
+[^6]: [Wikipedia (SMART) Requirements](https://en.wikipedia.org/wiki/SMART_criteria)
 
 
 <a name="business-discovery"></a>
