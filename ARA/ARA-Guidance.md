@@ -17,7 +17,9 @@
 
 
 1. Reuse / Buy / Build.   
-Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^5].   The following priorities for options analysis:
+
+  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^5].   The following priorities for options analysis:
+
   - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
   - Buy: Buy solutions and integrate into our enterprise architecture
   - Build:  As a last resort, custom build a solution.  This should be limited to business capabilities and processes that are unique to our department.  Executive approval (Department Architecture Review Board)  required.
@@ -25,26 +27,28 @@ Prior to a business case or project proceeds to development, any new application
 
 1. Document & Exercise Backup & Recovery
 
-All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
+  All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
 
-Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
+  Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
 
   - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical.
 
 
-1. Build Less and Stay Lean:   BaseCamp has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
+1. Build Less and Stay Lean
 
-- [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less):
-  - Less features
-  - Less options/preferences
-  - Less people and corporate structure
-  - Less meetings and abstractions
-  - Less promises
+  BaseCamp has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
 
--  [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
-  - less "Thick process"
-  - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
-  - less of "The past ruling the future"
+  - [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less):
+    - Less features
+    - Less options/preferences
+    - Less people and corporate structure
+    - Less meetings and abstractions
+    - Less promises
+
+  -  [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
+    - less "Thick process"
+    - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
+    - less of "The past ruling the future"
 
 
 ## Goal: Reduce Content Duplication with URL Design and Search
