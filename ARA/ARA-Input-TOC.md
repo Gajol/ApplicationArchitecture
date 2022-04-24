@@ -8,6 +8,8 @@
 
 {"gitdown": "include", "file": "./ARA-Intro.md"}
 
+{"gitdown": "include", "file": "./ARA-Definitions.md"}
+
 {"gitdown": "include", "file": "./ARA-Business.md"}
 
 {"gitdown": "include", "file": "./ARA-Discovery.md"}

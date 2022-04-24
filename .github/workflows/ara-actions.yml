@@ -24,7 +24,7 @@ jobs:
         PDF_ENGINE=pdflatex VERSION=$RELEASE_VERSION make build
       env:
         RELEASE_VERSION: ${{ steps.vars.outputs.tag }}
-    - name: Provide pdf
+    - name: Provide Gulp ARA PDF
       uses: actions/upload-artifact@v2
       with:
         name: ARA.pdf

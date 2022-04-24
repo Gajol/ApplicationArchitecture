@@ -1,4 +1,4 @@
-PDF_ENGINE ?= xelatex
+PDF_ENGINE ?= pdflatex
 VERSION ?= $(shell git log -n 1 --pretty=format:"%H" | head -c 8)
 
 build: ARA.pdf

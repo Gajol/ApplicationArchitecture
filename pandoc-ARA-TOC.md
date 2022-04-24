@@ -1,12 +1,103 @@
 <a name="application-reference-architecture"></a>
+
+
 # Application Reference Architecture
 
 
-<a name="application-reference-architecture-table-of-contents-djn"></a>
-## Table of Contents - DJN
+<a name="application-reference-architecture-table-of-contents"></a>
+
+
+## Table of Contents
 *Document Generation Date: 2022-04-24 14:04*
 
+* [Application Reference Architecture](#application-reference-architecture)
+    * [Table of Contents](#application-reference-architecture-table-of-contents)
+* [Introduction](#introduction)
+    * [Out-of-Scope](#introduction-out-of-scope)
+* [Definitions](#definitions)
+    * [Architecture](#definitions-architecture)
+* [Architecture Characteristics:](#architecture-characteristics)
+    * [Governance:](#architecture-characteristics-governance)
+    * [Technical Debt:](#architecture-characteristics-technical-debt)
+* [Business](#business)
+    * [Technology Environment](#business-technology-environment)
+    * [Discovery](#business-discovery)
+* [Application Characteristics and Styles](#application-characteristics-and-styles)
+    * [Application Characteristics](#application-characteristics-and-styles-application-characteristics)
+    * [Application Architecture Styles](#application-characteristics-and-styles-application-architecture-styles)
+* [Application Architecture Guidance](#application-architecture-guidance)
+    * [Goal:  Composable Enterprise](#application-architecture-guidance-goal-composable-enterprise)
+    * [Goal:  Reduce Technical Debt](#application-architecture-guidance-goal-reduce-technical-debt)
+    * [Goal: Reduce Content Duplication.](#application-architecture-guidance-goal-reduce-content-duplication)
+        * [References](#application-architecture-guidance-goal-reduce-content-duplication-references)
+    * [Goal: Composable Applications](#application-architecture-guidance-goal-composable-applications)
+        * [References](#application-architecture-guidance-goal-composable-applications-references-1)
+    * [Goal: Testable Applications](#application-architecture-guidance-goal-testable-applications)
+    * [Goal: Future Proof Technology](#application-architecture-guidance-goal-future-proof-technology)
+    * [Goal: User Experience](#application-architecture-guidance-goal-user-experience)
+    * [Goal: Accessibility](#application-architecture-guidance-goal-accessibility)
+    * [Other - TODO](#application-architecture-guidance-other-todo)
+        * [Goal: Streaming-Based Application](#application-architecture-guidance-other-todo-goal-streaming-based-application)
+    * [Goal: GC Alignment](#application-architecture-guidance-goal-gc-alignment)
+* [Goal: Architecture Strategy](#goal-architecture-strategy)
+    * [Creating a Strategy](#goal-architecture-strategy-creating-a-strategy)
+        * [Apply Patterns to Formulate a Strategy](#goal-architecture-strategy-creating-a-strategy-apply-patterns-to-formulate-a-strategy)
+        * [Concerns of an Architect](#goal-architecture-strategy-creating-a-strategy-concerns-of-an-architect)
+        * [Corporate (Enterprise) Context](#goal-architecture-strategy-creating-a-strategy-corporate-enterprise-context)
+* [Patterns](#patterns)
+* [Architecture Styles](#architecture-styles)
+    * [User Experience Patterns](#architecture-styles-user-experience-patterns)
+* [References](#references-2)
+* [References](#references-3)
+    * [Software](#references-3-software)
+    * [Architecture](#references-3-architecture-1)
+    * [Design](#references-3-design)
+    * [Patterns](#references-3-patterns-1)
+    * [Principles](#references-3-principles)
+    * [Government of Canada](#references-3-government-of-canada)
+* [Terms](#terms)
+* [TODO](#todo)
+    * [TODO 2022-04](#todo-todo-2022-04)
+    * [Culture](#todo-culture)
+    * [BI](#todo-bi)
+        * [Tableau](#todo-bi-tableau)
+        * [DAaaS](#todo-bi-daaas)
+    * [Data](#todo-data)
+        * [Lower Priority](#todo-data-lower-priority)
+    * [Notes - Paper to Write-Up](#todo-notes-paper-to-write-up)
+* [TO DO](#to-do)
+    * [Architecture: (from Gartner)](#to-do-architecture-from-gartner)
+    * [Enterprise Overview](#to-do-enterprise-overview)
+        * [Guidelines](#to-do-enterprise-overview-guidelines)
+        * [Design Methodolgoy??](#to-do-enterprise-overview-design-methodolgoy)
+        * [UX Design](#to-do-enterprise-overview-ux-design)
+        * [Observability](#to-do-enterprise-overview-observability)
+    * [Reference Architecture](#to-do-reference-architecture)
+        * [CNA - AWS : Cloud Native](#to-do-reference-architecture-cna-aws-cloud-native)
+    * [Example Problems](#to-do-example-problems)
+        * [Enterprise Search](#to-do-example-problems-enterprise-search)
+    * [Data Availability](#to-do-data-availability)
+    * [Framework for Data Governance](#to-do-framework-for-data-governance)
+    * [Distributed Multi-Security-Zone Business Process](#to-do-distributed-multi-security-zone-business-process)
+    * [Terms](#to-do-terms-1)
+    * [CNA](#to-do-cna)
+    * [References](#to-do-references-4)
+    * [Gartner](#to-do-gartner)
+    * [GC](#to-do-gc)
+    * [Wikipedia](#to-do-wikipedia)
+    * [Documentation](#to-do-documentation)
+    * [Standards Bodies](#to-do-standards-bodies)
+    * [Frameworks](#to-do-frameworks)
+        * [USA](#to-do-frameworks-usa)
+    * [Templates](#to-do-templates)
+    * [Goal](#to-do-goal)
+    * [Thoughts - Describe TRB / AWG differences](#to-do-thoughts-describe-trb-awg-differences)
+* [Footnotes - Test](#footnotes-test)
+
+
 <a name="introduction"></a>
+
+
 # Introduction
 This document outlines the Application Reference Architecture (ARA) as it applies to our department.  
 
@@ -29,6 +120,8 @@ This document is intended for:
 - technical design leads
 
 <a name="introduction-out-of-scope"></a>
+
+
 ## Out-of-Scope
 - This document is neither a vision, nor a strategy nor a roadmap document.   
 - This document is neither a strategy, nor a department culture nor an development process document.
@@ -38,10 +131,13 @@ This document is intended for:
 
 
 <a name="definitions"></a>
+
+
 # Definitions
 <a name="definitions-architecture"></a>
-## Architecture
 
+
+## Architecture
 
 Architecture:
 - *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
@@ -68,22 +164,30 @@ The overall architecture of an enterprise can be described by integrated sub-arc
     - [+ Security, Privacy and Data]
 
 <a name="architecture-characteristics"></a>
+
+
 # Architecture Characteristics:
-- Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. We often call these non-functional requirements; however I would prefer to use the term Quality Requirements.  Characteristics have three criteria: 1) specifies a non-domain (non-functional) consideration, 2) influences some aspect of the design, and 3) is critical/important to the application's success. A few are listed below
+
+    - Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. We often call these non-functional requirements; however I would prefer to use the term Quality Requirements.  Characteristics have three criteria: 1) specifies a non-domain (non-functional) consideration, 2) influences some aspect of the design, and 3) is critical/important to the application's success. A few are listed below:
+
+    - [[Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020) - Chapter 4. Architecture Characteristics Defined](http://www.worldcat.org/isbn/9781492043454)]:
       - operational characteristics: availability, business continuity, performance, recoverability, robustness, scalability, elasticity.
-
       - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainabilty, portability, supportability, upgradeability.
-
       - cross-cutting: authentication, authorization, legal, privacy, security, supportabilty, usability, achievability, compatibilty, interoperability.
-
       - See [Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)
 
-
 <a name="architecture-characteristics-governance"></a>
+
+
 ## Governance:
-    - Governance, derived from the Greek word kubernan (to steer) is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+      - Governance, derived from the Greek word kubernan (to steer) is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+
+      - [[Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)]
+
 
 <a name="architecture-characteristics-technical-debt"></a>
+
+
 ## Technical Debt:
     - Technical Debt is a term was coined by Ward Cunningham; *Shipping first-time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite. Objects make the cost of this transaction tolerable. The danger occurs when the debt is not repaid. Every minute spent on not-quite-right code counts as interest on that debt. Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation, object-oriented or otherwise.* [Ward Cunningham - 1992].  Note: Ward Cunningham is one of the authors of the [Agile Manifesto](https://agilemanifesto.org/)
     - The sum of time and effort one has to pay to keep up with the tools one is 'married' to.
@@ -94,8 +198,12 @@ The overall architecture of an enterprise can be described by integrated sub-arc
       - Technical debt may also be known as design debt.
     - When taking short cuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt.[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)
 
+    T
+
 
 <a name="business"></a>
+
+
 # Business
 
 A common way for the business to communicate what the organization needs and does is through a business capability model (BCM). There are many uses for a BCM.   Product owners can use a BCM to drive convergence in technology and business processes to enterprise standards.   Regular review of aligning the BCM with the department strategy and vision can allow enterprise architects and business architects to identify and prioritize the corresponding IT initiatives with business needs.  Internal committes, working groups and forums can collaborate to identify reusable business process and push for adoption across the organization.  Business capabilities, processes, information flows and value streams should be assessed routinely based on efficiency, priority, and complexity.
@@ -121,12 +229,16 @@ The health of our portfolio needs to improve as identified in our Corporate Risk
 As our department adapts agile methodologies, incremental value in the project can be obtained by the agile team developing business artefacts.
 
 <a name="business-technology-environment"></a>
+
+
 ## Technology Environment
 Our IT operates in a complex constrained environment.   
 !!! - add on corporate production details !!!
 
 
 <a name="business-discovery"></a>
+
+
 ## Discovery
 
 There are many initiatives within our department that require enterprise and domain architecture effort to recommend the path forward.
@@ -164,12 +276,16 @@ TODO - Add Enterprise Interoperability to ITOD Dependencies
 
 
 <a name="application-characteristics-and-styles"></a>
+
+
 # Application Characteristics and Styles
 
 - *Architecture Style: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.* - TOGAF
 
 
 <a name="application-characteristics-and-styles-application-characteristics"></a>
+
+
 ## Application Characteristics
 As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumed or derived for requirements
 
@@ -182,6 +298,8 @@ As part of the analysis and design some high-level characteristics of the applic
 |Information Business Type|Our department treats operational information different from administrative information.|The distinction is unclear, and there are few guidelines to help projects to help manage this distinction.   Applications are categorized as managing operational or administrative information.  For example, CW is administrative, CWOPS is operational (however only extremely limited operational information is permitted in CWOPS).|
 
 <a name="application-characteristics-and-styles-application-architecture-styles"></a>
+
+
 ## Application Architecture Styles
 Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are [[Fundamentals of software architecture]][fundamentalsofsoftwarearchitecture]:
 -  [[Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)]:
@@ -198,10 +316,14 @@ Architectural style is defined as a set of characteristics and features that mak
 
 
 <a name="application-architecture-guidance"></a>
+
+
 # Application Architecture Guidance
 
 
 <a name="application-architecture-guidance-goal-composable-enterprise"></a>
+
+
 ## Goal:  Composable Enterprise
 1. Integrations / Messaging
 Methodology: DDD / Bounded Context
@@ -209,6 +331,8 @@ Methodology: DDD / Bounded Context
 
 
 <a name="application-architecture-guidance-goal-reduce-technical-debt"></a>
+
+
 ## Goal:  Reduce Technical Debt
 
 1. Rationalization.
@@ -235,6 +359,8 @@ Methodology: DDD / Bounded Context
   - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the deparment's official configuration management database (CMDB).
 
 <a name="application-architecture-guidance-goal-reduce-content-duplication"></a>
+
+
 ## Goal: Reduce Content Duplication.
 
 Content is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   Some historical examples that have led to this "clone-and-own" culture include:
@@ -251,6 +377,8 @@ Content is duplicated within applications and across technologies.  The causes o
  Enterprise search will definitely help in enabling users to find the information they should have access to.   This is a major long-term initiative.
 
 <a name="application-architecture-guidance-goal-reduce-content-duplication-references"></a>
+
+
 ### References
 *TODO* 37signals - use as support for guidelines
 *TOD* CIO - use as support for guidelines
@@ -270,6 +398,8 @@ Content is duplicated within applications and across technologies.  The causes o
 
 
 <a name="application-architecture-guidance-goal-composable-applications"></a>
+
+
 ## Goal: Composable Applications
 Applications should reduce coupling; especially at the high-level interactions between components. [Reference: Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
 
@@ -314,6 +444,8 @@ Leverage events as a core principle.  Publish these events, subscribe to these e
 
 
 <a name="application-architecture-guidance-goal-composable-applications-references-1"></a>
+
+
 ### References
 - [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664) :  Composable ERP is defined as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
 
@@ -327,6 +459,8 @@ Leverage events as a core principle.  Publish these events, subscribe to these e
 
 
 <a name="application-architecture-guidance-goal-testable-applications"></a>
+
+
 ## Goal: Testable Applications
 Testing applications and groups of applications effectively and efficiently requires anlaysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
 
@@ -347,6 +481,8 @@ Development methodologies like test driven development (TDD) that predates DevOp
 
 
 <a name="application-architecture-guidance-goal-future-proof-technology"></a>
+
+
 ## Goal: Future Proof Technology
 The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.
 
@@ -374,12 +510,16 @@ A view of how MACH applies to guidance and industry patterns is below.
 Aside:  An interesting article on how a CMS is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack. [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
 
 <a name="application-architecture-guidance-goal-user-experience"></a>
+
+
 ## Goal: User Experience
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  Some modern experiences can include:
 - Push Notifications:  Business fit-for-purpose notifications using [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  [oEmbed](https://oembed.com/)
 
 <a name="application-architecture-guidance-goal-accessibility"></a>
+
+
 ## Goal: Accessibility
 The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
 
@@ -395,13 +535,19 @@ Applications should allow users to self-identity accessibility needs.
 *TODO* Add content from high-side Confluence at work.
 
 <a name="application-architecture-guidance-other-todo"></a>
+
+
 ## Other - TODO
 <a name="application-architecture-guidance-other-todo-goal-streaming-based-application"></a>
+
+
 ### Goal: Streaming-Based Application
 *TODO* Streaming-Ready/capable application
 - https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3
 
 <a name="application-architecture-guidance-goal-gc-alignment"></a>
+
+
 ## Goal: GC Alignment
 1. [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely
 
@@ -411,15 +557,21 @@ Applications should allow users to self-identity accessibility needs.
 
 
 <a name="goal-architecture-strategy"></a>
+
+
 # Goal: Architecture Strategy
 
 <a name="goal-architecture-strategy-creating-a-strategy"></a>
+
+
 ## Creating a Strategy
 The architectural strategy for a program; whether they are renewal efforts (ERP, HR, IM, Collaboration) or greenfield (Case Management) should follow methodologies proven to be successful.
 
 The guidance below is a summary of __Technology Strategy Patterns__. [[Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)]
 
 <a name="goal-architecture-strategy-creating-a-strategy-apply-patterns-to-formulate-a-strategy"></a>
+
+
 ### Apply Patterns to Formulate a Strategy
   - Context:  Trends, Constraints, Stakeholders
   - Understand:  Research, analyse and understand your stakeholders, the environment and the technology landscape.
@@ -428,6 +580,8 @@ The guidance below is a summary of __Technology Strategy Patterns__. [[Hewitt, E
   - Recommendation:  Make recommendation and obtain approval.
 
 <a name="goal-architecture-strategy-creating-a-strategy-concerns-of-an-architect"></a>
+
+
 ### Concerns of an Architect
   - Contain entropy:  Show a path in a roadmap; garnering support for that vision through communication of guidelines and standards; and creating clarity to ensure efficiency of execution and that you’re doing the right things and doing things right.
   - Specify Non-Functional Requirements / Quality Requirements: The "..ility" list.   scalability, availability, maintainability, manageability, monitorability, extensibility, interoperability, portability, security, accessibility, observability, conformity (laws, directives). [Wikipedia - Quality Attributes](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
@@ -448,6 +602,8 @@ Some tools suggested are:
 |__Current__|Market Penetration Strategy: Gain market share with current products and market|Product Development Strategy:  Develop new products in current markets.|
 
 <a name="goal-architecture-strategy-creating-a-strategy-corporate-enterprise-context"></a>
+
+
 ### Corporate (Enterprise) Context
 Position the enterprise for competitive advantage.
 - Stakeholder Alignment : A top-down approach, determine the organization chart, and *determine what leaders at the VP, Senior Director, and/or Director level matter in terms of your strategy*.  Based on the stakeholder matrix determine their influence and impact and associate an approach to working with them (monitor, keep informed, maintain confidence, collaborate).
@@ -461,6 +617,8 @@ Position the enterprise for competitive advantage.
 
 
 <a name="patterns"></a>
+
+
 # Patterns
 Patterns are known, proven solutions.  Patterns help us communicate architecture and design to each other.
 
@@ -471,6 +629,8 @@ Drive strategy with patterns.
 
 
 <a name="architecture-styles"></a>
+
+
 # Architecture Styles
 
 Big Ball of Mud - Anti-Pattern:
@@ -488,6 +648,8 @@ If it was, it may have eroded beyond recognition. Programmers with a shred of ar
 
 
 <a name="architecture-styles-user-experience-patterns"></a>
+
+
 ## User Experience Patterns
 Many patterns exist for a successful user-experience (search, navigation, filters, comparisons, grids, ...)
 - [CodePros - Patterns](http://tympanus.net/codrops/category/blueprints/)
@@ -498,28 +660,40 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 
 
 <a name="references-2"></a>
+
+
 # References
 
 
 
 
 <a name="references-3"></a>
+
+
 # References
 DJN Test
 
 <a name="references-3-software"></a>
+
+
 ## Software
 <a name="references-3-architecture-1"></a>
+
+
 ## Architecture
 - [Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)
 
 [fundamentalsofsoftwarearchitecture]: http://www.worldcat.org/isbn/9781492043454 "Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)]"
 
 <a name="references-3-design"></a>
+
+
 ## Design
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)] http://www.worldcat.org/isbn/9780133039900
 
 <a name="references-3-patterns-1"></a>
+
+
 ## Patterns
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
@@ -528,11 +702,15 @@ DJN Test
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
 
 <a name="references-3-principles"></a>
+
+
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
 
 <a name="references-3-government-of-canada"></a>
+
+
 ## Government of Canada
 - [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewrds, Design ethical services, Collaborate widely
 - [GC Information Management Guidelines - 1996](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=13832&section=html)
@@ -540,15 +718,21 @@ DJN Test
 
 
 <a name="terms"></a>
+
+
 # Terms
 
 Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.
 
 
 <a name="todo"></a>
+
+
 # TODO
 
 <a name="todo-todo-2022-04"></a>
+
+
 ## TODO 2022-04
 Themes : API, consistency, cohesive
 
@@ -622,20 +806,30 @@ Architecture - 4 Parts (not sure if from SAA-C02 Pearson AWS Certification test 
 4. Understanding Importance of "Business Drivers" and how they translate to architectural concerns.
 
 <a name="todo-culture"></a>
+
+
 ## Culture
 - Westrum Culture:  Useful, Timely, Relevant
 
 <a name="todo-bi"></a>
+
+
 ## BI
 <a name="todo-bi-tableau"></a>
+
+
 ### Tableau
 - Anaylitcs, Calculations, Data Prepparation, Data Relationships, Data Visualizations, Excel and Tableau, Performance, Storytelling, Tableau Server.
 
 <a name="todo-bi-daaas"></a>
+
+
 ### DAaaS
 - Kubeflow
 
 <a name="todo-data"></a>
+
+
 ## Data
 - DRA : Pragmatic, Feasible, "I can build it, consistently.".  Clear guidance to get of debt.  How to get out of debt, moving forward.
   - for initiatives have you gone to forums (TRB, AWG, ...)
@@ -644,6 +838,8 @@ Architecture - 4 Parts (not sure if from SAA-C02 Pearson AWS Certification test 
 - mutable data
 
 <a name="todo-data-lower-priority"></a>
+
+
 ### Lower Priority
 DevOps
 - Puppet vs Ansible vs Terraform
@@ -656,6 +852,8 @@ ML Pipeline Architecture.  Policy on Automated Decision Making.
 
 
 <a name="todo-notes-paper-to-write-up"></a>
+
+
 ## Notes - Paper to Write-Up
 - GraphQL / RESTful
 - microservices,
@@ -746,6 +944,8 @@ ML Pipeline Architecture.  Policy on Automated Decision Making.
 
 
 <a name="to-do"></a>
+
+
 # TO DO
 - [ ] : Enterprise Reference Architectures
 - [ ] : Enterprise Application Reference Architecture
@@ -759,6 +959,8 @@ ML Pipeline Architecture.  Policy on Automated Decision Making.
 
 
 <a name="to-do-architecture-from-gartner"></a>
+
+
 ## Architecture: (from Gartner)
 - Concepts:,
 - Principles:
@@ -780,24 +982,38 @@ Architecture: [([from Google)](https://cloud.google.com/blog/products/applicatio
 Directives, Guidelines, Standards, Processes, Procedures, ...
 
 <a name="to-do-enterprise-overview"></a>
+
+
 ## Enterprise Overview
 
 <a name="to-do-enterprise-overview-guidelines"></a>
+
+
 ### Guidelines
 
 <a name="to-do-enterprise-overview-guidelines-security-shift-left"></a>
+
+
 #### Security : Shift-Left
 Engage Security early.  Inform security early of the technology you are planning on using, and how you are address common security requirements (identity, access, monitoring, auditing, patching, ...).  There are many other security families, and including security and recording joint, collaborative decisions is important in avoiding the discovery of major security risks later in the project.
 
 <a name="to-do-enterprise-overview-guidelines-system-architecture"></a>
+
+
 #### System Architecture
 <a name="to-do-enterprise-overview-guidelines-system-architecture-loosely-coupled"></a>
+
+
 ##### Loosely Coupled
 Resources: Domain Driven Design : Domain Driven Design can help decompose a system into loosely coupled components: how to draw boundaries between services, how to decide whether some logic belongs to one service or another, and how domain-driven design can help us make those decisions.   
 
 <a name="to-do-enterprise-overview-design-methodolgoy"></a>
+
+
 ### Design Methodolgoy??
 <a name="to-do-enterprise-overview-design-methodolgoy-user-experience"></a>
+
+
 #### User Experience
 Embrace GC User Centric Design
 - [Nielsen Norman Group - Maturity Model](https://www.nngroup.com/articles/ux-maturity-model/)
@@ -819,6 +1035,8 @@ Embrace GC User Centric Design
 
 
 <a name="to-do-enterprise-overview-ux-design"></a>
+
+
 ### UX Design
 - follow GC User Centric Design
 - see deisgn mothers for Ux - on CW - [UK 18F Methods](https://methods.18f.gov/) - referenced by GC standards - [18f technoloyg and design company - USA ](https://18f.gsa.gov/)
@@ -827,6 +1045,8 @@ j -[Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/
 
 
 <a name="to-do-enterprise-overview-observability"></a>
+
+
 ### Observability
 
 Observability:  This is an entire field of its own, and has gained momentum with microservices.  
@@ -836,9 +1056,13 @@ Observability:  This is an entire field of its own, and has gained momentum with
 
 
 <a name="to-do-reference-architecture"></a>
+
+
 ## Reference Architecture
 
 <a name="to-do-reference-architecture-cna-aws-cloud-native"></a>
+
+
 ### CNA - AWS : Cloud Native
 https://aws.amazon.com/architecture/
 - Analytics and Big Data  
@@ -857,8 +1081,12 @@ data bricks : cloud hosted data engineering, data analytics, data science (core 
 
 
 <a name="to-do-example-problems"></a>
+
+
 ## Example Problems
 <a name="to-do-example-problems-enterprise-search"></a>
+
+
 ### Enterprise Search
 Problem:  Enterprise Search has access to all corporate information.   Display search results, and provide information to the user must respect security and privacy concerns.   Applications with local access-business logic, and big-data platforms are difficult to expose to enterprise search.
 Challenges:
@@ -874,12 +1102,16 @@ Challenges:
 
 
 <a name="to-do-data-availability"></a>
+
+
 ## Data Availability
 Problem:  Corporate solutions (ERP, HR, S-app, Collab-platforms) have silos of data which is unavailable for easy use by other applications.
 Guideline:  "Application data must be made available to other applications in a controlled fashion".
 - Controlled Fashion : respecting IM and security concerns.   Exposing data in a modern manner (distributed architecture, API).
 
 <a name="to-do-framework-for-data-governance"></a>
+
+
 ## Framework for Data Governance
 Problem:  Data governance, business and technical processes to provide a version of truth of the system, or, system of record.
 Example:  Entity Resolves / Unresolves.  The business-activity is unrestrained, and the application that performs the resolution action does not generate meaningful data such that a reliable API can be defined to identify a resource.  The system of record is unaware of these activities.  The SoR does not have API to identity the identity of the entity, nor, a means to notify on changes to the core entity's identity.
@@ -892,6 +1124,8 @@ Software Architecture Patterns that can help:
 Challenge:  Unsure how MDM can solve Analytics Platform resolve/unresolve process.
 
 <a name="to-do-distributed-multi-security-zone-business-process"></a>
+
+
 ## Distributed Multi-Security-Zone Business Process
 Problem: We are starting to use SaaS application providers, however, due to privacy and security concerns we cannot put sensitive information in the SaaS application.   As a result, business process will involve using systems on both the high and low security zones.  Business users will have to learn to complete processes using tokenized, masked and redacted information.   IT will have to provide technology to move and transform the data between these systems.  This design constraint will impact the user experience.  IT's role is to implement technology to facilitate these multi-zone business processes, while reamining loosely coupled with the SaaS solution (important as the SaaS solution is upgraded regularly beyond the control of the business or IT).
 Guideline:  
@@ -906,6 +1140,8 @@ Quote : Okta?
 
 
 <a name="to-do-terms-1"></a>
+
+
 ## Terms
 - Application:
 - System:
@@ -919,26 +1155,38 @@ Quote : Okta?
 
 
 <a name="to-do-cna"></a>
+
+
 ## CNA
 - CNA: Cloud-native architecture and technologies are an approach to designing, constructing, and operating workloads that are built in the cloud and take full advantage of the cloud computing model.
 - Kubernetes is a platform to manage, host, scale, and deploy containers.
 - Containers are a portable way of packaging and running code. They are well suited to the microservices pattern, where each microservice can run in its own container.
 
 <a name="to-do-references-4"></a>
+
+
 ## References
 <a name="to-do-gartner"></a>
+
+
 ## Gartner
 
 <a name="to-do-gc"></a>
+
+
 ## GC
 1. [Directive on Service & Digital - Appendix B - Mandatory Procedures](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=32604)
 <a name="to-do-wikipedia"></a>
+
+
 ## Wikipedia
 1. [View Model](https://en.wikipedia.org/wiki/View_model)
 1. [USA Federated Enterprise Architecture](https://en.wikipedia.org/wiki/Federal_enterprise_architecture) : Viewpoints of Enterprise, Information, Functional, Physical, Engineering, Technology.  6 Reference Models : Performance, Business, Data, Application, Infrastructure, Security.
 1. [USA NIST Enteprise Architecture Model](https://en.wikipedia.org/wiki/NIST_Enterprise_Architecture_Model) - 1980's no longer relevant
 
 <a name="to-do-documentation"></a>
+
+
 ## Documentation
 
 - [Google DORA State of DevOps - 2021](https://services.google.com/fh/files/misc/state-of-devops-2021.pdf)
@@ -946,33 +1194,45 @@ Quote : Okta?
 - [IEEE The Value of Software Quality - ISBN 978-1-4799-7198-5 - 2014](https://ieeexplore.ieee.org/document/6958422)
 
 <a name="to-do-standards-bodies"></a>
+
+
 ## Standards Bodies
 1. [IEEE 42010] - Systems and Software Engineering - Architecture Description (2011 $150)
  - [The Journal of Systems and Software - Overview of Architecture Description - Documenting Decisions - IEEE 42010](http://www.cs.rug.nl/paris/papers/JSS11c.pdf)
 
 <a name="to-do-frameworks"></a>
+
+
 ## Frameworks
 TOGAF
 Archimate
 Zachman
 <a name="to-do-frameworks-usa"></a>
+
+
 ### USA
 [DoD Architecture Framework](https://dodcio.defense.gov/Library/DoD-Architecture-Framework/) - massive framework
 - notes on USA Gov - coarse grained API ... (API for large data, ...)
 
 
 <a name="to-do-templates"></a>
+
+
 ## Templates
 This section addresses the lack of standards, templates and clear requirements for documentation.
 - Integration COE : standard for schemas (API and events) and knowledge of consumers/subscribers to these integration points.
 
 <a name="to-do-goal"></a>
+
+
 ## Goal
 - *At the end of the day, I want my artifacts to be enduring. My goal is to create a prescriptive, semi-formal architectural description that can be used as a basis for setting department priorities, parallelizing development, [managing] legacy migration, etc.*
 
 
 
 <a name="to-do-thoughts-describe-trb-awg-differences"></a>
+
+
 ## Thoughts - Describe TRB / AWG differences
 - key - TRB is agile - share early, quickly, often and informally...get guidance...
 
@@ -985,6 +1245,8 @@ Unstructured Knowledge Sharing:
 
 
 <a name="footnotes-test"></a>
+
+
 # Footnotes - Test
 
 Here's a sentence with a footnote. [^1]
