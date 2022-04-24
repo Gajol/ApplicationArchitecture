@@ -262,13 +262,6 @@ Architectural style is defined as a set of characteristics and features that mak
 # Application Architecture Guidance
 
 
-<a name="application-architecture-guidance-goal-composable-enterprise"></a>
-## Goal:  Composable Enterprise
-1. Integrations / Messaging
-Methodology: DDD / Bounded Context
-!!! : what was the API guideline - do one thing - either a command or a query but not both... - e.g., an API should get() info but or set() info but not both...???where was this.
-
-
 <a name="application-architecture-guidance-goal-reduce-technical-debt"></a>
 ## Goal:  Reduce Technical Debt
 
@@ -295,12 +288,18 @@ Methodology: DDD / Bounded Context
   Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
   - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the deparment's official configuration management database (CMDB).
 
-<a name="application-architecture-guidance-goal-reduce-content-duplication"></a>
-## Goal: Reduce Content Duplication.
 
-Content is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   Some historical examples that have led to this "clone-and-own" culture include:
-- Link Rot:  Application upgrades making links to content fail.   [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) is the use of a hyperlink that links to a specific, generally searchable or indexed, piece of web content on a website.  For example, a link to a specific case, request or document.  
-- Access:  Users are concerned that the content may disappear due to the content owner removing, renaming or modifying user-access.   This is difficult to address at the application layer, and requires enterprise information and access-management governance.
+<a name="application-architecture-guidance-goal-reduce-content-duplication-with-url-design-and-search"></a>
+## Goal: Reduce Content Duplication with URL Design and Search
+
+Content (information) is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   
+
+Some historical examples that have led to this "clone-and-own" culture include:
+
+  - Link Rot:  Application upgrades making links to content fail.   [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) is the use of a hyperlink that links to a specific, generally searchable or indexed, piece of web content on a website.  For example, a link to a specific case, request or document.  
+
+  - Access:  Users are concerned that the content may disappear due to the content owner removing, renaming or modifying user-access.   This is difficult to address at the application layer, and requires enterprise information and access-management governance.
+
 
 1. URL Lifecycle
  When supporting [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) design must take into account the lifecycle of the link, and its ability to function through upgrades.   Consider patterns such as [Permalink](https://en.wikipedia.org/wiki/Permalink) and Data Object Identifier [(DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier).  When provide a link to a user for reference, identify this should be a trusted-link which survives upgrades/replacements.
@@ -311,7 +310,7 @@ Content is duplicated within applications and across technologies.  The causes o
  1. Enterprise Search
  Enterprise search will definitely help in enabling users to find the information they should have access to.   This is a major long-term initiative.
 
-<a name="application-architecture-guidance-goal-reduce-content-duplication-references-1"></a>
+<a name="application-architecture-guidance-goal-reduce-content-duplication-with-url-design-and-search-references-1"></a>
 ### References
 *TODO* 37signals - use as support for guidelines
 *TOD* CIO - use as support for guidelines
@@ -332,11 +331,21 @@ Content is duplicated within applications and across technologies.  The causes o
 
 <a name="application-architecture-guidance-goal-composable-applications"></a>
 ## Goal: Composable Applications
-Applications should reduce coupling; especially at the high-level interactions between components. [Reference: Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
 
+
+
+<a name="application-architecture-guidance-goal-composable-enterprise"></a>
+## Goal:  Composable Enterprise
+1. Integrations / Messaging
+Methodology: DDD / Bounded Context
+!!! : what was the API guideline - do one thing - either a command or a query but not both... - e.g., an API should get() info but or set() info but not both...???where was this.
+
+with an focus on leveraging modern API concepts (API management, API catalog, API developer experience - sandbox, versioning, ...).
+
+
+Applications and the software architect should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^1][^2][^3]
 
 Architectural patterns to support composable applications include:
-*TODO* are these patterns or concepts??
 1. High Cohesion [ref oreilly - chapt 3 - modularity](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch03.xhtml#idm46005301692696)
 1. Low Coupling  : why persistence layers / data access layers added between application business logic and the database layer.
 
@@ -374,7 +383,7 @@ Leverage events as a core principle.  Publish these events, subscribe to these e
 
 
 
-<a name="application-architecture-guidance-goal-composable-applications-references-2"></a>
+<a name="application-architecture-guidance-goal-composable-enterprise-references-2"></a>
 ### References
 - [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664) :  Composable ERP is defined as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
 
@@ -467,6 +476,16 @@ Applications should allow users to self-identity accessibility needs.
 1. [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely
 
 1. [Cloud Adoption](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)
+
+
+
+[^1]: [Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
+
+[^2}: [Amazon-AWS Bezos API's - Expose Data and Functionality through service interfaces](https://blog.apievangelist.com/2015/07/09/the-new-aws-api-gateway-anyone-who-does-not-do-this-will-be-fired-thank-you-have-a-nice-day-jeff-bezos/)
+
+[^3]: [Mastering API Architecture](www.worldcat.org/isbn/978-1492090632)
+
+[^4]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
 
 
 
