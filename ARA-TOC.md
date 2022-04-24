@@ -256,7 +256,7 @@ Our IT operates in a complex constrained environment.
 
 <a name="business-references"></a>
 ## References
-[^1] : Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020. [ISBN 978-1-4920-4594-6](http://www.worldcat.org/ISBN 978-1-4920-4594-6))
+[^1]: Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020. [ISBN 978-1-4920-4594-6](http://www.worldcat.org/ISBN 978-1-4920-4594-6))
 
 
 <a name="business-discovery"></a>
