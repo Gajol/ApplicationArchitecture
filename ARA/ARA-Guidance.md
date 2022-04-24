@@ -17,16 +17,34 @@
 
 
 1. Reuse / Buy / Build.   
-  - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.   
+Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^5].   The following priorities for options analysis:
+  - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
   - Buy: Buy solutions and integrate into our enterprise architecture
   - Build:  As a last resort, custom build a solution.  This should be limited to business capabilities and processes that are unique to our department.  Executive approval (Department Architecture Review Board)  required.
 
 
 1. Document & Exercise Backup & Recovery
-  All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
 
-  Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
-  - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the deparment's official configuration management database (CMDB).
+All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
+
+Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
+
+  - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical.
+
+
+1. Build Less and Stay Lean:   BaseCamp has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
+
+- [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less):
+  - Less features
+  - Less options/preferences
+  - Less people and corporate structure
+  - Less meetings and abstractions
+  - Less promises
+
+-  [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
+  - less "Thick process"
+  - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
+  - less of "The past ruling the future"
 
 
 ## Goal: Reduce Content Duplication with URL Design and Search
@@ -41,12 +59,12 @@ Some historical examples that have led to this "clone-and-own" culture include:
 
 
 1. URL Lifecycle
- When supporting [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) design must take into account the lifecycle of the link, and its ability to function through upgrades.   Consider patterns such as [Permalink](https://en.wikipedia.org/wiki/Permalink) and Data Object Identifier [(DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier).  When provide a link to a user for reference, identify this should be a trusted-link which survives upgrades/replacements.
+ When supporting [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) design must take into account the lifecycle of the link, ned that the content may disappear due to the content owner removing, renaming or modifying userand its ability to function through upgrades.   Consider patterns such as [Permalink](https://en.wikipedia.org/wiki/Permalink) and Data Object Identifier [(DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier).  When provide a link to a user for reference, identify this should be a trusted-link which survives upgrades/replacements.
 
- 1. URL Design
+1. URL Design
  Define a URL strategy for the application, including an inventory or URL's provided.  Define the manner in which URLs are clean, friendly and pretty [Clean URL](https://en.wikipedia.org/wiki/Clean_URL); support *http://example.com/name* as opposed to *http://example.com/index.php?page=name*.
 
- 1. Enterprise Search
+1. Enterprise Search
  Enterprise search will definitely help in enabling users to find the information they should have access to.   This is a major long-term initiative.
 
 ### References
@@ -209,8 +227,10 @@ Applications should allow users to self-identity accessibility needs.
 
 [^1]: [Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
 
-[^2}: [Amazon-AWS Bezos API's - Expose Data and Functionality through service interfaces](https://blog.apievangelist.com/2015/07/09/the-new-aws-api-gateway-anyone-who-does-not-do-this-will-be-fired-thank-you-have-a-nice-day-jeff-bezos/)
+[^2]: [Amazon-AWS Bezos API's - Expose Data and Functionality through service interfaces](https://blog.apievangelist.com/2015/07/09/the-new-aws-api-gateway-anyone-who-does-not-do-this-will-be-fired-thank-you-have-a-nice-day-jeff-bezos/)
 
 [^3]: [Mastering API Architecture](www.worldcat.org/isbn/978-1492090632)
 
 [^4]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
+
+[^5]: [GC EARB EA Standards and Application Architecture](https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture)
