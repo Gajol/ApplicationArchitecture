@@ -1,5 +1,7 @@
 # Introduction
-This document outlines the Application Reference Architecture (ARA) as it applies to our department.  What is architecture?  
+This document outlines the Application Reference Architecture (ARA) as it applies to our department.  
+
+What is architecture in general?  
 
 ```
 Architecture is the stuff you can’t Google. - Mark Richards.   
@@ -21,7 +23,7 @@ This document is intended for:
 
 ## Out-of-Scope
 - This document is neither a vision, nor a strategy nor a roadmap document.   
-- This document is neither a strategy, nor a department culture nor execution/process document.
+- This document is neither a strategy, nor a department culture nor an development process document.
   - Strategy: What will and will not do, and how govern resources.
   - Culture: People, Processes (Organization / Teams), Communication
   - Execution: Processes, Tools

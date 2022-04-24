@@ -1,22 +1,3 @@
----
-title: Application Reference Architecture
-subtitle: Application Styles and Guidance
-author:
-- Doug Nielsen
-fontsize: 10pt
-mainfont: Arial
-geometry: margin=0.75in
-header-includes: |
-    \usepackage{fancyhdr}
-    \pagestyle{fancy}
-    \fancyhead[L]{Application Reference Architecture}
-    \fancyhead[R]{UNCLASSIFIED / NON-CLASSIFIÉ}
----
-
-\begin{center}UNCLASSIFIED / NON-CLASSIFIÉ\end{center}
-
-\newpage
-
 # Application Characteristics and Styles
 
 ## Application Characteristics

@@ -5,24 +5,21 @@ const Gitdown = require('gitdown');
 
 // https://stackoverflow.com/questions/32981108/how-to-run-a-gulp-task-from-another-task
 
-// Generate ARA without a Table of Contents
+// Generate ARA without a Table of Contents for use iwth pandowc to convert to PDF
 const araNoTOC = () => {
   return Gitdown
-    // ./.README/README.md fails saying "fileName must be an absolute path"
-    // ?? config issue?  I did npm init ...
-
     .readFile(__dirname + '/ARA/ARA-Input.md')
     .writeFile(__dirname + '/ARA.md');
 };
 gulp.task(araNoTOC);
 
 // Generate ARA with TOC
+// This format with Markdown relative links [TOC-text](#toc-text-anchor) and putting
+// anchors in the Markdown <a name="toc-text-anchor"></a>
+// This format does not work for pandoc (anchors) to convert the ARA.md to PDF
 const araTOC = async () => {
   return Gitdown
-    // ./.README/README.md fails saying "fileName must be an absolute path"
-    // ?? config issue?  I did npm init ...
-
-    .readFile(__dirname + '/ARA/ARA-TOC-Input.md')
+    .readFile(__dirname + '/ARA/ARA-Input-TOC.md')
     .writeFile(__dirname + '/ARA-TOC.md');
 };
 gulp.task(araTOC);
@@ -33,8 +30,7 @@ const ara = async () => {
 }
 gulp.task(ara)
 
-// watch changes to the README file (glob) and
-// run gitdown task on changes
+// watch changes to the ARA files (glob) and
 gulp.task('watchARA', () => {
   gulp.watch(['./ARA/*.md'], ara);
 });

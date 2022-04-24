@@ -10,7 +10,7 @@ ARA.pdf: *.md
 	pandoc \
 		--metadata=date:"Revision: $(VERSION)" \
 		--pdf-engine=$(PDF_ENGINE) \
-		-o $@ ARA/*.md
+		-o $@ ARA/ARA-Input.md ARA/ARA-Business.md
 
 ARA-gulp.pdf: *.md
 		pandoc \

@@ -6,7 +6,7 @@ There are many initiatives within our department that require enterprise and dom
 Analyze existing identity and access management options to provide multi-domain identity and access to compartmentalized information.
 
 
-1. Enterprise Integrations & Interoperability:  
+1. Enterprise Integration & Interoperability:  
 Analyze steps to mature our ability create a composable enterprise [Gartner] with an focus on leveraging modern API concepts (API management, API catalog, API developer experience - sandbox, versioning, ...).
 
 

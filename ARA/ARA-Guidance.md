@@ -171,9 +171,20 @@ Aside:  An interesting article on how a CMS is attempting to become MACH-complia
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  Some modern experiences can include:
 - Push Notifications:  Business fit-for-purpose notifications using [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  [oEmbed](https://oembed.com/)
-- Accessibility: Ability to self-identity accessibility needs.
 
-*TODO* Add content from high-side Confluence.
+## Goal: Accessibility
+The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
+
+WCAG 2.1 Level AA (Double-A) implies:
+- Media: Captions are present on live video.  When appropriate, there exists audio description of what’s happening on streaming media.
+- Markup: Ability to resize text without breaking layout.  Language is declared in document.
+- Design: A minimum contrast of 4.5:1 among elements. Heading tags (h1,h2,h3, etc.) are present and emerge from content organically.
+- Forms: If an error is present on a form, the website will: suggest ways to fix it, the user may withdraw and resubmit the form, or the form prompts a confirmation.
+- Navigation: Pages can’t be nested or unintentionally obfuscated unless part of a step-by-step process, such as an application or feed result. Navigation follows a semantic structure and is repeated on pages.
+
+Applications should allow users to self-identity accessibility needs.
+
+*TODO* Add content from high-side Confluence at work.
 
 ## Other - TODO  
 ### Goal: Streaming-Based Application
