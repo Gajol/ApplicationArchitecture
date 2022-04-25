@@ -12,7 +12,7 @@ To demonstrate architecture, c4model, ... (mach model)
 1. Strategy: ....
 
 1. Collaboration Capabilities
-- share, version control, notify, 
+- share, version control, notify,
 
 1. Technology supporting strategy:
   - Departmental : CW, Confluence, GCdocs, Drupal, ...
@@ -395,3 +395,12 @@ Unstructured Knowledge Sharing:
 - lunch & learn presentation series
 - show & tell / demonstrations  
 - peer learning groups : learning (small, L&D type activities), guided learning
+
+
+# References
+*TODO* 37signals - use as support for guidelines
+*TOD* CIO - use as support for guidelines
+
+# Goal: Streaming-Based Application
+*TODO* Streaming-Ready/capable application
+- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3

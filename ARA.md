@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents-djn"></a>
 ## Table of Contents - DJN
-*Document Generation Date: 2022-04-24 18:04*
+*Document Generation Date: 2022-04-24 20:04*
 
 <a name="introduction"></a>
 # Introduction
@@ -172,8 +172,6 @@ The health of our portfolio needs to improve as identified in our Corporate Risk
 Our Information Technology (IT) operates in a complex and constrained environment due to the sensitivity of information managed.  Awareness of the legislative and departmental directives and policies is crucial at the outset of application development.   A common phrase used in DevOps is to *shift-left* quality attributes like security and privacy.   Key non-functionality quality requirements derived from our environment should be considered at the outset (e.g., official languages act, accessibilty act, information management).   The non-functional requirements should be realistic and follow the SMART guidelines (Specific, Measurable, Achievable, Realistic, Time-Bount)[^6].
 
 
-<a name="business-references"></a>
-## References
 [^1]: Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.  - *[ISBN 978-1-4920-4594-6](http://www.worldcat.org/978-1-4920-4594-6)*
 
 [^2]: [Wikipedia - Business Capability Model](https://en.wikipedia.org/wiki/Business_capability_model)
@@ -192,13 +190,13 @@ Our Information Technology (IT) operates in a complex and constrained environmen
 
 There are many initiatives within our department that require enterprise and domain architecture effort to recommend the path forward.
 
+
 1. Identity and Access Management (IdAM):  
-Analyze existing identity and access management options to provide multi-domain identity and access to compartmentalized information.
+Analyze existing identity and access management options to provide multi-domain identity and access to highly  compartmentalized information.
 
 
 1. Enterprise Integration & Interoperability:  
-Analyze steps to mature our ability create a composable enterprise [Gartner] with an focus on leveraging modern API concepts (API management, API catalog, API developer experience - sandbox, versioning, ...).
-
+Analyze steps to mature our ability create a composable enterprise recommended by Gartner.[^1].  This guide recommends creating Reference Architectures which is modular.  The modules can be composed and indepently improved.  "*The framework is based on the ability to assemble and reassemble various digital assets and business elements for real-time adaptability and resilience in the face of uncertainty.*".  The guide identifies the need for business strategy documents, roadmaps and business architecture deliverables to inform reference architecture creation.
 
 1. Enterprise Search:  
 Gartner calls the broader enterprise search an Insight Engine. [Gartner - Critical Capabilities for an Insight Engine](https://www.gartner.com/document/4000026?ref=solrAll&refval=312773615).  [[Gartner Magic Quadrant - Insight Engines]](https://www.gartner.com/document/3999454?ref=ddisp&refval=4000026).  Key terms include; connectors, touch points, integrations.  Popular open-source solutions like Solr and Elastic support API integrations for adding and removing content with structured-metadata.   A key to the success of enterprise search is the ability to structure the index information with metadata.  This enables discover and faceted searches.
@@ -222,6 +220,9 @@ Features of a DXP:
 
 TODO - reference Confluence ITOD Dependencies document
 TODO - Add Enterprise Interoperability to ITOD Dependencies
+
+
+[^1]: [Gartner- Ignition Guide to Building Reference Architectures for a Composable Business](https://www.gartner.com/document/4008989?ref=solrAll&refval=323632540)
 
 
 <a name="application-characteristics-and-styles"></a>
@@ -332,10 +333,7 @@ Some historical examples that have led to this "clone-and-own" culture include:
 1. Enterprise Search
  Enterprise search will definitely help in enabling users to find the information they should have access to.   This is a major long-term initiative.
 
-<a name="application-architecture-guidance-goal-reduce-content-duplication-with-url-design-and-search-references-1"></a>
-### References
-*TODO* 37signals - use as support for guidelines
-*TOD* CIO - use as support for guidelines
+
 
 [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less)
 [...] less means:
@@ -351,119 +349,153 @@ Some historical examples that have led to this "clone-and-own" culture include:
   - less of "The past ruling the future"
 
 
-<a name="application-architecture-guidance-goal-composable-applications"></a>
-## Goal: Composable Applications
+<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications"></a>
+## Goal:  Composable Enterprise, Composable Applications
+A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
 
+1. Domain Drive Design (DDD) / Bounded Context[^11] : DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^12] for details on this concept.
 
+1. *GC Directive on Service and Digital - Standards on APIs*[^13] provides high-level guidance on API design which should be implemented:
+  - Build APIs against the business requirements
+  - Work with the developers who are expected to consume your API
+  - Expose APIs using industry accepted open standards
 
-<a name="application-architecture-guidance-goal-composable-enterprise"></a>
-## Goal:  Composable Enterprise
-1. Integrations / Messaging
-Methodology: DDD / Bounded Context
-!!! : what was the API guideline - do one thing - either a command or a query but not both... - e.g., an API should get() info but or set() info but not both...???where was this.
+1. Decouple User Interfaces :    Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
 
-with an focus on leveraging modern API concepts (API management, API catalog, API developer experience - sandbox, versioning, ...).
+1. APIs, and the consuming services and applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^1][^2][^3].   Architectural patterns to support composable applications include:
 
+  - High Cohesion: *The Fundamentals of Software Architecture*[^4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.    
+  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^14}].  Some common guidelines are:
+    - break system and APIs into encapsulated replacements
+    - minimize any connascence (depedecny relationships between objects) between systems
 
-Applications and the software architect should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^1][^2][^3]
+1. SOLID[^15] Five Design Principles supporting composable applications:
 
-Architectural patterns to support composable applications include:
-1. High Cohesion [ref oreilly - chapt 3 - modularity](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch03.xhtml#idm46005301692696)
-1. Low Coupling  : why persistence layers / data access layers added between application business logic and the database layer.
+  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class. [Reference: 97 Things Every Programmer Should Know #76 - 2010 ](http://www.worldcat.org/isbn/978-0-596-80948-5).
 
-Principles supporting composable applications:
-- SOLID : S - Single Responsibility Principle ([Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993](http://www.worldcat.org/isbn/978-0-13-720871-5))
-
-  ```
-  If a class has more than one responsibility, then the responsibilities become coupled.
+    *If a class has more than one responsibility, then the responsibilities become coupled.
   Changes to one responsibility may impair or inhibit the class' ability to meet the others.
-  This kind of coupling leads to fragile designs that break in unexpected ways when changed.
-  ```
+  This kind of coupling leads to fragile designs that break in unexpected ways when changed.*
 
-1. Decoupled Integration
+  1. O - Open–closed principle - Software entities and components should be open for extension, but closed for modification.
+
+  1. L - Liskov substitution principle - Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. Design by Contract.
+
+  1. I - Interface segregation principle - Many client-specific interfaces are better than one general-purpose interface.
+
+  1. D - Dependency inversion principle - One should "depend upon abstractions, *not* concretions.
+
+
+1. 12-Factor Application - Portability and Resilience
+The *12-Factor Applications*[^16] was defined by Heroku in 2011 as a means to define attriubutes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characterists are good goals for the software architecture to achieve.
+
+  1.  Codebase: There should be exactly one codebase for a deployed service with the codebase being used for many deployments.
+  1.	Dependencies: 	All dependencies should be declared, with no implicit reliance on system tools or libraries.
+  1.	Config:	Configuration that varies between deployments should be stored in the environment.
+  1.	Backing services:	All backing services are treated as attached resources and attached and detached by the execution environment.
+  1.  Build, release, run:	The delivery pipeline should strictly consist of build, release, run.
+  1.	Processes:	Applications should be deployed as one or more stateless processes with persisted data stored on a backing service.
+  1.	Port binding:	Self-contained services should make themselves available to other services by specified ports.
+  1.	Concurrency:	Concurrency is advocated by scaling individual processes.
+  1.	Disposability:	Fast startup and shutdown are advocated for a more robust and resilient system.
+  1.  Dev/Prod parity:	All environments should be as similar as possible.
+  1.	Logs:	Applications should produce logs as event streams and leave the execution environment to aggregate.
+  1.	Admin Processes:	Any needed admin tasks should be kept in source control and packaged with the application.
+
 
 1. Develop an API Strategy
 API's are a critical component of our technology stack.  As applications and technology more-and-more through API's we need to mature our API strategy. The API Strategy should address concerns such as:
-- API Discovery / Catalog:  How can developers discover integrations (*TODO*)
-- API Testing: automated testing, performance testing, stubbed-out testing.
-- API Standards follow [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) guidance, align with [NZ API Guidance & Resources](https://snapshot.ict.govt.nz/guidance-and-resources/standards-compliance/api-standard-and-guidelines/api-standard-and-guidelines-part-b-technical/) & [UK API Technical & Data Standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) guidance.   These are written to support integrated digital processes across departments and agencies; however their guidance is relevant for internal integrations.
-- As we mature with our API Strategy, and enterprise approach to APIs for the following is important:
-  - API Documentation(https://www.gov.uk/guidance/how-to-document-apis): discover, affordances (understand how to use API), integration with API.  Examples: [GOV.UK Frontend](https://frontend.design-system.service.gov.uk/?_ga=2.152481273.1904569585.1642645779-431822512.1642645779#gov-uk-frontend), [Stripe API](https://stripe.com/docs/api), [Mailchimp](https://mailchimp.com/developer/).
-  - API Protocols: Leverage protocols and languages like gRPC and GraphQL for integrations.
-  - API Management: As the number of components, micro-services and integrations grow, the need for an API management layer to provide orchestration and API lifecycle management increases.  API management provides a single point of entry for all connected systems and services.  Helps developers (IT, client-authentication, authentication, business-citizen) develop to APIs.
+  - API Discovery / Catalog:  How can developers discover integrations (*TODO*)
+  - API Testing: automated testing, performance testing, stubbed-out testing.
+  - API Standards follow [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) guidance, align with [NZ API Guidance & Resources](https://snapshot.ict.govt.nz/guidance-and-resources/standards-compliance/api-standard-and-guidelines/api-standard-and-guidelines-part-b-technical/) & [UK API Technical & Data Standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) guidance.   These are written to support integrated digital processes across departments and agencies; however their guidance is relevant for internal integrations.
+
+  - As we mature with our API Strategy, and enterprise approach to APIs for the following is important:
+    - API Documentation(https://www.gov.uk/guidance/how-to-document-apis): discover, affordances (understand how to use API), integration with API.  Examples: [GOV.UK Frontend](https://frontend.design-system.service.gov.uk/?_ga=2.152481273.1904569585.1642645779-431822512.1642645779#gov-uk-frontend), [Stripe API](https://stripe.com/docs/api), [Mailchimp](https://mailchimp.com/developer/).
+    - API Protocols: Leverage protocols and languages like gRPC and GraphQL for integrations.
+    - API Management: As the number of components, micro-services and integrations grow, the need for an API management layer to provide orchestration and API lifecycle management increases.  API management provides a single point of entry for all connected systems and services.  Helps developers (IT, client-authentication, authentication, business-citizen) develop to APIs.
+
 - References:
   - [Wikipedia API Management](https://en.wikipedia.org/wiki/API_management)
   - [Gartner Ensure API Management includes Cloud and Microservices](https://1drv.ms/b/s!AkwXSmFk-_xpgfcsgjdWFv2I6bIgDQ?e=JhBkfi)
   - [Gartner Human Capital Management (HCM) Integration Strategy - 2020](https://1drv.ms/b/s!AkwXSmFk-_xpgfgLA3GjpRzExHTf4A?e=mEUs6W)
-  - [Gartner Choose Integration Technology - 3 Patterns of Integration](https://1drv.ms/b/s!AkwXSmFk-_xpgfgPsUqHLZZfvh4Xqw?e=uweb4l): 1) Data Consistency across platforms (ERP, CRM, Billing, ...), 2) Multistep Process / Pipeline and 3) Composite Service.  Recommends to identify integration needs (Application Integration, Data Integration, API Lifecycle Management, Integration Platform, BPM (Pega, ..), Master Data Management, Message Oriented Middleware (ESB, Streaming, ...), Robotic Process Automation(RPA)
-)
+  - [Gartner Choose Integration Technology - 3 Patterns of Integration](https://1drv.ms/b/s!AkwXSmFk-_xpgfgPsUqHLZZfvh4Xqw?e=uweb4l):
+
+    1) Data Consistency across platforms (ERP, CRM, Billing, ...)
+
+    2) Multistep Process / Pipeline
+
+    3) Composite Service  
+
+    Identify integration needs (Application Integration, Data Integration, API Lifecycle Management, Integration Platform, BPM (Pega, ..), Master Data Management, Message Oriented Middleware (ESB, Streaming, ...), Robotic Process Automation(RPA)
 
 1. Event-Driven Process and Streaming
-Leverage events as a core principle.  Publish these events, subscribe to these events (streaming data flows).
-- event-based data flows for batch and real-time prcoessing
-- messaging-oriented over transactions.  [Interested Video Presentation on Why - Avdi Grimm - Nordic JS No Return: Moving beyond transactions](No Return: Moving beyond transactions)
+Event Driven Architectures are useful for distributed, asynchronous, scalable and performant systems  Leverage events as a core principle.  Publish these events, subscribe to these events (streaming data flows).
+
+  - event-based data flows for batch and real-time processing
+  - message-oriented over transactions.  An interesting video presentation on "*[Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)*".
 
 
 
-<a name="application-architecture-guidance-goal-composable-enterprise-references-2"></a>
-### References
-- [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664) :  Composable ERP is defined as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
+<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-composable-erp-and-hr-enterprise-gartner"></a>
+### Composable ERP and HR Enterprise - Gartner
 
-  Recommendations:
-    - Defining business capabilities through road mapping exercises
-    - Reduce reliance on customizations and proprietary-ERP
-    - Continuously deliver incremental business value in a modular mode
-    - Build an ERP team with wide-ranging skills (~DevOps for ERP); skill development and training
+[Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
 
-
-
-
-<a name="application-architecture-guidance-goal-testable-applications"></a>
-## Goal: Testable Applications
-Testing applications and groups of applications effectively and efficiently requires anlaysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
+The key Gartner recommendations are valid for ERP and HR modernization initiatives:
+- [ ]  Define business capabilities through road mapping exercises
+- [ ]  Reduce reliance on customizations and proprietary-ERP
+- [ ]  Continuously deliver incremental business value in a modular mode
+- [ ]  Build an ERP team with wide-ranging skills (Adopt a DevOps for ERP). Ensure adequate skill development and training
 
 
-- Automation:  Adopt the DevOps of shift-left the integration and quality testing.  The automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests.
+<a name="application-architecture-guidance-goal-testability-testable-applications-and-automation"></a>
+## Goal: Testability, Testable Applications and Automation
 
-- The following principles are copied from Microsoft [[Shift Left Testing]](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable).  
+Testing applications and groups of applications effectively and efficiently requires analysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
+
+
+- Automation:  Adopt the[Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  The following principles are copied from Microsoft Shift Left Testing[^6]
   - Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
   - Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod).
   - Design Product for Testability.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.
   - Test Code is a product.  Treat the software used to automate testcases as code.  The code is version-controlled, and discoverable (i.e., it exists in close proximity to the application code
   - Test ownership follows application software ownership.  The software development team owns creating automated tests for not only unit-tests but boundary/integration tests.  
 
+Recommendation:
+
 - [ ] SDLC Checklist: FY 22/23:  The Quality Assurance Working Group and the SDLC Working Group should consider formalizing the above principles and guidance as part of the new SDLC process, milestones and checklist.
 
-Development methodologies like test driven development (TDD) that predates DevOps.   How they are related is well described in this article - [[TDD for a DevOps World](https://medium.com/swlh/revisiting-test-driven-development-for-a-devops-world-401f1f8d3275)]; summary:
-- TDD is clearly a quality enhancing practice. It’s a really good way to mitigate the risks of defects and to increase the chances of actually the sort of rugged code that needs to withstand change and increasing demands of a DevOps world where expectations are much higher.
+
+Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD abd DevOps are related is well described in the article '*TDD for a DevOps World*[^7] - summary:
+- TDD is clearly a quality enhancing practice. I
+- TDD is a really good way to mitigate the risks of defects
+- TDD is increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
 
 
 <a name="application-architecture-guidance-goal-future-proof-technology"></a>
 ## Goal: Future Proof Technology
-The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.
+The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., )
 
-This manifesto is:
-```
-"Future proof enterprise technology and propel current and future digital experiences"
-```
-The GC CIO provides guidance, and these should be respected.   MACH aligns with the GC directions.
+This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^5]:
+
 - __M__: Micro-Services (Modular): Individual pieces of business functionality that are independently developed, deployed, and managed. A swappable architecture.
 - __A__: API: All functionality is exposed through an API.
 - __C__: Cloud: SaaS that leverages the cloud, beyond storage and hosting, including elastic scaling and automatically updating.
 - __H__: Headless: Front-end presentation is decoupled from back-end logic and channel, programming language, and is framework agnostic.
 
-Our constraints may limit our ability to leverage the cloud.  For on-premise constrained systems DevOps practices to automate updating and Kubernetes autoscaling should be prioritized.
+Our constraints may limit our ability to leverage the cloud.  For on-premise constrained systems DevOps practices to automate updating and Kubernetes auto scaling should be prioritized.
 
 A view of how MACH applies to guidance and industry patterns is below.
 
-|MACH|Description|ARA Guidance|Industry Paterns|
+|MACH|Description|ARA Guidance|Industry Patterns|
 |--|--|--|--|
-|M - Microservices|Individual *pieces* of business functionality can be deployed and manageed|Composable Applications|[Microservices Architecture Style](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch17.xhtml)|
-|A - API|Functionality exposed via API||GC API-First, [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html)|
-|C - Cloud|Leverage SaaS to its fullest including scalability and automation||
-|H - Headless|Decouple front-end from back-end|||
+|M - Microservices|Individual *pieces* of business functionality can be deployed and managed|Composable Applications|[Microservices Architecture Style](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch17.xhtml)|
+|A - API|Functionality exposed via API|Composable Applications|GC API-First, [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html)|
+|C - Cloud|Leverage SaaS to its fullest including scalability and automation|Security / Policy Restricted|Aligned to MACH|
+|H - Headless|Decouple front-end from back-end|Cohesive, Loosely-Coupled Applications, Services and APIs||
 
-Aside:  An interesting article on how a CMS is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack. [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
+Aside:  An interesting article, *MACH Sitecore Architecture*[^10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack.
+
 
 <a name="application-architecture-guidance-goal-user-experience"></a>
 ## Goal: User Experience
@@ -482,22 +514,10 @@ WCAG 2.1 Level AA (Double-A) implies:
 - Forms: If an error is present on a form, the website will: suggest ways to fix it, the user may withdraw and resubmit the form, or the form prompts a confirmation.
 - Navigation: Pages can’t be nested or unintentionally obfuscated unless part of a step-by-step process, such as an application or feed result. Navigation follows a semantic structure and is repeated on pages.
 
-Applications should allow users to self-identity accessibility needs.
+A basic checklist of minimal accessibility requirements are:
 
-*TODO* Add content from high-side Confluence at work.
-
-<a name="application-architecture-guidance-other-todo"></a>
-## Other - TODO
-<a name="application-architecture-guidance-other-todo-goal-streaming-based-application"></a>
-### Goal: Streaming-Based Application
-*TODO* Streaming-Ready/capable application
-- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3
-
-<a name="application-architecture-guidance-goal-gc-alignment"></a>
-## Goal: GC Alignment
-1. [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely
-
-1. [Cloud Adoption](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)
+- [ ] Applications should meet WCAG 2.1 Level AA success criteria.
+- [ ] Applications should allow users to self-identity accessibility needs.
 
 
 
@@ -510,6 +530,29 @@ Applications should allow users to self-identity accessibility needs.
 [^4]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
 
 [^5]: [GC EARB EA Standards and Application Architecture](https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture)
+
+[^6]: [Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)
+
+[^7]: [TDD for a DevOps World](https://medium.com/swlh/revisiting-test-driven-development-for-a-devops-world-401f1f8d3275)
+
+[^8]: [MACH Aliance](https://machalliance.org/)
+
+[^9]: [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664)
+
+[^10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
+
+[^11]: [Martin Fowler - Bounded Context](https://www.martinfowler.com/bliki/BoundedContext.html)
+
+[^12]: [Evans, Eric. Domain-Driven Design: Tackling Complexity in the Heart of Software. Boston: Addison-Wesley, 2004.
+](www.worldcat.org/isbn/978-0321125217)
+
+[^13]: [Appendix B to Directive on Service and Digital - Mandatory Procedures for APIs](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32604)
+
+[^14]: [Wikipedia - Connascense](https://en.wikipedia.org/wiki/Connascence)
+
+[^15]: [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993](http://www.worldcat.org/isbn/978-0-13-720871-5)
+
+[^16]: [12-Factor Application - Heroku - 2011](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
 
 
 
@@ -601,29 +644,29 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 
 
 
-<a name="references-3"></a>
+<a name="references"></a>
 # References
 
 
 
 
-<a name="references-4"></a>
+<a name="references-1"></a>
 # References
 
 
-<a name="references-4-software"></a>
+<a name="references-1-software"></a>
 ## Software
-<a name="references-4-architecture-1"></a>
+<a name="references-1-architecture-1"></a>
 ## Architecture
 - [Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)
 
 [fundamentalsofsoftwarearchitecture]: http://www.worldcat.org/isbn/9781492043454 "Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)]"
 
-<a name="references-4-design"></a>
+<a name="references-1-design"></a>
 ## Design
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)] http://www.worldcat.org/isbn/9780133039900
 
-<a name="references-4-patterns-1"></a>
+<a name="references-1-patterns-1"></a>
 ## Patterns
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
@@ -631,18 +674,20 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
 
-<a name="references-4-principles"></a>
+<a name="references-1-principles"></a>
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
 
-<a name="references-4-government-of-canada"></a>
+<a name="references-1-government-of-canada"></a>
 ## Government of Canada
 - [Digital Standards - Playbook](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Provides aspirational guidance around key themes; Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely.  Also available as GitHub Pages - *[Digital Playbook - GitHub Pages](https://canada-ca.github.io/digital-playbook-guide-numerique/views-vues/standards-normes/en/1-design-with-users.html?wbdisable=true)*.   These digital standards are common standards used internationally and align well with these *[Digital Principles](https://digitalprinciples.org/principles/)*.
 
 - [Directive on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601) : Defines EARB assessment, API use, Network use, IT provisions standards (minimum screen size, .ERP standard, ...)
 
   - [Standards on APIs](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) - also as [Appendix B to Directive on Service and Digital - Mandatory Procedures for APIs](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32604)
+
+  - [GC EARB EA Standards and Application Architecture](https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture)
 
 
 - [Policy on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603) : Defines role of TBS CIO and Deputy Heads.  Defines roles of SSC, PSPC, LAC, CSE departments.
@@ -654,6 +699,8 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 
 
 - [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
+
+- [GC Cloud Adoption Strategy](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)
 
 
 
@@ -680,7 +727,7 @@ To demonstrate architecture, c4model, ... (mach model)
 1. Strategy: ....
 
 1. Collaboration Capabilities
-- share, version control, notify, 
+- share, version control, notify,
 
 1. Technology supporting strategy:
   - Departmental : CW, Confluence, GCdocs, Drupal, ...
@@ -1043,7 +1090,7 @@ Quote : Okta?
 - Kubernetes is a platform to manage, host, scale, and deploy containers.
 - Containers are a portable way of packaging and running code. They are well suited to the microservices pattern, where each microservice can run in its own container.
 
-<a name="to-do-references-5"></a>
+<a name="to-do-references-2"></a>
 ## References
 <a name="to-do-gartner"></a>
 ## Gartner
@@ -1101,6 +1148,17 @@ Unstructured Knowledge Sharing:
 - lunch & learn presentation series
 - show & tell / demonstrations  
 - peer learning groups : learning (small, L&D type activities), guided learning
+
+
+<a name="references-3"></a>
+# References
+*TODO* 37signals - use as support for guidelines
+*TOD* CIO - use as support for guidelines
+
+<a name="goal-streaming-based-application"></a>
+# Goal: Streaming-Based Application
+*TODO* Streaming-Ready/capable application
+- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3
 
 
 <a name="footnotes-test"></a>
