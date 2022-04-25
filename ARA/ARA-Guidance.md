@@ -90,14 +90,20 @@ Some historical examples that have led to this "clone-and-own" culture include:
 ## Goal:  Composable Enterprise, Composable Applications
 A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
 
-1. Domain Drive Design (DDD) / Bounded Context[^11] : DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^12] for details on this concept.
+### Domain Drive Design (DDD) / Bounded Context[^11]
 
-1. *GC Directive on Service and Digital - Standards on APIs*[^13] provides high-level guidance on API design which should be implemented:
+DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^12] for details on this concept.
+
+### GC Directive on Service and Digital - Standards on APIs[^13]
+
+The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
   - Build APIs against the business requirements
   - Work with the developers who are expected to consume your API
   - Expose APIs using industry accepted open standards
 
-1. Decouple User Interfaces :    Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
+### Decouple User Interfaces
+
+Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
 
 1. APIs, and the consuming services and applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^1][^2][^3].   Architectural patterns to support composable applications include:
 
@@ -106,9 +112,11 @@ A composable application is a key pattern in micro-services.   In our current en
     - break system and APIs into encapsulated replacements
     - minimize any connascence (depedecny relationships between objects) between systems
 
-1. SOLID[^15] Five Design Principles supporting composable applications:
+### SOLID[^15]
 
-  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class. [Reference: 97 Things Every Programmer Should Know #76 - 2010 ](http://www.worldcat.org/isbn/978-0-596-80948-5).
+SOLID is five design principles supporting composable applications:
+
+  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class. - *[reference: 97 Things Every Programmer Should Know #76 - 2010 ](http://www.worldcat.org/isbn/978-0-596-80948-5)*.
 
     *If a class has more than one responsibility, then the responsibilities become coupled.
   Changes to one responsibility may impair or inhibit the class' ability to meet the others.
@@ -123,10 +131,11 @@ A composable application is a key pattern in micro-services.   In our current en
   1. D - Dependency inversion principle - One should "depend upon abstractions, *not* concretions.
 
 
-1. 12-Factor Application - Portability and Resilience
-The *12-Factor Applications*[^16] was defined by Heroku in 2011 as a means to define attriubutes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characterists are good goals for the software architecture to achieve.
+### 12-Factor Application
 
-  1.  Codebase: There should be exactly one codebase for a deployed service with the codebase being used for many deployments.
+The *12-Factor Applications*[^16] was defined by Heroku in 2011 as a means to define attributes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characteristics are good goals for the software architecture to achieve.
+
+  1.  Codebase: There should be exactly one codebase for a deployed service with the code base being used for many deployments.
   1.	Dependencies: 	All dependencies should be declared, with no implicit reliance on system tools or libraries.
   1.	Config:	Configuration that varies between deployments should be stored in the environment.
   1.	Backing services:	All backing services are treated as attached resources and attached and detached by the execution environment.
@@ -140,7 +149,8 @@ The *12-Factor Applications*[^16] was defined by Heroku in 2011 as a means to de
   1.	Admin Processes:	Any needed admin tasks should be kept in source control and packaged with the application.
 
 
-1. Develop an API Strategy
+### Develop an API Strategy
+
 API's are a critical component of our technology stack.  As applications and technology more-and-more through API's we need to mature our API strategy. The API Strategy should address concerns such as:
   - API Discovery / Catalog:  How can developers discover integrations (*TODO*)
   - API Testing: automated testing, performance testing, stubbed-out testing.
@@ -165,7 +175,8 @@ API's are a critical component of our technology stack.  As applications and tec
 
     Identify integration needs (Application Integration, Data Integration, API Lifecycle Management, Integration Platform, BPM (Pega, ..), Master Data Management, Message Oriented Middleware (ESB, Streaming, ...), Robotic Process Automation(RPA)
 
-1. Event-Driven Process and Streaming
+### Event-Driven Process and Streaming
+
 Event Driven Architectures are useful for distributed, asynchronous, scalable and performant systems  Leverage events as a core principle.  Publish these events, subscribe to these events (streaming data flows).
 
   - event-based data flows for batch and real-time processing
@@ -233,8 +244,8 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^10] on how a Conte
 
 ## Goal: User Experience
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  Some modern experiences can include:
-- Push Notifications:  Business fit-for-purpose notifications using [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
-- Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  [oEmbed](https://oembed.com/)
+- Push Notifications:  Business fit-for-purpose notifications using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into the Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
+- Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
 ## Goal: Accessibility
 The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
