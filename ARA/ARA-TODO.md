@@ -404,3 +404,27 @@ Unstructured Knowledge Sharing:
 # Goal: Streaming-Based Application
 *TODO* Streaming-Ready/capable application
 - https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3
+
+# Application
+*TODO* Discuss architecture styles and key characteristics - ../Downloads/The SOA Journey_ from Understanding Business to Agile Architecture, and how this leads us to loosely coupled, high-cohesion and encapsulated architectures (EDA & Microservices).
+
+# Guidance
+
+- [Ansoff Growth Matrix - Harvard Business Review 1957](https://en.wikipedia.org/wiki/Ansoff_matrix) : 2X2 matrix with Market and Products with values of Current/New.
+
+|Ansoff Growth Matrix|Market-Current|Market-New|
+|--|--|--|
+|__Product__|__New__|__Current__|
+|__New__|Market Development Strategy: Develop new markets for new products|Diversification Strategy: Develop new products in new markets|
+|__Current__|Market Penetration Strategy: Gain market share with current products and market|Product Development Strategy:  Develop new products in current markets.|
+
+from
+
+[^1] : [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
+
+
+# Patterns
+
+Ball of Mud:
+- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx
+If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.

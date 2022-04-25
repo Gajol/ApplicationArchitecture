@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-04-24 21:04*
+*Document Generation Date: 2022-04-24 22:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -12,9 +12,12 @@
     * [Out-of-Scope](#introduction-out-of-scope)
 * [Definitions](#definitions)
     * [Architecture](#definitions-architecture)
-* [Architecture Characteristics:](#architecture-characteristics)
-    * [Governance:](#architecture-characteristics-governance)
-    * [Technical Debt](#architecture-characteristics-technical-debt)
+        * [Architecture Quotes](#definitions-architecture-architecture-quotes)
+        * [Architecture Style (TOGAF)](#definitions-architecture-architecture-style-togaf)
+        * [Architecture Characteristics:](#definitions-architecture-architecture-characteristics)
+    * [Application](#definitions-application)
+    * [Governance:](#definitions-governance)
+    * [Technical Debt](#definitions-technical-debt)
 * [Business](#business)
     * [Business Capability Model (BCM)](#business-business-capability-model-bcm)
     * [Process Maps, Information Flows and Value Streams](#business-process-maps-information-flows-and-value-streams)
@@ -48,16 +51,21 @@
         * [Concerns of an Architect](#goal-architecture-strategy-creating-a-strategy-concerns-of-an-architect)
         * [Corporate (Enterprise) Context](#goal-architecture-strategy-creating-a-strategy-corporate-enterprise-context)
 * [Patterns](#patterns)
-* [Architecture Styles](#architecture-styles)
-    * [User Experience Patterns](#architecture-styles-user-experience-patterns)
+    * [Application Architecture Styles](#patterns-application-architecture-styles-1)
+        * [Big Ball of Mud - Anti-Pattern:](#patterns-application-architecture-styles-1-big-ball-of-mud-anti-pattern)
+    * [Software Design Patterns](#patterns-software-design-patterns)
+    * [User Interface Patterns](#patterns-user-interface-patterns)
+    * [Other Patterns / Laws](#patterns-other-patterns-laws)
+        * [Business Patterns](#patterns-other-patterns-laws-business-patterns)
+        * [Cloud Design Patterns](#patterns-other-patterns-laws-cloud-design-patterns)
+        * [Microservices Patterns](#patterns-other-patterns-laws-microservices-patterns)
 * [References](#references)
-* [References](#references-1)
-    * [Software](#references-1-software)
-    * [Architecture](#references-1-architecture-1)
-    * [Design](#references-1-design)
-    * [Patterns](#references-1-patterns-1)
-    * [Principles](#references-1-principles)
-    * [Government of Canada](#references-1-government-of-canada)
+    * [Software](#references-software)
+    * [Architecture](#references-architecture-1)
+    * [Design](#references-design)
+    * [Patterns](#references-patterns-1)
+    * [Principles](#references-principles)
+    * [Government of Canada](#references-government-of-canada)
 * [Terms](#terms)
 * [TODO](#todo)
     * [TODO 2022-04](#todo-todo-2022-04)
@@ -84,7 +92,7 @@
     * [Distributed Multi-Security-Zone Business Process](#to-do-distributed-multi-security-zone-business-process)
     * [Terms](#to-do-terms-1)
     * [CNA](#to-do-cna)
-    * [References](#to-do-references-2)
+    * [References](#to-do-references-1)
     * [Gartner](#to-do-gartner)
     * [GC](#to-do-gc)
     * [Wikipedia](#to-do-wikipedia)
@@ -95,8 +103,11 @@
     * [Templates](#to-do-templates)
     * [Goal](#to-do-goal)
     * [Thoughts - Describe TRB / AWG differences](#to-do-thoughts-describe-trb-awg-differences)
-* [References](#references-3)
+* [References](#references-2)
 * [Goal: Streaming-Based Application](#goal-streaming-based-application)
+* [Application](#application-1)
+* [Guidance](#guidance)
+* [Patterns](#patterns-2)
 * [Footnotes - Test](#footnotes-test)
 
 
@@ -149,14 +160,16 @@ Application Architecture (TOGAF)
 : A description of the structure and interaction of the applications as groups of capabilities that provide key business functions and manage the data assets.  [[Application Architect - Wikipedia](https://en.wikipedia.org/wiki/Applications_architecture#Application_architect).]
 
 
-Architecture Quotes
+<a name="definitions-architecture-architecture-quotes"></a>
+### Architecture Quotes
 :
 - *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
 - *Architecture is about the important stuff, whatever that is.* - Ralph Johnson & Martin Fowler
 - *Architecture is the stuff you can’t Google.* - Mark Richards
 
 
-Architecture Style (TOGAF)
+<a name="definitions-architecture-architecture-style-togaf"></a>
+### Architecture Style (TOGAF)
 : The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.
 
 Types of Architecture
@@ -170,8 +183,8 @@ Types of Architecture
   - Privacy Architecture and
   - Data Architecture
 
-<a name="architecture-characteristics"></a>
-# Architecture Characteristics:
+<a name="definitions-architecture-architecture-characteristics"></a>
+### Architecture Characteristics:
 - Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. These are often called non-functional requirements but should be considered as Quality Requirements.  
 
 - An architectural characteristics meets three criteria:
@@ -192,13 +205,32 @@ Types of Architecture
   - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
 
 
-<a name="architecture-characteristics-governance"></a>
+<a name="definitions-application"></a>
+## Application
+
+Application
+: An application, application program or application software is a computer program designed to help people perform an activity
+
+API
+: An application programming interface (API) is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software.  An API may be a web-service call (REST API, ...) or a software library or framework (function calls, methods, libraries, ...).
+
+Front-End & Back-End
+: In simple application terms, the front-end of an application is concerned with the presentation to the end-user. In simple application terms, the back-end interacts with the data access layer.
+
+Web Service
+: An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.
+
+
+<a name="definitions-governance"></a>
 ## Governance:
 
-- Governance, derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+Governance:
+Governance is derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
 
-<a name="architecture-characteristics-technical-debt"></a>
+
+<a name="definitions-technical-debt"></a>
 ## Technical Debt
+
 Technical debt is somewhat misunderstood in within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
 
 - Technical debt (also known as design debt or code debt, but can be also related to other technical endeavours) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. [[Technical Debt - Wikipedia](https://en.wikipedia.org/wiki/Technical_debt)].
@@ -752,29 +784,98 @@ Drive strategy with patterns.
 - user experience patterns
 
 
-<a name="architecture-styles"></a>
-# Architecture Styles
+<a name="patterns-application-architecture-styles-1"></a>
+## Application Architecture Styles
 
-Big Ball of Mud - Anti-Pattern:
-An application without structure, software making direct database calls, with no concerns for deisgn.  In 1997, Brian Foote and Joseph Yoder, coined this the Big Ball of Mud:
+<a name="patterns-application-architecture-styles-1-big-ball-of-mud-anti-pattern"></a>
+### Big Ball of Mud - Anti-Pattern:
 
-```
-A Big Ball of Mud is a haphazardly structured, sprawling, sloppy, duct-tape-and-baling-wire, spaghetti-code jungle. These systems show unmistakable signs of unregulated growth, and repeated, expedient repair. Information is shared promiscuously among distant elements of the system, often to the point where nearly all the important information becomes global or duplicated.
+A "Ball of Mud" application is an application without structure, software making direct database calls, with no concerns for design.  In 1997, Brian Foote and Joseph Yoder, coined this the Big Ball of Mud:
+
+
+  *A Big Ball of Mud is a haphazardly structured, sprawling, sloppy, duct-tape-and-baling-wire, spaghetti-code jungle. These systems show unmistakable signs of unregulated growth, and repeated, expedient repair. Information is shared promiscuously among distant elements of the system, often to the point where nearly all the important information becomes global or duplicated.*
 
 The overall structure of the system may never have been well defined.
--Based Application
-*TODO* Streaming-Ready/capable application
-- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx
-If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.
-```
+
+Our department has an abundance of *ball of mud* applications.
+
+Other useful architecture patterns/styles are described in "Application Architecture Styles".
 
 
-<a name="architecture-styles-user-experience-patterns"></a>
-## User Experience Patterns
+<a name="patterns-software-design-patterns"></a>
+## Software Design Patterns
+In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem within a given context in software design.  There are many great books on software design patterns.  Wikipedia's Software Design Patterns[^3] is a good resource.
+
+Famous design pattern books include:
+
+- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^5]
+- 2003 - Fowler - Patterns of Enterprise Application Architecture[^4]
+
+
+<a name="patterns-user-interface-patterns"></a>
+## User Interface Patterns
 Many patterns exist for a successful user-experience (search, navigation, filters, comparisons, grids, ...)
-- [CodePros - Patterns](http://tympanus.net/codrops/category/blueprints/)
-- [Google Material UI](https://material.io/search.html?q=pattern)
+- [Blueprints by CodePros - Patterns](http://tympanus.net/codrops/category/blueprints/) : The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration.
 
+
+- [Google Material UI](https://material.io/search.html?q=pattern) : An exensive library of UI patterns including [Search](https://material.io/archive/guidelines/patterns/search.html), Navigations, Onboarding and other common use-case patterns.
+
+
+
+
+<a name="patterns-other-patterns-laws"></a>
+## Other Patterns / Laws
+
+<a name="patterns-other-patterns-laws-business-patterns"></a>
+### Business Patterns
+
+Caveman Pattern
+: Reliving old problem experience with new projects even though the risk is extremely low.  (O'Reilly Fundamentals of SW Architecture)
+
+
+Conway's Law
+: Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The ['Inverse Conway Maneuver'](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
+) recommends evolving your team and organizational structure to promote your desired architecture. Ideally your technology architecture will display [isomorphism](https://en.wikipedia.org/wiki/Isomorphism_(sociology)) with your business architecture.
+
+  - Isomorphism : In sociology, an isomorphism is a similarity of the processes or structure of one organization to those of another, be it the result of imitation or independent development under similar constraints.  In our application development context, it implies, that different technology branches, division and sections develop their products under similar constraints.
+
+
+
+<a name="patterns-other-patterns-laws-cloud-design-patterns"></a>
+### Cloud Design Patterns
+
+1. [Microsoft Azure Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
+1. [AWS Prescriptive Guidance Patters](- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)) : 2,000 pages of patterns for cloud, DevOps, communication, testing, governance, IoT, Security, Servierless, Spark, ETL, A/B Testing, Canary Testing, ...
+
+
+<a name="patterns-other-patterns-laws-microservices-patterns"></a>
+### Microservices Patterns
+Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^1] defines many pattnerns, including patterns to migrate from monoliths to microservices.   These patterns include:
+
+  - Strangle Fig Pattern: . You intercept calls to the existing system—in our case the existing monolithic application. If the call to that piece of functionality is implemented in our new microservice architecture, it is redirected to the microservice.
+  - Saga Pattern
+  - References legacy Enterprise Integration Patterns (EIP)[^2]
+  - Backend for Front-End (BFF) : similar to an aggregating gateway, but limited to a single user-interface.  For example have a BFF for an Android vs Applie client.
+
+References for microservices patterns:
+
+  - [Sam Newman Patterns](https://samnewman.io/patterns/)
+  - [Martin Fowler](https://martinfowler.com/)
+
+
+
+
+
+
+[^1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
+
+[^2]: Gregor Hohpe and Bobby Woolf, Enterprise Integration Patterns (Boston: Addison-Wesley, 2003).
+
+[^3]: [Wikepeida - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+[^4}: [Fowler - Patterns of Enterprise Application Architecture](www.worldcat.org/isbn/978-0-321-12742-6) : Fowler, Martin. Patterns of Enterprise Application Architecture. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2003.
+
+[^5]: [Design Patterns: Elements of Reusable Object-Oriented Software](www.worldcat.org/isbn/0-201-63361-2)  : Gamma, Erich, ed. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional Computing Series. Reading, Mass: Addison-Wesley, 1995.
 
 
 
@@ -783,25 +884,19 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 # References
 
 
-
-
-<a name="references-1"></a>
-# References
-
-
-<a name="references-1-software"></a>
+<a name="references-software"></a>
 ## Software
-<a name="references-1-architecture-1"></a>
+<a name="references-architecture-1"></a>
 ## Architecture
 - [Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)
 
 [fundamentalsofsoftwarearchitecture]: http://www.worldcat.org/isbn/9781492043454 "Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)]"
 
-<a name="references-1-design"></a>
+<a name="references-design"></a>
 ## Design
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)] http://www.worldcat.org/isbn/9780133039900
 
-<a name="references-1-patterns-1"></a>
+<a name="references-patterns-1"></a>
 ## Patterns
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
@@ -809,12 +904,12 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
 
-<a name="references-1-principles"></a>
+<a name="references-principles"></a>
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
 
-<a name="references-1-government-of-canada"></a>
+<a name="references-government-of-canada"></a>
 ## Government of Canada
 - [Digital Standards - Playbook](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Provides aspirational guidance around key themes; Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely.  Also available as GitHub Pages - *[Digital Playbook - GitHub Pages](https://canada-ca.github.io/digital-playbook-guide-numerique/views-vues/standards-normes/en/1-design-with-users.html?wbdisable=true)*.   These digital standards are common standards used internationally and align well with these *[Digital Principles](https://digitalprinciples.org/principles/)*.
 
@@ -1225,7 +1320,7 @@ Quote : Okta?
 - Kubernetes is a platform to manage, host, scale, and deploy containers.
 - Containers are a portable way of packaging and running code. They are well suited to the microservices pattern, where each microservice can run in its own container.
 
-<a name="to-do-references-2"></a>
+<a name="to-do-references-1"></a>
 ## References
 <a name="to-do-gartner"></a>
 ## Gartner
@@ -1285,7 +1380,7 @@ Unstructured Knowledge Sharing:
 - peer learning groups : learning (small, L&D type activities), guided learning
 
 
-<a name="references-3"></a>
+<a name="references-2"></a>
 # References
 *TODO* 37signals - use as support for guidelines
 *TOD* CIO - use as support for guidelines
@@ -1294,6 +1389,33 @@ Unstructured Knowledge Sharing:
 # Goal: Streaming-Based Application
 *TODO* Streaming-Ready/capable application
 - https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3
+
+<a name="application-1"></a>
+# Application
+*TODO* Discuss architecture styles and key characteristics - ../Downloads/The SOA Journey_ from Understanding Business to Agile Architecture, and how this leads us to loosely coupled, high-cohesion and encapsulated architectures (EDA & Microservices).
+
+<a name="guidance"></a>
+# Guidance
+
+- [Ansoff Growth Matrix - Harvard Business Review 1957](https://en.wikipedia.org/wiki/Ansoff_matrix) : 2X2 matrix with Market and Products with values of Current/New.
+
+|Ansoff Growth Matrix|Market-Current|Market-New|
+|--|--|--|
+|__Product__|__New__|__Current__|
+|__New__|Market Development Strategy: Develop new markets for new products|Diversification Strategy: Develop new products in new markets|
+|__Current__|Market Penetration Strategy: Gain market share with current products and market|Product Development Strategy:  Develop new products in current markets.|
+
+from
+
+[^1] : [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
+
+
+<a name="patterns-2"></a>
+# Patterns
+
+Ball of Mud:
+- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx
+If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.
 
 
 <a name="footnotes-test"></a>
