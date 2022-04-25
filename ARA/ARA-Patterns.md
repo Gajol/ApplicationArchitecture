@@ -3,6 +3,9 @@
 Patterns are known, proven solutions.  Patterns help us communicate architecture and design to each other.
 
 Drive strategy with patterns.
+
+Patterns are used at different layers and perspectives; such as:
+
 - application architecture patterns
 - software design patterns : Decorator, Factory, Visitor, Pub/Sub, ..
 - user experience patterns

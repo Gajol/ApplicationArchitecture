@@ -436,3 +436,10 @@ If it was, it may have eroded beyond recognition. Programmers with a shred of ar
 Author: Sam Newman
 [Backends for FronEnds Pattern - 2015](https://samnewman.io/patterns/architectural/bff/)
 [Microsoft BE for FE Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends)
+
+
+
+
+# Terms
+
+Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.
