@@ -29,8 +29,8 @@ In software engineering, a software design pattern is a general, reusable soluti
 
 Famous design pattern books include:
 
-- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^5]
-- 2003 - Fowler - Patterns of Enterprise Application Architecture[^4]
+- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^5] : Define a set of creational, behavioural and structural software patterns like builder, factory, facada, bridge, mediator, command and observer.
+- 2003 - Fowler - Patterns of Enterprise Application Architecture[^4] : Defines many categories of patterns including Domain, Data Source, Web Presentation, Distribution, Offline, and Session State Patterns.  Specific patterns include data gateway, model-view-controller, and client session state.
 
 
 ## User Interface Patterns
@@ -80,14 +80,11 @@ References for microservices patterns:
 
 
 
-
-
-
 [^1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
 
 [^2]: Gregor Hohpe and Bobby Woolf, Enterprise Integration Patterns (Boston: Addison-Wesley, 2003).
 
-[^3]: [Wikepeida - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
+[^3]: [Wikipedia - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 [^4]: [Fowler - Patterns of Enterprise Application Architecture](www.worldcat.org/isbn/978-0-321-12742-6) : Fowler, Martin. Patterns of Enterprise Application Architecture. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2003.
 

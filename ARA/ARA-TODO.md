@@ -428,3 +428,11 @@ from
 Ball of Mud:
 - https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx
 If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.
+
+-Based Application
+*TODO* Streaming-Ready/capable application
+
+## Back-End for Front-End
+Author: Sam Newman
+[Backends for FronEnds Pattern - 2015](https://samnewman.io/patterns/architectural/bff/)
+[Microsoft BE for FE Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends)

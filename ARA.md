@@ -249,7 +249,7 @@ TODO - Add Enterprise Interoperability to ITOD Dependencies
 <a name="application-characteristics-and-styles"></a>
 # Application Characteristics and Styles
 
-TOAG defines Architecture Style as *the combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.*.   Depend ding on the desired architecture characteristics and different style will be chosen.
+TOGAF defines Architecture Style as *the combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.*.   Depend ding on the desired architecture characteristics and different style will be chosen.
 
   - The GC Digital Operations Strategic Plan[^2] indicates the priorities for services/applications should be *developing and delivering services that, by design, put users first by being accessible, inclusive, secure and easy to use, and that respect privacy and choice of official language*.   This is mostly focused at services the public consumes, versus, services and applications our internal public servants use.
 
@@ -617,55 +617,60 @@ A basic checklist of minimal accessibility requirements are:
 [^16]: [12-Factor Application - Heroku - 2011](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
 
 
+<a name="creating-an-architecture-strategy-guidance"></a>
+# Creating an Architecture Strategy : Guidance
 
-
-<a name="goal-architecture-strategy"></a>
-# Goal: Architecture Strategy
-
-<a name="goal-architecture-strategy-creating-a-strategy"></a>
-## Creating a Strategy
 The architectural strategy for a program; whether they are renewal efforts (ERP, HR, IM, Collaboration) or greenfield (Case Management) should follow methodologies proven to be successful.
 
-The guidance below is a summary of __Technology Strategy Patterns__. [[Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)]
+The guidance below is a summary of __Technology Strategy Patterns__.[^1]
 
-<a name="goal-architecture-strategy-creating-a-strategy-apply-patterns-to-formulate-a-strategy"></a>
-### Apply Patterns to Formulate a Strategy
+<a name="creating-an-architecture-strategy-guidance-apply-patterns-to-formulate-a-strategy"></a>
+## Apply Patterns to Formulate a Strategy
   - Context:  Trends, Constraints, Stakeholders
   - Understand:  Research, analyse and understand your stakeholders, the environment and the technology landscape.
   - Options: Identify options in the products, services and technology roadmaps
   - Analysis: Analyse options.
   - Recommendation:  Make recommendation and obtain approval.
 
-<a name="goal-architecture-strategy-creating-a-strategy-concerns-of-an-architect"></a>
-### Concerns of an Architect
+<a name="creating-an-architecture-strategy-guidance-concerns-of-an-architect"></a>
+## Concerns of an Architect
   - Contain entropy:  Show a path in a roadmap; garnering support for that vision through communication of guidelines and standards; and creating clarity to ensure efficiency of execution and that you’re doing the right things and doing things right.
   - Specify Non-Functional Requirements / Quality Requirements: The "..ility" list.   scalability, availability, maintainability, manageability, monitorability, extensibility, interoperability, portability, security, accessibility, observability, conformity (laws, directives). [Wikipedia - Quality Attributes](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
   - Determine trade-offs: Identity the least-bad option.
 
 1. Patterns / Tools
-The book goes in significant theory like propositional theory; and the advice is aimed more at the private and political sectors.  The intent is to create an hypothesis and then validate it formally.
+Many tools exist to perform options analysis.  Most start with creating an hypothesis and then validating (or invalidating) it formally.
 
 Some tools suggested are:
 - Logic Tree
 - SWOT - Strengths, Weaknesses, Opportunities and Threats
-- [Ansoff Growth Matrix - Harvard Business Review 1957](https://en.wikipedia.org/wiki/Ansoff_matrix) : 2X2 matrix with Market and Products with values of Current/New.
 
-|Ansoff Growth Matrix|Market-Current|Market-New|
-|--|--|--|
-|__Product__|__New__|__Current__|
-|__New__|Market Development Strategy: Develop new markets for new products|Diversification Strategy: Develop new products in new markets|
-|__Current__|Market Penetration Strategy: Gain market share with current products and market|Product Development Strategy:  Develop new products in current markets.|
 
-<a name="goal-architecture-strategy-creating-a-strategy-corporate-enterprise-context"></a>
-### Corporate (Enterprise) Context
-Position the enterprise for competitive advantage.
-- Stakeholder Alignment : A top-down approach, determine the organization chart, and *determine what leaders at the VP, Senior Director, and/or Director level matter in terms of your strategy*.  Based on the stakeholder matrix determine their influence and impact and associate an approach to working with them (monitor, keep informed, maintain confidence, collaborate).
-- RACI
-- Life-Cycle Stage
-- Value Chain : Identify where value is created (hint: legal, intrastructure, IT, HR, procurement are supporting the value chain.).  Maximize efficiency and value.
-- Growth-Share Matrix
-- Core/Innovation Wave
-- Investment Map
+<a name="creating-an-architecture-strategy-guidance-corporate-enterprise-context"></a>
+## Corporate (Enterprise) Context
+Use design-thinking in the cross-functional project team to arrive at appropriate architectures .  
+The steps in design thinking are:
+1. Define the Problem
+1. Make Observations : determine users, observe user's actions, create personas
+1. Form Insights
+1. Frame Opportunities
+1. Generate Ideas
+1. Refine Solutions
+1. Try Prototypes
+
+<a name="creating-an-architecture-strategy-guidance-corporate-enterprise-context-design-thinking-principles"></a>
+### Design thinking principles:
+1. Human-centricity
+1. Showing, not-telling
+1. Clarification
+1. Experimentation
+1. Collaboration
+
+
+
+[^1]: [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
+
+[^2]: [Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.](www.worldcat.org/isbn/978-1-4920-4594-6)
 
 
 
@@ -703,8 +708,8 @@ In software engineering, a software design pattern is a general, reusable soluti
 
 Famous design pattern books include:
 
-- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^5]
-- 2003 - Fowler - Patterns of Enterprise Application Architecture[^4]
+- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^5] : Define a set of creational, behavioural and structural software patterns like builder, factory, facada, bridge, mediator, command and observer.
+- 2003 - Fowler - Patterns of Enterprise Application Architecture[^4] : Defines many categories of patterns including Domain, Data Source, Web Presentation, Distribution, Offline, and Session State Patterns.  Specific patterns include data gateway, model-view-controller, and client session state.
 
 
 <a name="patterns-user-interface-patterns"></a>
@@ -759,14 +764,11 @@ References for microservices patterns:
 
 
 
-
-
-
 [^1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
 
 [^2]: Gregor Hohpe and Bobby Woolf, Enterprise Integration Patterns (Boston: Addison-Wesley, 2003).
 
-[^3]: [Wikepeida - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
+[^3]: [Wikipedia - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
 
 [^4]: [Fowler - Patterns of Enterprise Application Architecture](www.worldcat.org/isbn/978-0-321-12742-6) : Fowler, Martin. Patterns of Enterprise Application Architecture. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2003.
 
@@ -821,6 +823,12 @@ References for microservices patterns:
 
   - [GC Information Management Guidelines - 1996](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=13832&section=html)
 
+
+- [GC Digital Oprations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html) - by Marc Brouillard a/CIO (pre new CIO).  Highlights accomplishments - EARB, Digital Strategic Plan, Open Government Plan, signed Digital Nations Charter (Denmark, Canada, Israel, Mexico, UK, Estonia, Korea, Uruguay, New Zealand, ...).  1) Modernize IT via APM, 2) Improve Services, 3) Implement Enterprise, 4) Transform the Institution.
+
+  - [GC Digital Strategy](https://www.canada.ca/en/government/system/digital-government/digital-government-strategy.html) - DOSP aligns with digital strategy.
+
+  - [GC Digital Operations Strategic Plan - 2018-2022](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2018-2022.html) : User-centric, open, accessible, modern technology, digital leaders, digitally enabled.
 
 
 - [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
@@ -1311,6 +1319,15 @@ from
 Ball of Mud:
 - https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx
 If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.
+
+-Based Application
+*TODO* Streaming-Ready/capable application
+
+<a name="patterns-2-back-end-for-front-end"></a>
+## Back-End for Front-End
+Author: Sam Newman
+[Backends for FronEnds Pattern - 2015](https://samnewman.io/patterns/architectural/bff/)
+[Microsoft BE for FE Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends)
 
 
 <a name="footnotes-test"></a>
