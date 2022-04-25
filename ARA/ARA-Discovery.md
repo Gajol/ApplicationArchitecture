@@ -8,7 +8,7 @@ Analyze existing identity and access management options to provide multi-domain 
 
 
 1. Enterprise Integration & Interoperability:  
-Analyze steps to mature our ability create a composable enterprise recommended by Gartner.[^1].  This guide recommends creating Reference Architectures which is modular.  The modules can be composed and indepently improved.  "*The framework is based on the ability to assemble and reassemble various digital assets and business elements for real-time adaptability and resilience in the face of uncertainty.*".  The guide identifies the need for business strategy documents, roadmaps and business architecture deliverables to inform reference architecture creation.
+Analyze steps to mature our ability create a composable enterprise recommended by Gartner.[^Discovery-1].  This guide recommends creating Reference Architectures which is modular.  The modules can be composed and indepently improved.  "*The framework is based on the ability to assemble and reassemble various digital assets and business elements for real-time adaptability and resilience in the face of uncertainty.*".  The guide identifies the need for business strategy documents, roadmaps and business architecture deliverables to inform reference architecture creation.
 
 1. Enterprise Search:  
 Gartner calls the broader enterprise search an Insight Engine. [Gartner - Critical Capabilities for an Insight Engine](https://www.gartner.com/document/4000026?ref=solrAll&refval=312773615).  [[Gartner Magic Quadrant - Insight Engines]](https://www.gartner.com/document/3999454?ref=ddisp&refval=4000026).  Key terms include; connectors, touch points, integrations.  Popular open-source solutions like Solr and Elastic support API integrations for adding and removing content with structured-metadata.   A key to the success of enterprise search is the ability to structure the index information with metadata.  This enables discover and faceted searches.
@@ -34,4 +34,4 @@ TODO - reference Confluence ITOD Dependencies document
 TODO - Add Enterprise Interoperability to ITOD Dependencies
 
 
-[^1]: [Gartner- Ignition Guide to Building Reference Architectures for a Composable Business](https://www.gartner.com/document/4008989?ref=solrAll&refval=323632540)
+[^Discovery-1]: [Gartner- Ignition Guide to Building Reference Architectures for a Composable Business](https://www.gartner.com/document/4008989?ref=solrAll&refval=323632540)

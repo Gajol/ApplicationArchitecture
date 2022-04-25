@@ -18,7 +18,7 @@ In cooperation with the business, business governance and other stakeholders dev
 
 1. Reuse / Buy / Build.   
 
-  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^5].   The following priorities for options analysis:
+  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5].   The following priorities for options analysis:
 
   - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
   - Buy: Buy solutions and integrate into our enterprise architecture
@@ -90,11 +90,11 @@ Some historical examples that have led to this "clone-and-own" culture include:
 ## Goal:  Composable Enterprise, Composable Applications
 A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
 
-### Domain Drive Design (DDD) / Bounded Context[^11]
+### Domain Drive Design (DDD) / Bounded Context[^Guidance-11]
 
-DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^12] for details on this concept.
+DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
 
-### GC Directive on Service and Digital - Standards on APIs[^13]
+### GC Directive on Service and Digital - Standards on APIs[^Guidance-13]
 
 The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
   - Build APIs against the business requirements
@@ -105,14 +105,14 @@ The Direcitve on Service and Digial provides high-level guidance on API design w
 
 Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
 
-1. APIs, and the consuming services and applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^1][^2][^3].   Architectural patterns to support composable applications include:
+1. APIs, and the consuming services and applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^Guidance-1][^Guidance-2][^Guidance-3].   Architectural patterns to support composable applications include:
 
-  - High Cohesion: *The Fundamentals of Software Architecture*[^4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.    
-  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^14}].  Some common guidelines are:
+  - High Cohesion: *The Fundamentals of Software Architecture*[^Guidance-4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.    
+  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14}].  Some common guidelines are:
     - break system and APIs into encapsulated replacements
     - minimize any connascence (depedecny relationships between objects) between systems
 
-### SOLID[^15]
+### SOLID[^Guidance-15]
 
 SOLID is five design principles supporting composable applications:
 
@@ -133,7 +133,7 @@ SOLID is five design principles supporting composable applications:
 
 ### 12-Factor Application
 
-The *12-Factor Applications*[^16] was defined by Heroku in 2011 as a means to define attributes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characteristics are good goals for the software architecture to achieve.
+The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a means to define attributes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characteristics are good goals for the software architecture to achieve.
 
   1.  Codebase: There should be exactly one codebase for a deployed service with the code base being used for many deployments.
   1.	Dependencies: 	All dependencies should be declared, with no implicit reliance on system tools or libraries.
@@ -186,7 +186,7 @@ Event Driven Architectures are useful for distributed, asynchronous, scalable an
 
 ### Composable ERP and HR Enterprise - Gartner
 
-[Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
+[Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^Guidance-9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
 
 The key Gartner recommendations are valid for ERP and HR modernization initiatives:
 - [ ]  Define business capabilities through road mapping exercises
@@ -200,7 +200,7 @@ The key Gartner recommendations are valid for ERP and HR modernization initiativ
 Testing applications and groups of applications effectively and efficiently requires analysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
 
 
-- Automation:  Adopt the[Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  The following principles are copied from Microsoft Shift Left Testing[^6]
+- Automation:  Adopt the[Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]
   - Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
   - Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod).
   - Design Product for Testability.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.
@@ -212,7 +212,7 @@ Recommendation:
 - [ ] SDLC Checklist: FY 22/23:  The Quality Assurance Working Group and the SDLC Working Group should consider formalizing the above principles and guidance as part of the new SDLC process, milestones and checklist.
 
 
-Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD abd DevOps are related is well described in the article '*TDD for a DevOps World*[^7] - summary:
+Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD abd DevOps are related is well described in the article '*TDD for a DevOps World*[^Guidance-7] - summary:
 - TDD is clearly a quality enhancing practice. I
 - TDD is a really good way to mitigate the risks of defects
 - TDD is increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
@@ -221,7 +221,7 @@ Adopt development methodologies like test driven development (TDD) that predates
 ## Goal: Future Proof Technology
 The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., )
 
-This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^5]:
+This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^Guidance-5]:
 
 - __M__: Micro-Services (Modular): Individual pieces of business functionality that are independently developed, deployed, and managed. A swappable architecture.
 - __A__: API: All functionality is exposed through an API.
@@ -239,7 +239,7 @@ A view of how MACH applies to guidance and industry patterns is below.
 |C - Cloud|Leverage SaaS to its fullest including scalability and automation|Security / Policy Restricted|Aligned to MACH|
 |H - Headless|Decouple front-end from back-end|Cohesive, Loosely-Coupled Applications, Services and APIs||
 
-Aside:  An interesting article, *MACH Sitecore Architecture*[^10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack.
+Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack.
 
 
 ## Goal: User Experience
@@ -264,35 +264,35 @@ A basic checklist of minimal accessibility requirements are:
 
 
 
-[^1]: [Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
+[^Guidance-1]: [Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
 
-[^2]: [Amazon-AWS Bezos API's - Expose Data and Functionality through service interfaces](https://blog.apievangelist.com/2015/07/09/the-new-aws-api-gateway-anyone-who-does-not-do-this-will-be-fired-thank-you-have-a-nice-day-jeff-bezos/)
+[^Guidance-2]: [Amazon-AWS Bezos API's - Expose Data and Functionality through service interfaces](https://blog.apievangelist.com/2015/07/09/the-new-aws-api-gateway-anyone-who-does-not-do-this-will-be-fired-thank-you-have-a-nice-day-jeff-bezos/)
 
-[^3]: [Mastering API Architecture](www.worldcat.org/isbn/978-1492090632)
+[^Guidance-3]: [Mastering API Architecture](www.worldcat.org/isbn/978-1492090632)
 
-[^4]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
+[^Guidance-4]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
 
-[^5]: [GC EARB EA Standards and Application Architecture](https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture)
+[^Guidance-5]: [GC EARB EA Standards and Application Architecture](https://wiki.gccollab.ca/GC_Enterprise_Architecture/Standards/Application_Architecture)
 
-[^6]: [Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)
+[^Guidance-6]: [Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)
 
-[^7]: [TDD for a DevOps World](https://medium.com/swlh/revisiting-test-driven-development-for-a-devops-world-401f1f8d3275)
+[^Guidance-7]: [TDD for a DevOps World](https://medium.com/swlh/revisiting-test-driven-development-for-a-devops-world-401f1f8d3275)
 
-[^8]: [MACH Aliance](https://machalliance.org/)
+[^Guidance-8]: [MACH Aliance](https://machalliance.org/)
 
-[^9]: [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664)
+[^Guidance-9]: [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664)
 
-[^10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
+[^Guidance-10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
 
-[^11]: [Martin Fowler - Bounded Context](https://www.martinfowler.com/bliki/BoundedContext.html)
+[^Guidance-11]: [Martin Fowler - Bounded Context](https://www.martinfowler.com/bliki/BoundedContext.html)
 
-[^12]: [Evans, Eric. Domain-Driven Design: Tackling Complexity in the Heart of Software. Boston: Addison-Wesley, 2004.
+[^Guidance-12]: [Evans, Eric. Domain-Driven Design: Tackling Complexity in the Heart of Software. Boston: Addison-Wesley, 2004.
 ](www.worldcat.org/isbn/978-0321125217)
 
-[^13]: [Appendix B to Directive on Service and Digital - Mandatory Procedures for APIs](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32604)
+[^Guidance-13]: [Appendix B to Directive on Service and Digital - Mandatory Procedures for APIs](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32604)
 
-[^14]: [Wikipedia - Connascense](https://en.wikipedia.org/wiki/Connascence)
+[^Guidance-14]: [Wikipedia - Connascense](https://en.wikipedia.org/wiki/Connascence)
 
-[^15]: [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993](http://www.worldcat.org/isbn/978-0-13-720871-5)
+[^Guidance-15]: [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
-[^16]: [12-Factor Application - Heroku - 2011](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
+[^Guidance-16]: [12-Factor Application - Heroku - 2011](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
