@@ -11,12 +11,12 @@ SBOM : A Software Bill of Materials is a list of the components that form a piec
 - Information about the versions, licensing status and patch status of these components.
 
 
-The USA has identified SBOM as a key factor in securing the software supply chain.  The *[USA Cybersecurtiy & Infastructure Security Agency -CISA SBOM](https://www.cisa.gov/sbom)* states *SBOM has emerged as a key building block in software security and software supply chain risk management.*.  This is supported in the *[USA Executive Order to Improve the Nation's Cybersecurity](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/)*, section 4, *providing a purchaser a Software Bill of Materials (SBOM) for each product directly or by publishing it on a public website;*
+The USA has identified SBOM as a key factor in securing the software supply chain.  The *[USA Cybersecurity & Infrastructure Security Agency -CISA SBOM](https://www.cisa.gov/sbom)* states *SBOM has emerged as a key building block in software security and software supply chain risk management.*.  This is supported in the *[USA Executive Order to Improve the Nation's Cybersecurity](https://www.whitehouse.gov/briefing-room/presidential-actions/2021/05/12/executive-order-on-improving-the-nations-cybersecurity/)*, section 4, *providing a purchaser a Software Bill of Materials (SBOM) for each product directly or by publishing it on a public website;*
 
 ## Creating Software
 - jFrog Artifactory, [*Best Practices for Software Bill of Materials*](https://jfrog.com/knowledge-base/best-practices-for-software-bill-of-materials-sbom-management/) include:
   - Use a consistent SBOM format
-  - Automate SBOM creation; generate the SBOM as part of the CI/CD process.  Cytographically sign the SBOM.
+  - Automate SBOM creation; generate the SBOM as part of the CI/CD process.  Crytographically sign the SBOM.
   - Update your SBOM with each release
   - Include full metadata in your SBOM
   - Provide SBOMs for SaaS
@@ -30,12 +30,12 @@ SBOM : A Software Bill of Materials is a list of the components that form a piec
 
 
 ## Consuming Software
-As an enterprise IT consumer of many software products understanding how to acquire, manage and use these SBOMs is equally important.  There are several playbooks available to help us formulate a strategy.  The [USA NTIA Software Consumers SBOM Management and Use](https://www.ntia.gov/files/ntia/publications/software_consumers_sbom_acquisition_management_and_use_-_final.pdf)
-- acquisition : two options; datafeeds into workflows (structured), and, archive store of SBOM files (e.g., in ECM)
+As an enterprise IT consumer of many software products understanding how to acquire, manage and use these SBOMs is equally important.  There are several playbooks available to help us formulate a strategy.  The [*USA NTIA Software Consumers SBOM Management and Use*](https://www.ntia.gov/files/ntia/publications/software_consumers_sbom_acquisition_management_and_use_-_final.pdf) identifies the following processes for consuming software:
+- acquisition : two options; data feeds into workflows (structured), and, archive store of SBOM files (e.g., in ECM)
 - software entity resolution : two options; automated via build and ci/cd pipeline, and, two human-entered
-- chain of custody and software types: knowing exactly where software came from : was the software sourced as a bindary, locally built, ..
+- chain of custody and software types: knowing exactly where software came from : was the software sourced as a binary, locally built, ..
 
-  *For high-assurance systems, and environments, software transparency requires either that the point of origin for a software c omponent be identified, or that the customer’s default assumption for vulnerability management is that designated open source components have been included in the supplier deliverable as binary packages and therefore may contain thirdparty libraries and r untime dependencies as packaging inclusions that are not present in the open source repository to which the binary package manager refers as the compiled component.*
+  *For high-assurance systems, and environments, software transparency requires either that the point of origin for a software component be identified, or that the customer’s default assumption for vulnerability management is that designated open source components have been included in the supplier deliverable as binary packages and therefore may contain third-party libraries and run-time dependencies as packaging inclusions that are not present in the open source repository to which the binary package manager refers as the compiled component.*
 
 - dependency and transitive dependency resolution.
 
