@@ -22,7 +22,11 @@ This document is intended for:
 - technical development team
 
 ## Out-of-Scope
-- This document is neither a vision, nor a strategy nor a roadmap document.   
+- This document is not intended to be a strategy development document.   The ARA is not intended to be a vision, plan or actions towards such a vision.
+- The ARA is intended to align and support the many strategies, visions and roadmaps that exist within our department and branch.
+
+
+neither a vision, nor a strategy nor a roadmap document.   
 - This document is neither nor a department culture nor an project management and development process document.
   - Strategy: What we will and will not do, and how govern resources.
   - Culture: People, Processes (Organization / Teams), Communication
