@@ -12,7 +12,7 @@ To demonstrate architecture, c4model, ... (mach model)
 1. Strategy: ....
 
 1. Collaboration Capabilities
-- share, version control, notify, 
+- share, version control, notify,
 
 1. Technology supporting strategy:
   - Departmental : CW, Confluence, GCdocs, Drupal, ...
@@ -395,3 +395,51 @@ Unstructured Knowledge Sharing:
 - lunch & learn presentation series
 - show & tell / demonstrations  
 - peer learning groups : learning (small, L&D type activities), guided learning
+
+
+# References
+*TODO* 37signals - use as support for guidelines
+*TOD* CIO - use as support for guidelines
+
+# Goal: Streaming-Based Application
+*TODO* Streaming-Ready/capable application
+- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx?PageNum=3
+
+# Application
+*TODO* Discuss architecture styles and key characteristics - ../Downloads/The SOA Journey_ from Understanding Business to Agile Architecture, and how this leads us to loosely coupled, high-cohesion and encapsulated architectures (EDA & Microservices).
+
+# Guidance
+
+- [Ansoff Growth Matrix - Harvard Business Review 1957](https://en.wikipedia.org/wiki/Ansoff_matrix) : 2X2 matrix with Market and Products with values of Current/New.
+
+|Ansoff Growth Matrix|Market-Current|Market-New|
+|--|--|--|
+|__Product__|__New__|__Current__|
+|__New__|Market Development Strategy: Develop new markets for new products|Diversification Strategy: Develop new products in new markets|
+|__Current__|Market Penetration Strategy: Gain market share with current products and market|Product Development Strategy:  Develop new products in current markets.|
+
+from
+
+[^1] : [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
+
+
+# Patterns
+
+Ball of Mud:
+- https://www.dbta.com/Editorial/Think-About-It/Building-a-Modern-Data-Architecture-for-the-2020s-148239.aspx
+If it was, it may have eroded beyond recognition. Programmers with a shred of architectural sensibility shun these quagmires. Only those who are unconcerned about architecture, and, perhaps, are comfortable with the inertia of the day-to-day chore of patching the holes in these failing dikes, are content to work on such systems.
+
+-Based Application
+*TODO* Streaming-Ready/capable application
+
+## Back-End for Front-End
+Author: Sam Newman
+[Backends for FronEnds Pattern - 2015](https://samnewman.io/patterns/architectural/bff/)
+[Microsoft BE for FE Pattern](https://docs.microsoft.com/en-us/azure/architecture/patterns/backends-for-frontends)
+
+
+
+
+# Terms
+
+Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.

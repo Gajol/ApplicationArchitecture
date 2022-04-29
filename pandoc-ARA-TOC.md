@@ -1,8 +1,12 @@
 <a name="application-reference-architecture"></a>
+
+
 # Application Reference Architecture
 
 
 <a name="application-reference-architecture-table-of-contents"></a>
+
+
 ## Table of Contents
 *Document Generation Date: 2022-04-24 22:04*
 
@@ -69,6 +73,8 @@
 
 
 <a name="introduction"></a>
+
+
 # Introduction
 This document outlines the Application Reference Architecture (ARA) as it applies to our department.  
 
@@ -93,6 +99,8 @@ This document is intended for:
 - technical development team
 
 <a name="introduction-out-of-scope"></a>
+
+
 ## Out-of-Scope
 - This document is neither a vision, nor a strategy nor a roadmap document.   
 - This document is neither nor a department culture nor an project management and development process document.
@@ -102,8 +110,12 @@ This document is intended for:
 
 
 <a name="definitions"></a>
+
+
 # Definitions
 <a name="definitions-architecture"></a>
+
+
 ## Architecture
 
 Application Architecture (GC EARB)
@@ -118,6 +130,8 @@ Application Architecture (TOGAF)
 
 
 <a name="definitions-architecture-architecture-quotes"></a>
+
+
 ### Architecture Quotes
 :
 - *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
@@ -126,6 +140,8 @@ Application Architecture (TOGAF)
 
 
 <a name="definitions-architecture-architecture-style-togaf"></a>
+
+
 ### Architecture Style (TOGAF)
 : The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.
 
@@ -141,6 +157,8 @@ Types of Architecture
   - Data Architecture
 
 <a name="definitions-architecture-architecture-characteristics"></a>
+
+
 ### Architecture Characteristics:
 - Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. These are often called non-functional requirements but should be considered as Quality Requirements.  
 
@@ -163,6 +181,8 @@ Types of Architecture
 
 
 <a name="definitions-application"></a>
+
+
 ## Application
 
 Application
@@ -179,6 +199,8 @@ Web Service
 
 
 <a name="definitions-governance"></a>
+
+
 ## Governance:
 
 Governance:
@@ -186,6 +208,8 @@ Governance is derived from the Greek word kubernan "*to steer*" is an important 
 
 
 <a name="definitions-technical-debt"></a>
+
+
 ## Technical Debt
 
 Technical debt is somewhat misunderstood in within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
@@ -211,6 +235,8 @@ Technical debt is somewhat misunderstood in within IT and our department.   Tech
 
 
 <a name="business"></a>
+
+
 # Business
 
 The applications we develop support business models.  When an application is part of a business transformation or digital transformation initiative it is important to have a clear understanding of the businesses strategic direction.   Some common artifacts to communicate this are[^Business-1]:
@@ -224,6 +250,8 @@ The applications we develop support business models.  When an application is par
 1. Business Architecture in Applications : What business strategy does this application map to?  Why does this project/application matter?  What new capabilities are you creating?  What major uses cases are performed?  Who are the audiences?
 
 <a name="business-business-capability-model-bcm"></a>
+
+
 ## Business Capability Model (BCM)
 
 A common way for the business to communicate what the organization needs and does is through a business capability model (BCM)[^Business-2]. There are many uses for a BCM.   Product owners can use a BCM to drive convergence in technology and business processes to enterprise standards.   Regular review of aligning the BCM with the department strategy and vision can allow enterprise architects and business architects to identify and prioritize the corresponding IT initiatives with business needs.  Internal committees, working groups and forums can collaborate to identify reusable business process and push for adoption across the organization.  Business capabilities, processes, information flows and value streams should be assessed routinely based on efficiency, priority, and complexity.
@@ -231,6 +259,8 @@ A common way for the business to communicate what the organization needs and doe
 Our department has a draft Business Capabiltiy Map (BCM) describing the main capabilities required to fulfill our mandate.   To help support the business our technology teams provide a broad range of IT capabilities.   Our IT department supports many networks both nationally and internationally.  Within the IT department, our software development team supports an extensive catalog of applications.
 
 <a name="business-process-maps-information-flows-and-value-streams"></a>
+
+
 ## Process Maps, Information Flows and Value Streams
 Information Flows [^Business-4] is a business view of how information flows between business responsibility centres. *The main purpose of an information flow diagram is so that sources that send and receive information can be displayed neatly and analysed.*.  
 
@@ -240,6 +270,8 @@ A Process Map[^Business-5] defines the standard business process, and who is res
 
 
 <a name="business-business-governance"></a>
+
+
 ## Business Governance
 
 The health of our portfolio needs to improve as identified in our Corporate Risk Profile (CRP).   Several leadership principles have been established over the years to provide guidance when addressing business needs.   Key principles relating to governing and directing architecture and application design are:
@@ -251,6 +283,8 @@ The health of our portfolio needs to improve as identified in our Corporate Risk
 1. __Business Architecture and Artifacts__:  The business plays a key role in shaping the application.  Business architecture (capabilities, value streams, information flows, organization model) are essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.  As our department adapts agile methodologies, incremental value in the project can be obtained by the agile team including maturing business artefacts as part of the product backlog.
 
 <a name="business-business-and-technology-environment"></a>
+
+
 ## Business and Technology Environment
 Our Information Technology (IT) operates in a complex and constrained environment due to the sensitivity of information managed.  Awareness of the legislative and departmental directives and policies is crucial at the outset of application development.   A common phrase used in DevOps is to *shift-left* quality attributes like security and privacy.   Key non-functionality quality requirements derived from our environment should be considered at the outset (e.g., official languages act, accessibilty act, information management).   The non-functional requirements should be realistic and follow the SMART guidelines (Specific, Measurable, Achievable, Realistic, Time-Bount)[^Business-6].
 
@@ -269,6 +303,8 @@ Our Information Technology (IT) operates in a complex and constrained environmen
 
 
 <a name="business-discovery"></a>
+
+
 ## Discovery
 
 There are many initiatives within our department that require enterprise and domain architecture effort to recommend the path forward.
@@ -309,18 +345,24 @@ TODO - Add Enterprise Interoperability to ITOD Dependencies
 
 
 <a name="application-characteristics-and-styles"></a>
+
+
 # Application Characteristics and Styles
 
 TOGAF defines Architecture Style as *the combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.*.   Depend ding on the desired architecture characteristics and different style will be chosen.
 
-  - The GC Digital Operations Strategic Plan[^Application-2] indicates the priorities for services/applications should be *developing and delivering services that, by design, put users first by being accessible, inclusive, secure and easy to use, and that respect privacy and choice of official language*.   This is mostly focused at services the public consumes, versus, services and applications our internal public servants use.
+  - The GC Digital Operations Strategic Plan[^2] indicates the priorities for services/applications should be *developing and delivering services that, by design, put users first by being accessible, inclusive, secure and easy to use, and that respect privacy and choice of official language*.   This is mostly focused at services the public consumes, versus, services and applications our internal public servants use.
 
 
 <a name="application-characteristics-and-styles-application-characteristics"></a>
+
+
 ## Application Characteristics
 As part of the analysis and design some high-level characteristics of the application should be assessed.   Some of these attributes may be official documented as part of the project and application development, and others may have to be assumed or derived for requirements.
 
 <a name="application-characteristics-and-styles-application-characteristics-department-application-characteristics"></a>
+
+
 ### Department Application Characteristics
 
 |Attribute|Description|Note|
@@ -332,13 +374,17 @@ As part of the analysis and design some high-level characteristics of the applic
 |Information Business Type|Our department treats operational information different from administrative information.|The distinction is unclear, and there are few guidelines to help projects to help manage this distinction.   Applications are categorized as managing operational or administrative information.  For example, CW is administrative, CWOPS is operational (however only extremely limited operational information is permitted in CWOPS).|
 
 <a name="application-characteristics-and-styles-application-characteristics-quality-non-functional-characteristics"></a>
+
+
 ### Quality / Non-Functional Characteristics
 Identifying the key quality attributes of the system is required to chose an effective architecture style.  Trade-offs between complexity, scalability, observability, reliability and other attributes is required.  No single architecture style is suitable for all applications.
 
 
 <a name="application-characteristics-and-styles-application-architecture-styles"></a>
+
+
 ## Application Architecture Styles
-Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are[^Application-1]:
+Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are[^1]:
 
   - Distributed: Microservices Architecture : pros (reliablity, modularity, elasticity, +++), cons: (cost, complexity, ...)
 
@@ -358,18 +404,22 @@ Architectural style is defined as a set of characteristics and features that mak
 
 
 
-[^Application-1]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
+[^1]: [Fundamentals of Software Architecture](www.worldcat.org/isbn/978-1-4920-4345-4) : Richards, Mark, and Neal Ford. Fundamentals of Software Architecture: An Engineering Approach. First edition. Beijing Boston Farnham Sebastopol Tokyo: O’Reilly, 2020.
 
-[^Application-2]: [GC Digital Oprations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html)
+[^2]: [GC Digital Oprations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html)
 
 
 
 
 <a name="application-architecture-guidance"></a>
+
+
 # Application Architecture Guidance
 
 
 <a name="application-architecture-guidance-goal-reduce-technical-debt"></a>
+
+
 ## Goal:  Reduce Technical Debt
 
 1. Rationalization.
@@ -419,6 +469,8 @@ In cooperation with the business, business governance and other stakeholders dev
 
 
 <a name="application-architecture-guidance-goal-reduce-content-duplication-with-url-design-and-search"></a>
+
+
 ## Goal: Reduce Content Duplication with URL Design and Search
 
 Content (information) is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   
@@ -456,15 +508,21 @@ Some historical examples that have led to this "clone-and-own" culture include:
 
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications"></a>
+
+
 ## Goal:  Composable Enterprise, Composable Applications
 A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-domain-drive-design-ddd-bounded-context-guidance-11"></a>
+
+
 ### Domain Drive Design (DDD) / Bounded Context[^Guidance-11]
 
 DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-gc-directive-on-service-and-digital-standards-on-apis-guidance-13"></a>
+
+
 ### GC Directive on Service and Digital - Standards on APIs[^Guidance-13]
 
 The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
@@ -473,6 +531,8 @@ The Direcitve on Service and Digial provides high-level guidance on API design w
   - Expose APIs using industry accepted open standards
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-decouple-user-interfaces"></a>
+
+
 ### Decouple User Interfaces
 
 Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
@@ -485,6 +545,8 @@ Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a 
     - minimize any connascence (depedecny relationships between objects) between systems
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-solid-guidance-15"></a>
+
+
 ### SOLID[^Guidance-15]
 
 SOLID is five design principles supporting composable applications:
@@ -505,6 +567,8 @@ SOLID is five design principles supporting composable applications:
 
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-factor-application"></a>
+
+
 ### 12-Factor Application
 
 The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a means to define attributes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characteristics are good goals for the software architecture to achieve.
@@ -524,6 +588,8 @@ The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a me
 
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-develop-an-api-strategy"></a>
+
+
 ### Develop an API Strategy
 
 API's are a critical component of our technology stack.  As applications and technology more-and-more through API's we need to mature our API strategy. The API Strategy should address concerns such as:
@@ -551,6 +617,8 @@ API's are a critical component of our technology stack.  As applications and tec
     Identify integration needs (Application Integration, Data Integration, API Lifecycle Management, Integration Platform, BPM (Pega, ..), Master Data Management, Message Oriented Middleware (ESB, Streaming, ...), Robotic Process Automation(RPA)
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-event-driven-process-and-streaming"></a>
+
+
 ### Event-Driven Process and Streaming
 
 Event Driven Architectures are useful for distributed, asynchronous, scalable and performant systems  Leverage events as a core principle.  Publish these events, subscribe to these events (streaming data flows).
@@ -561,6 +629,8 @@ Event Driven Architectures are useful for distributed, asynchronous, scalable an
 
 
 <a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-composable-erp-and-hr-enterprise-gartner"></a>
+
+
 ### Composable ERP and HR Enterprise - Gartner
 
 [Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^Guidance-9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
@@ -573,6 +643,8 @@ The key Gartner recommendations are valid for ERP and HR modernization initiativ
 
 
 <a name="application-architecture-guidance-goal-testability-testable-applications-and-automation"></a>
+
+
 ## Goal: Testability, Testable Applications and Automation
 
 Testing applications and groups of applications effectively and efficiently requires analysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
@@ -597,6 +669,8 @@ Adopt development methodologies like test driven development (TDD) that predates
 
 
 <a name="application-architecture-guidance-goal-future-proof-technology"></a>
+
+
 ## Goal: Future Proof Technology
 The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., )
 
@@ -622,12 +696,16 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on ho
 
 
 <a name="application-architecture-guidance-goal-user-experience"></a>
+
+
 ## Goal: User Experience
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  Some modern experiences can include:
 - Push Notifications:  Business fit-for-purpose notifications using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into the Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
 <a name="application-architecture-guidance-goal-accessibility"></a>
+
+
 ## Goal: Accessibility
 The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
 
@@ -680,6 +758,8 @@ A basic checklist of minimal accessibility requirements are:
 
 
 <a name="creating-an-architecture-strategy-guidance"></a>
+
+
 # Creating an Architecture Strategy : Guidance
 
 The architectural strategy for a program; whether they are renewal efforts (ERP, HR, IM, Collaboration) or greenfield (Case Management) should follow methodologies proven to be successful.
@@ -687,6 +767,8 @@ The architectural strategy for a program; whether they are renewal efforts (ERP,
 The guidance below is a summary of __Technology Strategy Patterns__.[^1]
 
 <a name="creating-an-architecture-strategy-guidance-apply-patterns-to-formulate-a-strategy"></a>
+
+
 ## Apply Patterns to Formulate a Strategy
   - Context:  Trends, Constraints, Stakeholders
   - Understand:  Research, analyse and understand your stakeholders, the environment and the technology landscape.
@@ -695,6 +777,8 @@ The guidance below is a summary of __Technology Strategy Patterns__.[^1]
   - Recommendation:  Make recommendation and obtain approval.
 
 <a name="creating-an-architecture-strategy-guidance-concerns-of-an-architect"></a>
+
+
 ## Concerns of an Architect
   - Contain entropy:  Show a path in a roadmap; garnering support for that vision through communication of guidelines and standards; and creating clarity to ensure efficiency of execution and that you’re doing the right things and doing things right.
   - Specify Non-Functional Requirements / Quality Requirements: The "..ility" list.   scalability, availability, maintainability, manageability, monitorability, extensibility, interoperability, portability, security, accessibility, observability, conformity (laws, directives). [Wikipedia - Quality Attributes](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
@@ -709,6 +793,8 @@ Some tools suggested are:
 
 
 <a name="creating-an-architecture-strategy-guidance-corporate-enterprise-context"></a>
+
+
 ## Corporate (Enterprise) Context
 Use design-thinking in the cross-functional project team to arrive at appropriate architectures .  
 The steps in design thinking are:
@@ -721,6 +807,8 @@ The steps in design thinking are:
 1. Try Prototypes
 
 <a name="creating-an-architecture-strategy-guidance-corporate-enterprise-context-design-thinking-principles"></a>
+
+
 ### Design thinking principles:
 1. Human-centricity
 1. Showing, not-telling
@@ -737,6 +825,8 @@ The steps in design thinking are:
 
 
 <a name="patterns"></a>
+
+
 # Patterns
 Patterns are known, proven solutions.  Patterns help us communicate architecture and design to each other.
 
@@ -750,9 +840,13 @@ Patterns are used at different layers and perspectives; such as:
 
 
 <a name="patterns-application-architecture-styles-1"></a>
+
+
 ## Application Architecture Styles
 
 <a name="patterns-application-architecture-styles-1-big-ball-of-mud-anti-pattern"></a>
+
+
 ### Big Ball of Mud - Anti-Pattern:
 
 A "Ball of Mud" application is an application without structure, software making direct database calls, with no concerns for design.  In 1997, Brian Foote and Joseph Yoder, coined this the Big Ball of Mud:
@@ -768,6 +862,8 @@ Other useful architecture patterns/styles are described in "Application Architec
 
 
 <a name="patterns-software-design-patterns"></a>
+
+
 ## Software Design Patterns
 In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem within a given context in software design.  There are many great books on software design patterns.  Wikipedia's Software Design Patterns[^3] is a good resource.
 
@@ -778,6 +874,8 @@ Famous design pattern books include:
 
 
 <a name="patterns-user-interface-patterns"></a>
+
+
 ## User Interface Patterns
 Many patterns exist for a successful user-experience (search, navigation, filters, comparisons, grids, ...)
 - [Blueprints by CodePros - Patterns](http://tympanus.net/codrops/category/blueprints/) : The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration.
@@ -789,9 +887,13 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 
 
 <a name="patterns-other-patterns-laws"></a>
+
+
 ## Other Patterns / Laws
 
 <a name="patterns-other-patterns-laws-business-patterns"></a>
+
+
 ### Business Patterns
 
 Caveman Pattern
@@ -807,6 +909,8 @@ Conway's Law
 
 
 <a name="patterns-other-patterns-laws-cloud-design-patterns"></a>
+
+
 ### Cloud Design Patterns
 
 1. [Microsoft Azure Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
@@ -814,6 +918,8 @@ Conway's Law
 
 
 <a name="patterns-other-patterns-laws-microservices-patterns"></a>
+
+
 ### Microservices Patterns
 Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^1] defines many pattnerns, including patterns to migrate from monoliths to microservices.   These patterns include:
 
@@ -843,22 +949,32 @@ References for microservices patterns:
 
 
 <a name="references"></a>
+
+
 # References
 
 
 <a name="references-software"></a>
+
+
 ## Software
 <a name="references-architecture-1"></a>
+
+
 ## Architecture
 - [Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)](http://www.worldcat.org/isbn/9781492043454)
 
 [fundamentalsofsoftwarearchitecture]: http://www.worldcat.org/isbn/9781492043454 "Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)]"
 
 <a name="references-design"></a>
+
+
 ## Design
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)] http://www.worldcat.org/isbn/9780133039900
 
 <a name="references-patterns-1"></a>
+
+
 ## Patterns
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
@@ -867,11 +983,15 @@ References for microservices patterns:
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
 
 <a name="references-principles"></a>
+
+
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
 
 <a name="references-government-of-canada"></a>
+
+
 ## Government of Canada
 - [Digital Standards - Playbook](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Provides aspirational guidance around key themes; Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely.  Also available as GitHub Pages - *[Digital Playbook - GitHub Pages](https://canada-ca.github.io/digital-playbook-guide-numerique/views-vues/standards-normes/en/1-design-with-users.html?wbdisable=true)*.   These digital standards are common standards used internationally and align well with these *[Digital Principles](https://digitalprinciples.org/principles/)*.
 
