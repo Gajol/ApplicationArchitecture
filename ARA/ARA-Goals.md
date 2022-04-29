@@ -1,9 +1,29 @@
+# Goals for Application Architecture
+
+The following goals are described in this section.  These goals are aimed at becoming more efficient at releasing applicaitons to production, and, in improving the overall developer exerience (DevEx)
+
+The proceeding section will identify guidance to achieve these goals.
+
+1. Technical Debt Reduction
+1. Modular Applications and a Composalbe Enterprise
+1. APIs
+1. Event Driven
+1. Build Testable Applications
+1. Automation
+1. Cloud Native - Future Proof Technology
+1. User Experience
+1. Accessility
 
 
-# Application Architecture Guidance
+## Goal:  Technical Debt Reduction
 
+Our departments vision includes an *IT Rationalization* pillar which identifies the need to reduce the number of different applications supported by our team.  The Architecture Working Group includes principles which address the need to rationalze the portfolio.  The gaol is to have a smaller and healthier application portfolio through the following guidance:
 
-## Goal:  Reduce Technical Debt
+  - Rationalization
+  - Reuse / Buy / Build
+  - Document & Exercise Backup & Recovery
+  - Develop as per the Criticality of the Application
+  - Build Less and Stay Lean
 
 1. Rationalization.
 
@@ -18,7 +38,9 @@ In cooperation with the business, business governance and other stakeholders dev
 
 1. Reuse / Buy / Build.   
 
-  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5].   The following priorities for options analysis:
+  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If a new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5].   
+
+  The following priorities for options analysis:
 
   - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
   - Buy: Buy solutions and integrate into our enterprise architecture
@@ -29,9 +51,11 @@ In cooperation with the business, business governance and other stakeholders dev
 
   All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
 
-  Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
+1. Develop as per the Criticality of the Application
 
-  - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical.
+  Business critical applications require a Business Continuity Plan (BCP) and Disaster Recovery Plan (DRP) to be documented and reviewed on a regular basis.   The DRP must be excercised routinely.
+
+  - [ ] Enterprise Architecture Gap : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical to allow for analysis and design of the quality attributes required for a critical application.
 
 
 1. Build Less and Stay Lean
@@ -39,82 +63,54 @@ In cooperation with the business, business governance and other stakeholders dev
   BaseCamp has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
 
   - [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less):
+
     - Less features
     - Less options/preferences
     - Less people and corporate structure
     - Less meetings and abstractions
-    - Less promises
+    - Less promises  
 
   -  [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
-    - less "Thick process"
-    - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
-    - less of "The past ruling the future"
-
-
-## Goal: Reduce Content Duplication with URL Design and Search
-
-Content (information) is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   
-
-Some historical examples that have led to this "clone-and-own" culture include:
-
-  - Link Rot:  Application upgrades making links to content fail.   [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) is the use of a hyperlink that links to a specific, generally searchable or indexed, piece of web content on a website.  For example, a link to a specific case, request or document.  
-
-  - Access:  Users are concerned that the content may disappear due to the content owner removing, renaming or modifying user-access.   This is difficult to address at the application layer, and requires enterprise information and access-management governance.
-
-
-1. URL Lifecycle
- When supporting [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) design must take into account the lifecycle of the link, ned that the content may disappear due to the content owner removing, renaming or modifying userand its ability to function through upgrades.   Consider patterns such as [Permalink](https://en.wikipedia.org/wiki/Permalink) and Data Object Identifier [(DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier).  When provide a link to a user for reference, identify this should be a trusted-link which survives upgrades/replacements.
-
-1. URL Design
- Define a URL strategy for the application, including an inventory or URL's provided.  Define the manner in which URLs are clean, friendly and pretty [Clean URL](https://en.wikipedia.org/wiki/Clean_URL); support *http://example.com/name* as opposed to *http://example.com/index.php?page=name*.
-
-1. Enterprise Search
- Enterprise search will definitely help in enabling users to find the information they should have access to.   This is a major long-term initiative.
-
-
-
-[Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less)
-[...] less means:
-  - Less features
-  - Less options/preferences
-  - Less people and corporate structure
-  - Less meetings and abstractions
-  - Less promises
-
-[...] [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
-  - less "Thick process"
-  - less "Long-Term Roadmaps"  (supported as by ITSS Study - Ian Lovsion 2017)
-  - less of "The past ruling the future"
+      - less "Thick process"
+      - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
+      - less of "The past ruling the future"
 
 
 ## Goal:  Composable Enterprise, Composable Applications
 A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
 
+- Domain Drive Design
+- Standards on API (Government of Canada)
+- Decouple User Interfaces - Backend-For-Front-End (BFF)
+- SOLID Design Principles
+
+
 ### Domain Drive Design (DDD) / Bounded Context[^Guidance-11]
 
-DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
+  DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
 
 ### GC Directive on Service and Digital - Standards on APIs[^Guidance-13]
 
-The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
-  - Build APIs against the business requirements
-  - Work with the developers who are expected to consume your API
-  - Expose APIs using industry accepted open standards
+  The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
+    - Build APIs against the business requirements
+    - Work with the developers who are expected to consume your API
+    - Expose APIs using industry accepted open standards
 
 ### Decouple User Interfaces
 
-Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
+Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor; ideally support Edge and Chrome.
 
-1. APIs, and the consuming services and applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^Guidance-1][^Guidance-2][^Guidance-3].   Architectural patterns to support composable applications include:
+1. APIs, and the consuming services/applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   
+1. Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^Guidance-1][^Guidance-2][^Guidance-3].   Architectural patterns to support composable applications include:
 
   - High Cohesion: *The Fundamentals of Software Architecture*[^Guidance-4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.    
-  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14}].  Some common guidelines are:
+  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14].  Some common guidelines are:
     - break system and APIs into encapsulated replacements
     - minimize any connascence (depedecny relationships between objects) between systems
 
-### SOLID[^Guidance-15]
+### SOLID[^Guidance-15] Software Design
 
-SOLID is five design principles supporting composable applications:
+SOLID is five design principles supporting composable applications.   Some of the principles date back 30 years.  It is not imperative that applications and software rigidly enforce these principles.   What is important is for developers to understand the value of these, and when to use them effectively.[^Goals-1]   
 
   - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class. - *[reference: 97 Things Every Programmer Should Know #76 - 2010 ](http://www.worldcat.org/isbn/978-0-596-80948-5)*.
 
@@ -149,7 +145,7 @@ The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a me
   1.	Admin Processes:	Any needed admin tasks should be kept in source control and packaged with the application.
 
 
-### Develop an API Strategy
+## Develop an API Strategy
 
 API's are a critical component of our technology stack.  As applications and technology more-and-more through API's we need to mature our API strategy. The API Strategy should address concerns such as:
   - API Discovery / Catalog:  How can developers discover integrations (*TODO*)
@@ -183,43 +179,43 @@ Event Driven Architectures are useful for distributed, asynchronous, scalable an
   - message-oriented over transactions.  An interesting video presentation on "*[Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)*".
 
 
-
-### Composable ERP and HR Enterprise - Gartner
-
-[Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^Guidance-9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
-
-The key Gartner recommendations are valid for ERP and HR modernization initiatives:
-- [ ]  Define business capabilities through road mapping exercises
-- [ ]  Reduce reliance on customizations and proprietary-ERP
-- [ ]  Continuously deliver incremental business value in a modular mode
-- [ ]  Build an ERP team with wide-ranging skills (Adopt a DevOps for ERP). Ensure adequate skill development and training
-
-
 ## Goal: Testability, Testable Applications and Automation
 
-Testing applications and groups of applications effectively and efficiently requires analysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
+Testing applications and groups of applications effectively and efficiently requires planning, analysis and design.  The application development cycle must include developing capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
+
+The desired outcomes of this guidance is to:
+1. have a suite of automated testing that can be executed at modular levels on a component(s) or system
+1. toolsets to help in the setup, data-loading and test-validation of test suites
+1. integration of testcases into the CI/CD pipeline
+1. a library of version-controlled testcases available for agile teams to use
 
 
-- Automation:  Adopt the[Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]
-  - Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
-  - Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod).
-  - Design Product for Testability.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.
-  - Test Code is a product.  Treat the software used to automate testcases as code.  The code is version-controlled, and discoverable (i.e., it exists in close proximity to the application code
-  - Test ownership follows application software ownership.  The software development team owns creating automated tests for not only unit-tests but boundary/integration tests.  
+### Guidance : Shift-Left Testing
+
+The guidance is to adopt the [*Microsoft - Shift Left Testing*](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  
+
+The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]
+  - __Low Level Tests__: Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
+  - __Reusable Tests__: Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod) by consuming configuration of the environment.
+  - __Design Product for Testability__.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.  Include these user-stories early in the agile development cycle (Shift-Left)
+  - __Test Code is a product__.  Treat the software used to automate testcases as code.  The code is version-controlled, and discoverable (i.e., it exists in close proximity to the application code
+  - __Test ownership follows application software ownership__.  The software development team owns creating automated tests for not only unit-tests but boundary/integration tests.  Embrace the DevOps mentality of owning the system through to production deployment.  
 
 Recommendation:
 
 - [ ] SDLC Checklist: FY 22/23:  The Quality Assurance Working Group and the SDLC Working Group should consider formalizing the above principles and guidance as part of the new SDLC process, milestones and checklist.
 
+### Guidance : Test-Driven Development
 
-Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD abd DevOps are related is well described in the article '*TDD for a DevOps World*[^Guidance-7] - summary:
+Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD and DevOps are related is well described in the article '*TDD for a DevOps World*[^Guidance-7] - summary:
 - TDD is clearly a quality enhancing practice. I
 - TDD is a really good way to mitigate the risks of defects
 - TDD is increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
 
+Caution:  TDD can be burdoning on a development process.  TDD applied in meaningful areas is useful and worthwhile.
 
-## Goal: Future Proof Technology
-The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., )
+## Goal: Cloud-Native - Future Proof Technology
+The [MACH Aliance](https://machalliance.org/)[^Guidance-8] was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., ).  This alliance is for cloud-native applications (CNA), and is worthwhile reading for CNA development.
 
 This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^Guidance-5]:
 
@@ -243,12 +239,33 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on ho
 
 
 ## Goal: User Experience
-Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  Some modern experiences can include:
+Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  
+
+User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is hinteracts with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
+
+  - [Nielsen-Norman Group (NNG)](https://www.nngroup.com/) - recognized leader in user experience
+  - [Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
+  - [Government of Canada - Digital Standards - Design with Users][^Guidance-25]
+
+
+Some modern experiences can include:
 - Push Notifications:  Business fit-for-purpose notifications using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into the Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
+There are many modern application experiences uses expect in an application.  A short checklist of modern user experience functions are:
+- [ ] : social like : can the content be liked to identify high-value content
+- [ ] : share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
+- [ ] : link : should it be possible to get a link to the content for sharing, bookmarking, reporting.   What are the guarantees on the provided link (transitory, corporate, survives upgrades, ...)
+- [ ] : discuss/comment : can comments be provided for all to see, or to raise a concern to the author (private comment)
+- [ ] : rich link embed : when embedding a link in another application, should a link-preview be provided
+
+Guidance
+
+
 ## Goal: Accessibility
-The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
+The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   
+
+Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
 
 WCAG 2.1 Level AA (Double-A) implies:
 - Media: Captions are present on live video.  When appropriate, there exists audio description of what’s happening on streaming media.
@@ -257,10 +274,11 @@ WCAG 2.1 Level AA (Double-A) implies:
 - Forms: If an error is present on a form, the website will: suggest ways to fix it, the user may withdraw and resubmit the form, or the form prompts a confirmation.
 - Navigation: Pages can’t be nested or unintentionally obfuscated unless part of a step-by-step process, such as an application or feed result. Navigation follows a semantic structure and is repeated on pages.
 
-A basic checklist of minimal accessibility requirements are:
+A basic checklist of minimal accessibility guidelines are:
 
 - [ ] Applications should meet WCAG 2.1 Level AA success criteria.
-- [ ] Applications should allow users to self-identity accessibility needs.
+- [ ] Applications should allow users to self-identity accessibility needs through an application profile setting.
+- [ ] Applications should be tested for accessibility, including, testing functionality with our accessibiilty tool suite (page readers, etc)
 
 
 
@@ -280,9 +298,12 @@ A basic checklist of minimal accessibility requirements are:
 
 [^Guidance-8]: [MACH Aliance](https://machalliance.org/)
 
-[^Guidance-9]: [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664)
 
-[^Guidance-10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
+[^Goals-1]: [Devopedia - SOLID Design Principles](https://devopedia.org/solid-design-principles)
+
+[^Guidance-10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)Guidance
+
+[^Guidance-25]: [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html)
 
 [^Guidance-11]: [Martin Fowler - Bounded Context](https://www.martinfowler.com/bliki/BoundedContext.html)
 

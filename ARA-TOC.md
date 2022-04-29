@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-04-24 22:04*
+*Document Generation Date: 2022-04-29 18:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -12,12 +12,12 @@
     * [Out-of-Scope](#introduction-out-of-scope)
 * [Definitions](#definitions)
     * [Architecture](#definitions-architecture)
-        * [Architecture Quotes](#definitions-architecture-architecture-quotes)
-        * [Architecture Style (TOGAF)](#definitions-architecture-architecture-style-togaf)
-        * [Architecture Characteristics:](#definitions-architecture-architecture-characteristics)
-    * [Application](#definitions-application)
-    * [Governance:](#definitions-governance)
-    * [Technical Debt](#definitions-technical-debt)
+    * [Application  Platforms](#definitions-application-platforms)
+    * [Application Web Frameworks](#definitions-application-web-frameworks)
+    * [Application - Cloud Platforms](#definitions-application-cloud-platforms)
+    * [Technology Stacks](#definitions-technology-stacks)
+    * [Application Components](#definitions-application-components)
+    * [Application Portfolio Management](#definitions-application-portfolio-management)
 * [Business](#business)
     * [Business Capability Model (BCM)](#business-business-capability-model-bcm)
     * [Process Maps, Information Flows and Value Streams](#business-process-maps-information-flows-and-value-streams)
@@ -29,43 +29,63 @@
         * [Department Application Characteristics](#application-characteristics-and-styles-application-characteristics-department-application-characteristics)
         * [Quality / Non-Functional Characteristics](#application-characteristics-and-styles-application-characteristics-quality-non-functional-characteristics)
     * [Application Architecture Styles](#application-characteristics-and-styles-application-architecture-styles)
-* [Application Architecture Guidance](#application-architecture-guidance)
-    * [Goal:  Reduce Technical Debt](#application-architecture-guidance-goal-reduce-technical-debt)
-    * [Goal: Reduce Content Duplication with URL Design and Search](#application-architecture-guidance-goal-reduce-content-duplication-with-url-design-and-search)
-    * [Goal:  Composable Enterprise, Composable Applications](#application-architecture-guidance-goal-composable-enterprise-composable-applications)
-        * [Domain Drive Design (DDD) / Bounded Context[^Guidance-11]](#application-architecture-guidance-goal-composable-enterprise-composable-applications-domain-drive-design-ddd-bounded-context-guidance-11)
-        * [GC Directive on Service and Digital - Standards on APIs[^Guidance-13]](#application-architecture-guidance-goal-composable-enterprise-composable-applications-gc-directive-on-service-and-digital-standards-on-apis-guidance-13)
-        * [Decouple User Interfaces](#application-architecture-guidance-goal-composable-enterprise-composable-applications-decouple-user-interfaces)
-        * [SOLID[^Guidance-15]](#application-architecture-guidance-goal-composable-enterprise-composable-applications-solid-guidance-15)
-        * [12-Factor Application](#application-architecture-guidance-goal-composable-enterprise-composable-applications-factor-application)
-        * [Develop an API Strategy](#application-architecture-guidance-goal-composable-enterprise-composable-applications-develop-an-api-strategy)
-        * [Event-Driven Process and Streaming](#application-architecture-guidance-goal-composable-enterprise-composable-applications-event-driven-process-and-streaming)
-        * [Composable ERP and HR Enterprise - Gartner](#application-architecture-guidance-goal-composable-enterprise-composable-applications-composable-erp-and-hr-enterprise-gartner)
-    * [Goal: Testability, Testable Applications and Automation](#application-architecture-guidance-goal-testability-testable-applications-and-automation)
-    * [Goal: Future Proof Technology](#application-architecture-guidance-goal-future-proof-technology)
-    * [Goal: User Experience](#application-architecture-guidance-goal-user-experience)
-    * [Goal: Accessibility](#application-architecture-guidance-goal-accessibility)
+* [Goals for Application Architecture](#goals-for-application-architecture)
+    * [Goal:  Technical Debt Reduction](#goals-for-application-architecture-goal-technical-debt-reduction)
+    * [Goal:  Composable Enterprise, Composable Applications](#goals-for-application-architecture-goal-composable-enterprise-composable-applications)
+        * [Domain Drive Design (DDD) / Bounded Context[^Guidance-11]](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-domain-drive-design-ddd-bounded-context-guidance-11)
+        * [GC Directive on Service and Digital - Standards on APIs[^Guidance-13]](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-gc-directive-on-service-and-digital-standards-on-apis-guidance-13)
+        * [Decouple User Interfaces](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-decouple-user-interfaces)
+        * [SOLID[^Guidance-15] Software Design](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-solid-guidance-15-software-design)
+        * [12-Factor Application](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-factor-application)
+    * [Develop an API Strategy](#goals-for-application-architecture-develop-an-api-strategy)
+        * [Event-Driven Process and Streaming](#goals-for-application-architecture-develop-an-api-strategy-event-driven-process-and-streaming)
+    * [Goal: Testability, Testable Applications and Automation](#goals-for-application-architecture-goal-testability-testable-applications-and-automation)
+        * [Guidance : Shift-Left Testing](#goals-for-application-architecture-goal-testability-testable-applications-and-automation-guidance-shift-left-testing)
+        * [Guidance : Test-Driven Development](#goals-for-application-architecture-goal-testability-testable-applications-and-automation-guidance-test-driven-development)
+    * [Goal: Cloud-Native - Future Proof Technology](#goals-for-application-architecture-goal-cloud-native-future-proof-technology)
+    * [Goal: User Experience](#goals-for-application-architecture-goal-user-experience)
+    * [Goal: Accessibility](#goals-for-application-architecture-goal-accessibility)
 * [Creating an Architecture Strategy : Guidance](#creating-an-architecture-strategy-guidance)
     * [Apply Patterns to Formulate a Strategy](#creating-an-architecture-strategy-guidance-apply-patterns-to-formulate-a-strategy)
-    * [Concerns of an Architect](#creating-an-architecture-strategy-guidance-concerns-of-an-architect)
-    * [Corporate (Enterprise) Context](#creating-an-architecture-strategy-guidance-corporate-enterprise-context)
-        * [Design thinking principles:](#creating-an-architecture-strategy-guidance-corporate-enterprise-context-design-thinking-principles)
+    * [Design Thinking](#creating-an-architecture-strategy-guidance-design-thinking)
+        * [Design thinking principles:](#creating-an-architecture-strategy-guidance-design-thinking-design-thinking-principles)
+* [Application Architecture Styles](#application-architecture-styles-1)
+    * [Big Ball of Mud - Anti-Pattern:](#application-architecture-styles-1-big-ball-of-mud-anti-pattern)
+    * [Event Driven Architecture Patterns](#application-architecture-styles-1-event-driven-architecture-patterns)
+        * [Request-Response communication has the following characteristics:](#application-architecture-styles-1-event-driven-architecture-patterns-request-response-communication-has-the-following-characteristics)
+        * [Event streams are based on these concepts:](#application-architecture-styles-1-event-driven-architecture-patterns-event-streams-are-based-on-these-concepts)
+        * [EDA Integration Patterns](#application-architecture-styles-1-event-driven-architecture-patterns-eda-integration-patterns)
 * [Patterns](#patterns)
-    * [Application Architecture Styles](#patterns-application-architecture-styles-1)
-        * [Big Ball of Mud - Anti-Pattern:](#patterns-application-architecture-styles-1-big-ball-of-mud-anti-pattern)
     * [Software Design Patterns](#patterns-software-design-patterns)
     * [User Interface Patterns](#patterns-user-interface-patterns)
-    * [Other Patterns / Laws](#patterns-other-patterns-laws)
-        * [Business Patterns](#patterns-other-patterns-laws-business-patterns)
-        * [Cloud Design Patterns](#patterns-other-patterns-laws-cloud-design-patterns)
-        * [Microservices Patterns](#patterns-other-patterns-laws-microservices-patterns)
+    * [Business Patterns](#patterns-business-patterns)
+    * [Cloud Design Patterns](#patterns-cloud-design-patterns)
+    * [Microservices Patterns](#patterns-microservices-patterns)
 * [References](#references)
     * [Software](#references-software)
     * [Architecture](#references-architecture-1)
+    * [Cloud](#references-cloud)
     * [Design](#references-design)
     * [Patterns](#references-patterns-1)
     * [Principles](#references-principles)
+    * [Technologies](#references-technologies)
     * [Government of Canada](#references-government-of-canada)
+        * [Digital Standards](#references-government-of-canada-digital-standards)
+        * [Digital : Strategic Plan](#references-government-of-canada-digital-strategic-plan)
+        * [Information Management](#references-government-of-canada-information-management)
+        * [Privacy](#references-government-of-canada-privacy)
+* [Misc - To File](#misc-to-file)
+* [DDD](#ddd)
+* [Appendix - Definitions](#appendix-definitions)
+    * [Architecture](#appendix-definitions-architecture-2)
+        * [Architecture Quotes](#appendix-definitions-architecture-2-architecture-quotes)
+        * [Architecture Style (TOGAF)](#appendix-definitions-architecture-2-architecture-style-togaf)
+        * [Architecture Characteristics:](#appendix-definitions-architecture-2-architecture-characteristics)
+    * [Application](#appendix-definitions-application)
+    * [Governance:](#appendix-definitions-governance)
+    * [Technical Debt](#appendix-definitions-technical-debt)
+    * [DevOps](#appendix-definitions-devops)
+* [Policy Framework](#policy-framework)
 
 
 <a name="introduction"></a>
@@ -86,7 +106,8 @@ The Application Reference Architecture (ARA) borders on what many would consider
 
 This document documents:
 - existing application architecture within our department
-- guidelines for technical leaders
+- standards for technical leaders (mandatory)
+- guidelines for technical leaders (voluntary)
 
 This document is intended for:
 - technical design leads
@@ -94,7 +115,11 @@ This document is intended for:
 
 <a name="introduction-out-of-scope"></a>
 ## Out-of-Scope
-- This document is neither a vision, nor a strategy nor a roadmap document.   
+- This document is not intended to be a strategy development document.   The ARA is not intended to be a vision, plan or actions towards such a vision.
+- The ARA is intended to align and support the many strategies, visions and roadmaps that exist within our department and branch.
+
+
+neither a vision, nor a strategy nor a roadmap document.   
 - This document is neither nor a department culture nor an project management and development process document.
   - Strategy: What we will and will not do, and how govern resources.
   - Culture: People, Processes (Organization / Teams), Communication
@@ -106,108 +131,70 @@ This document is intended for:
 <a name="definitions-architecture"></a>
 ## Architecture
 
-Application Architecture (GC EARB)
+|Term|Definition|
+|--|----|
+|Application|An application, application program or application software is a computer program designed to help people perform an activity|
+|Application Architecture (GC EARB)|Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on overall design on how data is consumed and created by the system. It views the interactions between applications, databases, middleware to ensure scalability, reliability, availability and manageability.|
+|Architecture Style|The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed. (TOGAF)|
+|Architecture Types/Domains|The overall architecture of an enterprise can be described by integrated sub-architecture domains. These are; Business, Application, Information, Technology, Security, Privacy and Data Architecture|
+|Architecture Characteristics|Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. These are often called non-functional requirements but should be considered as Quality Requirements. An architectural characteristics of concern influences some aspect of the design, and is critical/important to the application's success.|
 
-: Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on overall design on how data is consumed and created by the system. It views the interactions between applications, databases, middleware to ensure scalability, reliability, availability and manageability.
+<a name="definitions-application-platforms"></a>
+## Application  Platforms
+An application platform provides an environment for software to be executed.
 
-Application Architecture (RedHat)
-: An application architecture describes the patterns and techniques used to design and build an application. The architecture gives you a roadmap and best practices to follow when building an application, so that you end up with a well-structured app. [[Redhat - CNA - What is Application Architecture](https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture)].   
+|Discipline or Platform|Definition|Example Products|
+|--|----|---|
+|Low Code Application|A platform which allows for the creation of applications with little to no code.|Mendix, ServiceNow, Outsystems, Salesforce|
+|Business Process Management|A platform which support business processes throught workflows, processes, orchestration and monitoring|Pega Platform, Microsoft Dynamics|
+|Robotic Process Automation|A tool which can automation repeated manual tasks.|uiPath|
 
-Application Architecture (TOGAF)
-: A description of the structure and interaction of the applications as groups of capabilities that provide key business functions and manage the data assets.  [[Application Architect - Wikipedia](https://en.wikipedia.org/wiki/Applications_architecture#Application_architect).]
-
-
-<a name="definitions-architecture-architecture-quotes"></a>
-### Architecture Quotes
-:
-- *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
-- *Architecture is about the important stuff, whatever that is.* - Ralph Johnson & Martin Fowler
-- *Architecture is the stuff you can’t Google.* - Mark Richards
-
-
-<a name="definitions-architecture-architecture-style-togaf"></a>
-### Architecture Style (TOGAF)
-: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.
-
-Types of Architecture
-: The overall architecture of an enterprise can be described by integrated sub-architecture domains. These are:
-
-  - Business Architecture
-  - Application Architecture
-  - Information Architecture
-  - Technology Architecture
-  - Security Architecture
-  - Privacy Architecture and
-  - Data Architecture
-
-<a name="definitions-architecture-architecture-characteristics"></a>
-### Architecture Characteristics:
-- Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. These are often called non-functional requirements but should be considered as Quality Requirements.  
-
-- An architectural characteristics meets three criteria:
-
-  1. specifies a non-domain (*non-functional*) consideration,
-  1. influences some aspect of the design, and
-  1. is critical/important to the application's success. A few are listed below
+<a name="definitions-application-web-frameworks"></a>
+## Application Web Frameworks
+An application framework is a software framework used by software developers following a standard structure supported by the framework.  StackOverflow annual survey identifies the top software languages, databases, web frameworks and tools. - [*2021 StackOverflow 2021 Survey*](https://insights.stackoverflow.com/survey/2021#technology).
 
 
-- Examples of architectural characteristics:
-
-  - operational characteristics: availability, business continuity, performance, recoverability, robustness, scalability, elasticity.
-
-  - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainabilty, portability, supportability, upgradeability.
-
-  - cross-cutting: authentication, authorization, legal, privacy, security, supportabilty, usability, achievability, compatibilty, accessibility, interoperability.
-
-  - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
+|Framework|Definition|Examples|
+|--|----|--|
+|Application Framework|Software framework for enterprise applications|Spring's framework is used to create Java-based enterprise applications.  .Net is Microsoft led framework (free and open-source).|
+|Front-End Frameworks|Create and provide the aesthetics, the user experience, and the visual appeal of web applications|React.js, JQuery, Angular, Vue.js|
+|Back-End Frameworks|Provides the framework for the aspects the user does not see, typcially on a server. APIs, dbs, search, caching are common functions|Nodejs, Spring, Ruby on Rails|
 
 
-<a name="definitions-application"></a>
-## Application
 
-Application
-: An application, application program or application software is a computer program designed to help people perform an activity
+<a name="definitions-application-cloud-platforms"></a>
+## Application - Cloud Platforms
+For the ARA, in 2022, our applications are primarily non-cloud based.  Teh Government of Canada uses Azure.
 
-API
-: An application programming interface (API) is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software.  An API may be a web-service call (REST API, ...) or a software library or framework (function calls, methods, libraries, ...).
+<a name="definitions-technology-stacks"></a>
+## Technology Stacks
 
-Front-End & Back-End
-: In simple application terms, the front-end of an application is concerned with the presentation to the end-user. In simple application terms, the back-end interacts with the data access layer.
+|Stack|Expansion|
+|--|----|
+|LAMP|Linux, Apache, MySQL, PHP|
+|MEAN|MongoDB, Express, Angular, Node.js|
 
-Web Service
-: An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.
+<a name="definitions-application-components"></a>
+## Application Components
 
+There are many groups of terms relating to applications and application development.
 
-<a name="definitions-governance"></a>
-## Governance:
+|Term|Definition|
+|--|----|
+|API|An application programming interface (API) is a connection between computers or between computer programs. An API is a software interface, offering a service to other pieces of software.  An API may be a web-service call (REST API, ...) or a software library or framework (function calls, methods, libraries, ...).|
+|Front-End & Back-End|In simple application terms, the front-end of an application is concerned with the presentation to the end-user. In simple application terms, the back-end interacts with the data access layer.|
+|Web Service|An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.|
 
-Governance:
-Governance is derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+<a name="definitions-application-portfolio-management"></a>
+## Application Portfolio Management
+Application Portfolio Management (APM) is used by enterprises to manage the lifecyle of applications.  The key goals of APM are to provide oversight to manager risks, reduce costs and make strategic investment decisions.   Some common terms are:
 
-
-<a name="definitions-technical-debt"></a>
-## Technical Debt
-
-Technical debt is somewhat misunderstood in within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
-
-- Technical debt (also known as design debt or code debt, but can be also related to other technical endeavours) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. [[Technical Debt - Wikipedia](https://en.wikipedia.org/wiki/Technical_debt)].
-
-- Technical Debt is a term coined thirty years ago by Ward Cunningham:
-
-  *Shipping first-time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite. Objects make the cost of this transaction tolerable. The danger occurs when the debt is not repaid. Every minute spent on not-quite-right code counts as interest on that debt. Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation, object-oriented or otherwise.* [Ward Cunningham - 1992].  
-
-  Note: Ward Cunningham is one of the authors of the [Agile Manifesto](https://agilemanifesto.org/)
-
-- The sum of time and effort one has to pay to keep up with the tools one is 'married' to.
-
-- Changes required that are not completed are considered debt, and until paid, will incur interest on top of interest, making it cumbersome to build a project. As a change is started on a codebase, there is often the need to make other coordinated changes in other parts of the codebase, system, solution or documentation. Although the term is used in software development primarily, it can also be applied to other professions.
-
-- Technical debt is a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution. - *[Technical Debt - Technopedia](https://www.techopedia.com/definition/27913/technical-debt)*
-- Technical debt is commonly associated with extreme programming, especially in the context of refactoring. That is, it implies that restructuring existing code (refactoring) is required as part of the development process. Under this line of thinking refactoring is not only a result of poorly written code, but is also done based on an evolving understanding of a problem and the best way to solve that problem.
-
-- Technical debt may also be known as design debt.
-
-- When taking short cuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
+|Term|Definition|
+|--|----|
+|Application Life Cycle|The stages of an application.  Four stages are commonly used; 1) governance (decision-making stakeholders decided to create an application; 2) development (the process of creating an application), 3) testing and 4) operations and maintenance.  
+|Technical Debt|Technical debt is the coding you must do tomorrow because you took a shortcut in order to deliver the software today.|
+|IT Governance| IT governance is processes that enable the IT staff to better manage risk and operate efficiently to the benefit of the organization on the whole.|
+|Critical Service|A critical service is one that, if disrupted, would result in a high or very high degree of injury to the health, safety, security or economic well-being of Canadians, or to the effective functioning of the Government of Canada.|
 
 
 <a name="business"></a>
@@ -340,7 +327,7 @@ Identifying the key quality attributes of the system is required to chose an eff
 ## Application Architecture Styles
 Architectural style is defined as a set of characteristics and features that make a building or other structure notable or historically identifiable. Architecture styles are been established and evolved over the years.   Some common application architecture styles are[^Application-1]:
 
-  - Distributed: Microservices Architecture : pros (reliablity, modularity, elasticity, +++), cons: (cost, complexity, ...)
+  - Distributed: Microservices Architecture : pros (reliability, modularity, elasticity, +++), cons: (cost, complexity, ...)
 
   - Distributed: Orchestration - Service Oriented Architecture (~2005) :
     - pros:  (good elasticity, fault tolerance, scalability), cons: (complexity, testability, cost, ...).  
@@ -363,14 +350,34 @@ Architectural style is defined as a set of characteristics and features that mak
 [^Application-2]: [GC Digital Oprations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html)
 
 
+<a name="goals-for-application-architecture"></a>
+# Goals for Application Architecture
+
+The following goals are described in this section.  These goals are aimed at becoming more efficient at releasing applicaitons to production, and, in improving the overall developer exerience (DevEx)
+
+The proceeding section will identify guidance to achieve these goals.
+
+1. Technical Debt Reduction
+1. Modular Applications and a Composalbe Enterprise
+1. APIs
+1. Event Driven
+1. Build Testable Applications
+1. Automation
+1. Cloud Native - Future Proof Technology
+1. User Experience
+1. Accessility
 
 
-<a name="application-architecture-guidance"></a>
-# Application Architecture Guidance
+<a name="goals-for-application-architecture-goal-technical-debt-reduction"></a>
+## Goal:  Technical Debt Reduction
 
+Our departments vision includes an *IT Rationalization* pillar which identifies the need to reduce the number of different applications supported by our team.  The Architecture Working Group includes principles which address the need to rationalze the portfolio.  The gaol is to have a smaller and healthier application portfolio through the following guidance:
 
-<a name="application-architecture-guidance-goal-reduce-technical-debt"></a>
-## Goal:  Reduce Technical Debt
+  - Rationalization
+  - Reuse / Buy / Build
+  - Document & Exercise Backup & Recovery
+  - Develop as per the Criticality of the Application
+  - Build Less and Stay Lean
 
 1. Rationalization.
 
@@ -385,7 +392,9 @@ In cooperation with the business, business governance and other stakeholders dev
 
 1. Reuse / Buy / Build.   
 
-  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If an new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5].   The following priorities for options analysis:
+  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If a new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5].   
+
+  The following priorities for options analysis:
 
   - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
   - Buy: Buy solutions and integrate into our enterprise architecture
@@ -396,9 +405,11 @@ In cooperation with the business, business governance and other stakeholders dev
 
   All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
 
-  Business critical applications require a BCP and DR plan to be documented and reviewed on a regular basis.
+1. Develop as per the Criticality of the Application
 
-  - [ ] Enterprise Architecture : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical.
+  Business critical applications require a Business Continuity Plan (BCP) and Disaster Recovery Plan (DRP) to be documented and reviewed on a regular basis.   The DRP must be excercised routinely.
+
+  - [ ] Enterprise Architecture Gap : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical to allow for analysis and design of the quality attributes required for a critical application.
 
 
 1. Build Less and Stay Lean
@@ -406,88 +417,59 @@ In cooperation with the business, business governance and other stakeholders dev
   BaseCamp has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
 
   - [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less):
+
     - Less features
     - Less options/preferences
     - Less people and corporate structure
     - Less meetings and abstractions
-    - Less promises
+    - Less promises  
 
   -  [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
-    - less "Thick process"
-    - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
-    - less of "The past ruling the future"
+      - less "Thick process"
+      - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
+      - less of "The past ruling the future"
 
 
-<a name="application-architecture-guidance-goal-reduce-content-duplication-with-url-design-and-search"></a>
-## Goal: Reduce Content Duplication with URL Design and Search
-
-Content (information) is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   
-
-Some historical examples that have led to this "clone-and-own" culture include:
-
-  - Link Rot:  Application upgrades making links to content fail.   [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) is the use of a hyperlink that links to a specific, generally searchable or indexed, piece of web content on a website.  For example, a link to a specific case, request or document.  
-
-  - Access:  Users are concerned that the content may disappear due to the content owner removing, renaming or modifying user-access.   This is difficult to address at the application layer, and requires enterprise information and access-management governance.
-
-
-1. URL Lifecycle
- When supporting [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) design must take into account the lifecycle of the link, ned that the content may disappear due to the content owner removing, renaming or modifying userand its ability to function through upgrades.   Consider patterns such as [Permalink](https://en.wikipedia.org/wiki/Permalink) and Data Object Identifier [(DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier).  When provide a link to a user for reference, identify this should be a trusted-link which survives upgrades/replacements.
-
-1. URL Design
- Define a URL strategy for the application, including an inventory or URL's provided.  Define the manner in which URLs are clean, friendly and pretty [Clean URL](https://en.wikipedia.org/wiki/Clean_URL); support *http://example.com/name* as opposed to *http://example.com/index.php?page=name*.
-
-1. Enterprise Search
- Enterprise search will definitely help in enabling users to find the information they should have access to.   This is a major long-term initiative.
-
-
-
-[Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less)
-[...] less means:
-  - Less features
-  - Less options/preferences
-  - Less people and corporate structure
-  - Less meetings and abstractions
-  - Less promises
-
-[...] [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
-  - less "Thick process"
-  - less "Long-Term Roadmaps"  (supported as by ITSS Study - Ian Lovsion 2017)
-  - less of "The past ruling the future"
-
-
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications"></a>
+<a name="goals-for-application-architecture-goal-composable-enterprise-composable-applications"></a>
 ## Goal:  Composable Enterprise, Composable Applications
 A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-domain-drive-design-ddd-bounded-context-guidance-11"></a>
+- Domain Drive Design
+- Standards on API (Government of Canada)
+- Decouple User Interfaces - Backend-For-Front-End (BFF)
+- SOLID Design Principles
+
+
+<a name="goals-for-application-architecture-goal-composable-enterprise-composable-applications-domain-drive-design-ddd-bounded-context-guidance-11"></a>
 ### Domain Drive Design (DDD) / Bounded Context[^Guidance-11]
 
-DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
+  DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-gc-directive-on-service-and-digital-standards-on-apis-guidance-13"></a>
+<a name="goals-for-application-architecture-goal-composable-enterprise-composable-applications-gc-directive-on-service-and-digital-standards-on-apis-guidance-13"></a>
 ### GC Directive on Service and Digital - Standards on APIs[^Guidance-13]
 
-The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
-  - Build APIs against the business requirements
-  - Work with the developers who are expected to consume your API
-  - Expose APIs using industry accepted open standards
+  The Direcitve on Service and Digial provides high-level guidance on API design which should be implemented:
+    - Build APIs against the business requirements
+    - Work with the developers who are expected to consume your API
+    - Expose APIs using industry accepted open standards
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-decouple-user-interfaces"></a>
+<a name="goals-for-application-architecture-goal-composable-enterprise-composable-applications-decouple-user-interfaces"></a>
 ### Decouple User Interfaces
 
-Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor.
+Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor; ideally support Edge and Chrome.
 
-1. APIs, and the consuming services and applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^Guidance-1][^Guidance-2][^Guidance-3].   Architectural patterns to support composable applications include:
+1. APIs, and the consuming services/applications should have *high-cohesion* and *losse-coupling*.  This is especially important as software communicates across business domains.   
+1. Application Programming Interfaces (APIs) should be used to reduce; especially at the high-level interactions between components.[^Guidance-1][^Guidance-2][^Guidance-3].   Architectural patterns to support composable applications include:
 
   - High Cohesion: *The Fundamentals of Software Architecture*[^Guidance-4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.    
-  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14}].  Some common guidelines are:
+  - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14].  Some common guidelines are:
     - break system and APIs into encapsulated replacements
     - minimize any connascence (depedecny relationships between objects) between systems
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-solid-guidance-15"></a>
-### SOLID[^Guidance-15]
+<a name="goals-for-application-architecture-goal-composable-enterprise-composable-applications-solid-guidance-15-software-design"></a>
+### SOLID[^Guidance-15] Software Design
 
-SOLID is five design principles supporting composable applications:
+SOLID is five design principles supporting composable applications.   Some of the principles date back 30 years.  It is not imperative that applications and software rigidly enforce these principles.   What is important is for developers to understand the value of these, and when to use them effectively.[^Goals-1]   
 
   - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class. - *[reference: 97 Things Every Programmer Should Know #76 - 2010 ](http://www.worldcat.org/isbn/978-0-596-80948-5)*.
 
@@ -504,7 +486,7 @@ SOLID is five design principles supporting composable applications:
   1. D - Dependency inversion principle - One should "depend upon abstractions, *not* concretions.
 
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-factor-application"></a>
+<a name="goals-for-application-architecture-goal-composable-enterprise-composable-applications-factor-application"></a>
 ### 12-Factor Application
 
 The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a means to define attributes or a successful Software as a Service (SaaS) application with portability and resilience characteristics.  These characteristics are good goals for the software architecture to achieve.
@@ -523,8 +505,8 @@ The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a me
   1.	Admin Processes:	Any needed admin tasks should be kept in source control and packaged with the application.
 
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-develop-an-api-strategy"></a>
-### Develop an API Strategy
+<a name="goals-for-application-architecture-develop-an-api-strategy"></a>
+## Develop an API Strategy
 
 API's are a critical component of our technology stack.  As applications and technology more-and-more through API's we need to mature our API strategy. The API Strategy should address concerns such as:
   - API Discovery / Catalog:  How can developers discover integrations (*TODO*)
@@ -550,7 +532,7 @@ API's are a critical component of our technology stack.  As applications and tec
 
     Identify integration needs (Application Integration, Data Integration, API Lifecycle Management, Integration Platform, BPM (Pega, ..), Master Data Management, Message Oriented Middleware (ESB, Streaming, ...), Robotic Process Automation(RPA)
 
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-event-driven-process-and-streaming"></a>
+<a name="goals-for-application-architecture-develop-an-api-strategy-event-driven-process-and-streaming"></a>
 ### Event-Driven Process and Streaming
 
 Event Driven Architectures are useful for distributed, asynchronous, scalable and performant systems  Leverage events as a core principle.  Publish these events, subscribe to these events (streaming data flows).
@@ -559,46 +541,47 @@ Event Driven Architectures are useful for distributed, asynchronous, scalable an
   - message-oriented over transactions.  An interesting video presentation on "*[Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)*".
 
 
-
-<a name="application-architecture-guidance-goal-composable-enterprise-composable-applications-composable-erp-and-hr-enterprise-gartner"></a>
-### Composable ERP and HR Enterprise - Gartner
-
-[Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^Guidance-9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
-
-The key Gartner recommendations are valid for ERP and HR modernization initiatives:
-- [ ]  Define business capabilities through road mapping exercises
-- [ ]  Reduce reliance on customizations and proprietary-ERP
-- [ ]  Continuously deliver incremental business value in a modular mode
-- [ ]  Build an ERP team with wide-ranging skills (Adopt a DevOps for ERP). Ensure adequate skill development and training
-
-
-<a name="application-architecture-guidance-goal-testability-testable-applications-and-automation"></a>
+<a name="goals-for-application-architecture-goal-testability-testable-applications-and-automation"></a>
 ## Goal: Testability, Testable Applications and Automation
 
-Testing applications and groups of applications effectively and efficiently requires analysis and design.  The application development needs to include capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
+Testing applications and groups of applications effectively and efficiently requires planning, analysis and design.  The application development cycle must include developing capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
+
+The desired outcomes of this guidance is to:
+1. have a suite of automated testing that can be executed at modular levels on a component(s) or system
+1. toolsets to help in the setup, data-loading and test-validation of test suites
+1. integration of testcases into the CI/CD pipeline
+1. a library of version-controlled testcases available for agile teams to use
 
 
-- Automation:  Adopt the[Microsoft - Shift Left Testing](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]
-  - Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
-  - Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod).
-  - Design Product for Testability.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.
-  - Test Code is a product.  Treat the software used to automate testcases as code.  The code is version-controlled, and discoverable (i.e., it exists in close proximity to the application code
-  - Test ownership follows application software ownership.  The software development team owns creating automated tests for not only unit-tests but boundary/integration tests.  
+<a name="goals-for-application-architecture-goal-testability-testable-applications-and-automation-guidance-shift-left-testing"></a>
+### Guidance : Shift-Left Testing
+
+The guidance is to adopt the [*Microsoft - Shift Left Testing*](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  
+
+The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]
+  - __Low Level Tests__: Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
+  - __Reusable Tests__: Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod) by consuming configuration of the environment.
+  - __Design Product for Testability__.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.  Include these user-stories early in the agile development cycle (Shift-Left)
+  - __Test Code is a product__.  Treat the software used to automate testcases as code.  The code is version-controlled, and discoverable (i.e., it exists in close proximity to the application code
+  - __Test ownership follows application software ownership__.  The software development team owns creating automated tests for not only unit-tests but boundary/integration tests.  Embrace the DevOps mentality of owning the system through to production deployment.  
 
 Recommendation:
 
 - [ ] SDLC Checklist: FY 22/23:  The Quality Assurance Working Group and the SDLC Working Group should consider formalizing the above principles and guidance as part of the new SDLC process, milestones and checklist.
 
+<a name="goals-for-application-architecture-goal-testability-testable-applications-and-automation-guidance-test-driven-development"></a>
+### Guidance : Test-Driven Development
 
-Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD abd DevOps are related is well described in the article '*TDD for a DevOps World*[^Guidance-7] - summary:
+Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD and DevOps are related is well described in the article '*TDD for a DevOps World*[^Guidance-7] - summary:
 - TDD is clearly a quality enhancing practice. I
 - TDD is a really good way to mitigate the risks of defects
 - TDD is increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
 
+Caution:  TDD can be burdoning on a development process.  TDD applied in meaningful areas is useful and worthwhile.
 
-<a name="application-architecture-guidance-goal-future-proof-technology"></a>
-## Goal: Future Proof Technology
-The [MACH Aliance](https://machalliance.org/) was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., )
+<a name="goals-for-application-architecture-goal-cloud-native-future-proof-technology"></a>
+## Goal: Cloud-Native - Future Proof Technology
+The [MACH Aliance](https://machalliance.org/)[^Guidance-8] was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., ).  This alliance is for cloud-native applications (CNA), and is worthwhile reading for CNA development.
 
 This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^Guidance-5]:
 
@@ -621,15 +604,36 @@ A view of how MACH applies to guidance and industry patterns is below.
 Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack.
 
 
-<a name="application-architecture-guidance-goal-user-experience"></a>
+<a name="goals-for-application-architecture-goal-user-experience"></a>
 ## Goal: User Experience
-Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  Some modern experiences can include:
+Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  
+
+User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is hinteracts with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
+
+  - [Nielsen-Norman Group (NNG)](https://www.nngroup.com/) - recognized leader in user experience
+  - [Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
+  - [Government of Canada - Digital Standards - Design with Users][^Guidance-25]
+
+
+Some modern experiences can include:
 - Push Notifications:  Business fit-for-purpose notifications using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into the Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
-<a name="application-architecture-guidance-goal-accessibility"></a>
+There are many modern application experiences uses expect in an application.  A short checklist of modern user experience functions are:
+- [ ] : social like : can the content be liked to identify high-value content
+- [ ] : share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
+- [ ] : link : should it be possible to get a link to the content for sharing, bookmarking, reporting.   What are the guarantees on the provided link (transitory, corporate, survives upgrades, ...)
+- [ ] : discuss/comment : can comments be provided for all to see, or to raise a concern to the author (private comment)
+- [ ] : rich link embed : when embedding a link in another application, should a link-preview be provided
+
+Guidance
+
+
+<a name="goals-for-application-architecture-goal-accessibility"></a>
 ## Goal: Accessibility
-The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
+The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   
+
+Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
 
 WCAG 2.1 Level AA (Double-A) implies:
 - Media: Captions are present on live video.  When appropriate, there exists audio description of what’s happening on streaming media.
@@ -638,10 +642,11 @@ WCAG 2.1 Level AA (Double-A) implies:
 - Forms: If an error is present on a form, the website will: suggest ways to fix it, the user may withdraw and resubmit the form, or the form prompts a confirmation.
 - Navigation: Pages can’t be nested or unintentionally obfuscated unless part of a step-by-step process, such as an application or feed result. Navigation follows a semantic structure and is repeated on pages.
 
-A basic checklist of minimal accessibility requirements are:
+A basic checklist of minimal accessibility guidelines are:
 
 - [ ] Applications should meet WCAG 2.1 Level AA success criteria.
-- [ ] Applications should allow users to self-identity accessibility needs.
+- [ ] Applications should allow users to self-identity accessibility needs through an application profile setting.
+- [ ] Applications should be tested for accessibility, including, testing functionality with our accessibiilty tool suite (page readers, etc)
 
 
 
@@ -661,9 +666,12 @@ A basic checklist of minimal accessibility requirements are:
 
 [^Guidance-8]: [MACH Aliance](https://machalliance.org/)
 
-[^Guidance-9]: [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664)
 
-[^Guidance-10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)
+[^Goals-1]: [Devopedia - SOLID Design Principles](https://devopedia.org/solid-design-principles)
+
+[^Guidance-10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)Guidance
+
+[^Guidance-25]: [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html)
 
 [^Guidance-11]: [Martin Fowler - Bounded Context](https://www.martinfowler.com/bliki/BoundedContext.html)
 
@@ -684,7 +692,7 @@ A basic checklist of minimal accessibility requirements are:
 
 The architectural strategy for a program; whether they are renewal efforts (ERP, HR, IM, Collaboration) or greenfield (Case Management) should follow methodologies proven to be successful.
 
-The guidance below is a summary of __Technology Strategy Patterns__.[^1]
+The guidance below is a summary of __Technology Strategy Patterns__.[^1].   This guidance is aimed at larger program initiatives that span multiple-years.   Our past history on programs (operations, collaboration, administrative) show these initiatives span five or more years before a minimal vialbe product (MVP) is in production.
 
 <a name="creating-an-architecture-strategy-guidance-apply-patterns-to-formulate-a-strategy"></a>
 ## Apply Patterns to Formulate a Strategy
@@ -694,22 +702,9 @@ The guidance below is a summary of __Technology Strategy Patterns__.[^1]
   - Analysis: Analyse options.
   - Recommendation:  Make recommendation and obtain approval.
 
-<a name="creating-an-architecture-strategy-guidance-concerns-of-an-architect"></a>
-## Concerns of an Architect
-  - Contain entropy:  Show a path in a roadmap; garnering support for that vision through communication of guidelines and standards; and creating clarity to ensure efficiency of execution and that you’re doing the right things and doing things right.
-  - Specify Non-Functional Requirements / Quality Requirements: The "..ility" list.   scalability, availability, maintainability, manageability, monitorability, extensibility, interoperability, portability, security, accessibility, observability, conformity (laws, directives). [Wikipedia - Quality Attributes](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
-  - Determine trade-offs: Identity the least-bad option.
 
-1. Patterns / Tools
-Many tools exist to perform options analysis.  Most start with creating an hypothesis and then validating (or invalidating) it formally.
-
-Some tools suggested are:
-- Logic Tree
-- SWOT - Strengths, Weaknesses, Opportunities and Threats
-
-
-<a name="creating-an-architecture-strategy-guidance-corporate-enterprise-context"></a>
-## Corporate (Enterprise) Context
+<a name="creating-an-architecture-strategy-guidance-design-thinking"></a>
+## Design Thinking
 Use design-thinking in the cross-functional project team to arrive at appropriate architectures .  
 The steps in design thinking are:
 1. Define the Problem
@@ -720,7 +715,7 @@ The steps in design thinking are:
 1. Refine Solutions
 1. Try Prototypes
 
-<a name="creating-an-architecture-strategy-guidance-corporate-enterprise-context-design-thinking-principles"></a>
+<a name="creating-an-architecture-strategy-guidance-design-thinking-design-thinking-principles"></a>
 ### Design thinking principles:
 1. Human-centricity
 1. Showing, not-telling
@@ -735,25 +730,11 @@ The steps in design thinking are:
 [^2]: [Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.](www.worldcat.org/isbn/978-1-4920-4594-6)
 
 
+<a name="application-architecture-styles-1"></a>
+# Application Architecture Styles
 
-<a name="patterns"></a>
-# Patterns
-Patterns are known, proven solutions.  Patterns help us communicate architecture and design to each other.
-
-Drive strategy with patterns.
-
-Patterns are used at different layers and perspectives; such as:
-
-- application architecture patterns
-- software design patterns : Decorator, Factory, Visitor, Pub/Sub, ..
-- user experience patterns
-
-
-<a name="patterns-application-architecture-styles-1"></a>
-## Application Architecture Styles
-
-<a name="patterns-application-architecture-styles-1-big-ball-of-mud-anti-pattern"></a>
-### Big Ball of Mud - Anti-Pattern:
+<a name="application-architecture-styles-1-big-ball-of-mud-anti-pattern"></a>
+## Big Ball of Mud - Anti-Pattern:
 
 A "Ball of Mud" application is an application without structure, software making direct database calls, with no concerns for design.  In 1997, Brian Foote and Joseph Yoder, coined this the Big Ball of Mud:
 
@@ -767,14 +748,64 @@ Our department has an abundance of *ball of mud* applications.
 Other useful architecture patterns/styles are described in "Application Architecture Styles".
 
 
+<a name="application-architecture-styles-1-event-driven-architecture-patterns"></a>
+## Event Driven Architecture Patterns
+
+Event Driven Architecture (EDA) is a architecture pattern based on the production, detection, consumption of, and reaction to events.  This architectural style is extremely useful in distributed systems for scalability and performance.  EDA architectures are not simple, nor are they easy to test.  EDA leverages the Publish/Subscribe Enterprise Integration Pattern[^Style-6]
+
+<a name="application-architecture-styles-1-event-driven-architecture-patterns-request-response-communication-has-the-following-characteristics"></a>
+### Request-Response communication has the following characteristics:
+- Low latency
+- Typically synchronous
+- Point-to-point, or, via broker/gateways
+- “Bespoke API”
+- e.g. HTTP, SOAP, gRPC
+
+<a name="application-architecture-styles-1-event-driven-architecture-patterns-event-streams-are-based-on-these-concepts"></a>
+### Event streams are based on these concepts:
+- Messaging / Pub Sub (sending data from A to B and C)
+- Continuous data processing (filtering, transformations, aggregations, business logic)
+- Often asynchrounous
+- Event-driven, supporting patterns like Event Sourcing and CQRS
+- General-purpose events
+- e.g. Apache Kafka
+
+<a name="application-architecture-styles-1-event-driven-architecture-patterns-eda-integration-patterns"></a>
+### EDA Integration Patterns
+- single partition / single consumer : simple pattern, provides orderin, but due to a single partition does not scale
+- single partition / multiple consumer : fan-out, sharing events with multiple consumers
+- at-least once delivery : product ensures message is committed by the delivery mechanism.  
+- multi-partitions / multi-consuers : ordering is by partition, consumers must understand partition ordering
+
+
+[^1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
+
+[^2]: Gregor Hohpe and Bobby Woolf, Enterprise Integration Patterns (Boston: Addison-Wesley, 2003).
+
+[Style-6]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.
+](www.worldcat.org./isbn/978-0321200686)
+
+
+<a name="patterns"></a>
+# Patterns
+Patterns are known, proven solutions.  Patterns help us communicate architecture and design to each other.
+
+Drive strategy with patterns.
+
+Patterns are used at different layers and perspectives; such as:
+
+- software design patterns : Decorator, Factory, Visitor, Pub/Sub, ..
+- user experience patterns
+
+
 <a name="patterns-software-design-patterns"></a>
 ## Software Design Patterns
-In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem within a given context in software design.  There are many great books on software design patterns.  Wikipedia's Software Design Patterns[^3] is a good resource.
+In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem within a given context in software design.  There are many great books on software design patterns.  Wikipedia's Software Design Patterns[^Pattern-3] is a good resource.
 
 Famous design pattern books include:
 
-- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^5] : Define a set of creational, behavioural and structural software patterns like builder, factory, facada, bridge, mediator, command and observer.
-- 2003 - Fowler - Patterns of Enterprise Application Architecture[^4] : Defines many categories of patterns including Domain, Data Source, Web Presentation, Distribution, Offline, and Session State Patterns.  Specific patterns include data gateway, model-view-controller, and client session state.
+- 1995 - Design Patterns: Elements of Reusable Object-Oriented Software[^Pattern-4] : Define a set of creational, behavioural and structural software patterns like builder, factory, facada, bridge, mediator, command and observer.
+- 2003 - Fowler - Patterns of Enterprise Application Architecture[^Pattern-5] : Defines many categories of patterns including Domain, Data Source, Web Presentation, Distribution, Offline, and Session State Patterns.  Specific patterns include data gateway, model-view-controller, and client session state.
 
 
 <a name="patterns-user-interface-patterns"></a>
@@ -786,13 +817,8 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 - [Google Material UI](https://material.io/search.html?q=pattern) : An exensive library of UI patterns including [Search](https://material.io/archive/guidelines/patterns/search.html), Navigations, Onboarding and other common use-case patterns.
 
 
-
-
-<a name="patterns-other-patterns-laws"></a>
-## Other Patterns / Laws
-
-<a name="patterns-other-patterns-laws-business-patterns"></a>
-### Business Patterns
+<a name="patterns-business-patterns"></a>
+## Business Patterns
 
 Caveman Pattern
 : Reliving old problem experience with new projects even though the risk is extremely low.  (O'Reilly Fundamentals of SW Architecture)
@@ -802,24 +828,23 @@ Conway's Law
 : Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The ['Inverse Conway Maneuver'](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
 ) recommends evolving your team and organizational structure to promote your desired architecture. Ideally your technology architecture will display [isomorphism](https://en.wikipedia.org/wiki/Isomorphism_(sociology)) with your business architecture.
 
-  - Isomorphism : In sociology, an isomorphism is a similarity of the processes or structure of one organization to those of another, be it the result of imitation or independent development under similar constraints.  In our application development context, it implies, that different technology branches, division and sections develop their products under similar constraints.
+  - Isomorphism : In sociology, an isomorphism is a similarity of the processes or structure of one organization to those of another, be it the result of imitation or independent development under similar constraints.  In our application development context, isomorphism implies, that different technology branches, division and sections develop their products under similar constraints.
 
 
-
-<a name="patterns-other-patterns-laws-cloud-design-patterns"></a>
-### Cloud Design Patterns
+<a name="patterns-cloud-design-patterns"></a>
+## Cloud Design Patterns
 
 1. [Microsoft Azure Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
 1. [AWS Prescriptive Guidance Patters](- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)) : 2,000 pages of patterns for cloud, DevOps, communication, testing, governance, IoT, Security, Servierless, Spark, ETL, A/B Testing, Canary Testing, ...
 
 
-<a name="patterns-other-patterns-laws-microservices-patterns"></a>
-### Microservices Patterns
-Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^1] defines many pattnerns, including patterns to migrate from monoliths to microservices.   These patterns include:
+<a name="patterns-microservices-patterns"></a>
+## Microservices Patterns
+Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^Pattern-1] defines many pattnerns, including patterns to migrate from monoliths to microservices.   These patterns include:
 
   - Strangle Fig Pattern: . You intercept calls to the existing system—in our case the existing monolithic application. If the call to that piece of functionality is implemented in our new microservice architecture, it is redirected to the microservice.
   - Saga Pattern
-  - References legacy Enterprise Integration Patterns (EIP)[^2]
+  - References legacy Enterprise Integration Patterns (EIP)[^Pattern-2]
   - Backend for Front-End (BFF) : similar to an aggregating gateway, but limited to a single user-interface.  For example have a BFF for an Android vs Applie client.
 
 References for microservices patterns:
@@ -829,15 +854,16 @@ References for microservices patterns:
 
 
 
-[^1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
+[^Pattern-1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
 
-[^2]: Gregor Hohpe and Bobby Woolf, Enterprise Integration Patterns (Boston: Addison-Wesley, 2003).
+[^Pattern-2]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.
+](www.worldcat.org./isbn/978-0321200686)
 
-[^3]: [Wikipedia - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
+[^Pattern-3]: [Wikipedia - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
 
-[^4]: [Fowler - Patterns of Enterprise Application Architecture](www.worldcat.org/isbn/978-0-321-12742-6) : Fowler, Martin. Patterns of Enterprise Application Architecture. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2003.
+[^Pattern-4]: [Design Patterns: Elements of Reusable Object-Oriented Software](www.worldcat.org/isbn/0-201-63361-2)  : Gamma, Erich, ed. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional Computing Series. Reading, Mass: Addison-Wesley, 1995.
 
-[^5]: [Design Patterns: Elements of Reusable Object-Oriented Software](www.worldcat.org/isbn/0-201-63361-2)  : Gamma, Erich, ed. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional Computing Series. Reading, Mass: Addison-Wesley, 1995.
+[^Pattern-5]: [Fowler - Patterns of Enterprise Application Architecture](www.worldcat.org/isbn/978-0-321-12742-6) : Fowler, Martin. Patterns of Enterprise Application Architecture. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2003.
 
 
 
@@ -854,9 +880,13 @@ References for microservices patterns:
 
 [fundamentalsofsoftwarearchitecture]: http://www.worldcat.org/isbn/9781492043454 "Richards, Mark. & Ford, Neil. Fundamentals of software architecture: an engineering approach. (O’Reilly, 2020)]"
 
+<a name="references-cloud"></a>
+## Cloud
+- [*Cloud Security Alliance - The Six Pillars for Cloud SecDevOps](https://cloudsecurityalliance.org/group/DevSecOps/)
+
 <a name="references-design"></a>
 ## Design
-- [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)] http://www.worldcat.org/isbn/9780133039900
+- [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)](http://www.worldcat.org/isbn/9780133039900)
 
 <a name="references-patterns-1"></a>
 ## Patterns
@@ -870,9 +900,17 @@ References for microservices patterns:
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
+<a name="references-technologies"></a>
+## Technologies
+- [Stack Overflow - 2021 Most Popular Technologies](https://insights.stackoverflow.com/survey/2021#most-popular-technologies)
 
 <a name="references-government-of-canada"></a>
 ## Government of Canada
+
+<a name="references-government-of-canada-digital-standards"></a>
+### Digital Standards
+
+- [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely
 - [Digital Standards - Playbook](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) : Provides aspirational guidance around key themes; Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely.  Also available as GitHub Pages - *[Digital Playbook - GitHub Pages](https://canada-ca.github.io/digital-playbook-guide-numerique/views-vues/standards-normes/en/1-design-with-users.html?wbdisable=true)*.   These digital standards are common standards used internationally and align well with these *[Digital Principles](https://digitalprinciples.org/principles/)*.
 
 - [Directive on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601) : Defines EARB assessment, API use, Network use, IT provisions standards (minimum screen size, .ERP standard, ...)
@@ -884,12 +922,14 @@ References for microservices patterns:
 
 - [Policy on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603) : Defines role of TBS CIO and Deputy Heads.  Defines roles of SSC, PSPC, LAC, CSE departments.
 
-  - These replaced *[Directive on Management of Information Technology - Archived 2020-03-31](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=15249#appC)*
-
-  - [GC Information Management Guidelines - 1996](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=13832&section=html)
+  - The *[Directive on Management of Information Technology - Archived 2020-03-31](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=15249#appC)* was replaced by the above directives.
 
 
-- [GC Digital Oprations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html) - by Marc Brouillard a/CIO (pre new CIO).  Highlights accomplishments - EARB, Digital Strategic Plan, Open Government Plan, signed Digital Nations Charter (Denmark, Canada, Israel, Mexico, UK, Estonia, Korea, Uruguay, New Zealand, ...).  1) Modernize IT via APM, 2) Improve Services, 3) Implement Enterprise, 4) Transform the Institution.
+
+<a name="references-government-of-canada-digital-strategic-plan"></a>
+### Digital : Strategic Plan
+
+- [GC Digital Operations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html) - by Marc Brouillard a/CIO (pre new CIO).  Highlights accomplishments - EARB, Digital Strategic Plan, Open Government Plan, signed Digital Nations Charter (Denmark, Canada, Israel, Mexico, UK, Estonia, Korea, Uruguay, New Zealand, ...).  1) Modernize IT via APM, 2) Improve Services, 3) Implement Enterprise, 4) Transform the Institution.
 
   - [GC Digital Strategy](https://www.canada.ca/en/government/system/digital-government/digital-government-strategy.html) - DOSP aligns with digital strategy.
 
@@ -898,5 +938,169 @@ References for microservices patterns:
 
 - [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
 
+<a name="references-government-of-canada-information-management"></a>
+### Information Management
+- [GC Information Management Guidelines - 1996](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=13832&section=html)
+- [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
+- [TBS Glossary](https://www.tbs-sct.canada.ca/pol/glossary-lexique-eng.aspx#glos-lex-D)
+
+<a name="references-government-of-canada-privacy"></a>
+### Privacy
+- [Directive on Privacy Practices](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=18309) : Defines direct and indirect collection of personal information.  Relates to other legislation such as  Policy on Privacy Protection, the Directive on Privacy Impact Assessment, the Directive on Social Insurance Number, the Directive on Privacy Requests and Correction of Personal Information and the Standard on Privacy and Web Analytics.
+
+
+<a name="misc-to-file"></a>
+# Misc - To File
+Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.
+
+
+<a name="ddd"></a>
+# DDD
+Eric Evans DDD Reference :Onedirve/.../Technical/Application Models/...
+=======
 - [GC Cloud Adoption Strategy](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)
+
+
+<a name="appendix-definitions"></a>
+# Appendix - Definitions
+<a name="appendix-definitions-architecture-2"></a>
+## Architecture
+
+Application Architecture (GC EARB)
+
+: Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on overall design on how data is consumed and created by the system. It views the interactions between applications, databases, middleware to ensure scalability, reliability, availability and manageability.
+
+Application Architecture (RedHat)
+: An application architecture describes the patterns and techniques used to design and build an application. The architecture gives you a roadmap and best practices to follow when building an application, so that you end up with a well-structured app. [[Redhat - CNA - What is Application Architecture](https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture)].   
+
+Application Architecture (TOGAF)
+: A description of the structure and interaction of the applications as groups of capabilities that provide key business functions and manage the data assets.  [[Application Architect - Wikipedia](https://en.wikipedia.org/wiki/Applications_architecture#Application_architect).]
+
+
+<a name="appendix-definitions-architecture-2-architecture-quotes"></a>
+### Architecture Quotes
+:
+- *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
+- *Architecture is about the important stuff, whatever that is.* - Ralph Johnson & Martin Fowler
+- *Architecture is the stuff you can’t Google.* - Mark Richards
+
+
+<a name="appendix-definitions-architecture-2-architecture-style-togaf"></a>
+### Architecture Style (TOGAF)
+: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.
+
+Types of Architecture
+: The overall architecture of an enterprise can be described by integrated sub-architecture domains. These are:
+
+  - Business Architecture
+  - Application Architecture
+  - Information Architecture
+  - Technology Architecture
+  - Security Architecture
+  - Privacy Architecture and
+  - Data Architecture
+
+<a name="appendix-definitions-architecture-2-architecture-characteristics"></a>
+### Architecture Characteristics:
+- Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. These are often called non-functional requirements but should be considered as Quality Requirements.  
+
+- An architectural characteristics meets three criteria:
+
+  1. specifies a non-domain (*non-functional*) consideration,
+  1. influences some aspect of the design, and
+  1. is critical/important to the application's success. A few are listed below
+
+
+- Examples of architectural characteristics:
+
+  - operational characteristics: availability, business continuity, performance, recoverability, robustness, scalability, elasticity.
+
+  - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainabilty, portability, supportability, upgradeability.
+
+  - cross-cutting: authentication, authorization, legal, privacy, security, supportabilty, usability, achievability, compatibilty, accessibility, interoperability.
+
+  - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
+
+
+<a name="appendix-definitions-application"></a>
+## Application
+
+Application
+: An application, application program or application software is a computer program designed to help people perform an activity
+
+API
+: An application programming interface (API) is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software.  An API may be a web-service call (REST API, ...) or a software library or framework (function calls, methods, libraries, ...).
+
+Front-End & Back-End
+: In simple application terms, the front-end of an application is concerned with the presentation to the end-user. In simple application terms, the back-end interacts with the data access layer.
+
+Web Service
+: An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.
+
+
+<a name="appendix-definitions-governance"></a>
+## Governance:
+
+Governance
+: is derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+
+IT Governance
+: is processes that enable the IT staff to better manage risk and operate efficiently to the benefit of the organization on the whole.   IT Governance includes aspects from many initiatives including:
+- The Principles of Scientific Management — a method of corporate organization focused on scientific output during the industrial era.
+- Total Quality Management — a method focused on creating a work environment where employees strive to constantly improve.
+- Quality Management System — a method that acts as a collection of organizational processes focused on increasing customer satisfaction.
+
+
+
+<a name="appendix-definitions-technical-debt"></a>
+## Technical Debt
+
+Technical debt is the coding you must do tomorrow because you took a shortcut in order to deliver the software today.
+
+Technical debt is somewhat misunderstood in within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
+
+- Technical debt (also known as design debt or code debt, but can be also related to other technical endeavours) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. [[Technical Debt - Wikipedia](https://en.wikipedia.org/wiki/Technical_debt)].
+
+- Technical Debt is a term coined thirty years ago by Ward Cunningham:
+
+  *Shipping first-time code is like going into debt. A little debt speeds development so long as it is paid back promptly with a rewrite. Objects make the cost of this transaction tolerable. The danger occurs when the debt is not repaid. Every minute spent on not-quite-right code counts as interest on that debt. Entire engineering organizations can be brought to a stand-still under the debt load of an unconsolidated implementation, object-oriented or otherwise.* [Ward Cunningham - 1992].  
+
+  Note: Ward Cunningham is one of the authors of the [Agile Manifesto](https://agilemanifesto.org/)
+
+- The sum of time and effort one has to pay to keep up with the tools one is 'married' to.
+
+- Changes required that are not completed are considered debt, and until paid, will incur interest on top of interest, making it cumbersome to build a project. As a change is started on a codebase, there is often the need to make other coordinated changes in other parts of the codebase, system, solution or documentation. Although the term is used in software development primarily, it can also be applied to other professions.
+
+- Technical debt is a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution. - *[Technical Debt - Technopedia](https://www.techopedia.com/definition/27913/technical-debt)*
+- Technical debt is commonly associated with extreme programming, especially in the context of refactoring. That is, it implies that restructuring existing code (refactoring) is required as part of the development process. Under this line of thinking refactoring is not only a result of poorly written code, but is also done based on an evolving understanding of a problem and the best way to solve that problem.
+
+- Technical debt may also be known as design debt.
+
+- When taking short cuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
+
+- Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)
+
+
+
+<a name="appendix-definitions-devops"></a>
+## DevOps
+
+DevOps, the practice of applying developmental best practices such as collective collaboration to infrastructure operations, has been shown to positively impact efficiencies of development and operations teams today, especially in the cloud environment.
+
+
+<a name="policy-framework"></a>
+# Policy Framework
+Treasury Board issues a range of policy instruments that are designed to establish mandatory requirements (rules) or voluntary best practices. There are three types of mandatory instruments (policies, directives and standards) and two voluntary instruments (guidelines and tools). Table 1 provides further definition. The decision to put in place a mandatory versus a voluntary instrument depends on the issue being addressed, the management objective, and whether a lack of consistency across government has the potential to create inequities, inefficiencies or risks that would jeopardize the achievement of the policy objective. - [*TBS Foundation Framework*](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=13616)
+
+  Policy
+  : Formal direction that imposes specific responsibilities on departments. Policies explain what deputy heads and their officials are expected to achieve.
+
+  Directive
+  : Formal instruction that obliges departments to take (or avoid) specific action. Directives explain how deputy heads' officials must meet the policy objective.
+
+  Standard
+  : A set of operational or technical measures, procedures or practices for government-wide use. Standards provide more detailed information on how managers and functional specialists are expected to conduct certain aspects of their duties.
+
+  Guideline
+  : A document providing guidance, advice or explanation to managers or functional area specialists.
 

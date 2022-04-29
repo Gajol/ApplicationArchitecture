@@ -15,7 +15,8 @@ The Application Reference Architecture (ARA) borders on what many would consider
 
 This document documents:
 - existing application architecture within our department
-- guidelines for technical leaders
+- standards for technical leaders (mandatory)
+- guidelines for technical leaders (voluntary)
 
 This document is intended for:
 - technical design leads

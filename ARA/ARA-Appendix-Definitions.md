@@ -1,4 +1,4 @@
-# Definitions
+# Appendix - Definitions
 ## Architecture
 
 Application Architecture (GC EARB)
@@ -69,13 +69,45 @@ Web Service
 : An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.
 
 
+
+
+## DevOps
+
+DevOps, the practice of applying developmental best practices such as collective collaboration to infrastructure operations, has been shown to positively impact efficiencies of development and operations teams today, especially in the cloud environment.
+
+
 ## Governance:
 
-Governance:
-Governance is derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+Governance
+: is derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+
+IT Governance
+: is processes that enable the IT staff to better manage risk and operate efficiently to the benefit of the organization on the whole.   IT Governance includes aspects from many initiatives including:
+- The Principles of Scientific Management — a method of corporate organization focused on scientific output during the industrial era.
+- Total Quality Management — a method focused on creating a work environment where employees strive to constantly improve.
+- Quality Management System — a method that acts as a collection of organizational processes focused on increasing customer satisfaction.
+
+
+
+## Policy Framework for Government of Canada
+Treasury Board issues a range of policy instruments that are designed to establish mandatory requirements (rules) or voluntary best practices. There are three types of mandatory instruments (policies, directives and standards) and two voluntary instruments (guidelines and tools). Table 1 provides further definition. The decision to put in place a mandatory versus a voluntary instrument depends on the issue being addressed, the management objective, and whether a lack of consistency across government has the potential to create inequities, inefficiencies or risks that would jeopardize the achievement of the policy objective. - [*TBS Foundation Framework*](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=13616)
+
+  Policy
+  : Formal direction that imposes specific responsibilities on departments. Policies explain what deputy heads and their officials are expected to achieve.
+
+  Directive
+  : Formal instruction that obliges departments to take (or avoid) specific action. Directives explain how deputy heads' officials must meet the policy objective.
+
+  Standard
+  : A set of operational or technical measures, procedures or practices for government-wide use. Standards provide more detailed information on how managers and functional specialists are expected to conduct certain aspects of their duties.
+
+  Guideline
+  : A document providing guidance, advice or explanation to managers or functional area specialists.
 
 
 ## Technical Debt
+
+Technical debt is the coding you must do tomorrow because you took a shortcut in order to deliver the software today.
 
 Technical debt is somewhat misunderstood in within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
 
@@ -97,3 +129,5 @@ Technical debt is somewhat misunderstood in within IT and our department.   Tech
 - Technical debt may also be known as design debt.
 
 - When taking short cuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
+
+- Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)

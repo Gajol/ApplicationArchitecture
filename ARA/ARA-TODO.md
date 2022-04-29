@@ -443,3 +443,80 @@ Author: Sam Newman
 # Terms
 
 Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.
+
+
+# Goals
+
+## Goal : Enterprise Search
+
+
+## Goal: Reduce Content Duplication with URL Design
+
+Content (information) is duplicated within applications and across technologies.  The causes of this have not been formally documented, however some factors leading to users copying content are the lack of *trust* in being able to find or access the content in the future.  This can be paraphrased as *I need a local copy for me or my team*.   This leads to copies of information on shared-drives and transitory and corporate applications.   
+
+Some historical examples that have led to this "clone-and-own" culture include:
+
+  - Link Rot:  Application upgrades making links to content fail.   [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) is the use of a hyperlink that links to a specific, generally searchable or indexed, piece of web content on a website.  For example, a link to a specific case, request or document.  
+
+  - Access:  Users are concerned that the content may disappear due to the content owner removing, renaming or modifying user-access.   This is difficult to address at the application layer, and requires enterprise information and access-management governance.
+
+
+1. URL Lifecycle
+ When supporting [Deep Linking](https://en.wikipedia.org/wiki/Deep_linking) design must take into account the lifecycle of the link, ned that the content may disappear due to the content owner removing, renaming or modifying userand its ability to function through upgrades.   Consider patterns such as [Permalink](https://en.wikipedia.org/wiki/Permalink) and Data Object Identifier [(DOI)](https://en.wikipedia.org/wiki/Digital_object_identifier).  When provide a link to a user for reference, identify this should be a trusted-link which survives upgrades/replacements.
+
+1. URL Design
+ Define a URL strategy for the application, including an inventory or URL's provided.  Define the manner in which URLs are clean, friendly and pretty [Clean URL](https://en.wikipedia.org/wiki/Clean_URL); support *http://example.com/name* as opposed to *http://example.com/index.php?page=name*.
+
+
+
+
+
+[Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less)
+[...] less means:
+  - Less features
+  - Less options/preferences
+  - Less people and corporate structure
+  - Less meetings and abstractions
+  - Less promises
+
+[...] [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
+  - less "Thick process"
+  - less "Long-Term Roadmaps"  (supported as by ITSS Study - Ian Lovsion 2017)
+  - less of "The past ruling the future"
+
+
+
+## Goal : Composable ERP and HR Enterprise - Gartner
+
+  [Gartner - The Future of Enterprise Resource Planning (ERP) is Composable](https://www.gartner.com/document/3991664)[^Guidance-9] defines a *Composable ERP* as an adaptive technology strategy that enables the foundational administrative and operational digital capabilities for an enterprise to keep up with the pace of business change. This strategy delivers a core of composable applications and, as a service, software platforms that are highly configurable, interoperable, and flexible to adapt to future modern technology.  
+
+  The key Gartner recommendations are valid for ERP and HR modernization initiatives:
+  - [ ]  Define business capabilities through road mapping exercises
+  - [ ]  Reduce reliance on customizations and proprietary-ERP
+  - [ ]  Continuously deliver incremental business value in a modular mode
+  - [ ]  Build an ERP team with wide-ranging skills (Adopt a DevOps for ERP). Ensure adequate skill development and training
+
+  [^Guidance-9]: [Gartner - The Future of ERP is Composable](https://www.gartner.com/document/3991664)
+
+
+# Deleted from ARA-Guidance Strategy.md
+
+## Concerns of an Architect
+  - Contain entropy:  Show a path in a roadmap; garnering support for that vision through communication of guidelines and standards; and creating clarity to ensure efficiency of execution and that you’re doing the right things and doing things right.
+  - Specify Non-Functional Requirements / Quality Requirements: The "..ility" list.   scalability, availability, maintainability, manageability, monitorability, extensibility, interoperability, portability, security, accessibility, observability, conformity (laws, directives). [Wikipedia - Quality Attributes](https://en.wikipedia.org/wiki/List_of_system_quality_attributes)
+  - Determine trade-offs: Identity the least-bad option.
+
+1. Patterns / Tools
+Many tools exist to perform options analysis.  Most start with creating an hypothesis and then validating (or invalidating) it formally.
+
+Some tools suggested are:
+- Logic Tree
+- SWOT - Strengths, Weaknesses, Opportunities and Threats
+
+
+
+[^Style-3]: [Wikipedia - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
+
+[^Style-4]: [Fowler - Patterns of Enterprise Application Architecture](www.worldcat.org/isbn/978-0-321-12742-6) : Fowler, Martin. Patterns of Enterprise Application Architecture. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2003.
+
+[^Style-5]: [Design Patterns: Elements of Reusable Object-Oriented Software](www.worldcat.org/isbn/0-201-63361-2)  : Gamma, Erich, ed. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley Professional Computing Series. Reading, Mass: Addison-Wesley, 1995.
