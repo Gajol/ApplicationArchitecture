@@ -27,6 +27,10 @@ The steps in design thinking are:
 1. Refine Solutions
 1. Try Prototypes
 
+__Design Thinking Process__
+![Design Thinking Process - Nielsen Norman Group](/Assets/DesignThinkingNNG.png)
+
+
 ### Design thinking principles:
 1. Human-centricity
 1. Showing, not-telling
