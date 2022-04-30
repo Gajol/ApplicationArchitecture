@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-04-30 13:04*
+*Document Generation Date: 2022-04-30 14:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -25,8 +25,6 @@
     * [Business and Technology Environment](#business-business-and-technology-environment)
     * [Discovery](#business-discovery)
 * [Digital Transformation : Design Principles](#digital-transformation-design-principles)
-    * [Data is an Asset](#digital-transformation-design-principles-data-is-an-asset)
-* [API](#api)
 * [Application Characteristics and Styles](#application-characteristics-and-styles)
     * [Application Characteristics](#application-characteristics-and-styles-application-characteristics)
         * [Department Application Characteristics](#application-characteristics-and-styles-application-characteristics-department-application-characteristics)
@@ -89,6 +87,7 @@
         * [Architecture Characteristics:](#appendix-definitions-architecture-2-architecture-characteristics)
     * [Application](#appendix-definitions-application)
     * [DevOps](#appendix-definitions-devops)
+    * [Digital Transformation](#appendix-definitions-digital-transformation)
     * [Governance:](#appendix-definitions-governance)
     * [Policy Framework for Government of Canada](#appendix-definitions-policy-framework-for-government-of-canada)
     * [Principles](#appendix-definitions-principles-1)
@@ -307,67 +306,24 @@ TODO - Add Enterprise Interoperability to ITOD Dependencies
 <a name="digital-transformation-design-principles"></a>
 # Digital Transformation : Design Principles
 
-There are many sources for digital principles.  The Government of Canada has identified the following standards.  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
+There are many sources for digital principles[^Principles-1.  The Government of Canada has identified the following digital architecture standards[^Principles-2].  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
 
 
-| Principle  |Description                                                                                                                                                                                      | Supported By                                                                                                                  |
-| :-- | :---- | :-- |
-| Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
-| Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
-| Design for Users First                               | User-centred methods, focus on users, using agile.                                                                                                                                               | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
-| Deliver with Multidisciplinary Teams                 | Include all skillsets required for delivery                                                                                                                                                      | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
-| Design for Performance, Availability and Scalability | Design quality into the system.  Use distributed systems (assume failure will happen)                                                                                                            | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
-| Enable Interoperability                              | Expose functionality as a service.  Use microservices built around business capabilities.  Scope each service to a single purpose.  Use APIs.  Use the Canadian Digital Exchange Platform (CDXP) | GC[^Principles-2], GC API Standards[^Principles-API], GC Service & Digital[^Principles-DSP],Digital Principles[^Principles-1] |
-| Design Systems to be Measurable and Accountable      | Publish Service Level Agreements (SLAs), Make an audit trail for all transactions (traceability).                                                                                                | GC[^Principles-2]                                                                                                             |
-| Keep Data Organized                                  | Decouple master data from applications.  Make systems or record (SOR) authoritative sources, use Master Data Management (MDM)                                                                    | GC[^Principles-2]                                                                                                             |
-| Use Cloud First                                      | Use SaaS -> PaaS -> IaaS                                                                                                                                                                         | GC[^Principles-2], GC Service & Digital[^Principles-DSP]                                                                      |
-Design for Security and Privacy|	Categorize data, perform a privacy impact assessment on personally identifiable information (PII)|GC[^Principles-2], Digital Principles[^Principles-1]|
+| Principle |Description |
+| :-- | :---- | 
+| Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   |
+| Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               |
+| Design for Users First                               | User-centred methods, focus on users, using agile.                                                                                                                                               |
+| Deliver with Multidisciplinary Teams                 | Include all skillsets required for delivery                                                                                                                                                      |
+| Design for Performance, Availability and Scalability | Design quality into the system.  Use distributed systems (assume failure will happen)                                                                                                            |
+| Enable Interoperability                              | Expose functionality as a service.  Use microservices built around business capabilities.  Scope each service to a single purpose.  Use APIs.  Use the Canadian Digital Exchange Platform (CDXP) |
+| Design Systems to be Measurable and Accountable      | Publish Service Level Agreements (SLAs), Make an audit trail for all transactions (traceability).                                                                                                |
+| Keep Data Organized                                  | Decouple master data from applications.  Make systems or record (SOR) authoritative sources, use Master Data Management (MDM)                                                                    |
+| Use Cloud First                                      | Use SaaS -> PaaS -> IaaS                                                                                                                                                                         |
+| Design for Security and Privacy|	Categorize data, perform privacy impact assessment (PIA) on personally identifiable information (PII)|
 
 
 
-The website *Principles for Digital Design*[^Principles-1] [*Design Principles*](https://digitalprinciples.org/principles/) reference in *Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.*.
-
-- Design with the User : User-centered design starts with getting to know the people you are designing for through conversation, observation and co-creation.
-
-- Understand the Existing Ecosystem : Well-designed initiatives and digital tools consider the particular structures and needs that exist in each country, region and community.
-
-- Design for Scale: Achieving scale requires adoption beyond an initiatives pilot population and often necessitates securing funding or partners that take the initiative to new communities or regions.
-
-- Build for Sustainability : Building sustainable programs, platforms and digital tools is essential to maintain user and stakeholder support, as well as to maximize long-term impact.
-
-- Be Data Driven : When an initiative is data driven, quality information is available to the right people when they need it, and they are using those data to take action.
-
-- Use Open Standards, Open Data, Open Source, and Open Innovation: An open approach to digital development can help to increase collaboration in the digital development community and avoid duplicating work that has already been done.
-
-- Reuse and Improve : Reusing and improving is about taking the work of the global development community further than any organization or program can do alone.
-
-- Address Privacy and Security : Addressing privacy and security in digital development involves careful consideration of which data are collected and how data are acquired, used, stored and shared.
-
-- Be Collaborative : Being collaborative means sharing information, insights, strategies and resources across projects, organizations and sectors, leading to increased efficiency and impact.
-
-
-<a name="digital-transformation-design-principles-data-is-an-asset"></a>
-## Data is an Asset
-What are the application architecture implications of "data is an asset"?
-- Past: In the past, applications were made to help users accomplish a task.  The data design model might have been part of the software development process, but it was not a prioritized objective.   
-- Today: With data as an asset being a core principle, considerable time should be spent defining how data is collected, stored, organized/modelled, __protected__, and making it available to other applications.
-
-
-<a name="api"></a>
-# API
-2002 Amazon API Principle [[reference](https://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/)]:
-- All teams will henceforth expose their data and functionality through service interfaces.
-- Teams must communicate with each other through these interfaces.
-There will be no other form of inter-process communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only - communication allowed is via service interface calls over the network.
-- It doesn’t matter what technology they use.
-All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in - the outside world. No exceptions.
-- __Anyone who doesn’t do this will be fired.__  Thank you; have a nice day!
-
-From "Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020"
-- The protocol, too, is another element to consider in our deconstructed method. After doing this for more than 20 years, it becomes very apparent how much time we technologists spend rearranging the furniture for the flavor of the month. Everyone had to switch everything to SOAP. Then they hated SOAP and had to switch everything to XML. Then they hated that and had to switch everything to JSON. The clever minority touted ProtoBuf. Popular products like Cassandra used Avro, so a patch of proponents pop up around that. Soon something else will come along.
-
-
-- Postman - 12 features to help solve API problems : https://apievangelist.com/2022/01/27/twenty-problems-that-postman-is-solving-for-developers-in-2022/
 
 
 
@@ -1030,8 +986,11 @@ References for microservices patterns:
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
 - [Design patterns: elements of reusable object-oriented software. (Addison-Wesley, 1995).](http://www.worldcat.org/isbn/978-0-201-63361-0)
+ 
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
+
+- [Postman - 12 features to help solve API problems](https://apievangelist.com/2022/01/27/twenty-problems-that-postman-is-solving-for-developers-in-2022/)
 
 <a name="references-principles"></a>
 ## Principles
@@ -1105,10 +1064,10 @@ Eric Evans DDD Reference :Onedirve/.../Technical/Application Models/...
 
 Application Architecture (GC EARB)
 
-: Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on overall design on how data is consumed and created by the system. It views the interactions between applications, databases, middleware to ensure scalability, reliability, availability and manageability.
+: Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on the overall design of how data is consumed and created by the system. It views the interactions between applications, databases, and middleware to ensure scalability, reliability, availability and manageability.
 
 Application Architecture (RedHat)
-: An application architecture describes the patterns and techniques used to design and build an application. The architecture gives you a roadmap and best practices to follow when building an application, so that you end up with a well-structured app. [[Redhat - CNA - What is Application Architecture](https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture)].   
+: An application architecture describes the patterns and techniques used to design and build an application. The architecture gives you a roadmap and best practices to follow when building an application so that you end up with a well-structured app. [[Redhat - CNA - What is Application Architecture](https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture)].   
 
 Application Architecture (TOGAF)
 : A description of the structure and interaction of the applications as groups of capabilities that provide key business functions and manage the data assets.  [[Application Architect - Wikipedia](https://en.wikipedia.org/wiki/Applications_architecture#Application_architect).]
@@ -1124,7 +1083,7 @@ Application Architecture (TOGAF)
 
 <a name="appendix-definitions-architecture-2-architecture-style-togaf"></a>
 ### Architecture Style (TOGAF)
-: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed.
+: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how architecture is formed.
 
 Types of Architecture
 : The overall architecture of an enterprise can be described by integrated sub-architecture domains. These are:
@@ -1139,12 +1098,12 @@ Types of Architecture
 
 <a name="appendix-definitions-architecture-2-architecture-characteristics"></a>
 ### Architecture Characteristics:
-- Architecture characteristics are the aspects the system must do that is not directly related to the domain functionality. These are often called non-functional requirements but should be considered as Quality Requirements.  
+- Architecture characteristics are the aspects the system must do that are not directly related to the domain functionality. These are often called non-functional requirements but should be considered Quality Requirements.  
 
-- An architectural characteristics meets three criteria:
+- An architectural characteristic meets three criteria:
 
   1. specifies a non-domain (*non-functional*) consideration,
-  1. influences some aspect of the design, and
+  1. influences some aspects of the design, and
   1. is critical/important to the application's success. A few are listed below
 
 
@@ -1152,18 +1111,18 @@ Types of Architecture
 
   - operational characteristics: availability, business continuity, performance, recoverability, robustness, scalability, elasticity.
 
-  - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainabilty, portability, supportability, upgradeability.
+  - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainability, portability, supportability, upgradeability.
 
-  - cross-cutting: authentication, authorization, legal, privacy, security, supportabilty, usability, achievability, compatibilty, accessibility, interoperability.
+  - cross-cutting: authentication, authorization, legal, privacy, security, supportability, usability, achievability, compatibility, accessibility, interoperability.
 
   - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
 
 <a name="appendix-definitions-architecture-2-architecture-characteristics-quality-characteristics"></a>
 #### Quality Characteristics
-The below are some quality characteristics to consider when developing applications:
+Below are some quality characteristics to consider when developing applications:
 
 Observability 
-: Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitor which reacts to quality thresholds).
+: Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitoring which reacts to quality thresholds).
 
 Testability
 : Testability is a quality attribute of an application that measures how easy it is to define test criteria, execute a set of tests and determine their success.
@@ -1175,13 +1134,13 @@ Application
 : An application, application program or application software is a computer program designed to help people perform an activity
 
 API
-: An application programming interface (API) is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software.  An API may be a web-service call (REST API, ...) or a software library or framework (function calls, methods, libraries, ...).
+: An application programming interface (API) is a connection between computers or between computer programs. It is a type of software interface, offers a service to other pieces of software.  An API may be a web-service call (REST API, ...) or a software library or framework (function calls, methods, libraries, ...).
 
 Front-End & Back-End
 : In simple application terms, the front-end of an application is concerned with the presentation to the end-user. In simple application terms, the back-end interacts with the data access layer.
 
 Web Service
-: An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.
+: An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is a newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programmatic interface description language.   gRPC is often used in micro-service architectures.
 
 
 
@@ -1189,18 +1148,22 @@ Web Service
 <a name="appendix-definitions-devops"></a>
 ## DevOps
 
-DevOps, the practice of applying developmental best practices such as collective collaboration to infrastructure operations, has been shown to positively impact efficiencies of development and operations teams today, especially in the cloud environment.
+DevOps, the practice of applying developmental best practices such as collaboration to infrastructure operations, has been shown to positively impact the efficiencies of development and operations teams today, especially in the cloud environment.
 
+<a name="appendix-definitions-digital-transformation"></a>
+## Digital Transformation
+
+Digital transformation is the process os using digital technologies to create new, or modify exiting business proceofes, culture and customer experiences to meet changingexistingss and market requirements.  Reimagining the business in the digital age is a digital transformation. - [*Salesforce*](https://www.salesforce.com/products/platform/what-is-digital-transformation/)
 
 <a name="appendix-definitions-governance"></a>
 ## Governance:
 
 Governance
-: is derived from the Greek word kubernan "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
+: is derived from the Greek word Huberman "*to steer*" is an important responsibility of the architect role. As the name implies, the scope of architecture governance covers any aspect of the software development process that architects (including roles like enterprise architects) want to exert an influence upon. For example, ensuring software quality within an organization falls under the heading of architectural governance because it falls within the scope of architecture, and negligence can lead to disastrous quality problems.
 
 IT Governance
 : is processes that enable the IT staff to better manage risk and operate efficiently to the benefit of the organization on the whole.   IT Governance includes aspects from many initiatives including:
-- The Principles of Scientific Management — a method of corporate organization focused on scientific output during the industrial era.
+- The Principles of Scientific Management — a method of a corporate organization focused on scientific output during the industrial era.
 - Total Quality Management — a method focused on creating a work environment where employees strive to constantly improve.
 - Quality Management System — a method that acts as a collection of organizational processes focused on increasing customer satisfaction.
 
@@ -1214,7 +1177,7 @@ Treasury Board issues a range of policy instruments that are designed to establi
   : Formal direction that imposes specific responsibilities on departments. Policies explain what deputy heads and their officials are expected to achieve.
 
   Directive
-  : Formal instruction that obliges departments to take (or avoid) specific action. Directives explain how deputy heads' officials must meet the policy objective.
+  : Formal instruction that obliges departments to take (or avoid) a specific action. Directives explain how deputy heads' officials must meet the policy objective.
 
   Standard
   : A set of operational or technical measures, procedures or practices for government-wide use. Standards provide more detailed information on how managers and functional specialists are expected to conduct certain aspects of their duties.
@@ -1225,14 +1188,14 @@ Treasury Board issues a range of policy instruments that are designed to establi
 <a name="appendix-definitions-principles-1"></a>
 ## Principles
 
-A principle is a proposition.  It serves as the foundation for a system of beliefs. As propositions, principles are abstract, but they should precipitate actions on the part of your teams that support them. The principles are subsets or decompositions of your overarching corporate vision. If they’re not, your teams and department will suffer from a lack of alignment. [^Hewitt]
+A principle is a proposition.  It serves as the foundation for a system of beliefs. As propositions, principles are abstract, but they should precipitate actions on the part of your teams that support them. The principles are subsets or decompositions of your overarching corporate vision. If they’re not, your teams and the department will suffer from a lack of alignment. [^Hewitt]
 
 <a name="appendix-definitions-technical-debt"></a>
 ## Technical Debt
 
-Technical debt is the coding you must do tomorrow because you took a shortcut in order to deliver the software today.
+Technical debt is the coding you must do tomorrow because you took a shortcut to deliver the software today.
 
-Technical debt is somewhat misunderstood in within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
+Technical debt is somewhat misunderstood within IT and our department.   Technical debt goes beyond having aging end-of-life applications.  Below are some common definitions used to describe technical debt:
 
 - Technical debt (also known as design debt or code debt, but can be also related to other technical endeavours) is a concept in software development that reflects the implied cost of additional rework caused by choosing an easy (limited) solution now instead of using a better approach that would take longer. [[Technical Debt - Wikipedia](https://en.wikipedia.org/wiki/Technical_debt)].
 
@@ -1247,11 +1210,11 @@ Technical debt is somewhat misunderstood in within IT and our department.   Tech
 - Changes required that are not completed are considered debt, and until paid, will incur interest on top of interest, making it cumbersome to build a project. As a change is started on a codebase, there is often the need to make other coordinated changes in other parts of the codebase, system, solution or documentation. Although the term is used in software development primarily, it can also be applied to other professions.
 
 - Technical debt is a concept in programming that reflects the extra development work that arises when code that is easy to implement in the short run is used instead of applying the best overall solution. - *[Technical Debt - Technopedia](https://www.techopedia.com/definition/27913/technical-debt)*
-- Technical debt is commonly associated with extreme programming, especially in the context of refactoring. That is, it implies that restructuring existing code (refactoring) is required as part of the development process. Under this line of thinking refactoring is not only a result of poorly written code, but is also done based on an evolving understanding of a problem and the best way to solve that problem.
+- Technical debt is commonly associated with extreme programming, especially in the context of refactoring. That is, it implies that restructuring existing code (refactoring) is required as part of the development process. Under this line of thinking, refactoring is not only a result of poorly written code but is also done based on an evolving understanding of a problem and the best way to solve that problem.
 
 - Technical debt may also be known as design debt.
 
-- When taking short cuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
+- When taking shortcuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
 
 - Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)
 

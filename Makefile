@@ -10,7 +10,19 @@ ARA.pdf: *.md
 	pandoc \
 		--metadata=date:"Revision: $(VERSION)" \
 		--pdf-engine=$(PDF_ENGINE) \
-		-o $@ ARA/ARA-Intro.md ARA/ARA-Business.md ARA/ARA-Discovery.md
+		-o $@  \
+		ARA/ARA-Intro.md \
+		ARA-Definitions-Short.md \
+		ARA/ARA-Business.md \
+		ARA/ARA-Discovery.md \
+		ARA-Principles.md \
+		ARA-Application.md \
+		ARA-Goals.md \
+		ARA-GuidanceStrategy.md \
+		ARA-Styles.md \
+		ARA-Patterns.md \
+		ARA-References.md \
+		ARA-Appendix-Definitions.md
 
 ARA-gulp.pdf: *.md
 		pandoc \
