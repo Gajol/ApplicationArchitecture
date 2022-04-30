@@ -28,7 +28,7 @@ The steps in design thinking are:
 1. Try Prototypes
 
 __Design Thinking Process__
-![Design Thinking Process - Nielsen Norman Group](/Assets/DesignThinkingNNG.png)
+![Design Thinking Process - Nielsen Norman Group](/ARA/Assets/DesignThinkingNNG.png)
 
 
 ### Design thinking principles:
