@@ -53,6 +53,14 @@ Types of Architecture
 
   - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
 
+#### Quality Characteristics
+The below are some quality characteristics to consider when developing applications:
+
+Observability 
+: Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitor which reacts to quality thresholds).
+
+Testability
+: Testability is a quality attribute of an application that measures how easy it is to define test criteria, execute a set of tests and determine their success.
 
 ## Application
 
