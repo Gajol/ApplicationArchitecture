@@ -8,7 +8,7 @@
 
 
 ## Table of Contents
-*Document Generation Date: 2022-04-30 10:04*
+*Document Generation Date: 2022-04-30 11:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -800,8 +800,10 @@ The guidance below is a summary of __Technology Strategy Patterns__.[^1].   This
 
 
 ## Design Thinking
+
 Use design-thinking in the cross-functional project team to arrive at appropriate architectures .  
 The steps in design thinking are:
+
 1. Define the Problem
 1. Make Observations : determine users, observe user's actions, create personas
 1. Form Insights
@@ -810,8 +812,7 @@ The steps in design thinking are:
 1. Refine Solutions
 1. Try Prototypes
 
-__Design Thinking Process__
-![Design Thinking Process - Nielsen Norman Group](/ARA/Assets/DesignThinkingNNG.png)
+![Design Thinking Process - Nielsen Norman Group](./ARA/Assets/DesignThinkingNNG.png)
 
 
 <a name="creating-an-architecture-strategy-guidance-design-thinking-design-thinking-principles"></a>

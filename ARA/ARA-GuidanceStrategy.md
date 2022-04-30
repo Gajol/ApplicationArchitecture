@@ -17,8 +17,10 @@ The guidance below is a summary of __Technology Strategy Patterns__.[^1].   This
 
 
 ## Design Thinking
+
 Use design-thinking in the cross-functional project team to arrive at appropriate architectures .  
 The steps in design thinking are:
+
 1. Define the Problem
 1. Make Observations : determine users, observe user's actions, create personas
 1. Form Insights
@@ -27,8 +29,7 @@ The steps in design thinking are:
 1. Refine Solutions
 1. Try Prototypes
 
-__Design Thinking Process__
-![Design Thinking Process - Nielsen Norman Group](/ARA/Assets/DesignThinkingNNG.png)
+![Design Thinking Process - Nielsen Norman Group](./ARA/Assets/DesignThinkingNNG.png)
 
 
 ### Design thinking principles:
@@ -38,9 +39,9 @@ __Design Thinking Process__
 1. Experimentation
 1. Collaboration
 
-## Patterns 
+## Patterns
 
-### Corporate Level Patterns 
+### Corporate Level Patterns
 - Stakeholder Alignment : influence/impact matric to determine their role in projects (maintain confidence, collaborate, keep informed, monitor)
 - RACI
 - Life-Cycle Stage : more aligned for companies and their stage of product and market maturity
