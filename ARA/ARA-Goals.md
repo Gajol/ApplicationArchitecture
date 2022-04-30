@@ -253,6 +253,7 @@ Some modern experiences can include:
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
 There are many modern application experiences uses expect in an application.  A short checklist of modern user experience functions are:
+
 - [ ] : social like : can the content be liked to identify high-value content
 - [ ] : share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
 - [ ] : link : should it be possible to get a link to the content for sharing, bookmarking, reporting.   What are the guarantees on the provided link (transitory, corporate, survives upgrades, ...)
@@ -261,7 +262,7 @@ There are many modern application experiences uses expect in an application.  A 
 
 Guidance
 - [ ] : Agile development teams should include user-experience design resources.
-- [ ] : Agile iterations iterations should include user-experience user-stories 
+- [ ] : Agile iterations iterations should include user-experience user-stories
 
 
 ## Goal: Accessibility

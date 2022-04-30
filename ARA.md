@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents-djn"></a>
 ## Table of Contents - DJN
-*Document Generation Date: 2022-04-29 18:04*
+*Document Generation Date: 2022-04-30 10:04*
 
 <a name="introduction"></a>
 # Introduction
@@ -519,14 +519,14 @@ A view of how MACH applies to guidance and industry patterns is below.
 |C - Cloud|Leverage SaaS to its fullest including scalability and automation|Security / Policy Restricted|Aligned to MACH|
 |H - Headless|Decouple front-end from back-end|Cohesive, Loosely-Coupled Applications, Services and APIs||
 
-Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack.
+Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack; a static-site generator (SSG) framework.
 
 
 <a name="goals-for-application-architecture-goal-user-experience"></a>
 ## Goal: User Experience
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  
 
-User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is hinteracts with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
+User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is the experiece of a user as they interact with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
 
   - [Nielsen-Norman Group (NNG)](https://www.nngroup.com/) - recognized leader in user experience
   - [Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
@@ -538,6 +538,7 @@ Some modern experiences can include:
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
 There are many modern application experiences uses expect in an application.  A short checklist of modern user experience functions are:
+
 - [ ] : social like : can the content be liked to identify high-value content
 - [ ] : share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
 - [ ] : link : should it be possible to get a link to the content for sharing, bookmarking, reporting.   What are the guarantees on the provided link (transitory, corporate, survives upgrades, ...)
@@ -545,6 +546,8 @@ There are many modern application experiences uses expect in an application.  A 
 - [ ] : rich link embed : when embedding a link in another application, should a link-preview be provided
 
 Guidance
+- [ ] : Agile development teams should include user-experience design resources.
+- [ ] : Agile iterations iterations should include user-experience user-stories
 
 
 <a name="goals-for-application-architecture-goal-accessibility"></a>
@@ -608,17 +611,21 @@ A basic checklist of minimal accessibility guidelines are:
 <a name="creating-an-architecture-strategy-guidance"></a>
 # Creating an Architecture Strategy : Guidance
 
+XXX - This is WEAK - XXX
+
 The architectural strategy for a program; whether they are renewal efforts (ERP, HR, IM, Collaboration) or greenfield (Case Management) should follow methodologies proven to be successful.
 
-The guidance below is a summary of __Technology Strategy Patterns__.[^1].   This guidance is aimed at larger program initiatives that span multiple-years.   Our past history on programs (operations, collaboration, administrative) show these initiatives span five or more years before a minimal vialbe product (MVP) is in production.
+The guidance below is a summary of __Technology Strategy Patterns__.[^1].   This guidance is written for architects, product managers, technology managers, and executives to help develop larger application program strategies.   Our past history on programs (operations, collaboration, administrative) shows we consistently require five or more years before a minimal viable product (MVP) is in production. This books provides patterns to drive strategy, similar to how software design patterns like decorator and factory are used in software development.
+
+
 
 <a name="creating-an-architecture-strategy-guidance-apply-patterns-to-formulate-a-strategy"></a>
 ## Apply Patterns to Formulate a Strategy
-  - Context:  Trends, Constraints, Stakeholders
-  - Understand:  Research, analyse and understand your stakeholders, the environment and the technology landscape.
-  - Options: Identify options in the products, services and technology roadmaps
-  - Analysis: Analyse options.
-  - Recommendation:  Make recommendation and obtain approval.
+1. Context:  Trends, Constraints, Stakeholders
+1. Understand:  Research, analyze and understand your stakeholders, the environment and the technology landscape.
+1. Options: Identify options in the products, services and technology roadmaps
+1. Analysis: Analyze options.
+1. Recommendation:  Make recommendation and obtain approval.
 
 
 <a name="creating-an-architecture-strategy-guidance-design-thinking"></a>
@@ -633,6 +640,10 @@ The steps in design thinking are:
 1. Refine Solutions
 1. Try Prototypes
 
+__Design Thinking Process__
+![Design Thinking Process - Nielsen Norman Group](/ARA/Assets/DesignThinkingNNG.png)
+
+
 <a name="creating-an-architecture-strategy-guidance-design-thinking-design-thinking-principles"></a>
 ### Design thinking principles:
 1. Human-centricity
@@ -641,6 +652,31 @@ The steps in design thinking are:
 1. Experimentation
 1. Collaboration
 
+<a name="creating-an-architecture-strategy-guidance-patterns"></a>
+## Patterns
+
+<a name="creating-an-architecture-strategy-guidance-patterns-corporate-level-patterns"></a>
+### Corporate Level Patterns
+- Stakeholder Alignment : influence/impact matric to determine their role in projects (maintain confidence, collaborate, keep informed, monitor)
+- RACI
+- Life-Cycle Stage : more aligned for companies and their stage of product and market maturity
+- Value Chain : identify where value is created
+- Growth-Share Matrix
+- Core/Innovation Wave : identify funding based on core to business, and how innovative (complex) the technology is.
+- Investment Map : difficulty and readiness, do the easy and ready ones.
+
+
+<a name="creating-an-architecture-strategy-guidance-patterns-department-level-patterns"></a>
+### Department Level Patterns
+
+| Level            | Pattern                                | Description                                                                        |
+| :--------------- | :------------------------------------- | :--------------------------------------------------------------------------------- |
+| Department Level | Principles, Practices, Tools           | Define principles aligned to vision.                                               |
+|                  | Current and Future Model               | Focus on key value derived from LEAN Six Sigma, process mapping and value streams. |
+|                  | Process Posture Map                    | Categorize processes by Start, Continue, Invest, Assess, Revise                    |
+|                  | Business Process Mapping               | Draw out process using BPMN                                                        |
+|                  | Application Portfolio Management (APM) | Value, Cost, Risk awareness.                                                       |
+|                  | Capability Mapping                     |                                                                                    |
 
 
 [^1]: [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
@@ -704,7 +740,7 @@ Event Driven Architecture (EDA) is a architecture pattern based on the productio
 ](www.worldcat.org./isbn/978-0321200686)
 
 
-<a name="patterns"></a>
+<a name="patterns-1"></a>
 # Patterns
 Patterns are known, proven solutions.  Patterns help us communicate architecture and design to each other.
 
@@ -716,7 +752,7 @@ Patterns are used at different layers and perspectives; such as:
 - user experience patterns
 
 
-<a name="patterns-software-design-patterns"></a>
+<a name="patterns-1-software-design-patterns"></a>
 ## Software Design Patterns
 In software engineering, a software design pattern is a general, reusable solution to a commonly occurring problem within a given context in software design.  There are many great books on software design patterns.  Wikipedia's Software Design Patterns[^Pattern-3] is a good resource.
 
@@ -726,16 +762,16 @@ Famous design pattern books include:
 - 2003 - Fowler - Patterns of Enterprise Application Architecture[^Pattern-5] : Defines many categories of patterns including Domain, Data Source, Web Presentation, Distribution, Offline, and Session State Patterns.  Specific patterns include data gateway, model-view-controller, and client session state.
 
 
-<a name="patterns-user-interface-patterns"></a>
+<a name="patterns-1-user-interface-patterns"></a>
 ## User Interface Patterns
 Many patterns exist for a successful user-experience (search, navigation, filters, comparisons, grids, ...)
 - [Blueprints by CodePros - Patterns](http://tympanus.net/codrops/category/blueprints/) : The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration.
 
 
-- [Google Material UI](https://material.io/search.html?q=pattern) : An exensive library of UI patterns including [Search](https://material.io/archive/guidelines/patterns/search.html), Navigations, Onboarding and other common use-case patterns.
+- [Google Material UI](https://material.io/search.html?q=pattern) : An extensive library of UI patterns including [Search](https://material.io/archive/guidelines/patterns/search.html), Navigations, On-boarding and other common use-case patterns.
 
 
-<a name="patterns-business-patterns"></a>
+<a name="patterns-1-business-patterns"></a>
 ## Business Patterns
 
 Caveman Pattern
@@ -743,22 +779,22 @@ Caveman Pattern
 
 
 Conway's Law
-: Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The ['Inverse Conway Maneuver'](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
+: Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The [*Inverse Conway Maneuver*](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
 ) recommends evolving your team and organizational structure to promote your desired architecture. Ideally your technology architecture will display [isomorphism](https://en.wikipedia.org/wiki/Isomorphism_(sociology)) with your business architecture.
 
   - Isomorphism : In sociology, an isomorphism is a similarity of the processes or structure of one organization to those of another, be it the result of imitation or independent development under similar constraints.  In our application development context, isomorphism implies, that different technology branches, division and sections develop their products under similar constraints.
 
 
-<a name="patterns-cloud-design-patterns"></a>
+<a name="patterns-1-cloud-design-patterns"></a>
 ## Cloud Design Patterns
 
 1. [Microsoft Azure Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
-1. [AWS Prescriptive Guidance Patters](- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)) : 2,000 pages of patterns for cloud, DevOps, communication, testing, governance, IoT, Security, Servierless, Spark, ETL, A/B Testing, Canary Testing, ...
+1. [AWS Prescriptive Guidance Patterns](- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)) : 2,000 pages of patterns for cloud, DevOps, communication, testing, governance, IoT, Security, Serverless, Spark, ETL, A/B Testing, Canary Testing, ...
 
 
-<a name="patterns-microservices-patterns"></a>
+<a name="patterns-1-microservices-patterns"></a>
 ## Microservices Patterns
-Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^Pattern-1] defines many pattnerns, including patterns to migrate from monoliths to microservices.   These patterns include:
+Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^Pattern-1] defines many patterns, including patterns to migrate from monoliths to microservices.   These patterns include:
 
   - Strangle Fig Pattern: . You intercept calls to the existing system—in our case the existing monolithic application. If the call to that piece of functionality is implemented in our new microservice architecture, it is redirected to the microservice.
   - Saga Pattern
@@ -806,7 +842,7 @@ References for microservices patterns:
 ## Design
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)](http://www.worldcat.org/isbn/9780133039900)
 
-<a name="references-patterns-1"></a>
+<a name="references-patterns-2"></a>
 ## Patterns
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
@@ -956,6 +992,14 @@ Web Service
 : An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programatic interface description language.   gRPC is often used in micro-service architectures.
 
 
+
+
+<a name="appendix-definitions-devops"></a>
+## DevOps
+
+DevOps, the practice of applying developmental best practices such as collective collaboration to infrastructure operations, has been shown to positively impact efficiencies of development and operations teams today, especially in the cloud environment.
+
+
 <a name="appendix-definitions-governance"></a>
 ## Governance:
 
@@ -969,6 +1013,27 @@ IT Governance
 - Quality Management System — a method that acts as a collection of organizational processes focused on increasing customer satisfaction.
 
 
+
+<a name="appendix-definitions-policy-framework-for-government-of-canada"></a>
+## Policy Framework for Government of Canada
+Treasury Board issues a range of policy instruments that are designed to establish mandatory requirements (rules) or voluntary best practices. There are three types of mandatory instruments (policies, directives and standards) and two voluntary instruments (guidelines and tools). Table 1 provides further definition. The decision to put in place a mandatory versus a voluntary instrument depends on the issue being addressed, the management objective, and whether a lack of consistency across government has the potential to create inequities, inefficiencies or risks that would jeopardize the achievement of the policy objective. - [*TBS Foundation Framework*](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=13616)
+
+  Policy
+  : Formal direction that imposes specific responsibilities on departments. Policies explain what deputy heads and their officials are expected to achieve.
+
+  Directive
+  : Formal instruction that obliges departments to take (or avoid) specific action. Directives explain how deputy heads' officials must meet the policy objective.
+
+  Standard
+  : A set of operational or technical measures, procedures or practices for government-wide use. Standards provide more detailed information on how managers and functional specialists are expected to conduct certain aspects of their duties.
+
+  Guideline
+  : A document providing guidance, advice or explanation to managers or functional area specialists.
+
+<a name="appendix-definitions-principles-1"></a>
+## Principles
+
+A principle is a proposition.  It serves as the foundation for a system of beliefs. As propositions, principles are abstract, but they should precipitate actions on the part of your teams that support them. The principles are subsets or decompositions of your overarching corporate vision. If they’re not, your teams and department will suffer from a lack of alignment. [^Hewitt]
 
 <a name="appendix-definitions-technical-debt"></a>
 ## Technical Debt
@@ -997,28 +1062,4 @@ Technical debt is somewhat misunderstood in within IT and our department.   Tech
 - When taking short cuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
 
 - Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)
-
-
-
-<a name="appendix-definitions-devops"></a>
-## DevOps
-
-DevOps, the practice of applying developmental best practices such as collective collaboration to infrastructure operations, has been shown to positively impact efficiencies of development and operations teams today, especially in the cloud environment.
-
-
-<a name="policy-framework"></a>
-# Policy Framework
-Treasury Board issues a range of policy instruments that are designed to establish mandatory requirements (rules) or voluntary best practices. There are three types of mandatory instruments (policies, directives and standards) and two voluntary instruments (guidelines and tools). Table 1 provides further definition. The decision to put in place a mandatory versus a voluntary instrument depends on the issue being addressed, the management objective, and whether a lack of consistency across government has the potential to create inequities, inefficiencies or risks that would jeopardize the achievement of the policy objective. - [*TBS Foundation Framework*](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=13616)
-
-  Policy
-  : Formal direction that imposes specific responsibilities on departments. Policies explain what deputy heads and their officials are expected to achieve.
-
-  Directive
-  : Formal instruction that obliges departments to take (or avoid) specific action. Directives explain how deputy heads' officials must meet the policy objective.
-
-  Standard
-  : A set of operational or technical measures, procedures or practices for government-wide use. Standards provide more detailed information on how managers and functional specialists are expected to conduct certain aspects of their duties.
-
-  Guideline
-  : A document providing guidance, advice or explanation to managers or functional area specialists.
 
