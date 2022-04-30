@@ -23,7 +23,7 @@ Many patterns exist for a successful user-experience (search, navigation, filter
 - [Blueprints by CodePros - Patterns](http://tympanus.net/codrops/category/blueprints/) : The Blueprints are a collection of basic and minimal website concepts, components, plugins and layouts with minimal style for easy adaption and usage, or simply for inspiration.
 
 
-- [Google Material UI](https://material.io/search.html?q=pattern) : An exensive library of UI patterns including [Search](https://material.io/archive/guidelines/patterns/search.html), Navigations, Onboarding and other common use-case patterns.
+- [Google Material UI](https://material.io/search.html?q=pattern) : An extensive library of UI patterns including [Search](https://material.io/archive/guidelines/patterns/search.html), Navigations, On-boarding and other common use-case patterns.
 
 
 ## Business Patterns
@@ -33,7 +33,7 @@ Caveman Pattern
 
 
 Conway's Law
-: Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The ['Inverse Conway Maneuver'](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
+: Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The [*Inverse Conway Maneuver*](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
 ) recommends evolving your team and organizational structure to promote your desired architecture. Ideally your technology architecture will display [isomorphism](https://en.wikipedia.org/wiki/Isomorphism_(sociology)) with your business architecture.
 
   - Isomorphism : In sociology, an isomorphism is a similarity of the processes or structure of one organization to those of another, be it the result of imitation or independent development under similar constraints.  In our application development context, isomorphism implies, that different technology branches, division and sections develop their products under similar constraints.
@@ -42,11 +42,11 @@ Conway's Law
 ## Cloud Design Patterns
 
 1. [Microsoft Azure Cloud Design Patterns](https://docs.microsoft.com/en-us/azure/architecture/patterns/)
-1. [AWS Prescriptive Guidance Patters](- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)) : 2,000 pages of patterns for cloud, DevOps, communication, testing, governance, IoT, Security, Servierless, Spark, ETL, A/B Testing, Canary Testing, ...
+1. [AWS Prescriptive Guidance Patterns](- [AWS Prescriptive Guidance Patterns](https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/welcome.html)) : 2,000 pages of patterns for cloud, DevOps, communication, testing, governance, IoT, Security, Serverless, Spark, ETL, A/B Testing, Canary Testing, ...
 
 
 ## Microservices Patterns
-Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^Pattern-1] defines many pattnerns, including patterns to migrate from monoliths to microservices.   These patterns include:
+Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^Pattern-1] defines many patterns, including patterns to migrate from monoliths to microservices.   These patterns include:
 
   - Strangle Fig Pattern: . You intercept calls to the existing system—in our case the existing monolithic application. If the call to that piece of functionality is implemented in our new microservice architecture, it is redirected to the microservice.
   - Saga Pattern

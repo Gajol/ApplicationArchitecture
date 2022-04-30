@@ -104,6 +104,9 @@ Treasury Board issues a range of policy instruments that are designed to establi
   Guideline
   : A document providing guidance, advice or explanation to managers or functional area specialists.
 
+## Principles
+
+A principle is a proposition.  It serves as the foundation for a system of beliefs. As propositions, principles are abstract, but they should precipitate actions on the part of your teams that support them. The principles are subsets or decompositions of your overarching corporate vision. If they’re not, your teams and department will suffer from a lack of alignment. [^Hewitt]
 
 ## Technical Debt
 
