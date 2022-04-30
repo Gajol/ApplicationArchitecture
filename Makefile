@@ -12,17 +12,17 @@ ARA.pdf: *.md
 		--pdf-engine=$(PDF_ENGINE) \
 		-o $@  \
 		ARA/ARA-Intro.md \
-		ARA-Definitions-Short.md \
+		ARA/ARA-Definitions-Short.md \
 		ARA/ARA-Business.md \
 		ARA/ARA-Discovery.md \
-		ARA-Principles.md \
-		ARA-Application.md \
-		ARA-Goals.md \
-		ARA-GuidanceStrategy.md \
-		ARA-Styles.md \
-		ARA-Patterns.md \
-		ARA-References.md \
-		ARA-Appendix-Definitions.md
+		ARA/ARA-Principles.md \
+		ARA/ARA-Application.md \
+		ARA/ARA-Goals.md \
+		ARA/ARA-GuidanceStrategy.md \
+		ARA/ARA-Styles.md \
+		ARA/ARA-Patterns.md \
+		ARA/ARA-References.md \
+		ARA/ARA-Appendix-Definitions.md
 
 ARA-gulp.pdf: *.md
 		pandoc \
