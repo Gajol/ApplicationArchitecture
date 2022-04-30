@@ -8,7 +8,7 @@
 
 
 ## Table of Contents
-*Document Generation Date: 2022-04-30 11:04*
+*Document Generation Date: 2022-04-30 12:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -525,6 +525,7 @@ Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a 
 
   - High Cohesion: *The Fundamentals of Software Architecture*[^Guidance-4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.    
   - Low Coupling  : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14].  Some common guidelines are:
+
     - break system and APIs into encapsulated replacements
     - minimize any connascence (depedecny relationships between objects) between systems
 
@@ -582,6 +583,7 @@ API's are a critical component of our technology stack.  As applications and tec
   - API Standards follow [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) guidance, align with [NZ API Guidance & Resources](https://snapshot.ict.govt.nz/guidance-and-resources/standards-compliance/api-standard-and-guidelines/api-standard-and-guidelines-part-b-technical/) & [UK API Technical & Data Standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) guidance.   These are written to support integrated digital processes across departments and agencies; however their guidance is relevant for internal integrations.
 
   - As we mature with our API Strategy, and enterprise approach to APIs for the following is important:
+
     - API Documentation(https://www.gov.uk/guidance/how-to-document-apis): discover, affordances (understand how to use API), integration with API.  Examples: [GOV.UK Frontend](https://frontend.design-system.service.gov.uk/?_ga=2.152481273.1904569585.1642645779-431822512.1642645779#gov-uk-frontend), [Stripe API](https://stripe.com/docs/api), [Mailchimp](https://mailchimp.com/developer/).
     - API Protocols: Leverage protocols and languages like gRPC and GraphQL for integrations.
     - API Management: As the number of components, micro-services and integrations grow, the need for an API management layer to provide orchestration and API lifecycle management increases.  API management provides a single point of entry for all connected systems and services.  Helps developers (IT, client-authentication, authentication, business-citizen) develop to APIs.
@@ -632,7 +634,8 @@ The desired outcomes of this guidance is to:
 
 The guidance is to adopt the [*Microsoft - Shift Left Testing*](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  
 
-The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]
+The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]:
+
   - __Low Level Tests__: Write tests at lowest level possible.  Favour unit tests over functional tests.   When functional tests fail, consider if unit tests should be more comprehensive.
   - __Reusable Tests__: Write-once, run anywhere (DRY - Do Not Repeat yourself):  Tests should be written to work in any environment (Dev, Sig, Prod) by consuming configuration of the environment.
   - __Design Product for Testability__.   Discuss how the system is testable during peer-reviews and Technology Review Board (TRB) reviews.  Include these user-stories early in the agile development cycle (Shift-Left)
@@ -649,9 +652,10 @@ Recommendation:
 ### Guidance : Test-Driven Development
 
 Adopt development methodologies like test driven development (TDD) that predates DevOps.   How TDD and DevOps are related is well described in the article '*TDD for a DevOps World*[^Guidance-7] - summary:
-- TDD is clearly a quality enhancing practice. I
-- TDD is a really good way to mitigate the risks of defects
-- TDD is increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
+
+- TDD is clearly a quality enhancing practice.
+- TDD is an effective way to mitigate the risks of defects.
+- TDD increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
 
 Caution:  TDD can be burdoning on a development process.  TDD applied in meaningful areas is useful and worthwhile.
 
@@ -659,6 +663,7 @@ Caution:  TDD can be burdoning on a development process.  TDD applied in meaning
 
 
 ## Goal: Cloud-Native - Future Proof Technology
+
 The [MACH Aliance](https://machalliance.org/)[^Guidance-8] was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., ).  This alliance is for cloud-native applications (CNA), and is worthwhile reading for CNA development.
 
 This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^Guidance-5]:
@@ -699,7 +704,7 @@ Some modern experiences can include:
 - Push Notifications:  Business fit-for-purpose notifications using the [Push API](https://developer.mozilla.org/en-US/docs/Web/API/Push_API) and integrated into the Windows Operating System experience.  Replace mindset of email-based notifications into a notification platform with end-user ability to control notifications.
 - Sharing Content Across Platforms:  Ability to share content across platforms similar to sharing news and social-media content.  Allows the ability to communicate effectively in different channels (intranet, CMS, ...).  *[oEmbed](https://oembed.com/)* is one standard for sharing content across platforms with a linkable visual.
 
-There are many modern application experiences uses expect in an application.  A short checklist of modern user experience functions are:
+There are many modern application experiences users expect in an application.  A short checklist of modern user experience functions relating to presented content are:
 
 - [ ] : social like : can the content be liked to identify high-value content
 - [ ] : share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
@@ -707,7 +712,8 @@ There are many modern application experiences uses expect in an application.  A 
 - [ ] : discuss/comment : can comments be provided for all to see, or to raise a concern to the author (private comment)
 - [ ] : rich link embed : when embedding a link in another application, should a link-preview be provided
 
-Guidance
+Guidance:
+
 - [ ] : Agile development teams should include user-experience design resources.
 - [ ] : Agile iterations iterations should include user-experience user-stories
 
@@ -716,11 +722,13 @@ Guidance
 
 
 ## Goal: Accessibility
+
 The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   
 
 Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
 
 WCAG 2.1 Level AA (Double-A) implies:
+
 - Media: Captions are present on live video.  When appropriate, there exists audio description of what’s happening on streaming media.
 - Markup: Ability to resize text without breaking layout.  Language is declared in document.
 - Design: A minimum contrast of 4.5:1 among elements. Heading tags (h1,h2,h3, etc.) are present and emerge from content organically.

@@ -1,26 +1,26 @@
 
 
-# Design Principles
+# Digital Transformation : Design Principles
 
-From [Design Principles](https://digitalprinciples.org/principles/) reference in *Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.*.
+The website *Principles for Digital Design*[^Principles-1] [*Design Principles*](https://digitalprinciples.org/principles/) reference in *Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.*.
 
-Design with the User : User-centered design starts with getting to know the people you are designing for through conversation, observation and co-creation.
+- Design with the User : User-centered design starts with getting to know the people you are designing for through conversation, observation and co-creation.
 
-Understand the Existing Ecosystem : Well-designed initiatives and digital tools consider the particular structures and needs that exist in each country, region and community.
+- Understand the Existing Ecosystem : Well-designed initiatives and digital tools consider the particular structures and needs that exist in each country, region and community.
 
-Design for Scale: Achieving scale requires adoption beyond an initiatives pilot population and often necessitates securing funding or partners that take the initiative to new communities or regions.
+- Design for Scale: Achieving scale requires adoption beyond an initiatives pilot population and often necessitates securing funding or partners that take the initiative to new communities or regions.
 
-Build for Sustainability : Building sustainable programs, platforms and digital tools is essential to maintain user and stakeholder support, as well as to maximize long-term impact.
+- Build for Sustainability : Building sustainable programs, platforms and digital tools is essential to maintain user and stakeholder support, as well as to maximize long-term impact.
 
-Be Data Driven : When an initiative is data driven, quality information is available to the right people when they need it, and they are using those data to take action.
+- Be Data Driven : When an initiative is data driven, quality information is available to the right people when they need it, and they are using those data to take action.
 
-Use Open Standards, Open Data, Open Source, and Open Innovation: An open approach to digital development can help to increase collaboration in the digital development community and avoid duplicating work that has already been done.
+- Use Open Standards, Open Data, Open Source, and Open Innovation: An open approach to digital development can help to increase collaboration in the digital development community and avoid duplicating work that has already been done.
 
-Reuse and Improve : Reusing and improving is about taking the work of the global development community further than any organization or program can do alone.
+- Reuse and Improve : Reusing and improving is about taking the work of the global development community further than any organization or program can do alone.
 
-Address Privacy and Security : Addressing privacy and security in digital development involves careful consideration of which data are collected and how data are acquired, used, stored and shared.
+- Address Privacy and Security : Addressing privacy and security in digital development involves careful consideration of which data are collected and how data are acquired, used, stored and shared.
 
-Be Collaborative : Being collaborative means sharing information, insights, strategies and resources across projects, organizations and sectors, leading to increased efficiency and impact.
+- Be Collaborative : Being collaborative means sharing information, insights, strategies and resources across projects, organizations and sectors, leading to increased efficiency and impact.
 
 
 ## Data is an Asset
@@ -46,5 +46,9 @@ From "Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide f
 
 
 
-# References
-- [TOGAF Architecture Principles](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
+
+- [^Principles-1]: [*Principles for Digital Design*](https://digitalprinciples.org/principles/]
+
+- [^Principles-2]: [*TOGAF Architecture Principles*](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
+
+- [^Principles-3]: [Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.](www.worldcat.org/isbn/978-1-4920-4594-6)
