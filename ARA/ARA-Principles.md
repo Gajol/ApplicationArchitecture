@@ -2,7 +2,7 @@
 
 # Digital Transformation : Design Principles
 
-There are many sources for digital principles.  The Government of Canada has identified the following standards.  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
+There are many sources for digital principles[^Principles-1.  The Government of Canada has identified the following digital architecture standards[^Principles-2].  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
 
 
 | Principle                                            | Description                                                                                                                                                                                      | Supported By                                                                                                                  |
