@@ -5,8 +5,8 @@
 There are many sources for digital principles.  The Government of Canada has identified the following standards.  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
 
 
-| Principle                                            | Description                                                                                                                                                                                      | Supported By                                                                                                                  |
-| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+| Principle  |Description                                                                                                                                                                                      | Supported By                                                                                                                  |
+| :-- | :---- | :-- |
 | Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
 | Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
 | Design for Users First                               | User-centred methods, focus on users, using agile.                                                                                                                                               | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
@@ -67,7 +67,7 @@ From "Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide f
 
 [^Principles-1]: [*Principles for Digital Design*](https://digitalprinciples.org/principles/]
 
-[^Principles-2]: [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html) 
+[^Principles-2]: [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html)
 
 [^Principles-DOSP]: [GC Digital Operations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html)
 

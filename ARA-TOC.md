@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-04-30 12:04*
+*Document Generation Date: 2022-04-30 13:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -24,6 +24,9 @@
     * [Business Governance](#business-business-governance)
     * [Business and Technology Environment](#business-business-and-technology-environment)
     * [Discovery](#business-discovery)
+* [Digital Transformation : Design Principles](#digital-transformation-design-principles)
+    * [Data is an Asset](#digital-transformation-design-principles-data-is-an-asset)
+* [API](#api)
 * [Application Characteristics and Styles](#application-characteristics-and-styles)
     * [Application Characteristics](#application-characteristics-and-styles-application-characteristics)
         * [Department Application Characteristics](#application-characteristics-and-styles-application-characteristics-department-application-characteristics)
@@ -297,6 +300,91 @@ TODO - Add Enterprise Interoperability to ITOD Dependencies
 
 
 [^Discovery-1]: [Gartner- Ignition Guide to Building Reference Architectures for a Composable Business](https://www.gartner.com/document/4008989?ref=solrAll&refval=323632540)
+
+
+
+
+<a name="digital-transformation-design-principles"></a>
+# Digital Transformation : Design Principles
+
+There are many sources for digital principles.  The Government of Canada has identified the following standards.  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
+
+
+| Principle  |Description                                                                                                                                                                                      | Supported By                                                                                                                  |
+| :-- | :---- | :-- |
+| Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
+| Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
+| Design for Users First                               | User-centred methods, focus on users, using agile.                                                                                                                                               | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
+| Deliver with Multidisciplinary Teams                 | Include all skillsets required for delivery                                                                                                                                                      | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
+| Design for Performance, Availability and Scalability | Design quality into the system.  Use distributed systems (assume failure will happen)                                                                                                            | GC[^Principles-2], Digital Principles[^Principles-1]                                                                          |
+| Enable Interoperability                              | Expose functionality as a service.  Use microservices built around business capabilities.  Scope each service to a single purpose.  Use APIs.  Use the Canadian Digital Exchange Platform (CDXP) | GC[^Principles-2], GC API Standards[^Principles-API], GC Service & Digital[^Principles-DSP],Digital Principles[^Principles-1] |
+| Design Systems to be Measurable and Accountable      | Publish Service Level Agreements (SLAs), Make an audit trail for all transactions (traceability).                                                                                                | GC[^Principles-2]                                                                                                             |
+| Keep Data Organized                                  | Decouple master data from applications.  Make systems or record (SOR) authoritative sources, use Master Data Management (MDM)                                                                    | GC[^Principles-2]                                                                                                             |
+| Use Cloud First                                      | Use SaaS -> PaaS -> IaaS                                                                                                                                                                         | GC[^Principles-2], GC Service & Digital[^Principles-DSP]                                                                      |
+Design for Security and Privacy|	Categorize data, perform a privacy impact assessment on personally identifiable information (PII)|GC[^Principles-2], Digital Principles[^Principles-1]|
+
+
+
+The website *Principles for Digital Design*[^Principles-1] [*Design Principles*](https://digitalprinciples.org/principles/) reference in *Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.*.
+
+- Design with the User : User-centered design starts with getting to know the people you are designing for through conversation, observation and co-creation.
+
+- Understand the Existing Ecosystem : Well-designed initiatives and digital tools consider the particular structures and needs that exist in each country, region and community.
+
+- Design for Scale: Achieving scale requires adoption beyond an initiatives pilot population and often necessitates securing funding or partners that take the initiative to new communities or regions.
+
+- Build for Sustainability : Building sustainable programs, platforms and digital tools is essential to maintain user and stakeholder support, as well as to maximize long-term impact.
+
+- Be Data Driven : When an initiative is data driven, quality information is available to the right people when they need it, and they are using those data to take action.
+
+- Use Open Standards, Open Data, Open Source, and Open Innovation: An open approach to digital development can help to increase collaboration in the digital development community and avoid duplicating work that has already been done.
+
+- Reuse and Improve : Reusing and improving is about taking the work of the global development community further than any organization or program can do alone.
+
+- Address Privacy and Security : Addressing privacy and security in digital development involves careful consideration of which data are collected and how data are acquired, used, stored and shared.
+
+- Be Collaborative : Being collaborative means sharing information, insights, strategies and resources across projects, organizations and sectors, leading to increased efficiency and impact.
+
+
+<a name="digital-transformation-design-principles-data-is-an-asset"></a>
+## Data is an Asset
+What are the application architecture implications of "data is an asset"?
+- Past: In the past, applications were made to help users accomplish a task.  The data design model might have been part of the software development process, but it was not a prioritized objective.   
+- Today: With data as an asset being a core principle, considerable time should be spent defining how data is collected, stored, organized/modelled, __protected__, and making it available to other applications.
+
+
+<a name="api"></a>
+# API
+2002 Amazon API Principle [[reference](https://apievangelist.com/2012/01/12/the-secret-to-amazons-success-internal-apis/)]:
+- All teams will henceforth expose their data and functionality through service interfaces.
+- Teams must communicate with each other through these interfaces.
+There will be no other form of inter-process communication allowed: no direct linking, no direct reads of another team’s data store, no shared-memory model, no back-doors whatsoever. The only - communication allowed is via service interface calls over the network.
+- It doesn’t matter what technology they use.
+All service interfaces, without exception, must be designed from the ground up to be externalizable. That is to say, the team must plan and design to be able to expose the interface to developers in - the outside world. No exceptions.
+- __Anyone who doesn’t do this will be fired.__  Thank you; have a nice day!
+
+From "Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020"
+- The protocol, too, is another element to consider in our deconstructed method. After doing this for more than 20 years, it becomes very apparent how much time we technologists spend rearranging the furniture for the flavor of the month. Everyone had to switch everything to SOAP. Then they hated SOAP and had to switch everything to XML. Then they hated that and had to switch everything to JSON. The clever minority touted ProtoBuf. Popular products like Cassandra used Avro, so a patch of proponents pop up around that. Soon something else will come along.
+
+
+- Postman - 12 features to help solve API problems : https://apievangelist.com/2022/01/27/twenty-problems-that-postman-is-solving-for-developers-in-2022/
+
+
+
+
+[^Principles-1]: [*Principles for Digital Design*](https://digitalprinciples.org/principles/]
+
+[^Principles-2]: [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html)
+
+[^Principles-DOSP]: [GC Digital Operations Strategic Plan - 2021-2024](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-operations-strategic-plans/digital-operations-strategic-plan-2021-2024.html)
+
+[^Principles-DSP]: [Directive on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601)
+
+[^Principles-API]: [Standards on APIs](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html)
+
+[^Principles-TOGAF]: [*TOGAF Architecture Principles*](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
+
+[^Principles-XXXX]: [Hewitt, Eben. Semantic Software Design: A New Theory and Practical Guide for Modern Architects, 2020.](www.worldcat.org/isbn/978-1-4920-4594-6)
 
 
 <a name="application-characteristics-and-styles"></a>
@@ -1070,6 +1158,15 @@ Types of Architecture
 
   - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
 
+<a name="appendix-definitions-architecture-2-architecture-characteristics-quality-characteristics"></a>
+#### Quality Characteristics
+The below are some quality characteristics to consider when developing applications:
+
+Observability 
+: Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitor which reacts to quality thresholds).
+
+Testability
+: Testability is a quality attribute of an application that measures how easy it is to define test criteria, execute a set of tests and determine their success.
 
 <a name="appendix-definitions-application"></a>
 ## Application
@@ -1111,7 +1208,7 @@ IT Governance
 
 <a name="appendix-definitions-policy-framework-for-government-of-canada"></a>
 ## Policy Framework for Government of Canada
-Treasury Board issues a range of policy instruments that are designed to establish mandatory requirements (rules) or voluntary best practices. There are three types of mandatory instruments (policies, directives and standards) and two voluntary instruments (guidelines and tools). Table 1 provides further definition. The decision to put in place a mandatory versus a voluntary instrument depends on the issue being addressed, the management objective, and whether a lack of consistency across government has the potential to create inequities, inefficiencies or risks that would jeopardize the achievement of the policy objective. - [*TBS Foundation Framework*](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=13616)
+Treasury Board issues a range of policy instruments that are designed to establish mandatory requirements (rules) or voluntary best practices. There are three types of mandatory instruments (policies, directives and standards) and two voluntary instruments (guidelines and tools). - [*TBS Foundation Framework*](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=13616)
 
   Policy
   : Formal direction that imposes specific responsibilities on departments. Policies explain what deputy heads and their officials are expected to achieve.
