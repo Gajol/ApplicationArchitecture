@@ -235,13 +235,13 @@ A view of how MACH applies to guidance and industry patterns is below.
 |C - Cloud|Leverage SaaS to its fullest including scalability and automation|Security / Policy Restricted|Aligned to MACH|
 |H - Headless|Decouple front-end from back-end|Cohesive, Loosely-Coupled Applications, Services and APIs||
 
-Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack.
+Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack; a static-site generator (SSG) framework.
 
 
 ## Goal: User Experience
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  
 
-User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is hinteracts with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
+User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is the experiece of a user as they interact with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
 
   - [Nielsen-Norman Group (NNG)](https://www.nngroup.com/) - recognized leader in user experience
   - [Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
@@ -260,6 +260,8 @@ There are many modern application experiences uses expect in an application.  A 
 - [ ] : rich link embed : when embedding a link in another application, should a link-preview be provided
 
 Guidance
+- [ ] : Agile development teams should include user-experience design resources.
+- [ ] : Agile iterations iterations should include user-experience user-stories 
 
 
 ## Goal: Accessibility
