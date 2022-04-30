@@ -19,8 +19,11 @@
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
 - [Design patterns: elements of reusable object-oriented software. (Addison-Wesley, 1995).](http://www.worldcat.org/isbn/978-0-201-63361-0)
+ 
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
+
+- [Postman - 12 features to help solve API problems](https://apievangelist.com/2022/01/27/twenty-problems-that-postman-is-solving-for-developers-in-2022/)
 
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
