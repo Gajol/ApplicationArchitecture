@@ -1,14 +1,12 @@
-# Creating an Architecture Strategy : Guidance
+# Goals for Business Architecture
 
-XXX - This is WEAK - XXX
+Although beyond the scope of this document, product development can be vastly improved when business architecture is developed alongside the application. This section provides some high-level guidance reference Government of Canada directions as appropriate.
+
+## Guidance: Create an Business Architecture Strategy
 
 The architectural strategy for a program; whether they are renewal efforts (ERP, HR, IM, Collaboration) or greenfield (Case Management) should follow methodologies proven to be successful.
 
-The guidance below is a summary of __Technology Strategy Patterns__.[^1].   This guidance is written for architects, product managers, technology managers, and executives to help develop larger application program strategies.   Our past history on programs (operations, collaboration, administrative) shows we consistently require five or more years before a minimal viable product (MVP) is in production. This books provides patterns to drive strategy, similar to how software design patterns like decorator and factory are used in software development.
-
-
-
-## Apply Patterns to Formulate a Strategy
+### Apply Patterns to Formulate a Strategy
 1. Context:  Trends, Constraints, Stakeholders
 1. Understand:  Research, analyze and understand your stakeholders, the environment and the technology landscape.
 1. Options: Identify options in the products, services and technology roadmaps
@@ -61,7 +59,8 @@ The steps in design thinking are:
 |                  | Business Process Mapping               | Draw out process using BPMN                                                        |
 |                  | Application Portfolio Management (APM) | Value, Cost, Risk awareness.                                                       |
 |                  | Capability Mapping                     |                                                                                    |
-
+## References
+The guidance in this section is a summary of __Technology Strategy Patterns__.[^1].   This book provides guidance written for architects, product managers, technology managers, and executives to help develop larger application program strategies.  This books provides patterns to drive strategy, similar to how software design patterns like decorator and factory are used in software development. Our past history on programs (operations, collaboration, administrative) shows we consistently require five or more years before a minimal viable product (MVP) is in production. Improving our capacity and collaboration across the department will be beneficial.
 
 [^1]: [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 

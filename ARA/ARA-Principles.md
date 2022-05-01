@@ -24,7 +24,10 @@ Application architecture should include these as over-arching guidelines.
 2. Digital Operations Strategic Plan - 2021-2024[^Principles-DOSP]
 3. Directive on Service and Digital[^Principles-DSP]
 4. Standards on APIs[^Principles-API]
-
+### GC DOSP
+The GC Digital Operations Strategic Plan[^Application-2] indicates the priorities for services/applications should be :
+	
+	developing and delivering services that, by design, put users first by being accessible, inclusive, secure and easy to use, and that respect privacy and choice of official language*.   
 
 
 

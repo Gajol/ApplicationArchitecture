@@ -57,6 +57,12 @@ Examples of architectural characteristics[^Appendix-Arch-Evol]:
 
   - cross-cutting: authentication, authorization, legal, privacy, security, supportability, usability, achievability, compatibility, accessibility, interoperability.
 
+Shift-Left
+: Shift-Left is a term used to identify importance of prioritizing quality characteristics in all iterations of agile development and DevOps cycles.  The skill is balance the benefits of agile's quick product increments, and, the need to identify quality characteristics that become increasingly more expensive to introduce (high refactoring costs) if not included in the original design.  
+
+- Legislative: Our department has legislative requirements that impact applications information management, official languages, employment equity and accessibility characteristics.  These requirements often become *architecture characteristics* of the system.
+- Testing & Observability: Testable and observable applications are important characteristics often overlooked in minimal viable product (MVP) product development. Balance the value of improved quality and include user-stories for these in MVP development cycles.
+
 ### Quality Characteristics
 Below are some quality characteristics to consider when developing applications:
 
