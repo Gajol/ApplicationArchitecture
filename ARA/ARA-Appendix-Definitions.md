@@ -1,67 +1,4 @@
 # Appendix - Definitions
-## Architecture
-
-Application Architecture (GC EARB)
-
-: Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on the overall design of how data is consumed and created by the system. It views the interactions between applications, databases, and middleware to ensure scalability, reliability, availability and manageability.
-
-Application Architecture (RedHat)
-: An application architecture describes the patterns and techniques used to design and build an application. The architecture gives you a roadmap and best practices to follow when building an application so that you end up with a well-structured app. [[Redhat - CNA - What is Application Architecture](https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture)].   
-
-Application Architecture (TOGAF)
-: A description of the structure and interaction of the applications as groups of capabilities that provide key business functions and manage the data assets.  [[Application Architect - Wikipedia](https://en.wikipedia.org/wiki/Applications_architecture#Application_architect).]
-
-
-### Architecture Quotes
-:
-- *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
-- *Architecture is about the important stuff, whatever that is.* - Ralph Johnson & Martin Fowler
-- *Architecture is the stuff you can’t Google.* - Mark Richards
-
-
-### Architecture Style (TOGAF)
-: The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how architecture is formed.
-
-Types of Architecture
-: The overall architecture of an enterprise can be described by integrated sub-architecture domains. These are:
-
-  - Business Architecture
-  - Application Architecture
-  - Information Architecture
-  - Technology Architecture
-  - Security Architecture
-  - Privacy Architecture and
-  - Data Architecture
-
-### Architecture Characteristics:  
-- Architecture characteristics are the aspects the system must do that are not directly related to the domain functionality. These are often called non-functional requirements but should be considered Quality Requirements.  
-
-- An architectural characteristic meets three criteria:
-
-  1. specifies a non-domain (*non-functional*) consideration,
-  1. influences some aspects of the design, and
-  1. is critical/important to the application's success. A few are listed below
-
-
-- Examples of architectural characteristics:
-
-  - operational characteristics: availability, business continuity, performance, recoverability, robustness, scalability, elasticity.
-
-  - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainability, portability, supportability, upgradeability.
-
-  - cross-cutting: authentication, authorization, legal, privacy, security, supportability, usability, achievability, compatibility, accessibility, interoperability.
-
-  - See *[Neal Ford's Presentation with List of Quality Attributes](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)* for more information
-
-#### Quality Characteristics
-Below are some quality characteristics to consider when developing applications:
-
-Observability 
-: Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitoring which reacts to quality thresholds).
-
-Testability
-: Testability is a quality attribute of an application that measures how easy it is to define test criteria, execute a set of tests and determine their success.
-
 ## Application
 
 Application
@@ -76,9 +13,71 @@ Front-End & Back-End
 Web Service
 : An API to invoke a service over a network.  Many different standards exist for web service APIs (Service Oriented Architecture - SOA and SOAP, REST API, CORBA). gRPC is a newer option (2015) using HTTP and ProtoBuf; while more complex than REST APIs, offers programmatic interface description language.   gRPC is often used in micro-service architectures.
 
+## Application Architecture
+
+- Application Architecture (GC EARB)
+: Application Architecture consists of the interaction of applications with each other and with users. It focuses less on internal mechanics and specific programming and more on the overall design of how data is consumed and created by the system. It views the interactions between applications, databases, and middleware to ensure scalability, reliability, availability and manageability.
+
+- Application Architecture (RedHat)
+: An application architecture describes the patterns and techniques used to design and build an application. The architecture gives you a roadmap and best practices to follow when building an application so that you end up with a well-structured app. [[Redhat - CNA - What is Application Architecture](https://www.redhat.com/en/topics/cloud-native-apps/what-is-an-application-architecture)].   
+
+- Application Architecture (TOGAF)[^Principles-TOGAF]
+: A description of the structure and interaction of the applications as groups of capabilities that provide key business functions and manage the data assets.  
+
+- Application Architecture (Wikipedia)
+: Application architecture describes the behaviour of applications used in a business, focused on how they interact with each other and with users. It is focused on the data consumed and produced by applications rather than their internal structure. In application portfolio management, applications are mapped to business functions and processes as well as costs, functional quality and technical quality in order to assess the value provided." - *[Wikipedia - Application Architect](https://en.wikipedia.org/wiki/Applications_architecture#Application_architect).*
+
+
+### Architecture Quotes
+
+- *Architecture is the decisions that you wish you could get right early in a project, product or project lifecycle* - Ralph Johnson & Martin Fowler
+- *Architecture is about the important stuff, whatever that is.* - Ralph Johnson & Martin Fowler
+- *Architecture is the stuff you can’t Google.* - Mark Richards
+
+
+### Architecture Style (TOGAF)
+The combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how architecture is formed.
+
+## Architecture Characteristics
+
+Architecture characteristics are the aspects the system must do that are not directly related to the domain functionality. These are often called non-functional requirements but should be considered Quality Requirements.  
+
+An architectural characteristic meets three criteria:
+
+  1. specifies a non-domain (*non-functional*) consideration,
+  1. influences some aspects of the design, and
+  1. is critical/important to the application's success. A few are listed below
+
+
+Examples of architectural characteristics[^Appendix-Arch-Evol]:
+
+  - operational characteristics: availability, business continuity, performance, recoverability, robustness, scalability, elasticity.
+
+  - structural characteristics: configurability, extensibility, installability, reusability, localization, maintainability, portability, supportability, upgradeability.
+
+  - cross-cutting: authentication, authorization, legal, privacy, security, supportability, usability, achievability, compatibility, accessibility, interoperability.
+
+### Quality Characteristics
+Below are some quality characteristics to consider when developing applications:
+
+Observability 
+: Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitoring which reacts to quality thresholds).
+
+Testability
+: Testability is a quality attribute of an application that measures how easy it is to define test criteria, execute a set of tests and determine their success.
 
 
 
+## Architecture Domains
+The overall architecture of an enterprise can be described by integrated sub-architecture domains. These are:
+
+  - Business Architecture
+  - Application Architecture
+  - Information Architecture
+  - Technology Architecture
+  - Security Architecture
+  - Privacy Architecture and
+  - Data Architecture
 ## DevOps
 
 DevOps, the practice of applying developmental best practices such as collaboration to infrastructure operations, has been shown to positively impact the efficiencies of development and operations teams today, especially in the cloud environment.
@@ -86,6 +85,10 @@ DevOps, the practice of applying developmental best practices such as collaborat
 ## Digital Transformation
 
 Digital transformation is the process os using digital technologies to create new, or modify exiting business proceofes, culture and customer experiences to meet changingexistingss and market requirements.  Reimagining the business in the digital age is a digital transformation. - [*Salesforce*](https://www.salesforce.com/products/platform/what-is-digital-transformation/)
+
+## Enterprise Architecture
+
+Enterprise architecture documents the whole architecture and all important elements of the respective organization, covering relevant domains such as business, digital, physical, or organizational; and ii) the relations and interactions between elements that belong to those domains, such as processes, functions, applications, events, data, or technologies." - *[Wikipedia - Enterprise Architect](https://en.wikipedia.org/wiki/Enterprise_architecture)*.  
 
 ## Governance:
 
@@ -145,3 +148,8 @@ Technical debt is somewhat misunderstood within IT and our department.   Technic
 - When taking shortcuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
 
 - Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)
+
+
+[^Appendix-Arch-Evol]: [Architectural Evolution - Neal Ford](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)
+
+[^Principles-TOGAF]: [TOGAF Architecture Principles](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)

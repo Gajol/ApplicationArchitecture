@@ -113,19 +113,15 @@ Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a 
 
 SOLID is five design principles supporting composable applications.   Some of the principles date back 30 years.  It is not imperative that applications and software rigidly enforce these principles.   What is important is for developers to understand the value of these, and when to use them effectively.[^Goals-1]   
 
-  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. A class should only have a single responsibility, that is, only changes to one part of the software's specification should be able to affect the specification of the class. - *[reference: 97 Things Every Programmer Should Know #76 - 2010 ](http://www.worldcat.org/isbn/978-0-596-80948-5)*.
+  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. 
 
-    *If a class has more than one responsibility, then the responsibilities become coupled.
-  Changes to one responsibility may impair or inhibit the class' ability to meet the others.
-  This kind of coupling leads to fragile designs that break in unexpected ways when changed.*
+  - O - Open–closed principle - Software entities and components should be open for extension, but closed for modification.
 
-  1. O - Open–closed principle - Software entities and components should be open for extension, but closed for modification.
+  - L - Liskov substitution principle - Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. Design by Contract.
 
-  1. L - Liskov substitution principle - Objects in a program should be replaceable with instances of their subtypes without altering the correctness of that program. Design by Contract.
+  - I - Interface segregation principle - Many client-specific interfaces are better than one general-purpose interface.
 
-  1. I - Interface segregation principle - Many client-specific interfaces are better than one general-purpose interface.
-
-  1. D - Dependency inversion principle - One should "depend upon abstractions, *not* concretions.
+  - D - Dependency inversion principle - One should "depend upon abstractions, *not* concretions.
 
 
 ### 12-Factor Application
