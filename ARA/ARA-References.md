@@ -7,6 +7,21 @@
 
 - [*Cloud Security Alliance - The Six Pillars for Cloud SecDevOps](https://cloudsecurityalliance.org/group/DevSecOps/)
 
+## Design
+
+### Systems Thinking : Human-Centric Design
+
+- [System Thinking](https://en.wikipedia.org/wiki/Systems_thinking) : breaking world into parts, draws on Systems Theory and Systems Science.
+  - [Systems Theory](https://en.wikipedia.org/wiki/Systems_theory#In_engineering) : [Engineering - User-Centric Design Process](https://en.wikipedia.org/wiki/Systems_theory#User-centered_design_process)
+  - [Systems Science](https://en.wikipedia.org/wiki/Systems_science) : understanding systems
+- [Systemic Design](https://en.wikipedia.org/wiki/Systemic_design) : systems thinking + [human-centric design](https://en.wikipedia.org/wiki/User-centered_design)
+
+- [Management Theory - Human Side](https://en.wikipedia.org/wiki/Joseph_M._Juran) : Juran is widely credited for adding the human dimension to quality management. He pushed for the education and training of managers. For Juran, human relations problems were the ones to isolate, and resistance to change was the root cause of quality issues. Juran credits Margaret Mead's book *Cultural Patterns and Technical Change* for illuminating the core problem in reforming business quality. His book Managerial Breakthrough, published in 1964, outlined the issue.
+  - [Margarat Mead - Cultural Anthropoligist - Wikipedia](https://en.wikipedia.org/wiki/Margaret_Mead)
+  - Juran met the creator of the Pareto Principle
+
+- [Mead, Margaret, World Federation for Mental Health, and Unesco, eds. Cultural Patterns and Technical Change: A Manual. Westport, Conn: Greenwood Press, 1985.](www.worldcat.org/isbn/978-0313248399)
+
 
 ## Government of Canada
 
@@ -62,6 +77,7 @@
 
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
+
 ## Software
 ### API - Application Programming Interface
 
@@ -75,11 +91,12 @@
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)](http://www.worldcat.org/isbn/9780133039900)
 
 
-
 ## Technologies
 
 - [Stack Overflow - 2021 Most Popular Technologies](https://insights.stackoverflow.com/survey/2021#most-popular-technologies)
 
 
 ## Interesting Videos
-- [Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)
+- Event Driven Architeture: [Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)
+
+- Quality: [Steve Jobs on Joseph Juran and Quality](https://www.youtube.com/watch?v=XbkMcvnNq3g&ab_channel=AmericanSocietyforQuality%2CQualityManagementDivision)

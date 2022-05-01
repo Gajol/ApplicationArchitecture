@@ -8,7 +8,7 @@
 
 
 ## Table of Contents
-*Document Generation Date: 2022-04-30 14:04*
+*Document Generation Date: 2022-04-30 15:04*
 
 * [Application Reference Architecture](#application-reference-architecture)
     * [Table of Contents](#application-reference-architecture-table-of-contents)
@@ -80,10 +80,9 @@
     * [Government of Canada](#references-government-of-canada)
         * [Digital Standards](#references-government-of-canada-digital-standards)
         * [Digital : Strategic Plan](#references-government-of-canada-digital-strategic-plan)
+        * [Cloud Adoption](#references-government-of-canada-cloud-adoption)
         * [Information Management](#references-government-of-canada-information-management)
         * [Privacy](#references-government-of-canada-privacy)
-* [Misc - To File](#misc-to-file)
-* [DDD](#ddd)
 * [Appendix - Definitions](#appendix-definitions)
     * [Architecture](#appendix-definitions-architecture-2)
         * [Architecture Quotes](#appendix-definitions-architecture-2-architecture-quotes)
@@ -1116,7 +1115,7 @@ References for microservices patterns:
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
 - [Design patterns: elements of reusable object-oriented software. (Addison-Wesley, 1995).](http://www.worldcat.org/isbn/978-0-201-63361-0)
- 
+
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
 
@@ -1174,10 +1173,18 @@ References for microservices patterns:
 
 - [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
 
+<a name="references-government-of-canada-cloud-adoption"></a>
+
+
+### Cloud Adoption
+
+- [2018 GC Cloud Adoption Strategy](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)
+
 <a name="references-government-of-canada-information-management"></a>
 
 
 ### Information Management
+
 - [GC Information Management Guidelines - 1996](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=13832&section=html)
 - [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
 - [TBS Glossary](https://www.tbs-sct.canada.ca/pol/glossary-lexique-eng.aspx#glos-lex-D)
@@ -1187,22 +1194,6 @@ References for microservices patterns:
 
 ### Privacy
 - [Directive on Privacy Practices](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=18309) : Defines direct and indirect collection of personal information.  Relates to other legislation such as  Policy on Privacy Protection, the Directive on Privacy Impact Assessment, the Directive on Social Insurance Number, the Directive on Privacy Requests and Correction of Personal Information and the Standard on Privacy and Web Analytics.
-
-
-<a name="misc-to-file"></a>
-
-
-# Misc - To File
-Value Streams: See also [Scaled-Agile Framework - SAFe - Value Streams](https://www.scaledagileframework.com/value-streams/).  Agile Release Trains (ART) within each value stream develop the business solutions used by the operational value streams. ARTs are cross-functional and have all the capabilities—software, hardware, firmware, and other—needed to define, implement, test, deploy, release, and where applicable, operate solutions.
-
-
-<a name="ddd"></a>
-
-
-# DDD
-Eric Evans DDD Reference :Onedirve/.../Technical/Application Models/...
-=======
-- [GC Cloud Adoption Strategy](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/cloud-services/government-canada-cloud-adoption-strategy.html)
 
 
 <a name="appendix-definitions"></a>

@@ -66,7 +66,7 @@ Shift-Left
 ### Quality Characteristics
 Below are some quality characteristics to consider when developing applications:
 
-Observability 
+Observability
 : Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitoring which reacts to quality thresholds).
 
 Testability
@@ -127,6 +127,9 @@ Treasury Board issues a range of policy instruments that are designed to establi
 ## Principles
 
 A principle is a proposition.  It serves as the foundation for a system of beliefs. As propositions, principles are abstract, but they should precipitate actions on the part of your teams that support them. The principles are subsets or decompositions of your overarching corporate vision. If they’re not, your teams and the department will suffer from a lack of alignment. [^Hewitt]
+
+## Systems Thinking
+Systems thinking is a perspective of seeing and understanding systems as wholes rather than as collections of parts. A whole is a web of interconnections that creates emerging patterns.
 
 ## Technical Debt
 

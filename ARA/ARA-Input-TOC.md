@@ -20,7 +20,7 @@
 
 {"gitdown": "include", "file": "./ARA-Goals.md"}
 
-{"gitdown": "include", "file": "./ARA-GuidanceStrategy.md"}
+{"gitdown": "include", "file": "./ARA-Goals-Business.md"}
 
 {"gitdown": "include", "file": "./ARA-Styles.md"}
 
