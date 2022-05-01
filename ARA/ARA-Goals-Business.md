@@ -39,7 +39,7 @@ Use design-thinking in the cross-functional project team to arrive at appropriat
 1. Experimentation
 1. Collaboration
 
-## Guidance; Incorporate Systems Thinking in Transformational Programs
+## Guidance: Incorporate Systems Thinking in Transformational Programs
 
 Systems Theory in engineering considers both the business and the technical needs of all customers, with the goal of providing a quality product that meets the user's needs.   Systems thinking, draws on this theory, and provides a perspective of seeing and understanding systems as wholes rather than as collections of parts. A whole is a web of interconnections that creates emerging patterns. – [Peter Senge](https://en.wikipedia.org/wiki/Peter_Senge) and the book [The Fifth Discipline - 1997](https://en.wikipedia.org/wiki/Peter_Senge)
 

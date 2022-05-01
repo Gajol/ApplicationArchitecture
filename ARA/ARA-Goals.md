@@ -117,9 +117,9 @@ Architectural patterns to support composable applications include:
 
 High Cohesion
 : *The Fundamentals of Software Architecture*[^Guidance-4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.
-- 
+-
 Low Coupling
-: Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14]. 
+: Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14].
 
 Some common guidelines are:
 
@@ -132,7 +132,7 @@ SOLID is five design principles supporting composable applications.   Some of th
 
 Rigid adherence to SOLID is not the objective.  What is important is for developers to understand the value of these, and when to use them effectively.  This article[^Goals-1] provides an excellent description of the value of each principle.   
 
-  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed. 
+  - S - Single Responsibility Principle. Gather together things that change for the same reason, and separate things that change for different reasons.  Good system design means that we separate the system into components that can be independently deployed.
 
   - O - Open–closed principle - Software entities and components should be open for extension, but closed for modification.
 
@@ -167,7 +167,7 @@ API's are a critical component of our technology stack.  As applications and tec
 
 As per the GC DOSP, our department needs to develop an API Strategy.  The API Strategy should address concerns such as:
 
-- API Discovery / Catalog:  How can developers discover integrations 
+- API Discovery / Catalog:  How can developers discover integrations
 - API Testing: automated testing, performance testing, stubbed-out testing.
 - API Standards follow [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) guidance, align with [NZ API Guidance & Resources](https://snapshot.ict.govt.nz/guidance-and-resources/standards-compliance/api-standard-and-guidelines/api-standard-and-guidelines-part-b-technical/) & [UK API Technical & Data Standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) guidance.   These are written to support integrated digital processes across departments and agencies; however their guidance is relevant for internal integrations.
 
@@ -338,5 +338,3 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on ho
 [^Guidance-15]: [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
 [^Guidance-16]: [12-Factor Application - Heroku - 2011](https://en.wikipedia.org/wiki/Twelve-Factor_App_methodology)
-
-[^Guidance-Postman]: [Postman APIs- 22 Problems Solved for Developers](https://apievangelist.com/2022/01/27/twenty-problems-that-postman-is-solving-for-developers-in-2022/)

@@ -34,8 +34,8 @@ The GC Digital Operations Strategic Plan[^Application-2] indicates the prioritie
 
 From [Coursera - DevOps Culture and Mindset](https://www.coursera.org/lecture/devops-culture-and-mindset/the-westrum-model-for-improving-organizational-culture-8HXtP)
 
-1. __Eliminate Waste__ : Don't code more features than needed.   Aligns with rationalization principle.\
-1. __Build Quality In__ : Quality is everyone's responsibility.  (Reference Deming) Verify quality is built into product and process.
+1. __Eliminate Waste__ : Don't code more features than needed.   Aligns with rationalization principle.
+1. __Build Quality In__ : Quality is everyone's responsibility.  Verify quality is built into product and process.
 1. __Create Knowledge__ : Amplify learning.  Development is constant learning. Create blogs, videos, team-onboarding tutorials, leverage hands-on training environments.
 1. __Defer Commitment__ : Make decisions at the right time, with analysis and considerations.  Defer decisions until you have more information.  Understand impact of decisions.   ''*Take your time. When the decision is irreversible, give yourself time and space to think it through. When the decision is easily reversible, don't overthink it.*' - *[Dries - Drupal - Decisions](https://dri.es/principles-for-life)*
 1. __Deliver Fast__ : Ensure feedback received early and often allowing to change and adapt.  Deliver in smaller batches which will allow you to deliver faster.
