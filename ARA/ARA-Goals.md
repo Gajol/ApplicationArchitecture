@@ -12,14 +12,15 @@ The proceeding section will identify guidance to achieve these goals.
 1. Automation
 1. Cloud Native - Future Proof Technology
 1. User Experience
-1. Accessility
+1. Accessibility
+1. Embrace DevOps and Agile
 
 
 ## Goal:  Technical Debt Reduction
 
 Our department's vision includes an *IT Rationalization* pillar which identifies the need to reduce the number of different applications supported by our team.  The Architecture Working Group (AWG) includes principles which address the need to rationalze the portfolio.  
 
-The benefits of technical debt reduction is with a smaller and healthier application portfolio, DevOps teams can focus on contributing to high-value projects.  Debt reduct is reduced by this strategic guidance:
+By reducing technical debt our development teams can focus on contributing to high-value projects.  Debt reduction is reduced by the following guidance:
 
   - Rationalization
   - Reuse / Buy / Build
@@ -29,40 +30,47 @@ The benefits of technical debt reduction is with a smaller and healthier applica
 
 ### Guidance: Rationalization.
 
-In cooperation with the business, business governance and other stakeholders development of functional and non-functional requirements must be rationalized.  There are many strategies to rationalize development to ensure the project can be completed on time, in an agile manner.  Some strategies for recognized industry leaders include:
+Development of functional and non-functional requirements must be rationalized to help simplify the systems and reduce development and operational costs.   This rationalization requires advocating for change.  There are many strategies to rationalize development to ensure the project can be completed on time, in an agile manner.  Some rationalization guidance recognized by industry leaders include:
 
-  - "Reduce features, focus on the priorities" - [Basecamp - Feature Selection - Start with No](https://basecamp.com/gettingreal/05.3-start-with-no)
-  - Apple had suffered from lousy engineering management and Steve Jobs was answering a negative question about a removed feature.  Steve Jobs response was that "*Focusing is about saying no.   When you say no, you piss off people.*"- [Steve Jobs - Focus on Saying No - 1997](https://www.youtube.com/watch?v=H8eP99neOVs):  
-  - Are we staying true to the vision? : [Basecamp - Priorities - Whats the Big Idea](https://basecamp.com/gettingreal/04.1-whats-the-big-idea):
-  - Prioritize, Focus on what you really want to deliver), Flexibility : Scope flexibility.  It’s better to make half a product than a half-assed product. - [Basecamp - The Starting Line - Fix Time and Budget, Flexibility on Scope](https://basecamp.com/gettingreal/02.4-fix-time-and-budget-flex-scope):
-  -  *How does a project get to be a year behind schedule? One day at a time.* - [Fred Brooks 1979 Software Project Management - The Mythical man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month). [the mythical man-month - 1975 - isbn](http://www.worldcat.org/isbn/0-201-00650-2)
+  - __Reduce Features__:  "Reduce features, focus on the priorities"[^Rationalize-No]
+  - __Focus__: "*Focusing is about saying no.   When you say no, you piss off people.*"[^Rationalize-Focus]
+  - __Align to Vision__: "Are we staying true to the vision?"[^Rationalize-Vision]
+  - __Prioritize__: Prioritize, Focus on what you really want to deliver), Flexibility : Scope flexibility.  It’s better to make half a product than a half-assed product.[^Rationalize-Prioritize]  
+  - __Schedule__: *How does a project get to be a year behind schedule? One day at a time.*[^Rationalize-Schedule]
 
 
 ### Guidance: Reuse / Buy / Build.   
 
-  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders (e.g, TMO - Transformation Management Office, BRMO - Business Relationship Management Office, TRB - Technology Review Board and the AWG - Architecture Review Board).   If a new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5].   
+  Prior to a business case or project proceeds to development, any new application creation should be discussed with other stakeholders.  If a new application is justified, the options analysis should consider the TBS Digital Standards and GC EARB Application Architecture Standards [^Guidance-5]. In our department this list includes:
+
+  - TMO - Transformation Management Office,
+  - BRMO - Business Relationship Management Office,
+  - TRB - Technology Review Board and the
+  - AWG - Architecture Review Board).     
 
   The following priorities for options analysis:
 
-  - Reuse:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
-  - Buy: Buy solutions and integrate into our enterprise architecture
-  - Build:  As a last resort, custom build a solution.  This should be limited to business capabilities and processes that are unique to our department.  Executive approval (Department Architecture Review Board)  required.
+  - __Reuse__:  Attempt to reuse what we currently own, or what other government departments / partners are using.     
+  - __Buy__: Buy solutions and integrate into our enterprise architecture
+  - __Build__:  As a last resort, custom build a solution.  This should be limited to business capabilities and processes that are unique to our department.  Executive approval (Department Architecture Review Board - DARB)  required.
 
 
 ### Guidance: Document & Exercise Backup & Recovery
 
-  All applications, regardless or criticality, must have a documented backup and recovery procedure.   This needs to be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
+  All applications, regardless or criticality, must have a documented backup and recovery procedure.   The procedure must be exercised on a regular basis (at least annually) and must be done prior to deployment to production.
 
 ### Guidance: Develop as per the Criticality of the Application
 
-  Business critical applications require a Business Continuity Plan (BCP) and Disaster Recovery Plan (DRP) to be documented and reviewed on a regular basis.   The DRP must be excercised routinely.
+  Business critical applications require a Business Continuity Plan (BCP) and Disaster Recovery Plan (DRP) to be documented and reviewed on a regular basis.   The DRP must be exercised routinely.
 
-  - [ ] Enterprise Architecture Gap : Formally identify the criticality of applications and record this in the department's official configuration management database (CMDB).  Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  The project should clearly identity if this application is critical to allow for analysis and design of the quality attributes required for a critical application.
+  - [ ] Enterprise Architecture Gap : Formally identification of critical applications is not available.  A formal list of application must be captured and recorded in the department's official configuration management database (CMDB).  
+
+    - Note: *As of this writing the CMDB is not the official source of truth for the list of critical applications.  In the interim, projects should clearly identity application criticality and allow for analysis and design of the quality attributes required for critical applications.*
 
 
 ### Guidance: Build Less and Stay Lean
 
-  BaseCamp has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
+  BaseCamp, a project management software provider, has a few short-narratives on ways to stay-competitive; which can be adopted to our department attempting to reduce technical debt.
 
   - [Basecamp - The Starting  - Build Less](https://basecamp.com/gettingreal/02.1-build-less):
 
@@ -73,13 +81,14 @@ In cooperation with the business, business governance and other stakeholders dev
     - Less promises  
 
   -  [Basecamp - Stay Lean - Less Mass:](https://basecamp.com/gettingreal/03.1-less-mass)
-      - less "Thick process"
-      - less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovsion 2017)
-      - less of "The past ruling the future"
+      - Less "Thick process"
+      - Less "Long-Term Roadmaps"  (supported as by our ITSS Study - Ian Lovison 2017)
+      - Less of "The past ruling the future"
 
 
 ## Goal:  Composable Enterprise, Composable Applications
-A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some strategies to help in the design and communication of the service-architecture are:
+
+A composable application is a key pattern in micro-services.   In our current environment and infrastructure environment, the focus should be on designing *single purpose services" on virtual machines.   Applications should be thought of as thin user interfaces on top of this collections of services.  The design of the services/APIs is important to success of the project and application.  Some guidance to help in the design and communication of the service-architecture are:
 
 - Domain Drive Design
 - Standards on API (Government of Canada)
@@ -89,7 +98,7 @@ A composable application is a key pattern in micro-services.   In our current en
 
 ### Guidance: Domain Drive Design (DDD) / Bounded Context[^Guidance-11]
 
-DDD is useful for large transformation and modernization projects like HR and ERP modernization.   A bounded-context breaks the large domain into a cohesive boundary.  Within this bounded-countext services can be designed and exposed.  
+DDD is useful for large transformation and modernization projects like HR and ERP modernization.   DDD is complex, however understand some core-concepts can help in developing modular applications.  Within DDD, a bounded-context defines core boundaries of a sub-domain.  The bounded-context helps identify what features and data models are in its responsibility, and, equally as important what is beyond it's context.  Within this bounded-context services can be designed and exposed.  
 
 A quick summary of DDD is to:
 
@@ -100,15 +109,15 @@ Refer to *Domain Driven Design*[^Guidance-12] for details on this concept.
 
 ### Guidance: Use APIs
 
-  The Direcitve on Service and Digial[^Guidance-13] provides high-level guidance on API design which should be implemented:
+  The Directive on Service and Digital[^Guidance-13] provides high-level guidance on API design summarized below:
 
-- Business-Based APIs:  Build APIs against business requirements
-- Collaborate: Work with the developers who are expected to consume your API
-- Standardized: Expose APIs using industry accepted open standards
+- __Business-Based APIs__:  Build APIs against business requirements
+- __Collaborate__: Work with the developers who are expected to consume your API
+- __Standardized__: Expose APIs using industry accepted open standards
 
 ### Guidance: Decouple User Interfaces
 
-Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitor; ideally support Edge and Chrome.
+Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a minimum.  Text is ~~striked-out~~ to indicate we currently develop applications for use on a known standard-provisioned desktop with two-monitors; ideally supporting Edge and Chrome.
 
 1. APIs, and the consuming services/applications should have *high-cohesion* and *loose-coupling*.  This is especially important as software communicates across business domains.   
 1. APIs should be used to reduce; especially at the high-level interactions between components.[^Guidance-1],[^Guidance-2],[^Guidance-3].
@@ -116,8 +125,8 @@ Design the web UI to work across ~~mobile devices, tablets, and~~ desktops at a 
 Architectural patterns to support composable applications include:
 
 High Cohesion
-: *The Fundamentals of Software Architecture*[^Guidance-4], in Chapter 3 on Modularity, describes how to measure modularity.  Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.
--
+: Cohesion can be measured in terms of functional, communication, procedural, logical and other dimensions.[^Guidance-4]
+
 Low Coupling
 : Use data access layers between application business logic and the database layer.  Coupling is more difficult to understand and requires assessment of connascence[^Guidance-14].
 
@@ -126,7 +135,7 @@ Some common guidelines are:
 - break system and APIs into encapsulated replacements
 - minimize any connascence between systems (dependency relationships between objects)
 
-### Guidance: S.O.L.I.D[^Guidance-15] Software Design
+### Guidance: S.O.L.I.D. Software Design[^Guidance-15]
 
 SOLID is five design principles supporting composable applications.   Some of the principles date back 30 years.
 
@@ -163,39 +172,44 @@ The *12-Factor Applications*[^Guidance-16] was defined by Heroku in 2011 as a me
 
 ## Goal: Improved API Developer Experience
 
-API's are a critical component of our technology stack.  As applications and technology more-and-more through API's we need to mature our API strategy. Our department's developers have inadequate guidance and tooling to build API's effectively and efficiently.
+Our department's developers have inadequate guidance and tooling to build API's effectively and efficiently.  API's are a critical component of our technology stack.  The API strategy needs to mature as applications integrate more-and-more through API's.
 
 As per the GC DOSP, our department needs to develop an API Strategy.  The API Strategy should address concerns such as:
 
-- API Discovery / Catalog:  How can developers discover integrations
+- API Discovery / Catalog:  Provide tools to allow developers to discover integrations amd APIs?
 - API Testing: automated testing, performance testing, stubbed-out testing.
-- API Standards follow [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) guidance, align with [NZ API Guidance & Resources](https://snapshot.ict.govt.nz/guidance-and-resources/standards-compliance/api-standard-and-guidelines/api-standard-and-guidelines-part-b-technical/) & [UK API Technical & Data Standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards) guidance.   These are written to support integrated digital processes across departments and agencies; however their guidance is relevant for internal integrations.
+- The following GC, NZ and UK API guidance documents are written to support integrating digital processes across departments and agencies.   Their guidance is relevant for internal integrations.
+
+  - [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) guidance,
+  - [NZ API Guidance & Resources](https://snapshot.ict.govt.nz/guidance-and-resources/standards-compliance/api-standard-and-guidelines/api-standard-and-guidelines-part-b-technical/)
+  - [UK API Technical & Data Standards](https://www.gov.uk/guidance/gds-api-technical-and-data-standards)   
+
 
 ### Guidance:  Develop and API Strategy
 
-As we mature with our API Strategy, and enterprise approach to APIs for the following is important:
+Develop an enterprise API Strategy to help mature our API approach and improve our ability to integrate systems.  API documentation, using standardized protocols and providing API management are aspects of the strategy.
 
 1. [API Documentation](https://www.gov.uk/guidance/how-to-document-apis): discover, affordances (understand how to use API), integration with API.  Examples: [GOV.UK Frontend](https://frontend.design-system.service.gov.uk/?_ga=2.152481273.1904569585.1642645779-431822512.1642645779#gov-uk-frontend), [Stripe API](https://stripe.com/docs/api), [Mailchimp](https://mailchimp.com/developer/).
 1. API Protocols: Leverage protocols and languages like gRPC and GraphQL for integrations.
-1.  API Management: As the number of components, micro-services and integrations grow, the need for an API management layer to provide orchestration and API lifecycle management increases.  API management provides a single point of entry for all connected systems and services.  Helps developers (IT, client-authentication, authentication, business-citizen) develop to APIs.  API Service Mesh are common in microservices architectures.[^API-ServiceMesh]
+1.  API Management / Service Mesh: As the number of components, micro-services and integrations grow, the need for an API management layer to provide orchestration and API lifecycle management increases.  API management provides a single point of entry for all connected systems and services.  API Management also helps developers (IT, client-authentication, authentication, business-citizen) develop to APIs.  API Service Mesh are common in microservices architectures.[^API-ServiceMesh]
 
 
 ## Goal: Testable Applications
 
 Testing applications and groups of applications effectively and efficiently requires planning, analysis and design.  The application development cycle must include developing capabilities to facilitate testability.  Testing scopes vary based on developer testing and quality assurance testing.  QA testing often involves elaborate efforts to setup a system (install, configure and provision) for a single test case.  
 
-The architectural goal is to build testability into applications.  Testable applications will enhance the reliability and security of applications.
+The architectural goal is to build testability into applications.  Testable applications  enhance the reliability and security of applications.
 
 The desired outcomes of this guidance is to:
-1. have a suite of automated testing that can be executed at modular levels on a component(s) or system
-1. toolsets to help in the setup, data-loading and test-validation of test suites
-1. integration of testcases into the CI/CD pipeline
-1. a library of version-controlled testcases available for agile teams to use
+1. Modular Testsuite: have a suite of automated testing that can be executed at modular levels on a component(s) or system
+1. Toolsets for Testing: toolsets to help in the setup, data-loading and test-validation of test suites
+1. Continual Testing: integration of testcases into the CI/CD pipeline
+1. Version Controlled Tests: a library of version-controlled testcases available for agile teams to use
 
 
 ### Guidance : Shift-Left Testing
 
-The guidance is to adopt the [*Microsoft - Shift Left Testing*](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  
+The guidance is to adopt the [*Microsoft - Shift Left Testing*](https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable)) DevOps of automation while shifting-left the integration and quality testing.  Automation should accommodate the CI/CD concepts, as well as the ability to provision and validate tests across multiple environments.  The shifting left of testing improves release cycle planning, allows more predictability on product quality and reliability
 
 The following principles are copied from Microsoft Shift Left Testing[^Guidance-6]:
 
@@ -217,13 +231,14 @@ Adopt development methodologies like test driven development (TDD) that predates
 - TDD is an effective way to mitigate the risks of defects.
 - TDD increases the chances of actually achieving the resilient and rugged code that needs to withstand the increasing demands of a DevOps world where expectations are much higher.
 
-Caution:  TDD can be burdoning on a development process.  TDD applied in meaningful areas is useful and worthwhile.
+Caution:  Although directed by the TBS Playbook Towards EARB, TDD can be burdening on a development process.  Ensure, TDD  is applied in meaningful areas.
 
 
 ## Goal: User Experience
+
 Our user experience can be improved by looking at modern applications and their integration into varying computing platforms (desktop, mobile, tablet).  
 
-User-experience is an entire-domain, and frankly, the author of the ARA does not have expertise in this field.  User-experience is should not be confused with user-interface.    User-experience is the experiece of a user as they interact with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
+User-experience is an entire-profession.  User-experience is the experience of a user as they interact with the system and the perception they feel throughout and after the interaction.   Understand usability, affordances and other behaviours is important.  Some resources include:
 
   - [Nielsen-Norman Group (NNG) - User Experience](https://www.nngroup.com/)
   - [Usability.gov - User Centric Design](https://www.usability.gov/what-and-why/user-centered-design.html)
@@ -239,11 +254,11 @@ Some modern experiences can include:
 
 There are many modern application experiences users expect in an application.  A short checklist of modern user experience functions relating to presented content are:
 
-- [ ] : social like : can the content be liked to identify high-value content
-- [ ] : share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
-- [ ] : link : should it be possible to get a link to the content for sharing, bookmarking, reporting.   What are the guarantees on the provided link (transitory, corporate, survives upgrades, ...)
-- [ ] : discuss/comment : can comments be provided for all to see, or to raise a concern to the author (private comment)
-- [ ] : rich link embed : when embedding a link in another application, should a link-preview be provided
+- social like : can the content be liked to identify high-value content
+- share : does it make sense to have a *share* button to allow sharing with collegues while enforcing access as appropriate
+- link : should it be possible to get a link to the content for sharing, bookmarking, reporting.   What are the guarantees on the provided link (transitory, corporate, survives upgrades, ...)
+- discuss/comment : can comments be provided for all to see, or to raise a concern to the author (private comment)
+- rich link embed : when embedding a link in another application, should a link-preview be provided
 
 ### Guidance: Include Ux Design in Agile Product Teams
 
@@ -253,9 +268,9 @@ There are many modern application experiences users expect in an application.  A
 
 ## Goal: Accessibility
 
-The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[[Reference](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)].   
+The Accessible Canada Act received Royal Assent on June 21, 2019, and came into force on July 11, 2019.[^Accessibility]   
 
-Our department has no formal policies on accessibility.   In light of no policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
+In light of no departmental policy, applications should strive to achieve WCAG 2.1 Level AA.  This goal changes by application, and development must ensure they are aware of the business requirements for accessibility.  
 
 WCAG 2.1 Level AA (Double-A) implies:
 
@@ -274,10 +289,43 @@ A basic checklist of minimal accessibility guidelines are:
 - [ ] Applications should be tested for accessibility, including, testing functionality with our accessibility tool suite (page readers, etc)
 - [ ] Application develop and product teams must establish accessibility early in develop cycle interactions.  Shift-left accessibility.
 
+## Goal: Embrace DevOps and Agile
+
+Agile and DevOps are modern methodologies that have proven to be successful in business and in modern complex application development.   Agile provides a dynamic, engaging experience for the IT and business teams.  The GC has directed departments to use agile methodologies.
+
+Some principles of Agile DevOps are highlighted below.   
+
+From [DevOpsAgileSkills](https://www.devopsagileskills.org/dasa-devops-principles/):
+
+1. Customer-Centric Action : Short iterations with real-clients
+1. Create with the End in Mind : All employees need to see the big picture, and break down role boundaries
+1. End-To-End Responsibility : Create teams which support the operations behind what the team hasa developed; *DevOps*!
+1. Cross-Functional Autonomous Teams : Fully responsible teams for the product's lifecycle
+1. Continuous Improvement : Experiment, iterative, fail, improve.  
+1. Automate Everything You Can : Automate software and infrastructure.  Use containers.
+
+
+From [Coursera - DevOps Culture and Mindset](https://www.coursera.org/lecture/devops-culture-and-mindset/the-westrum-model-for-improving-organizational-culture-8HXtP)
+
+1. __Eliminate Waste__ : Don't code more features than needed.   Aligns with rationalization principle.
+1. __Build Quality In__ : Quality is everyone's responsibility.  Verify quality is built into product and process.
+1. __Create Knowledge__ : Amplify learning.  Development is constant learning. Create blogs, videos, team-onboarding tutorials, leverage hands-on training environments.
+1. __Defer Commitment__ : Make decisions at the right time, with analysis and considerations.  Defer decisions until you have more information.  Understand impact of decisions.   ''*Take your time. When the decision is irreversible, give yourself time and space to think it through. When the decision is easily reversible, don't overthink it.*' - *[Dries - Drupal - Decisions](https://dri.es/principles-for-life)*
+1. __Deliver Fast__ : Ensure feedback received early and often allowing to change and adapt.  Deliver in smaller batches which will allow you to deliver faster.
+1. __Respect People__ : Lean and DevOps rely on a culture of respect.
+1. __Optimize the Whole__ : Employ Systems Thinking.
+
+### Guidance : Adopt Agile and DevOps
+
+Our department is maturing with agile.  A checklist to assess a few aspects of Agile are:
+
+- [ ] The Agile team has all skillsets needed for the product development and operations.
+- [ ] The team is delivering to production in an interative manner
+- [ ] Team members are dedicated to the development, and, context-switching is minimized through the use work-in-progress limits.
 
 ## Goal: Cloud-Native - Future Proof Technology
 
-The [MACH Aliance](https://machalliance.org/)[^Guidance-8] was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy, allow container and micro-service focused, still identifies key-concepts for use within our data-centre applications; namely modular, API-based and headless (i.e., ).  This alliance is for cloud-native applications (CNA), and is worthwhile reading for CNA development.
+The [MACH Aliance](https://machalliance.org/)[^Guidance-8] was announced in December 2021.  AWS, MongoDB and others are associated with this alliance.  This alliance defines the strategy for a best-of-breed enterprise technology ecosystem.  MACH is container and  micro-service focused.   MACH does identify key-concepts for use within our data-centre applications; namely modular, API-based and headless.  T
 
 This manifesto is "*Future proof enterprise technology and propel current and future digital experiences*". MACH aligns with the GC EARB directions[^Guidance-5]:
 
@@ -286,20 +334,27 @@ This manifesto is "*Future proof enterprise technology and propel current and fu
 - __C__: Cloud: SaaS that leverages the cloud, beyond storage and hosting, including elastic scaling and automatically updating.
 - __H__: Headless: Front-end presentation is decoupled from back-end logic and channel, programming language, and is framework agnostic.
 
-Our constraints may limit our ability to leverage the cloud.  For on-premise constrained systems DevOps practices to automate updating and Kubernetes auto scaling should be prioritized.
-
-A view of how MACH applies to guidance and industry patterns is below.
+his alliance is for cloud-native applications (CNA), and is worthwhile reading for CNA development.  Our constraints may limit our ability to leverage the cloud.  For on-premise constrained systems DevOps practices to automate updating and Kubernetes auto scaling should be prioritized.  A view of how MACH applies to guidance and industry patterns is below.
 
 |MACH|Description|ARA Guidance|Industry Patterns|
 |--|--|--|--|
 |M - Microservices|Individual *pieces* of business functionality can be deployed and managed|Composable Applications|[Microservices Architecture Style](https://learning.oreilly.com/library/view/fundamentals-of-software/9781492043447/ch17.xhtml)|
 |A - API|Functionality exposed via API|Composable Applications|GC API-First, [GC Standards on API](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html)|
 |C - Cloud|Leverage SaaS to its fullest including scalability and automation|Security / Policy Restricted|Aligned to MACH|
-|H - Headless|Decouple front-end from back-end|Cohesive, Loosely-Coupled Applications, Services and APIs||
+|H - Headless|Decouple front-end from back-end|Cohesive, Loosely-Coupled Applications, Services and APIs|[Accenture](https://www.accenture.com/nl-en/blogs/insights/headless-architecture-why-its-becoming-the-new-normal)|
 
 Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on how a Content Management System (CMS) is attempting to become MACH-compliant; with discussion on impacts to CMS features like editors, and the use of technologies like JAMstack; a static-site generator (SSG) framework.
 
 
+[^Rationalize-No]: [Basecamp - Feature Selection - Start with No](https://basecamp.com/gettingreal/05.3-start-with-no)
+
+[^Rationalize-Focus]: [Steve Jobs - Focus on Saying No - 1997](https://www.youtube.com/watch?v=H8eP99neOVs)
+
+[^Rationalize-Vision]: [Basecamp - Priorities - Whats the Big Idea](https://basecamp.com/gettingreal/04.1-whats-the-big-idea)
+
+[^Rationalize-Prioritize]: [Basecamp - The Starting Line - Fix Time and Budget, Flexibility on Scope](https://basecamp.com/gettingreal/02.4-fix-time-and-budget-flex-scope)
+
+[^Rationalize-Schedule]: [Fred Brooks 1979 Software Project Management - The Mythical man Month](https://en.wikipedia.org/wiki/The_Mythical_Man-Month). [Book](http://www.worldcat.org/isbn/0-201-00650-2)
 
 [^Guidance-1]: [Reduce Coupling - Martin Fowler IEEE 2002](https://www.martinfowler.com/ieeeSoftware/coupling.pdf).
 
@@ -317,7 +372,6 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on ho
 
 [^Guidance-8]: [MACH Aliance](https://machalliance.org/)
 
-
 [^Goals-1]: [Devopedia - SOLID Design Principles](https://devopedia.org/solid-design-principles)
 
 [^Guidance-10]: [MACH Sitecore Architecture](https://www.verndale.com/insights/emerging-technology/hitchhikers-guide-to-sitecore-architecture-in-2022)Guidance
@@ -326,14 +380,15 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on ho
 
 [^Guidance-11]: [Martin Fowler - Bounded Context](https://www.martinfowler.com/bliki/BoundedContext.html)
 
-[^Guidance-12]: [Evans, Eric. Domain-Driven Design: Tackling Complexity in the Heart of Software. Boston: Addison-Wesley, 2004.
-](www.worldcat.org/isbn/978-0321125217)
+[^Guidance-12]: [Evans, Eric. Domain-Driven Design: Tackling Complexity in the Heart of Software. Boston: Addison-Wesley, 2004.](www.worldcat.org/isbn/978-0321125217)
 
 [^Guidance-13]: [Appendix B to Directive on Service and Digital - Mandatory Procedures for APIs](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32604)
 
 [^Guidance-14]: [Wikipedia - Connascense](https://en.wikipedia.org/wiki/Connascence)
 
 [^API-ServiceMesh](https://www.redhat.com/en/resources/api-management-and-service-mesh-checklist)
+
+[^Accessibility][Accessibility Act - Summary](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)
 
 [^Guidance-15]: [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 

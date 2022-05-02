@@ -22,6 +22,8 @@
 
 - [Mead, Margaret, World Federation for Mental Health, and Unesco, eds. Cultural Patterns and Technical Change: A Manual. Westport, Conn: Greenwood Press, 1985.](www.worldcat.org/isbn/978-0313248399)
 
+- [Disruptive Thinking - Medium](https://medium.com/disruptive-design/tools-for-systems-thinkers-the-6-fundamental-concepts-of-systems-thinking-379cdac3dc6a)
+
 
 ## Government of Canada
 

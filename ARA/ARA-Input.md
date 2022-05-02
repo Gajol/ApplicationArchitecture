@@ -10,8 +10,6 @@
 
 {"gitdown": "include", "file": "./ARA-Business.md"}
 
-{"gitdown": "include", "file": "./ARA-Discovery.md"}
-
 {"gitdown": "include", "file": "./ARA-Principles.md"}
 
 {"gitdown": "include", "file": "./ARA-Application.md"}
@@ -23,6 +21,8 @@
 {"gitdown": "include", "file": "./ARA-Styles.md"}
 
 {"gitdown": "include", "file": "./ARA-Patterns.md"}
+
+{"gitdown": "include", "file": "./ARA-Discovery.md"}
 
 {"gitdown": "include", "file": "./ARA-References.md"}
 

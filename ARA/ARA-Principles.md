@@ -2,7 +2,7 @@
 
 ## Digital Transformation: Design Principles
 
-There are many sources for digital principles[^Principles-1].  The Government of Canada has identified the following digital architecture standards.  The standards/principles are in support of the Digital Operations Strategic Plan.
+The Government of Canada has identified the following digital architecture standards.  There are many sources for digital principles[^Principles-1].    The standards/principles are in support of the Digital Operations Strategic Plan.
 
 Application architecture should include these as over-arching guidelines.
 
@@ -12,7 +12,7 @@ Application architecture should include these as over-arching guidelines.
 | :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   |
 | Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               |
-| Design for Users First                               | User-centred methods, focus on users, using agile.                                                                                                                                               |
+| Design for Users First                               | User-centered methods, focus on users, using agile.                                                                                                                                               |
 | Deliver with Multidisciplinary Teams                 | Include all skillsets required for delivery                                                                                                                                                      |
 | Design for Performance, Availability and Scalability | Design quality into the system.  Use distributed systems (assume failure will happen)                                                                                                            |
 | Enable Interoperability                              | Expose functionality as a service.  Use microservices built around business capabilities.  Scope each service to a single purpose.  Use APIs.  Use the Canadian Digital Exchange Platform (CDXP) |
@@ -28,19 +28,7 @@ Application architecture should include these as over-arching guidelines.
 4. Standards on APIs[^Principles-API]
 
 #### GC DOSP
-The GC Digital Operations Strategic Plan[^Application-2] indicates the priorities for services/applications should be, '*developing and delivering services that, by design, put users first by being accessible, inclusive, secure and easy to use, and that respect privacy and choice of official language*.   
-
-# DevOps Principles
-
-From [Coursera - DevOps Culture and Mindset](https://www.coursera.org/lecture/devops-culture-and-mindset/the-westrum-model-for-improving-organizational-culture-8HXtP)
-
-1. __Eliminate Waste__ : Don't code more features than needed.   Aligns with rationalization principle.
-1. __Build Quality In__ : Quality is everyone's responsibility.  Verify quality is built into product and process.
-1. __Create Knowledge__ : Amplify learning.  Development is constant learning. Create blogs, videos, team-onboarding tutorials, leverage hands-on training environments.
-1. __Defer Commitment__ : Make decisions at the right time, with analysis and considerations.  Defer decisions until you have more information.  Understand impact of decisions.   ''*Take your time. When the decision is irreversible, give yourself time and space to think it through. When the decision is easily reversible, don't overthink it.*' - *[Dries - Drupal - Decisions](https://dri.es/principles-for-life)*
-1. __Deliver Fast__ : Ensure feedback received early and often allowing to change and adapt.  Deliver in smaller batches which will allow you to deliver faster.
-1. __Respect People__ : Lean and DevOps rely on a culture of respect.
-1. __Optimize the Whole__ : Employ Systems Thinking.
+The GC Digital Operations Strategic Plan[^Principles-DOSP] indicates the priorities for services/applications should be, '*developing and delivering services that, by design, put users first by being accessible, inclusive, secure and easy to use, and that respect privacy and choice of official language*.   
 
 
 [^Principles-1]: [*Principles for Digital Design*](https://digitalprinciples.org/principles/)
