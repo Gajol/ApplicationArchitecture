@@ -4,7 +4,7 @@
 
 <a name="application-reference-architecture-table-of-contents-djn"></a>
 ## Table of Contents - DJN
-*Document Generation Date: 2022-05-01 21:05*
+*Document Generation Date: 2022-05-01 22:05*
 
 <a name="introduction"></a>
 # Introduction
@@ -166,13 +166,13 @@ Process Map
 
 Our Corporate Risk Profile (CRP) has identified the risk of our aging IT portfolio.   The health of our portfolio needs to improve.   Several leadership principles have been established over the years to provide guidance when addressing business needs.   
 
-Key business principles relating to governing and directing architecture and application design are:
+Key business principles relating to governing and directing architecture and application design are: 
 
 1. __Rationalization__:  Application functionality must be constantly rationalized to allow us to tackle the large backlog of valuable business requests and opportunities.   During the software development phase, requirements must be rationalized against the originally approved project scope and other competing for business needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and should include the senior management team when necessary.  [*See Guidance - Rationalization for more information*]
 
 1. __Executive Lead / Change Management__:  Projects and programs need executive sponsors who are committed to embrace change management and the rationalization that is required to allow IT to develop a product.
 
-1. __Business Architecture and Artifacts__:  The business plays a key role in shaping the application feature-set.  Business architecture (capabilities, value streams, information flows, organization model) is essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.  Including the increment improvement of business artifacts during the agile implementation can help derive value from the project. 
+1. __Business Architecture and Artifacts__:  The business plays a key role in shaping the application feature-set.  Business architecture (capabilities, value streams, information flows, organization model) is essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.  Including the increment improvement of business artifacts during the agile implementation can help derive value from the project.
 
 <a name="business-business-and-technology-environment"></a>
 ## Business and Technology Environment

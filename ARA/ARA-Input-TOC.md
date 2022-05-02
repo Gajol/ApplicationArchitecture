@@ -4,7 +4,7 @@
 ## Table of Contents
 *Document Generation Date: {"gitdown": "date", "format": "YYYY-MM-DD HH:MM"}*
 
-{"gitdown": "contents"}
+{"gitdown": "contents", "maxLevel": 1}
 
 {"gitdown": "include", "file": "./ARA-Intro.md"}
 
@@ -29,3 +29,5 @@
 {"gitdown": "include", "file": "./ARA-References.md"}
 
 {"gitdown": "include", "file": "./ARA-Appendix-Definitions.md"}
+
+# Footnotes

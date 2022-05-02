@@ -4,114 +4,22 @@
 
 <a name="application-reference-architecture-table-of-contents"></a>
 ## Table of Contents
-*Document Generation Date: 2022-05-01 21:05*
+*Document Generation Date: 2022-05-01 22:05*
 
 * [Application Reference Architecture](#application-reference-architecture)
-    * [Table of Contents](#application-reference-architecture-table-of-contents)
 * [Introduction](#introduction)
-    * [Out-of-Scope](#introduction-out-of-scope)
 * [Definitions](#definitions)
-    * [Architecture](#definitions-architecture)
-    * [Application  Platforms](#definitions-application-platforms)
-    * [Application Web Frameworks](#definitions-application-web-frameworks)
-    * [Technology Stacks](#definitions-technology-stacks)
-    * [Application Components](#definitions-application-components)
-    * [Application Portfolio Management](#definitions-application-portfolio-management)
 * [Business](#business)
-    * [Business Capability Model (BCM)](#business-business-capability-model-bcm)
-    * [Process Maps, Information Flows and Value Streams](#business-process-maps-information-flows-and-value-streams)
-    * [Business Governance](#business-business-governance)
-    * [Business and Technology Environment](#business-business-and-technology-environment)
 * [Principles](#principles)
-    * [Digital Transformation: Design Principles](#principles-digital-transformation-design-principles)
-        * [GC References for Principles and Standards](#principles-digital-transformation-design-principles-gc-references-for-principles-and-standards)
 * [Application Characteristics and Styles](#application-characteristics-and-styles)
-    * [Application Characteristics](#application-characteristics-and-styles-application-characteristics)
-        * [Department Application Characteristics](#application-characteristics-and-styles-application-characteristics-department-application-characteristics)
-        * [Quality / Non-Functional Characteristics](#application-characteristics-and-styles-application-characteristics-quality-non-functional-characteristics)
-    * [Application Architecture Styles](#application-characteristics-and-styles-application-architecture-styles)
-        * [Monolithic Styles](#application-characteristics-and-styles-application-architecture-styles-monolithic-styles)
-        * [Distributed Styles](#application-characteristics-and-styles-application-architecture-styles-distributed-styles)
 * [Goals for Application Architecture](#goals-for-application-architecture)
-    * [Goal:  Technical Debt Reduction](#goals-for-application-architecture-goal-technical-debt-reduction)
-        * [Guidance: Rationalization.](#goals-for-application-architecture-goal-technical-debt-reduction-guidance-rationalization)
-        * [Guidance: Reuse / Buy / Build.](#goals-for-application-architecture-goal-technical-debt-reduction-guidance-reuse-buy-build)
-        * [Guidance: Document & Exercise Backup & Recovery](#goals-for-application-architecture-goal-technical-debt-reduction-guidance-document-exercise-backup-recovery)
-        * [Guidance: Develop as per the Criticality of the Application](#goals-for-application-architecture-goal-technical-debt-reduction-guidance-develop-as-per-the-criticality-of-the-application)
-        * [Guidance: Build Less and Stay Lean](#goals-for-application-architecture-goal-technical-debt-reduction-guidance-build-less-and-stay-lean)
-    * [Goal:  Composable Enterprise, Composable Applications](#goals-for-application-architecture-goal-composable-enterprise-composable-applications)
-        * [Guidance: Domain Drive Design (DDD) / Bounded Context[^Guidance-11]](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-guidance-domain-drive-design-ddd-bounded-context-guidance-11)
-        * [Guidance: Use APIs](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-guidance-use-apis)
-        * [Guidance: Decouple User Interfaces](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-guidance-decouple-user-interfaces)
-        * [Guidance: S.O.L.I.D. Software Design[^Guidance-15]](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-guidance-s-o-l-i-d-software-design-guidance-15)
-        * [Guidance: 12-Factor Application](#goals-for-application-architecture-goal-composable-enterprise-composable-applications-guidance-12-factor-application)
-    * [Goal: Improved API Developer Experience](#goals-for-application-architecture-goal-improved-api-developer-experience)
-        * [Guidance:  Develop and API Strategy](#goals-for-application-architecture-goal-improved-api-developer-experience-guidance-develop-and-api-strategy)
-    * [Goal: Testable Applications](#goals-for-application-architecture-goal-testable-applications)
-        * [Guidance : Shift-Left Testing](#goals-for-application-architecture-goal-testable-applications-guidance-shift-left-testing)
-        * [Guidance : Test-Driven Development](#goals-for-application-architecture-goal-testable-applications-guidance-test-driven-development)
-    * [Goal: User Experience](#goals-for-application-architecture-goal-user-experience)
-        * [Guidance: Include Ux Design in Agile Product Teams](#goals-for-application-architecture-goal-user-experience-guidance-include-ux-design-in-agile-product-teams)
-    * [Goal: Accessibility](#goals-for-application-architecture-goal-accessibility)
-        * [Guidance: Establish Baseline Accessibility Targets for Application](#goals-for-application-architecture-goal-accessibility-guidance-establish-baseline-accessibility-targets-for-application)
-    * [Goal: Embrace DevOps and Agile](#goals-for-application-architecture-goal-embrace-devops-and-agile)
-        * [Guidance : Adopt Agile and DevOps](#goals-for-application-architecture-goal-embrace-devops-and-agile-guidance-adopt-agile-and-devops)
-    * [Goal: Cloud-Native - Future Proof Technology](#goals-for-application-architecture-goal-cloud-native-future-proof-technology)
 * [Goals for Business Architecture](#goals-for-business-architecture)
-    * [Guidance: Create an Business Architecture Strategy](#goals-for-business-architecture-guidance-create-an-business-architecture-strategy)
-    * [Guidance: Incorporate Design Thinking in Transformation Programs](#goals-for-business-architecture-guidance-incorporate-design-thinking-in-transformation-programs)
-        * [Design thinking principles:](#goals-for-business-architecture-guidance-incorporate-design-thinking-in-transformation-programs-design-thinking-principles)
-    * [Guidance: Incorporate Systems Thinking in Transformational Programs](#goals-for-business-architecture-guidance-incorporate-systems-thinking-in-transformational-programs)
 * [Application Architecture Styles](#application-architecture-styles-1)
-    * [Big Ball of Mud - Anti-Pattern:](#application-architecture-styles-1-big-ball-of-mud-anti-pattern)
-    * [Event Driven Architecture Patterns](#application-architecture-styles-1-event-driven-architecture-patterns)
-        * [Request-Response communication has the following characteristics:](#application-architecture-styles-1-event-driven-architecture-patterns-request-response-communication-has-the-following-characteristics)
-        * [Event streams are based on these concepts:](#application-architecture-styles-1-event-driven-architecture-patterns-event-streams-are-based-on-these-concepts)
-        * [EDA Integration Patterns](#application-architecture-styles-1-event-driven-architecture-patterns-eda-integration-patterns)
 * [Patterns](#patterns)
-    * [Software Design Patterns](#patterns-software-design-patterns)
-    * [User Interface Patterns](#patterns-user-interface-patterns)
-    * [Business Patterns](#patterns-business-patterns)
-    * [Cloud Design Patterns](#patterns-cloud-design-patterns)
-    * [Microservices Patterns](#patterns-microservices-patterns)
 * [Discovery](#discovery)
-    * [Identity and Access Management (IdAM)](#discovery-identity-and-access-management-idam)
-    * [Multi-Security Zone Applications](#discovery-multi-security-zone-applications)
-    * [Managing Media](#discovery-managing-media)
 * [References](#references)
-    * [Architecture](#references-architecture-1)
-    * [Cloud](#references-cloud)
-    * [Design](#references-design)
-        * [Systems Thinking : Human-Centric Design](#references-design-systems-thinking-human-centric-design)
-    * [Government of Canada](#references-government-of-canada)
-        * [Digital Standards](#references-government-of-canada-digital-standards)
-        * [Digital : Strategic Plan](#references-government-of-canada-digital-strategic-plan)
-        * [Cloud Adoption](#references-government-of-canada-cloud-adoption)
-        * [Information Management](#references-government-of-canada-information-management)
-        * [Privacy](#references-government-of-canada-privacy)
-    * [Patterns](#references-patterns-1)
-    * [Principles](#references-principles-1)
-    * [Software](#references-software)
-        * [API - Application Programming Interface](#references-software-api-application-programming-interface)
-        * [Domain Drive Design](#references-software-domain-drive-design)
-    * [Technologies](#references-technologies)
-    * [Interesting Videos](#references-interesting-videos)
 * [Appendix - Definitions](#appendix-definitions)
-    * [Application](#appendix-definitions-application)
-    * [Application Architecture](#appendix-definitions-application-architecture)
-        * [Architecture Quotes](#appendix-definitions-application-architecture-architecture-quotes)
-        * [Architecture Style (TOGAF)](#appendix-definitions-application-architecture-architecture-style-togaf)
-    * [Architecture Characteristics](#appendix-definitions-architecture-characteristics)
-        * [Quality Characteristics](#appendix-definitions-architecture-characteristics-quality-characteristics)
-    * [Architecture Domains](#appendix-definitions-architecture-domains)
-    * [DevOps](#appendix-definitions-devops)
-    * [Digital Transformation](#appendix-definitions-digital-transformation)
-    * [Enterprise Architecture](#appendix-definitions-enterprise-architecture)
-    * [Governance:](#appendix-definitions-governance)
-    * [Policy Framework for Government of Canada](#appendix-definitions-policy-framework-for-government-of-canada)
-    * [Principles](#appendix-definitions-principles-2)
-    * [Systems Thinking](#appendix-definitions-systems-thinking)
-    * [Technical Debt](#appendix-definitions-technical-debt)
+* [Footnotes](#footnotes)
 
 
 <a name="introduction"></a>
@@ -274,13 +182,13 @@ Process Map
 
 Our Corporate Risk Profile (CRP) has identified the risk of our aging IT portfolio.   The health of our portfolio needs to improve.   Several leadership principles have been established over the years to provide guidance when addressing business needs.   
 
-Key business principles relating to governing and directing architecture and application design are:
+Key business principles relating to governing and directing architecture and application design are: 
 
 1. __Rationalization__:  Application functionality must be constantly rationalized to allow us to tackle the large backlog of valuable business requests and opportunities.   During the software development phase, requirements must be rationalized against the originally approved project scope and other competing for business needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and should include the senior management team when necessary.  [*See Guidance - Rationalization for more information*]
 
 1. __Executive Lead / Change Management__:  Projects and programs need executive sponsors who are committed to embrace change management and the rationalization that is required to allow IT to develop a product.
 
-1. __Business Architecture and Artifacts__:  The business plays a key role in shaping the application feature-set.  Business architecture (capabilities, value streams, information flows, organization model) is essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.  Including the increment improvement of business artifacts during the agile implementation can help derive value from the project. 
+1. __Business Architecture and Artifacts__:  The business plays a key role in shaping the application feature-set.  Business architecture (capabilities, value streams, information flows, organization model) is essential for successful analysis of the business needs during application development. Significant architecture re-work and design waste result if these are unavailable.  Including the increment improvement of business artifacts during the agile implementation can help derive value from the project.
 
 <a name="business-business-and-technology-environment"></a>
 ## Business and Technology Environment
@@ -1404,3 +1312,6 @@ Technical debt is somewhat misunderstood within IT and our department.   Technic
 
 [^Principles-TOGAF]: [TOGAF Architecture Principles](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
 
+
+<a name="footnotes"></a>
+# Footnotes
