@@ -69,6 +69,6 @@ Application Portfolio Management (APM) is used by enterprises to manage the life
 |Critical Service|A critical service is one that, if disrupted, would result in a high or very high degree of injury to the health, safety, security or economic well-being of Canadians, or to the effective functioning of the Government of Canada.|
 
 
-[^StackOverflow-Survey]: StackOverflow's annual survey identifies the top software languages, databases, web frameworks and tools. - [*2021 StackOverflow 2021 Survey*](https://insights.stackoverflow.com/survey/2021#technology
+[^StackOverflow-Survey]: StackOverflow's annual survey identifies the top software languages, databases, web frameworks and tools. - [*2021 StackOverflow 2021 Survey*](https://insights.stackoverflow.com/survey/2021#technology)
 
 [^ComponentSW]: [Componet Based Software Engineering - Wikipedia](https://en.wikipedia.org/wiki/Component-based_software_engineering#History)
