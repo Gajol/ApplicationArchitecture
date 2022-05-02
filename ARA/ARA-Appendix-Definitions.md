@@ -162,3 +162,5 @@ Technical debt is somewhat misunderstood within IT and our department.   Technic
 [^Appendix-Arch-Evol]: [Architectural Evolution - Neal Ford](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)
 
 [^Principles-TOGAF]: [TOGAF Architecture Principles](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
+
+[^Hewitt]: [Hewitt, E. Technology strategy patterns: architecture as a strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)

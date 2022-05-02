@@ -8,8 +8,8 @@ Application architecture should include these as over-arching guidelines.
 
 
 
-| Principle                                            | Description                                                                                                                                                                                      |
-| :--------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Principle  | Description   |
+| - | ---- |
 | Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   |
 | Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               |
 | Design for Users First                               | User-centered methods, focus on users, using agile.                                                                                                                                               |

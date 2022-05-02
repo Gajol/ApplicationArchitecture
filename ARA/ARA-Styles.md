@@ -31,9 +31,9 @@ Event Driven Architecture (EDA) is a architecture pattern based on the productio
 - e.g. Apache Kafka
 
 ### EDA Integration Patterns
-- single partition / single consumer : simple pattern, provides orderin, but due to a single partition does not scale
+- single partition / single consumer : simple pattern, provides ordering, but due to a single partition does not scale
 - single partition / multiple consumer : fan-out, sharing events with multiple consumers
 - at-least once delivery : product ensures message is committed by the delivery mechanism.  
-- multi-partitions / multi-consuers : ordering is by partition, consumers must understand partition ordering
+- multi-partitions / multi-consumers : ordering is by partition, consumers must understand partition ordering
 
-[^EIP: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.](www.worldcat.org./isbn/978-0321200686)
+[^EIP]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.](www.worldcat.org./isbn/978-0321200686)
