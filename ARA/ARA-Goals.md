@@ -386,9 +386,9 @@ Aside:  An interesting article, *MACH Sitecore Architecture*[^Guidance-10] on ho
 
 [^Guidance-14]: [Wikipedia - Connascense](https://en.wikipedia.org/wiki/Connascence)
 
-[^API-ServiceMesh](https://www.redhat.com/en/resources/api-management-and-service-mesh-checklist)
+[^API-ServiceMesh]: [API Management and Sevice Mesh Checlist - Redhat](https://www.redhat.com/en/resources/api-management-and-service-mesh-checklist)
 
-[^Accessibility][Accessibility Act - Summary](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)
+[^Accessibility]: [Accessibility Act - Summary](https://www.canada.ca/en/employment-social-development/programs/accessible-people-disabilities/act-summary.html)
 
 [^Guidance-15]: [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
 
