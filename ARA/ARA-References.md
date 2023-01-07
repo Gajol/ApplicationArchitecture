@@ -7,6 +7,23 @@
 
 - [*Cloud Security Alliance - The Six Pillars for Cloud SecDevOps](https://cloudsecurityalliance.org/group/DevSecOps/)
 
+## Design
+
+### Systems Thinking : Human-Centric Design
+
+- [System Thinking](https://en.wikipedia.org/wiki/Systems_thinking) : breaking world into parts, draws on Systems Theory and Systems Science.
+  - [Systems Theory](https://en.wikipedia.org/wiki/Systems_theory#In_engineering) : [Engineering - User-Centric Design Process](https://en.wikipedia.org/wiki/Systems_theory#User-centered_design_process)
+  - [Systems Science](https://en.wikipedia.org/wiki/Systems_science) : understanding systems
+- [Systemic Design](https://en.wikipedia.org/wiki/Systemic_design) : systems thinking + [human-centric design](https://en.wikipedia.org/wiki/User-centered_design)
+
+- [Management Theory - Human Side](https://en.wikipedia.org/wiki/Joseph_M._Juran) : Juran is widely credited for adding the human dimension to quality management. He pushed for the education and training of managers. For Juran, human relations problems were the ones to isolate, and resistance to change was the root cause of quality issues. Juran credits Margaret Mead's book *Cultural Patterns and Technical Change* for illuminating the core problem in reforming business quality. His book Managerial Breakthrough, published in 1964, outlined the issue.
+  - [Margarat Mead - Cultural Anthropoligist - Wikipedia](https://en.wikipedia.org/wiki/Margaret_Mead)
+  - Juran met the creator of the Pareto Principle
+
+- [Mead, Margaret, World Federation for Mental Health, and Unesco, eds. Cultural Patterns and Technical Change: A Manual. Westport, Conn: Greenwood Press, 1985.](www.worldcat.org/isbn/978-0313248399)
+
+- [Disruptive Thinking - Medium](https://medium.com/disruptive-design/tools-for-systems-thinkers-the-6-fundamental-concepts-of-systems-thinking-379cdac3dc6a)
+
 
 ## Government of Canada
 
@@ -19,6 +36,7 @@
 - [Digital Standards - Playbook](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html): Provides aspirational guidance around key themes; Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely.  Also available as GitHub Pages - *[Digital Playbook - GitHub Pages](https://canada-ca.github.io/digital-playbook-guide-numerique/views-vues/standards-normes/en/1-design-with-users.html?wbdisable=true)*.   These digital standards are common standards used internationally and align well with these *[Digital Principles](https://digitalprinciples.org/principles/)*.
 
 - [Directive on Service and Digital](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32601): Defines EARB assessment, API use, Network use, IT provisions standards (minimum screen size, ERP standard, ...)
+  - [Guidance on Service and Digital](https://www.canada.ca/en/government/system/digital-government/guideline-service-digital.html)
 
   - [Standards on APIs](https://www.canada.ca/en/government/system/digital-government/modern-emerging-technologies/government-canada-standards-apis.html) - also as [Appendix B to Directive on Service and Digital - Mandatory Procedures for APIs](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32604)
 
@@ -29,6 +47,8 @@
 
   - The *[Directive on Management of Information Technology - Archived 2020-03-31](https://www.tbs-sct.gc.ca/pol/doc-eng.aspx?id=15249#appC)* was replaced by the above directives.
 
+### Digital_Transformation Office
+- [DTO](https://www.canada.ca/en/government/about/about-digital-transformation-office.html)
 
 
 ### Digital : Strategic Plan
@@ -52,6 +72,9 @@
 - [GC TBS Information Management Strategic Plan - 2017-2021](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/information-management/tbs-information-management-strategic-plan.html): Includes strategic goals and objectives.
 - [TBS Glossary](https://www.tbs-sct.canada.ca/pol/glossary-lexique-eng.aspx#glos-lex-D)
 
+### Outcome Management
+- - [Logic Models]: (https://www.canada.ca/en/treasury-board-secretariat/services/information-technology-project-management/project-management/outcome-management-guide-tools.html)
+
 ### Privacy
 - [Directive on Privacy Practices](https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=18309): Defines a direct and indirect collection of personal information.  Relates to other legislation such as the Policy on Privacy Protection, the Directive on Privacy Impact Assessment, the Directive on Social Insurance Number, the Directive on Privacy Requests and Correction of Personal Information and the Standard on Privacy and Web Analytics.
 
@@ -65,6 +88,7 @@
 
 ## Principles
 - [Martin, J. Principles of object-oriented analysis and design. (Prentice-Hall, 1993)](http://www.worldcat.org/isbn/978-0-13-720871-5)
+
 ## Software
 ### API - Application Programming Interface
 
@@ -78,7 +102,6 @@
 - [1.Vernon, V. Implementing domain-driven design. (Addison-Wesley, 2013)](http://www.worldcat.org/isbn/9780133039900)
 
 
-
 ## Technologies
 
 - [Stack Overflow - 2021 Most Popular Technologies](https://insights.stackoverflow.com/survey/2021#most-popular-technologies)
@@ -87,4 +110,10 @@
 - [USA Digital Services Playbook](https://playbook.cio.gov/)
 -
 ## Interesting Videos
+<<<<<<< HEAD
 - [Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)
+=======
+- Event Driven Architeture: [Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)
+
+- Quality: [Steve Jobs on Joseph Juran and Quality](https://www.youtube.com/watch?v=XbkMcvnNq3g&ab_channel=AmericanSocietyforQuality%2CQualityManagementDivision)
+>>>>>>> 032234cb70f5fd08ae932b99f83587311bae9f29

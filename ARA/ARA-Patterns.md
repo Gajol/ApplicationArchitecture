@@ -34,9 +34,7 @@ Caveman Pattern
 
 Conway's Law
 : Conway's Law asserts that organizations are constrained to produce application designs which are copies of their communication structures. This often leads to unintended friction points. The [*Inverse Conway Maneuver*](https://www.thoughtworks.com/radar/techniques/inverse-conway-maneuver
-) recommends evolving your team and organizational structure to promote your desired architecture. Ideally your technology architecture will display [isomorphism](https://en.wikipedia.org/wiki/Isomorphism_(sociology)) with your business architecture.
-
-  - Isomorphism : In sociology, an isomorphism is a similarity of the processes or structure of one organization to those of another, be it the result of imitation or independent development under similar constraints.  In our application development context, isomorphism implies, that different technology branches, division and sections develop their products under similar constraints.
+) recommends evolving your team and organizational structure to promote your desired architecture. Ideally your technology architecture will display synergies with your business architecture.
 
 
 ## Cloud Design Patterns
@@ -51,7 +49,7 @@ Sam Newman's book, "Building Microservices, Defining Fine-Grained Systems"[^Patt
   - Strangle Fig Pattern: . You intercept calls to the existing system—in our case the existing monolithic application. If the call to that piece of functionality is implemented in our new microservice architecture, it is redirected to the microservice.
   - Saga Pattern
   - References legacy Enterprise Integration Patterns (EIP)[^Pattern-2]
-  - Backend for Front-End (BFF) : similar to an aggregating gateway, but limited to a single user-interface.  For example have a BFF for an Android vs Applie client.
+  - Backend for Front-End (BFF) : similar to an aggregating gateway, but limited to a single user-interface.  For example have a BFF for an Android vs Apple client.
 
 References for microservices patterns:
 
@@ -62,8 +60,7 @@ References for microservices patterns:
 
 [^Pattern-1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
 
-[^Pattern-2]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.
-](www.worldcat.org./isbn/978-0321200686)
+[^Pattern-2]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.](www.worldcat.org./isbn/978-0321200686)
 
 [^Pattern-3]: [Wikipedia - Software Design Patterns](https://en.wikipedia.org/wiki/Software_design_pattern)
 

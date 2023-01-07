@@ -66,7 +66,7 @@ Shift-Left
 ### Quality Characteristics
 Below are some quality characteristics to consider when developing applications:
 
-Observability 
+Observability
 : Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitoring which reacts to quality thresholds).
 
 Testability
@@ -128,6 +128,9 @@ Treasury Board issues a range of policy instruments that are designed to establi
 
 A principle is a proposition.  It serves as the foundation for a system of beliefs. As propositions, principles are abstract, but they should precipitate actions on the part of your teams that support them. The principles are subsets or decompositions of your overarching corporate vision. If they’re not, your teams and the department will suffer from a lack of alignment. [^Hewitt]
 
+## Systems Thinking
+Systems thinking is a perspective of seeing and understanding systems as wholes rather than as collections of parts. A whole is a web of interconnections that creates emerging patterns.
+
 ## Technical Debt
 
 Technical debt is the coding you must do tomorrow because you took a shortcut to deliver the software today.
@@ -159,3 +162,5 @@ Technical debt is somewhat misunderstood within IT and our department.   Technic
 [^Appendix-Arch-Evol]: [Architectural Evolution - Neal Ford](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)
 
 [^Principles-TOGAF]: [TOGAF Architecture Principles](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
+
+[^Hewitt]: [Hewitt, E. Technology strategy patterns: architecture as a strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)

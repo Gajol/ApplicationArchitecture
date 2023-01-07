@@ -11,12 +11,9 @@ The overall structure of the system may never have been well defined.
 
 Our department has an abundance of *ball of mud* applications.
 
-Other useful architecture patterns/styles are described in "Application Architecture Styles".
-
-
 ## Event Driven Architecture Patterns
 
-Event Driven Architecture (EDA) is a architecture pattern based on the production, detection, consumption of, and reaction to events.  This architectural style is extremely useful in distributed systems for scalability and performance.  EDA architectures are not simple, nor are they easy to test.  EDA leverages the Publish/Subscribe Enterprise Integration Pattern[^Style-6]
+Event Driven Architecture (EDA) is a architecture pattern based on the production, detection, consumption of, and reaction to events.  This architectural style is extremely useful in distributed systems for scalability and performance.  EDA architectures are not simple, nor are they easy to test.  EDA leverages the Publish/Subscribe Enterprise Integration Pattern[^EIP]
 
 ### Request-Response communication has the following characteristics:
 - Low latency
@@ -34,15 +31,9 @@ Event Driven Architecture (EDA) is a architecture pattern based on the productio
 - e.g. Apache Kafka
 
 ### EDA Integration Patterns
-- single partition / single consumer : simple pattern, provides orderin, but due to a single partition does not scale
+- single partition / single consumer : simple pattern, provides ordering, but due to a single partition does not scale
 - single partition / multiple consumer : fan-out, sharing events with multiple consumers
 - at-least once delivery : product ensures message is committed by the delivery mechanism.  
-- multi-partitions / multi-consuers : ordering is by partition, consumers must understand partition ordering
+- multi-partitions / multi-consumers : ordering is by partition, consumers must understand partition ordering
 
-
-[^1]: [Building Microservices - Sam Newman](www.worldcat.org/isbn/978-1492034025)
-
-[^2]: Gregor Hohpe and Bobby Woolf, Enterprise Integration Patterns (Boston: Addison-Wesley, 2003).
-
-[Style-6]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.
-](www.worldcat.org./isbn/978-0321200686)
+[^EIP]: [Hohpe, Gregor, and Bobby Woolf. Enterprise Integration Patterns: Designing, Building, and Deploying Messaging Solutions. The Addison-Wesley Signature Series. Boston: Addison-Wesley, 2004.](www.worldcat.org./isbn/978-0321200686)

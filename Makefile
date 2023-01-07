@@ -18,7 +18,7 @@ ARA.pdf: *.md
 		ARA/ARA-Principles.md \
 		ARA/ARA-Application.md \
 		ARA/ARA-Goals.md \
-		ARA/ARA-GuidanceStrategy.md \
+		ARA/ARA-Goals-Business.md \
 		ARA/ARA-Styles.md \
 		ARA/ARA-Patterns.md \
 		ARA/ARA-References.md \
