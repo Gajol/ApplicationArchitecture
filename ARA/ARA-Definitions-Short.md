@@ -1,11 +1,7 @@
 # Definitions
-<<<<<<< HEAD
-This section provides definitions which will help in the understanding of asdopics discussed in the ARA. haslasdf adf asdf asdf asf asdf abcde kjklasdf asdf a
-=======
 
 This section provides some definitions relating to the application architecture domain in the architecture, platform, framework, platform, and portfolio managements areas.
 
->>>>>>> 032234cb70f5fd08ae932b99f83587311bae9f29
 ## Architecture
 
 The following table describes some common terms associated with application architecture.

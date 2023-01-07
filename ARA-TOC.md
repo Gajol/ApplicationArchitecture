@@ -182,7 +182,7 @@ Process Map
 
 Our Corporate Risk Profile (CRP) has identified the risk of our aging IT portfolio.   The health of our portfolio needs to improve.   Several leadership principles have been established over the years to provide guidance when addressing business needs.   
 
-Key business principles relating to governing and directing architecture and application design are: 
+Key business principles relating to governing and directing architecture and application design are:
 
 1. __Rationalization__:  Application functionality must be constantly rationalized to allow us to tackle the large backlog of valuable business requests and opportunities.   During the software development phase, requirements must be rationalized against the originally approved project scope and other competing for business needs.  The costs of increment application development, both in project costs and ongoing costs must be carefully understood.  This is the process of rationalizing business needs and should include the senior management team when necessary.  [*See Guidance - Rationalization for more information*]
 
@@ -222,7 +222,6 @@ Application architecture should include these as over-arching guidelines.
 
 
 
-<<<<<<< HEAD
 
 TODO - reference Confluence ITOD Dependencies document
 TODO - Add Enterprise Interoperability to ITOD Dependencies
@@ -241,10 +240,6 @@ There are many sources for digital principles[^Principles-1].  The Government of
 
 | Principle |Description |
 | :-- | :---- |
-=======
-| Principle  | Description   |
-| - | ---- |
->>>>>>> 032234cb70f5fd08ae932b99f83587311bae9f29
 | Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   |
 | Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               |
 | Design for Users First                               | User-centered methods, focus on users, using agile.                                                                                                                                               |
@@ -1046,10 +1041,11 @@ Features of a DXP:
 
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
-=======
+
 - [System Thinking](https://en.wikipedia.org/wiki/Systems_thinking) : breaking world into parts, draws on Systems Theory and Systems Science.
   - [Systems Theory](https://en.wikipedia.org/wiki/Systems_theory#In_engineering) : [Engineering - User-Centric Design Process](https://en.wikipedia.org/wiki/Systems_theory#User-centered_design_process)
   - [Systems Science](https://en.wikipedia.org/wiki/Systems_science) : understanding systems
+
 - [Systemic Design](https://en.wikipedia.org/wiki/Systemic_design) : systems thinking + [human-centric design](https://en.wikipedia.org/wiki/User-centered_design)
 >>>>>>> 032234cb70f5fd08ae932b99f83587311bae9f29
 
@@ -1329,17 +1325,3 @@ Technical debt is somewhat misunderstood within IT and our department.   Technic
 - When taking shortcuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
 
 - Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)
-<<<<<<< HEAD
-=======
-
-
-[^Appendix-Arch-Evol]: [Architectural Evolution - Neal Ford](http://nealford.com/downloads/Evolutionary_Architectures_by_Neal_Ford.pdf)
-
-[^Principles-TOGAF]: [TOGAF Architecture Principles](https://pubs.opengroup.org/architecture/togaf8-doc/arch/chap29.html)
-
-[^Hewitt]: [Hewitt, E. Technology strategy patterns: architecture as a strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
-
-
-<a name="footnotes"></a>
-# Footnotes
->>>>>>> 032234cb70f5fd08ae932b99f83587311bae9f29

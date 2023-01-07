@@ -10,6 +10,7 @@ ARA.pdf: *.md
 	pandoc \
 		--metadata=date:"Revision: $(VERSION)" \
 		--pdf-engine=$(PDF_ENGINE) \
+		--verbose \
 		-o $@  \
 		ARA/ARA-Intro.md \
 		ARA/ARA-Definitions-Short.md \
