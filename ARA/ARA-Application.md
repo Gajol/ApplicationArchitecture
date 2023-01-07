@@ -1,3 +1,4 @@
+asdf asdf
 # Application Characteristics and Styles
 
 TOGAF defines Architecture Style as '*the combination of distinctive features related to the specific context within which architecture is performed or expressed; a collection of principles and characteristics that steer or constrain how an architecture is formed*'.   

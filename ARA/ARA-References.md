@@ -10,6 +10,9 @@
 
 ## Government of Canada
 
+### Open First
+[GC Open First Whitepaper](https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/open-source-software/open-first-whitepaper.html)
+
 ### Digital Standards
 
 - [CTO - Government of Canada Digital Standards](https://www.canada.ca/en/government/system/digital-government/government-canada-digital-standards.html): Design with Users, Iterate and improve frequently, Work in the open by default, Use open standards and solutions, Address security and privacy risks, Build in accessibility from the start, Empower staff to deliver better services, Be good data stewards, Design ethical services, Collaborate widely
@@ -80,6 +83,8 @@
 
 - [Stack Overflow - 2021 Most Popular Technologies](https://insights.stackoverflow.com/survey/2021#most-popular-technologies)
 
-
+## USA
+- [USA Digital Services Playbook](https://playbook.cio.gov/)
+-
 ## Interesting Videos
 - [Why to use Events by Avdi Grimm - Nordic JS No Return: Moving beyond transactions](Nhttps://avdi.codes/talks/no-return/)

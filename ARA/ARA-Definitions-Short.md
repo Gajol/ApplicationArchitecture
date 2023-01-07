@@ -1,4 +1,5 @@
 # Definitions
+This section provides definitions which will help in the understanding of asdopics discussed in the ARA. haslasdf adf asdf asdf asf asdf abcde kjklasdf asdf a
 ## Architecture
 
 The following table describes some common terms associated with application architecture.

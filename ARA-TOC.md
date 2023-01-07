@@ -306,11 +306,11 @@ TODO - Add Enterprise Interoperability to ITOD Dependencies
 <a name="digital-transformation-design-principles"></a>
 # Digital Transformation : Design Principles
 
-There are many sources for digital principles[^Principles-1.  The Government of Canada has identified the following digital architecture standards[^Principles-2].  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
+There are many sources for digital principles[^Principles-1].  The Government of Canada has identified the following digital architecture standards[^Principles-2].  The standards are in support of the Digital Operations Strategic Plan[^Principles-DOSP] :
 
 
 | Principle |Description |
-| :-- | :---- | 
+| :-- | :---- |
 | Use Open Standards and Solutions by Default          | Open Source, Prioritize (open source, COTS, custom), contribute to open-source                                                                                                                   |
 | Maximize Reuse, Reuse and Improve                    | Leverage existing solutions, minimize duplication.                                                                                                                                               |
 | Design for Users First                               | User-centred methods, focus on users, using agile.                                                                                                                                               |
@@ -986,7 +986,7 @@ References for microservices patterns:
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018)](http://www.worldcat.org/isbn/978-1-4920-4087-3)
 
 - [Design patterns: elements of reusable object-oriented software. (Addison-Wesley, 1995).](http://www.worldcat.org/isbn/978-0-201-63361-0)
- 
+
 - [Hewitt, E. Technology strategy patterns: architecture as strategy. (O’Reilly, 2018).
 ](http://www.worldcat.org/isbn/978-1-4920-4087-3).  Analysis, Strategy Creation and Communication Patterns.  Audience is technical leads and architects attempting to recommend a strategy.
 
@@ -1121,7 +1121,7 @@ Types of Architecture
 #### Quality Characteristics
 Below are some quality characteristics to consider when developing applications:
 
-Observability 
+Observability
 : Observability provides deep visibility into modern distributed applications for faster, automated problem identification and resolution.  Observability can be considered an active process where actions are taken based on observable events (contrary to traditional monitoring which reacts to quality thresholds).
 
 Testability
@@ -1217,4 +1217,3 @@ Technical debt is somewhat misunderstood within IT and our department.   Technic
 - When taking shortcuts and delivering code that is not quite right for the programming task of the moment, a development team incurs Technical Debt. This debt decreases productivity. This loss of productivity is the interest of the Technical Debt. - *[Technical Debt Metaphor - Agile Alliance](https://www.agilealliance.org/introduction-to-the-technical-debt-concept)*
 
 - Managing technical debt is an increasingly critical aspect of producing cost-effective, timely, and high-quality software products, especially in projects that apply agile methods. A delicate balance is needed between the desire to release new software features rapidly to satisfy users and the desire to practice sound software engineering that reduces rework. - [*A Study of Technical Debt - Software Engineering Institute - Carnegie Mellon University*](https://insights.sei.cmu.edu/blog/a-field-study-of-technical-debt/)
-
