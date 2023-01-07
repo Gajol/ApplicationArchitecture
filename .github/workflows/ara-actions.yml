@@ -17,7 +17,10 @@ jobs:
           ref="${GITHUB_REF}"
           tag=$(echo $GITHUB_REF | sed 's/refs\/tags\///g')
         fi
-        echo "::set-output name=tag::$tag"
+        # echo "::set-output name=tag::$tag"
+        # above line depracted: https://github.blog/changelog/2022-10-11-github-actions-deprecating-save-state-and-set-output-commands/
+        echo "{tag}={$tag}" >> $GITHUB_OUTPUT
+
     - name: Build ARA PDF
       run: |
         apk add make git
